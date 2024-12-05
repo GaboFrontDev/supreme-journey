@@ -19,16 +19,16 @@ function getLocale(request: NextRequest): string | undefined {
 }
 
 export function middleware(request: NextRequest) {
-  const pathname = request.nextUrl.pathname
+  // const pathname = request.nextUrl.pathname
 
-  if (pathname === '/') {
-    return NextResponse.redirect(
-      new URL(
-        `/home`,
-        request.url
-      )
-    )
-  }
+  // if (pathname === '/') {
+  //   return NextResponse.redirect(
+  //     new URL(
+  //       `/home`,
+  //       request.url
+  //     )
+  //   )
+  // }
 }
 
 export const config = {
