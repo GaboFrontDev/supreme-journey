@@ -2,9 +2,9 @@ import { PageController } from '../PageController';
 
 const { getPageBySlug: getBySlug } = new PageController();
 
-export async function getPageBySlug(slug: string, locale: string) {
+export async function getPageBySlug(slug: string) {
   try {
-    const page = await getBySlug(slug, locale);
+    const page = await getBySlug(slug);
     if (!page.data.length) {
       console.log({ page });
     }

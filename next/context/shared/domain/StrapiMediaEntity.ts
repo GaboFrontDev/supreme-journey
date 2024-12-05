@@ -1,7 +1,4 @@
-export interface StrapiMediaEntity {
-  id: number;
-  attributes: MediaAttributes;
-}
+export type StrapiMediaEntity = MediaAttributes;
 
 interface MediaAttributes {
   name: string;

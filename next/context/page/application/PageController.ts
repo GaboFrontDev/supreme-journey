@@ -3,8 +3,8 @@ import PageRepository from '../infrastructure/PageRepository';
 export class PageController {
   constructor() {}
 
-  async getPageBySlug(id: string, locale: string) {
-    return await PageRepository.getBySlug(id, locale);
+  async getPageBySlug(id: string) {
+    return await PageRepository.getBySlug(id);
   }
 
   async getPages() {

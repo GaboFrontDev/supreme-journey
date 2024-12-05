@@ -17,22 +17,22 @@ class PageRepositoryClass extends StrapiRepository<PageEntity> {
     super('page');
   }
 
-  async getBySlug(slug: string, locale: string) {
+  async getBySlug(slug: string) {
     return await this.getByQuery(
-      `filters\[slug\][$eq]=${slug}&${PopulateParmsStr}&locale=${locale}`
+      `filters\[slug\][$eq]=${slug}&${PopulateParmsStr}&locale=es`
     );
   }
 
   async getAllPages() {
     let articles = await this.get(
-      `?${PopulateParmsStr}&pagination[page]=1&pagination[pageSize]=100&locale=all`
+      `?populate=*`
     );
     let retry = 0;
     if (!articles.data || articles.data.length < 1) {
       // retry strategy
       while (!articles.data && retry < 5) {
         articles = await this.get(
-          `?${PopulateParmsStr}&pagination[page]=1&pagination[pageSize]=100&locale=all`
+          `?populate=*`
         );
         retry++;
       }

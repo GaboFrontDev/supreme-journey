@@ -3,9 +3,6 @@ import { Montserrat, Manrope } from 'next/font/google';
 import type { Metadata } from 'next';
 import '@/styles/globals.css';
 import { Header } from '@/components/Header';
-import { Footer } from '@/components/Footer';
-import { getAllLocales, getSlugAndLocale } from '@/dynamicRendering/utils';
-import { AppBackground } from '@/components/AppBackground';
 
 const PrimaryFontFont = Manrope({
   subsets: ['latin'],
@@ -18,22 +15,17 @@ const SecondaryFontFont = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: 'Kirliantech',
-  description: 'Kirliantech description',
+  title: 'Ares',
+  description: 'Ares Architectos',
 };
 
 export default async function RootLayout({
   children,
-  params,
 }: Readonly<{
   children: React.ReactNode;
-  params: ISlugParamType;
 }>) {
-  const allLocales = await getAllLocales();
-  const { currentLocale } = getSlugAndLocale(params?.slug, allLocales);
-
   return (
-    <html lang={currentLocale}>
+    <html lang={'es'}>
       <head>
         <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
         <link rel='icon' type='image/png' href='/favicon.png' />
@@ -44,18 +36,13 @@ export default async function RootLayout({
       >
         <div className='flex min-h-screen flex-col'>
           <Header
-            navigationLinks={[]}
-            currentLocale={currentLocale}
-            allLocales={allLocales}
+            navigationLinks={[{ id: 1, title: 'Inicio', url: '/' }, { id: 2, title: 'Proyectos', url: '/proyectos' }, { id: 3, title: 'Contacto', url: '/contacto' }]}
+            currentLocale={'es'}
+            allLocales={[]}
           />
           <main className='relative z-10 flex-1 overflow-hidden'>
-            <AppBackground />
             {children}
           </main>
-          <Footer
-            navigationLinks={[]}
-            currentLocale={currentLocale}
-          />
         </div>
 
       </body>

@@ -2,7 +2,6 @@ import { HeaderNav } from './HeaderNav';
 import { motion } from 'framer-motion';
 
 export const HeaderMobileMenu = ({
-  currentLocale,
   navigationLinks,
 }: ILayout) => (
   <motion.div
@@ -14,7 +13,6 @@ export const HeaderMobileMenu = ({
   >
     <HeaderNav
       navigationLinks={navigationLinks}
-      currentLocale={currentLocale}
     />
   </motion.div>
 );

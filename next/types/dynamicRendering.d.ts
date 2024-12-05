@@ -1,9 +1,9 @@
 interface ISlugParamType {
-  slug: string[];
+  slug: string;
 }
 
 interface IPageProps {
-  params: SlugParamType;
+  params: ISlugParamType;
 }
 
 interface LocaleItem {
