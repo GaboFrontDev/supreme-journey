@@ -19,10 +19,13 @@ export const metadata: Metadata = {
   description: 'Ares Architectos',
 };
 
+
 export default async function RootLayout({
   children,
+  params
 }: Readonly<{
   children: React.ReactNode;
+  params: any;
 }>) {
   return (
     <html lang={'es'}>

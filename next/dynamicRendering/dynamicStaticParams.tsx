@@ -4,9 +4,9 @@ const getPagesSlugs = async () => {
   const { data } = await getAllPages();
   const resData = Array.isArray(data) && data?.length ? data : [];
   const slugArray = resData.map((item) => {
-    
     return {
-      slug: [item.slug]
+      slug: [item.slug],
+      title: [item.title],
     };
   });
 
@@ -15,6 +15,5 @@ const getPagesSlugs = async () => {
 
 export async function dynamicStaticParams() {
   const pagesSlugData = await getPagesSlugs();
-  
   return [...pagesSlugData];
 }

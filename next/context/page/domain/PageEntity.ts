@@ -24,7 +24,7 @@ type PageSection =
   | Paragraph;
 interface PageEntity {
   slug: string;
-  Title: string;
+  title : string;
   sections: PageSection[];
   locale: string;
   metadata: Metadata;
