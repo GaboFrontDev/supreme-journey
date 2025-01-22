@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 export const HeaderMobileMenu = ({
   navigationLinks,
-}: ILayout) => (
+}: Partial<ILayout>) => (
   <motion.div
     initial={{ opacity: 0 }}
     animate={{ opacity: 1 }}

@@ -6,7 +6,7 @@ import { LogoLink } from './LogoLink';
 
 export const Header = ({
   navigationLinks,
-}: ILayout) => {
+}: Partial<ILayout>) => {
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {

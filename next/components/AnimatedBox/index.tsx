@@ -2,7 +2,7 @@
 
 import { motion, MotionProps } from 'framer-motion';
 
-interface IAnimatedBox extends MotionProps {
+export type IAnimatedBox = MotionProps & {
   children: React.ReactNode;
   className?: string;
   delay?: number;
@@ -40,3 +40,5 @@ export const AnimatedBox = ({
     </motion.div>
   );
 };
+
+export default AnimatedBox;
