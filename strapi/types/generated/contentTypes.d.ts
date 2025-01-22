@@ -372,6 +372,7 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
 export interface ApiNavBarNavBar extends Struct.SingleTypeSchema {
   collectionName: 'nav_bars';
   info: {
+    description: '';
     displayName: 'nav-bar';
     pluralName: 'nav-bars';
     singularName: 'nav-bar';
@@ -381,6 +382,7 @@ export interface ApiNavBarNavBar extends Struct.SingleTypeSchema {
   };
   attributes: {
     buttons: Schema.Attribute.Component<'shared.button', true>;
+    className: Schema.Attribute.Text;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

@@ -4,7 +4,8 @@
   "info": {
     "singularName": "nav-bar",
     "pluralName": "nav-bars",
-    "displayName": "nav-bar"
+    "displayName": "nav-bar",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -15,6 +16,9 @@
       "type": "component",
       "repeatable": true,
       "component": "shared.button"
+    },
+    "className": {
+      "type": "text"
     }
   }
 }
