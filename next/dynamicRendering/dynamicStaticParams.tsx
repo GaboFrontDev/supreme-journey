@@ -5,8 +5,7 @@ const getPagesSlugs = async () => {
   const resData = Array.isArray(data) && data?.length ? data : [];
   const slugArray = resData.map((item) => {
     return {
-      slug: [item.slug],
-      title: [item.title],
+      slug: [item.slug]
     };
   });
 

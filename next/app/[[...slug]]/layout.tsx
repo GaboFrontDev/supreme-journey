@@ -3,6 +3,7 @@ import { Montserrat, Manrope } from 'next/font/google';
 import type { Metadata } from 'next';
 import '@/styles/globals.css';
 import { Header } from '@/components/Header';
+import { getAllPages } from '@/context/page/application/actions/getAllPages';
 
 const PrimaryFontFont = Manrope({
   subsets: ['latin'],
@@ -27,6 +28,14 @@ export default async function RootLayout({
   children: React.ReactNode;
   params: any;
 }>) {
+  const pages = await getAllPages();
+  const navigationLinks: INavigationLink[] = pages.data.map((page) => {
+    return {
+      id: +page.id,
+      title: page.title,
+      url: page.slug,
+    };
+  });
   return (
     <html lang={'es'}>
       <head>
@@ -39,7 +48,7 @@ export default async function RootLayout({
       >
         <div className='flex min-h-screen flex-col'>
           <Header
-            navigationLinks={[{ id: 1, title: 'Inicio', url: '/' }, { id: 2, title: 'Proyectos', url: '/proyectos' }, { id: 3, title: 'Contacto', url: '/contacto' }]}
+            navigationLinks={navigationLinks}
             currentLocale={'es'}
             allLocales={[]}
           />
