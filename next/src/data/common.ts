@@ -13,4 +13,4 @@ export const FOOTER_MOCK_DATA = {
   ],
 };
 
-export const APP_BASE_URL = 'https://aura-imaging.com/';
+export const APP_BASE_URL = 'https://aresarquitectos.com/';
