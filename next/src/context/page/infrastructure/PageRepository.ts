@@ -1,6 +1,6 @@
 import { StrapiRepository } from '@/context/shared/infrastructure/StrapiRepository';
 import { PageEntity } from '../domain/PageEntity';
-import { PopulateParmsStr } from './constants';
+import { AuraImaging } from './constants';
 
 class PageRepositoryClass extends StrapiRepository<PageEntity> {
   rels = {
@@ -19,7 +19,7 @@ class PageRepositoryClass extends StrapiRepository<PageEntity> {
 
   async getBySlug(slug: string, locale: string) {
     return await this.getByQuery(
-      `filters\[slug\][$eq]=${slug}&${PopulateParmsStr}&locale=${locale}`
+      `filters\[slug\][$eq]=${slug}&${AuraImaging.PopulateParmsStr}&locale=${locale}`
     );
   }
 
@@ -32,7 +32,7 @@ class PageRepositoryClass extends StrapiRepository<PageEntity> {
       // retry strategy
       while (!articles && retry < 5) {
         articles = await this.get(
-          `?populate=*&pagination[page]=1&pagination[pageSize]=100&locale=en`
+          `?populate=*&pagination[page]=1&pagination[pageSize]=100&locale=all`
         );
         retry++;
       }

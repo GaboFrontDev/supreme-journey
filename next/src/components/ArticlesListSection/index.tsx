@@ -71,7 +71,9 @@ export const ArticlesListSection = ({
 
       {isLoadMoreEnabled && (
         <AnimatedBox className="mt-12 text-center">
-          hi
+          <Button onClick={onClickHandler} className="min-w-40">
+            Load More
+          </Button>
         </AnimatedBox>
       )}
     </section>

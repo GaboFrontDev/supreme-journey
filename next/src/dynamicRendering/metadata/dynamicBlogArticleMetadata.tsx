@@ -17,13 +17,13 @@ export async function dynamicBlogArticleMetadata({
       params?.slug,
       allLocales
     );
-
-    const articleSlug = pageSlug.split('/')[1];
-
+    const articleSlug = pageSlug?.split('/')[1];
+    
+    console.log('pageSlug', articleSlug);
     const data = await getArticleBySlug(articleSlug, currentLocale);
-    const article = data[0] || [];
+    const article = data[0]?.attributes || [];
 
-    const { Title, Content, Image } = article.attributes;
+    const { Title, Content, Image } = article;
 
     return {
       title: Title,
@@ -32,14 +32,14 @@ export async function dynamicBlogArticleMetadata({
         images: Image.data.attributes.url,
         type: 'article',
         locale: currentLocale,
-        publishedTime: article.attributes.PublishDate,
+        publishedTime: article.PublishDate,
         authors: ['Inneractive'],
       },
       alternates: {
-        canonical: `${APP_BASE_URL}${article.attributes.slug}`,
+        canonical: `${APP_BASE_URL}${article.slug}`,
         languages: {
-          es: `${APP_BASE_URL}${article.attributes.slug}`,
-          de: `${APP_BASE_URL}${article.attributes.slug}`,
+          es: `${APP_BASE_URL}${article.slug}`,
+          de: `${APP_BASE_URL}${article.slug}`,
         },
       },
     };

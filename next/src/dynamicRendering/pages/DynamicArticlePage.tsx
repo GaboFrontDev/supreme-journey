@@ -1,3 +1,4 @@
+import { ArticleSection } from '@/containers/ArticleSection';
 import { getArticleBySlug } from '@/context/article/application/actions/getArticleBySlug';
 import { getAllLocales, getSlugAndLocale } from '@/dynamicRendering/utils';
 
@@ -12,5 +13,5 @@ export default async function DynamicArticlePage({ params }: IPageProps) {
 
   const data = await getArticleBySlug(articleSlug, currentLocale);
 
-  return <div>Article</div>;
+  return <ArticleSection data={data[0]} />;
 }
