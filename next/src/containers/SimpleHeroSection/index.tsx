@@ -29,10 +29,7 @@ export const SimpleHeroSection: React.FC<SimpleHero> = ({
               <AnimatedBox key={i} delay={((i % 2) + 2) / 10}>
                 <Button
                   key={itm.Text}
-                  url={itm.Link}
-                  size='xl'
                   className="w-full min-w-40 sm:w-auto"
-                  variant={itm.Primary ? 'primary' : 'secondary'}
                   currentLocale={currentLocale}
                 >
                   {itm.Text}

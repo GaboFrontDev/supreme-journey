@@ -5,7 +5,7 @@ export class AuraImaging {
   static readonly LandingHero = ["heroButtons", "landingImage", "heroDeviceCarousel", "heroDeviceCarousel.photo", "heroFolderCarousel", "heroFolderCarousel.photo", "smallFolder", "smallFolder.image" ].map((str) => `${section}.${str}`);
   static readonly ProductsSlide = ["slideItem", "slideItem.media"].map((str) => `${section}.${str}`);
   static readonly WhatItIsSection = ["cards", "cards.image"].map((str) => `${section}.${str}`);
-  static readonly WhatClientsSay = ["reviews", "reviews.avatar"].map((str) => `PageSections.${str}`);
+  static readonly WhatClientsSay = ["reviews", "reviews.avatar"].map((str) => `sections.${str}`);
   static readonly FAQ = ["Title", "FaqItems"].map((str) => `${section}.${str}`);
   static readonly FormSection = ["ContactDetails", "Title", "ContactTitle"].map((str) => `${section}.${str}`);
   static readonly SimpleHero = ["heroButtons"].map((str) => `${section}.${str}`);

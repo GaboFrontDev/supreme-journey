@@ -27,7 +27,7 @@ export const Footer = ({
         ))}
 
         <p className="text-xs leading-6 text-c-gray-500">
-          {year} Inneractive. All rights reserved.
+          {year}. All rights reserved.
         </p>
       </div>
     </footer>

@@ -36,10 +36,7 @@ export const HeroSection: React.FC<Hero> = ({
               <AnimatedBox key={i} delay={i / 10 + 0.15}>
                 <Button
                   key={itm.Text}
-                  url={itm.Link}
-                  size='xl'
                   className="w-full min-w-40 sm:w-auto"
-                  variant={itm.Primary ? 'primary' : 'secondary'}
                   currentLocale={currentLocale}
                 >
                   {itm.Text}

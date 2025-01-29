@@ -31,9 +31,6 @@ export const FeaturesSection: React.FC<ProductsSlides> = ({
           </AnimatedBox>
           <AnimatedBox delay={0.15}>
             <Button
-              url={feature.buttonLink}
-              variant='secondary'
-              icon={<ArrowRightIcon />}
               currentLocale={currentLocale}
             >
               {feature.buttonText}

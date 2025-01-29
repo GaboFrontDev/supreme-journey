@@ -9,7 +9,7 @@ interface Component<T> {
   currentLocale: string;
 }
 
-interface Button {
+export type Button = Component<'shared.button'> & {
   Text: string;
   Link: string;
   Primary: boolean;
@@ -184,7 +184,7 @@ export type PageSection =
 interface PageEntity {
   slug: string;
   Title: string;
-  PageSections: PageSection[];
+  sections: PageSection[];
   locale: string;
   metadata: Metadata;
 }

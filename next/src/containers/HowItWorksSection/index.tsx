@@ -65,7 +65,6 @@ export const HowItWorksSection: React.FC<WhatItIs> = ({
 
                 {itm.buttonLabel && itm.buttonUrl && (
                   <Button
-                    url={itm.buttonUrl}
                     className="mt-6"
                     currentLocale={currentLocale}
                   >
