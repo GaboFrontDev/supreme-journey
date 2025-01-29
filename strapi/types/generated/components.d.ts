@@ -17,11 +17,14 @@ export interface HomeHero extends Struct.ComponentSchema {
 export interface SharedButton extends Struct.ComponentSchema {
   collectionName: 'components_shared_buttons';
   info: {
+    description: '';
     displayName: 'Button';
   };
   attributes: {
     className: Schema.Attribute.Text;
     content: Schema.Attribute.String;
+    primary: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<true>;
+    title: Schema.Attribute.String;
   };
 }
 

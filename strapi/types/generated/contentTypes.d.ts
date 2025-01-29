@@ -418,7 +418,9 @@ export interface ApiPagePage extends Struct.CollectionTypeSchema {
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::page.page'> &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
-    sections: Schema.Attribute.DynamicZone<['home.hero', 'text.paragraph']>;
+    sections: Schema.Attribute.DynamicZone<
+      ['home.hero', 'text.paragraph', 'shared.button']
+    >;
     slug: Schema.Attribute.String;
     title: Schema.Attribute.String & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;

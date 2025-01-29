@@ -94,3 +94,20 @@ body {
 }
 /* -------------------------------------------------------------------- */
 /* custom styles to create unique app background */
+
+.bg-linear-to-l {
+  background-color: white;
+  background: linear-gradient(to left, white 50%, #e5e5e5 50%) right;
+  &.secondary {
+    background: linear-gradient(to left, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.45) 50%) right;
+    background-size: 200% 100%;
+  }
+  background-size: 200% 100%;
+  transition: .2s ease-out;
+}
+
+.bg-linear-to-l:hover {
+  background-position: left;
+}
+
+

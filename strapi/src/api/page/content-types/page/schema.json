@@ -16,7 +16,8 @@
       "type": "dynamiczone",
       "components": [
         "home.hero",
-        "text.paragraph"
+        "text.paragraph",
+        "shared.button"
       ]
     },
     "title": {

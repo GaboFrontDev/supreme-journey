@@ -5,6 +5,7 @@ const section = "sections";
 const PageStructure = {
   Hero: ["media"].map((str) => `${section}.${str}`),
   Paragraph: [""].map((str) => `${section}.paragraph.${str}`),
+  Button: ["content", "className"].map((str) => `${section}.button.${str}`),
 };
 
 const PopulateParams = [
@@ -12,6 +13,8 @@ const PopulateParams = [
   ...PageStructure.Hero,
   "sections.paragraph",
   ...PageStructure.Paragraph,
+  "sections.button",
+  ...PageStructure.Button,
 ];
 
 export const PopulateParmsStr = qs.stringify({
