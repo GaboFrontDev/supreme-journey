@@ -129,3 +129,8 @@ dist
 build
 .strapi-updater.json
 .strapi-cloud.json
+
+next/out
+next/log.txt
+next/next-env.d.ts
+next/log*.txt
