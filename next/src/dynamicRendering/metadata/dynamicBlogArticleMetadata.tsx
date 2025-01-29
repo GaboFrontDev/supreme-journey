@@ -23,23 +23,23 @@ export async function dynamicBlogArticleMetadata({
     const data = await getArticleBySlug(articleSlug, currentLocale);
     const article = data[0] || [];
 
-    const { Title, Content, Image } = article;
+    const { Title, Content, Image } = article.attributes;
 
     return {
       title: Title,
       description: summarizeDescription(Content),
       openGraph: {
-        images: Image.data.url,
+        images: Image.data.attributes.url,
         type: 'article',
         locale: currentLocale,
-        publishedTime: article.PublishDate,
+        publishedTime: article.attributes.PublishDate,
         authors: ['Inneractive'],
       },
       alternates: {
-        canonical: `${APP_BASE_URL}${article.slug}`,
+        canonical: `${APP_BASE_URL}${article.attributes.slug}`,
         languages: {
-          es: `${APP_BASE_URL}${article.slug}`,
-          de: `${APP_BASE_URL}${article.slug}`,
+          es: `${APP_BASE_URL}${article.attributes.slug}`,
+          de: `${APP_BASE_URL}${article.attributes.slug}`,
         },
       },
     };

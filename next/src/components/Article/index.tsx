@@ -35,7 +35,7 @@ const Article = ({
   return (
     <ArticleAnimationBox animationDelay={animationDelay}>
       <Link
-        href={`${urlLocale}/blog/${data.slug}`}
+        href={`${urlLocale}/blog/${data.attributes.slug}`}
         className={`${isHorizontal ? 'flex-col md:flex-row md:gap-6' : 'flex-col'} flex outline-none
         transition-opacity hover:opacity-75`}
       >
@@ -44,28 +44,28 @@ const Article = ({
           overflow-hidden rounded-xl bg-c-gray-950`}
         >
           <Image
-            src={data.Image.data.url}
+            src={data.attributes.Image.data.attributes.url}
             fill
-            alt={data.Title}
+            alt={data.attributes.Title}
             className="object-cover"
           />
         </div>
         <div>
           <div className="mb-2 text-sm text-c-gray-500">
-            {data.PublishDate}
+            {data.attributes.PublishDate}
           </div>
 
-          <h3 className={titleClasses} title={data.Title}>
-            {data.Title}
+          <h3 className={titleClasses} title={data.attributes.Title}>
+            {data.attributes.Title}
           </h3>
 
           <p
             className={`line-clamp-2 text-sm leading-[22px] ${
               isLightTheme ? 'text-c-gray-500' : 'text-c-gray-900'
             }`}
-            title={data.Content}
+            title={data.attributes.Content}
           >
-            {data.Content}
+            {data.attributes.Content}
           </p>
         </div>
       </Link>

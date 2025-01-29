@@ -362,10 +362,32 @@ export interface AdminUser extends Schema.CollectionType {
   };
 }
 
+export interface ApiBlogBlog extends Schema.CollectionType {
+  collectionName: 'blogs';
+  info: {
+    displayName: 'blog';
+    pluralName: 'blogs';
+    singularName: 'blog';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::blog.blog', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    publishedAt: Attribute.DateTime;
+    slug: Attribute.String;
+    title: Attribute.String;
+    updatedAt: Attribute.DateTime;
+    updatedBy: Attribute.Relation<'api::blog.blog', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
 export interface ApiNavBarNavBar extends Schema.SingleType {
   collectionName: 'nav_bars';
   info: {
-    description: '';
     displayName: 'nav-bar';
     pluralName: 'nav-bars';
     singularName: 'nav-bar';
@@ -374,8 +396,7 @@ export interface ApiNavBarNavBar extends Schema.SingleType {
     draftAndPublish: true;
   };
   attributes: {
-    buttons: Attribute.Component<'shared.button', true>;
-    className: Attribute.Text;
+    buttons: Attribute.String;
     createdAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
       'api::nav-bar.nav-bar',
@@ -411,10 +432,10 @@ export interface ApiPagePage extends Schema.CollectionType {
       Attribute.Private;
     publishedAt: Attribute.DateTime;
     sections: Attribute.DynamicZone<
-      ['home.hero', 'text.paragraph', 'shared.button']
+      ['shared.button', 'text.paragraph', 'home.hero']
     >;
     slug: Attribute.String;
-    title: Attribute.String & Attribute.Required;
+    title: Attribute.String;
     updatedAt: Attribute.DateTime;
     updatedBy: Attribute.Relation<'api::page.page', 'oneToOne', 'admin::user'> &
       Attribute.Private;
@@ -857,6 +878,7 @@ declare module '@strapi/types' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
+      'api::blog.blog': ApiBlogBlog;
       'api::nav-bar.nav-bar': ApiNavBarNavBar;
       'api::page.page': ApiPagePage;
       'plugin::content-releases.release': PluginContentReleasesRelease;

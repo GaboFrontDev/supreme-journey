@@ -4,8 +4,7 @@
   "info": {
     "singularName": "nav-bar",
     "pluralName": "nav-bars",
-    "displayName": "nav-bar",
-    "description": ""
+    "displayName": "nav-bar"
   },
   "options": {
     "draftAndPublish": true
@@ -13,12 +12,7 @@
   "pluginOptions": {},
   "attributes": {
     "buttons": {
-      "type": "component",
-      "repeatable": true,
-      "component": "shared.button"
-    },
-    "className": {
-      "type": "text"
+      "type": "string"
     }
   }
 }

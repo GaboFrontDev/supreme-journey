@@ -1,5 +1,6 @@
 import { StrapiAttributesEntity } from './StrapiAttributesEntity';
 
-export type  StrapiEntryEntity<T> = T & StrapiAttributesEntity & {
+export interface StrapiEntryEntity<T> {
   id: number | string;
+  attributes: T & StrapiAttributesEntity;
 }

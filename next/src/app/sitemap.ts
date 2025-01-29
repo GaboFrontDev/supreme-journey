@@ -7,7 +7,7 @@ export default async function sitemap({}: any): Promise<MetadataRoute.Sitemap> {
 
   return mainAppPages.map((page) => {
     const pageSlug =
-      page.slug === 'home' ? '' : page.slug;
+      page.attributes.slug === 'home' ? '' : page.attributes.slug;
 
     return {
       url: `${APP_BASE_URL}${pageSlug}`,

@@ -25,7 +25,7 @@ class PageRepositoryClass extends StrapiRepository<PageEntity> {
 
   async getAllPages() {
     let articles = await this.get(
-      `?populate=*&pagination[page]=1&pagination[pageSize]=100&locale=en`
+      `?populate=*&pagination[page]=1&pagination[pageSize]=100&locale=all`
     );
     let retry = 0;
     if (!articles.data || articles.data.length < 1) {

@@ -25,7 +25,7 @@ export const ArticlesListSection = ({
   const searchTerm = p.get('q')?.toLowerCase() || '';
 
   const filteredData = data.filter((itm) =>
-    itm.Title.toLowerCase().includes(searchTerm)
+    itm.attributes.Title.toLowerCase().includes(searchTerm)
   );
 
   const total = filteredData.length;

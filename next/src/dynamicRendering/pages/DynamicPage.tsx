@@ -12,7 +12,7 @@ export default async function DynamicPage({ params }: IPageProps) {
 
   const { data } = await getPageBySlug(pageSlug, currentLocale);
   console.log({data});
-  const PAGE_SECTIONS = data[0]?.sections;
+  const PAGE_SECTIONS = data[0]?.attributes?.sections;
 
   return (
     <>

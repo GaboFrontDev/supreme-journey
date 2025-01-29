@@ -9,8 +9,8 @@ export const generateSitemap = async () => {
     Array.isArray(pageRes) && pageRes?.length
       ? pageRes?.filter(
           (itm) =>
-            itm?.locale === 'en' &&
-            itm.slug !== 'global-metadata'
+            itm?.attributes?.locale === 'en' &&
+            itm?.attributes?.slug !== 'global-metadata'
         )
       : [];
   const blogsData =
@@ -19,7 +19,7 @@ export const generateSitemap = async () => {
           ...blog,
           attributes: {
             ...blog,
-            slug: `blog/${blog.slug}`,
+            slug: `blog/${blog.attributes.slug}`,
           },
         }))
       : [];

@@ -12,21 +12,19 @@
   },
   "pluginOptions": {},
   "attributes": {
+    "slug": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
     "sections": {
       "type": "dynamiczone",
       "components": [
-        "home.hero",
+        "shared.button",
         "text.paragraph",
-        "shared.button"
+        "home.hero"
       ]
-    },
-    "title": {
-      "type": "string",
-      "required": true
-    },
-    "slug": {
-      "type": "string",
-      "required": false
     }
   }
 }
