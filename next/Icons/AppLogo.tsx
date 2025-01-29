@@ -21,9 +21,9 @@ const drawIcon = {
 
 export const AppLogoIcon = ({ className }: { className?: string }) => (
   <motion.svg
-    width="163"
+    width="100"
     height="40"
-    viewBox="0 0 163 40"
+    viewBox="0 0 100 40"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
     className={className}

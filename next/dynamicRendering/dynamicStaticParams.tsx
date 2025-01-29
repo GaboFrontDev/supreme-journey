@@ -1,14 +1,9 @@
-import { getAllPages } from '@/context/page/application/actions/getAllPages';
+import { getAllPages } from "@/context/page/application/actions/getAllPages";
 
 const getPagesSlugs = async () => {
   const { data } = await getAllPages();
   const resData = Array.isArray(data) && data?.length ? data : [];
-  const slugArray = resData.map((item) => {
-    return {
-      slug: [item.slug]
-    };
-  });
-
+  const slugArray = resData.map((item) => ({ slug: [item.slug === '/' ? '' : item.slug] }));
   return slugArray;
 };
 

@@ -32,13 +32,13 @@ export const Header = ({
       <div
         className={`${headerContainnerClasses} absolute left-0 top-0 z-10 w-full transition-all`}
       >
-        <div className='container relative flex items-center md:justify-between'>
+        <div className='container relative flex items-center justify-between'>
           <LogoLink
-            url={'home'}
-            className='z-10 relative left-10 '
+            url={'/'}
+            className='z-10 left-10 flex items-center'
           />
 
-          <div className='items-center md:flex md:justify-between gap-10'>
+          <div className='flex justify-between gap-10 items-center'>
             <HeaderNav
               navigationLinks={navigationLinks}
             />

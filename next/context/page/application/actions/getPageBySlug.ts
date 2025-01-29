@@ -6,7 +6,8 @@ export async function getPageBySlug(slug: string) {
   try {
     const page = await getBySlug(slug);
     if (!page.data.length) {
-      console.log({ page });
+      console.log('not found');
+      console.log({ page, slug });
     }
     return page;
   } catch (error) {

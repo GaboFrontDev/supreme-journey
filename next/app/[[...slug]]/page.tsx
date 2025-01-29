@@ -1,6 +1,5 @@
-import { dynamicStaticParams } from '@/dynamicRendering/dynamicStaticParams';
-import DynamicPage from '@/dynamicRendering/pages/DynamicPage';
-
+import { dynamicStaticParams } from "@/dynamicRendering/dynamicStaticParams";
+import DynamicPage from "@/dynamicRendering/pages/DynamicPage";
 
 export async function generateStaticParams() {
   return dynamicStaticParams();

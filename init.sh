@@ -1,5 +1,5 @@
 PARAM1=$1
-
+PARAM2=$2
 # check if bun is installed else use npm
 if ! command -v bun &> /dev/null; then
     echo "Bun is not installed, using npm instead"
@@ -15,7 +15,11 @@ if [ "$PARAM1" == "next" ]; then
     if [ ! -d "node_modules" ]; then
         $runtime install
     fi
-    $runtime run dev
+    if [ "$PARAM2" == "build" ]; then
+        $runtime run build
+    else
+        $runtime run dev
+    fi
 
 
 elif [ "$PARAM1" == "strapi" ]; then

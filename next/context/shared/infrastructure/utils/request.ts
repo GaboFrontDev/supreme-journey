@@ -11,7 +11,7 @@ export function strapiRequest(
       'Content-Type': 'application/json; charset=utf-8',
       Authorization: `Bearer ${CONFIG.STRAPI_API_TOKEN}`,
     },
-    cache: 'force-cache' as any,
+    cache: 'no-cache' as any,
   };
   if (method === 'GET') {
     console.log(`Calling GET: ${CONFIG.STRAPI_API_URL}/${url}`);

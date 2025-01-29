@@ -1,19 +1,7 @@
-import { Montserrat, Manrope } from 'next/font/google';
-
 import type { Metadata } from 'next';
 import '@/styles/globals.css';
 import { Header } from '@/components/Header';
 import { getAllPages } from '@/context/page/application/actions/getAllPages';
-
-const PrimaryFontFont = Manrope({
-  subsets: ['latin'],
-  variable: '--font-primary',
-});
-
-const SecondaryFontFont = Montserrat({
-  subsets: ['latin'],
-  variable: '--font-secondary',
-});
 
 export const metadata: Metadata = {
   title: 'Ares',
@@ -43,8 +31,7 @@ export default async function RootLayout({
         <link rel='icon' type='image/png' href='/favicon.png' />
       </head>
       <body
-        className={`${PrimaryFontFont.variable} ${SecondaryFontFont.variable} font-primary
-        text-white`}
+        className={`font-primary text-white`}
       >
         <div className='flex min-h-screen flex-col'>
           <Header

@@ -4,7 +4,6 @@ import { Hero } from "@/context/page/domain/PageEntity";
 import Image from "next/image";
 
 export const HeroSection: React.FC<Hero> = ({ title, media }) => {
-  
   return (
     <section className="container grid justify-center pb-24 pt-64 sm:pb-48 sm:pt-72 lg:grid-cols-12">
       <div className="col-span-8 col-start-3">
