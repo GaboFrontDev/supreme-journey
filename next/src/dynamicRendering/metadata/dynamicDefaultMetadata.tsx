@@ -10,15 +10,52 @@ export async function dynamicDefaultMetadata({
   const allLocales = await getAllLocales();
   const { currentLocale } = getSlugAndLocale(params?.slug, allLocales);
 
-  const { data } = await getPageBySlug('global-metadata', currentLocale);
-  const pageMetadata = removeEmptyFields(data[0]?.attributes?.metadata);
+  const pageMetadata = {
+    title: 'demo',
+    description: 'demo',
+    keywords: 'demo',
+    robots: 'demo',
+    twitter: 'demo',
+    openGraph: {
+      images: 'demo',
+      type: 'website',
+      locale: currentLocale,
+    },
+    category: 'demo',
+    classification: 'demo',
+    metadataBase: new URL(APP_BASE_URL),
+    applicationName: 'demo',
+    generator: 'Next.js',
+    referrer: 'origin-when-cross-origin',
+    formatDetection: {
+      telephone: false,
+      date: false,
+      email: false,
+      address: false,
+    },
+    icons: [
+      {
+        url: '/favicon.ico',
+        sizes: 'any',
+      },
+      {
+        url: '/favicon-32x32.png',
+        sizes: '32x32',
+      },
+      {
+        url: '/favicon-16x16.png',
+        sizes: '16x16',
+      },
+    ],
+    // manifest: '/manifest.json',
+  };
 
   return {
     title: pageMetadata?.title,
     description: pageMetadata?.description,
     keywords: pageMetadata?.keywords,
     robots: pageMetadata?.robots,
-    twitter: pageMetadata?.twitter,
+    twitter: null,
     openGraph: {
       ...pageMetadata.openGraph,
       type: 'website',

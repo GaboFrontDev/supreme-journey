@@ -13,7 +13,7 @@ class ArticleRepositoryClass extends StrapiRepository<ArticleEntity> {
   };
 
   constructor() {
-    super('auraimaging-blog');
+    super('blog');
   }
 
   async getById(id: string, locale: string) {

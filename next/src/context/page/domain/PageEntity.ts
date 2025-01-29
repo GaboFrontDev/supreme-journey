@@ -31,8 +31,6 @@ export interface Button extends Component<'shared.button'> {
  * It's used to build the page dynamically.
  */
 type PageSection =
-  | Hero
-  | Paragraph
   | Button;
 
 

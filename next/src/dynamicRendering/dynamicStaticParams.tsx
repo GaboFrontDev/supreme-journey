@@ -7,9 +7,9 @@ const getPagesSlugs = async () => {
 
   const slugArray = resData.map((item) => {
     const locale =
-      item.attributes.locale === 'en' ? '' : item.attributes.locale;
+      item.locale === 'en' ? '' : item.locale;
     const slug =
-      item.attributes.slug === 'home' ? [''] : item.attributes.slug.split('/');
+      item.slug === 'home' ? [''] : item.slug.split('/');
 
     return {
       slug: [locale, ...slug].filter(Boolean),
@@ -26,9 +26,9 @@ const getBlogArticleSlugs = async () => {
 
   const slugArray = resData.map((item) => {
     const locale =
-      item.attributes.locale === 'en' ? '' : item.attributes.locale;
+      item.locale === 'en' ? '' : item.locale;
 
-    const slug = item.attributes.slug;
+    const slug = item.slug;
 
     return {
       slug: [locale, 'blog', slug].filter(Boolean),

@@ -16,8 +16,8 @@ export async function dynamicMainAppMetadata({
 
     const { data } = await getPageBySlug(pageSlug, currentLocale);
 
-    const metadata = data[0]?.attributes?.metadata || {};
-    const slug = data[0]?.attributes?.slug || '';
+    const metadata = data[0]?.metadata || {};
+    const slug = data[0]?.slug || '';
     const pageSlugUrl = slug === 'home' ? '' : slug;
     const filteredMetadata = removeEmptyFields(metadata);
 

@@ -21,7 +21,7 @@ export async function dynamicBlogArticleMetadata({
     const articleSlug = pageSlug.split('/')[1];
 
     const data = await getArticleBySlug(articleSlug, currentLocale);
-    const article = data[0]?.attributes || [];
+    const article = data[0] || [];
 
     const { Title, Content, Image } = article;
 
@@ -29,7 +29,7 @@ export async function dynamicBlogArticleMetadata({
       title: Title,
       description: summarizeDescription(Content),
       openGraph: {
-        images: Image.data.attributes.url,
+        images: Image.data.url,
         type: 'article',
         locale: currentLocale,
         publishedTime: article.PublishDate,
