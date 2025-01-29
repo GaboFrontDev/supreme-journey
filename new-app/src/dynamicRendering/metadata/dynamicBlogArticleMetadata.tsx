@@ -17,9 +17,9 @@ export async function dynamicBlogArticleMetadata({
       params?.slug,
       allLocales
     );
-
-    const articleSlug = pageSlug.split('/')[1];
-
+    const articleSlug = pageSlug?.split('/')[1];
+    
+    console.log('pageSlug', articleSlug);
     const data = await getArticleBySlug(articleSlug, currentLocale);
     const article = data[0]?.attributes || [];
 

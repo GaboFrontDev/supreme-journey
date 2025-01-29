@@ -1,6 +1,6 @@
 import qs from "qs";
 
-const section = "PageSections";
+const section = "sections";
 export class AuraImaging {
   static readonly LandingHero = ["heroButtons", "landingImage", "heroDeviceCarousel", "heroDeviceCarousel.photo", "heroFolderCarousel", "heroFolderCarousel.photo", "smallFolder", "smallFolder.image" ].map((str) => `${section}.${str}`);
   static readonly ProductsSlide = ["slideItem", "slideItem.media"].map((str) => `${section}.${str}`);

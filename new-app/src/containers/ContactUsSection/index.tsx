@@ -4,7 +4,6 @@ import Button from '@/components/Button';
 import { AnimatedBox } from '@/components/AnimatedBox';
 import { FormSection } from '@/context/page/domain/PageEntity';
 import { useCallback } from 'react';
-import { InneractiveContactForm } from '@inneractive-inc/inneractive-contact-form';
 import { useRouter } from 'next/navigation';
 
 const formFieldClassnamesConfig = {
@@ -57,21 +56,9 @@ export const ContactUsSection: React.FC<FormSection> = ({
             {Subtitle}
           </p>
         </AnimatedBox>
+        
         <AnimatedBox>
-          <InneractiveContactForm
-            onSubmitSuccess={onSubmitSuccess}
-            submitButton={(isLoading) => (
-              <Button
-                isLoading={isLoading}
-                type='submit'
-                className='mt-10 w-full min-w-40 md:w-auto'
-              >
-                Submit
-              </Button>
-            )}
-            webformType='Landing Page'
-            classnamesConfig={formFieldClassnamesConfig}
-          />
+          hi  
         </AnimatedBox>
       </div>
     </section>

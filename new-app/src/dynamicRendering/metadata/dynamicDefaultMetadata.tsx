@@ -10,23 +10,19 @@ export async function dynamicDefaultMetadata({
   const allLocales = await getAllLocales();
   const { currentLocale } = getSlugAndLocale(params?.slug, allLocales);
 
-  const { data } = await getPageBySlug('global-metadata', currentLocale);
-  const pageMetadata = removeEmptyFields(data[0]?.attributes?.metadata);
-
   return {
-    title: pageMetadata?.title,
-    description: pageMetadata?.description,
-    keywords: pageMetadata?.keywords,
-    robots: pageMetadata?.robots,
-    twitter: pageMetadata?.twitter,
+    title: "pageMetadata?.title",
+    description: "pageMetadata?.description",
+    keywords: "pageMetadata?.keywords",
+    robots: "pageMetadata?.robots",
+    twitter: null,
     openGraph: {
-      ...pageMetadata.openGraph,
       type: 'website',
       locale: currentLocale,
-      images: pageMetadata?.openGraph?.images,
+      images: "pageMetadata?.openGraph?.images",
     },
-    category: pageMetadata?.category,
-    classification: pageMetadata?.classification,
+    category: "pageMetadata?.category",
+    classification: "pageMetadata?.classification",
 
     // default metadata auto-generated
     metadataBase: new URL(APP_BASE_URL),

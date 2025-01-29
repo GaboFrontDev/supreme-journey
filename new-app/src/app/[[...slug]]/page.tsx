@@ -11,9 +11,6 @@ export async function generateMetadata({ params }: IPageProps) {
   const allLocales = await getAllLocales();
   const { pageSlug } = getSlugAndLocale(params?.slug, allLocales);
 
-  if (pageSlug.includes('blog/')) {
-    return dynamicBlogArticleMetadata({ params });
-  }
 
   return await dynamicMainAppMetadata({ params });
 }
@@ -25,10 +22,6 @@ export async function generateStaticParams() {
 export default async function Page({ params }: IPageProps) {
   const allLocales = await getAllLocales();
   const { pageSlug } = getSlugAndLocale(params?.slug, allLocales);
-
-  if (pageSlug.includes('blog/')) {
-    return DynamicArticlePage({ params });
-  }
 
   return DynamicPage({
     params,

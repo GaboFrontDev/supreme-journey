@@ -14,7 +14,7 @@ class PageRepositoryClass extends StrapiRepository<PageEntity> {
   };
 
   constructor() {
-    super('auraimaging-page');
+    super('page');
   }
 
   async getBySlug(slug: string, locale: string) {
