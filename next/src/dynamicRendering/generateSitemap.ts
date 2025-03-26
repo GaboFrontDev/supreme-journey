@@ -10,7 +10,7 @@ export const generateSitemap = async () => {
       ? pageRes?.filter(
           (itm) =>
             itm?.attributes?.locale === 'en' &&
-            itm.attributes.slug !== 'global-metadata'
+            itm.attributes.slug !== 'global-metadata'  
         )
       : [];
   const blogsData =
