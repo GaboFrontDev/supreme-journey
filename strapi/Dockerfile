@@ -5,7 +5,6 @@ COPY package.json  .
 COPY yarn.lock .
 RUN touch .env
 COPY .env.prod .env
-RUN export $(cat .env | xargs);
 
 RUN yarn install --production --quiet --frozen-lockfile
 COPY . .

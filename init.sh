@@ -31,6 +31,7 @@ if [ "$PARAM1" == "next" ]; then
         $runtime run $PARAM2
     fi
 
+fi
 
 if [ "$PARAM1" == "strapi" ]; then
     echo "Starting strapi..."
@@ -44,19 +45,4 @@ if [ "$PARAM1" == "strapi" ]; then
     docker compose up -d
     $runtime run develop
 fi
-
-if [ "$PARAM1" == "build-image" ]; then
-    echo "Building strapi image..."
-    cd strapi
-    docker build -t strapi .
-fi
-
-# deploy strapi container
-if [ "$PARAM1" == "deploy-strapi" ]; then
-    echo "Deploying strapi container..."
-    cd strapi
-    docker compose up -d
-fi
-
-# go back to the root directory
 cd ..
