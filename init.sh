@@ -31,19 +31,13 @@ if [ "$PARAM1" == "next" ]; then
         $runtime run $PARAM2
     fi
 
-
-elif [ "$PARAM1" == "strapi" ]; then
-    echo "Starting strapi..."
-    cd strapi
-    # check if node_modules are installed with bun
-    if [ ! -d "node_modules" ]; then
-        $runtime install
-    fi
-
-    # run docker compose up on background
-    docker compose up -d
-    $runtime run develop
 fi
 
-# go back to the root directory
+if [ "$PARAM1" == "storybook" ]; then
+    echo "Starting storybook..."
+    cd next
+    $runner storybook dev
+    exit 0
+fi
+
 cd ..

@@ -1,11 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',
+  reactStrictMode: false,
   images: {
-    remotePatterns: [{ hostname: process.env.IMAGE_HOSTNAME || "127.0.0.1" }],
-    unoptimized: true,
+    loader: 'custom',
+    loaderFile: './customImageLoader.js',
   },
-  pageExtensions: ["ts", "tsx"],
+  output: 'export',
 };
 
 export default nextConfig;

@@ -1,45 +1,36 @@
-# 🌟 Next.js Multilingual Blog Template
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-Welcome to our cutting-edge Next.js Multilingual Blog Template! This powerful and flexible template is designed to help you create stunning, multilingual blogs with ease.
+## Getting Started
 
-## ✨ Features
+First, run the development server:
 
-- 🌐 Multilingual support (English and French)
-- 📱 Fully responsive design
-- 🎨 Customizable themes
-- 🖼️ Image optimization
-- 🔍 SEO-friendly
-- 🚀 Fast performance with Next.js
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
 
-## 🚀 Getting Started
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-1. Clone this repository
-2. Install dependencies: `npm install`
-3. Copy `.env.sample` to `.env.local` and update the variables
-4. Run the development server: `npm run dev`
-5. Open [http://localhost:3000](http://localhost:3000) in your browser
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-## 🛠️ Customization
+This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-- Modify `config.ts` to change language settings
-- Update `next.config.mjs` for advanced configurations
-- Add your own MDX files in the `blog` page directly
+## Learn More
 
-## 🤝 Contributing
+To learn more about Next.js, take a look at the following resources:
 
-We welcome contributions! Please see our [contributing guidelines](link-to-contributing-guidelines) for more information.
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-## 📄 License
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+## Deploy on Vercel
 
----
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-<footer>
-<p align="center">
-  Made by <a href="https://aceternity.com">Aceternity</a><br>
-  Powered by <a href="https://nextjs.org/">Next.js</a> | <a href="https://tailwindcss.com/">Tailwind CSS</a> | <a href="https://framer.com/motion">Framer Motion</a> | <a href="https://ui.aceternity.com">Aceternity UI</a>
-</p>
-</footer>
-
-++ Deploy
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
