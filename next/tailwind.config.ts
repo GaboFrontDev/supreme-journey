@@ -96,6 +96,15 @@ const config: Config = {
         900: '#4C524F',
         950: '#1D1F1E',
       },
+      'font-grey': {
+        50: '#989F9C',
+        100: '#EDF2F1',
+        200: '#D9DEDD',
+        300: '#C6CECD',
+        400: '#AEB5B4',
+        500: '#929C9A',
+        
+      },
 
       black: '#000000',
       white: '#ffffff',

@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import { AnimatedBox } from '../AnimatedBox';
 
 type HeroProps = {
@@ -10,7 +9,7 @@ type HeroProps = {
 
 const Hero = ({ title, description, image, showDescription = false }: HeroProps) => {
   return (
-    <div className='z-1 absolute left-0 top-0 h-full w-full max-w-[1440px] max-h-[1024px] overflow-hidden'>
+    <div className='z-1 relative left-0 top-0 h-full w-full max-w-[1440px] max-h-[1024px] overflow-hidden'>
       <div className='w-[1440px] h-[1024px] bg-[url(https://picsum.photos/1440/1024)] bg-fixed'>
       </div>
       <div className='w-[1440px] h-[1024px] bg-black/50'>

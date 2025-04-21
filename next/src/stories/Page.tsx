@@ -4,6 +4,7 @@ import { Header } from './Header';
 import './page.css';
 import Hero from '@/components/Hero/Hero';
 import { HeaderNav } from '@/components/Header/HeaderNav';
+import Indicadores from '@/components/Indicadores/Indicadores';
 
 type User = {
   name: string;
@@ -12,7 +13,7 @@ type User = {
 export const Page: React.FC = () => {
   return (
     <div className='h-screen bg-c-blue-400 relative'>
-      <div className='h-20 flex items-center justify-center px-4'>
+      <div className='h-20 flex items-center justify-center px-4 absolute top-0 left-0 right-0'>
         <HeaderNav
           currentLocale='es'
           navigationLinks={[
@@ -44,6 +45,7 @@ export const Page: React.FC = () => {
         description='We are a design studio that helps you create successful products.'
         image='https://picsum.photos/1440/1024'
       />
+      <Indicadores />
     </div>
   );
 };
