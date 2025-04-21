@@ -13,22 +13,18 @@ const defaultClasses = twMerge(
   backgrounColor
 );
 
-const backgroundColorSecondary = "secondary text-white";
-
-const defaultClassesSecondary = twMerge(defaultClasses, backgroundColorSecondary);
-
 /**
  * Button component
  * @param props - ButtonProps
  * @returns Button component
  */
 export function Button(props: ButtonProps) {
-  const { title, className, content, ...rest } = props;
+  const { title, className, children, ...rest } = props;
   const classes = twMerge(defaultClasses, className);
 
   return (
     <button className={classes} {...rest} title={title}>
-      {content}
+      {children}
     </button>
   );
 }

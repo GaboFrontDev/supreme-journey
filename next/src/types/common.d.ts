@@ -8,4 +8,5 @@ interface ILayout {
   navigationLinks?: INavigationLink[];
   currentLocale: string;
   allLocales?: LocaleItem[];
+  className?: string;
 }

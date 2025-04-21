@@ -33,4 +33,11 @@ if [ "$PARAM1" == "next" ]; then
 
 fi
 
+if [ "$PARAM1" == "storybook" ]; then
+    echo "Starting storybook..."
+    cd next
+    $runner storybook dev
+    exit 0
+fi
+
 cd ..
