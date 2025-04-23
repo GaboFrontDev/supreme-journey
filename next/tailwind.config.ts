@@ -121,8 +121,8 @@ const config: Config = {
         '8': '0.08',
       },
 
-      fontFamily: {
-        primary: 'var(--font-primary)',
+      letterSpacing: {
+        'tight-032': '0.32px',
       },
       boxShadow: {
         custom1: '0px 30px 50px 0px rgba(30, 58, 138, 0.05)',

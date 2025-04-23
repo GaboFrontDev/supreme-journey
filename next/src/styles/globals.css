@@ -3,11 +3,14 @@
 @tailwind utilities;
 @import './parsedown.css';
 @import './utils.css';
+@import './fonts.css';
 
 html,
 body {
-  background-color: theme('colors.c-gray.50');
+  font-family: 'Gilmer', sans-serif;
+  font-weight: 400;
   color: theme('colors.c-text');
+  background-color: theme('colors.c-gray.50');
 }
 
 @layer utilities {
@@ -355,4 +358,13 @@ body {
 }
 .country_select_input__menu {
   @apply !text-black;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
