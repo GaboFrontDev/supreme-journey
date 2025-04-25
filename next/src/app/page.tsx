@@ -14,6 +14,23 @@ import HeroScroll from './components/HeroScroll';
 import HeroIntroScroll from './components/HeroIntroScroll';
 import Header from './components/Header';
 import CarouselWrapper from './components/CarouselWrapper';
+import CompanyStats from './components/CompanyStats';
+import OfficesGrid from './components/OfficesGrid';
+
+const stats = [
+  { value: '50', label: 'Años de experiencia', fixedWidth: true },
+  { value: '16', label: 'Países' },
+  { value: '4', label: 'Millones de m² diseñados', fixedWidth: true },
+  { value: '11', label: 'Premios' },
+  { value: '110', label: 'Proyectos en México y LATAM' },
+];
+
+const offices = [
+  { title: 'Guadalajara HQ', country: 'México' },
+  { title: 'CDMX', country: 'México' },
+  { title: 'L35 Barcelona', country: 'España' },
+  { title: 'L35 Madrid', country: 'España' },
+]
 
 const items1 = [
   { name: 'Artha Capital' },
@@ -93,61 +110,13 @@ export default function HomePage() {
       <HeroIntroScroll />
 
       <Section width='max-w-7xl' paddingBottom='pt-0'>
-        <div className='grid grid-cols-5 gap-10 mb-16'>
-          <div>
-            <h4 className="text-[#989F9C] text-8xl relative">50 
-              <span className='text-6xl absolute'>+</span>
-            </h4>
-            <span className='inline-flex w-[150px] text-base text-black'>Años de experiencia</span>
-          </div>
-          <div>
-            <h4 className="text-[#989F9C] text-8xl relative">16
-              <span className='text-6xl absolute'>+</span>
-            </h4>
-            <span className='text-base text-black'>Países</span>
-          </div>
-          <div>
-            <h4 className="text-[#989F9C] text-8xl relative">4
-              <span className='text-6xl absolute'>+</span>
-            </h4>
-            <span className='inline-flex w-[150px] text-base text-black'>Millones de m² diseñados</span>
-          </div>
-          <div>
-            <h4 className="text-[#989F9C] text-8xl relative">11
-              <span className='text-6xl absolute'>+</span>
-            </h4>
-            <span className='text-base text-black'>Premios</span>
-          </div>
-          <div>
-            <h4 className="text-[#989F9C] text-8xl relative">110
-              <span className='text-6xl absolute'>+</span>
-            </h4>
-            <span className='text-base text-black'>Proyectos en México y LATAM</span>
-          </div>
-        </div>
+        <CompanyStats stats={stats} />
       </Section>
 
       <HeroScroll />
 
       <Section width='max-w-7xl' paddingBottom='pt-0' paddingTop='pt-0'>
-        <div className='grid grid-cols-4 gap-10 mb-16'>
-          <div>
-            <h4 className="font-bold text-xl">Guadalajara HQ</h4>
-            <span className='text-xs text-[#A1A1A1]'>México</span>
-          </div>
-          <div>
-            <h4 className="font-bold text-xl">CDMX</h4>
-            <span className='text-xs text-[#A1A1A1]'>México</span>
-          </div>
-          <div>
-            <h4 className="font-bold text-xl">L35 Barcelona</h4>
-            <span className='text-xs text-[#A1A1A1]'>España</span>
-          </div>
-          <div>
-            <h4 className="font-bold text-xl">L35 Madrid</h4>
-            <span className='text-xs text-[#A1A1A1]'>España</span>
-          </div>
-        </div>
+        <OfficesGrid  items={offices} />
         <div className='flex justify-items-start'>
           <Button label='Conoce el estudio' />
         </div>
@@ -186,7 +155,7 @@ export default function HomePage() {
         background='bg-[#F5F5F5]'
       >
         <div className='mb-20 flex items-center justify-between'>
-          <h2 className='mb-16 max-w-md text-5xl font-bold text-[#636B69]'>
+          <h2 className='max-w-md text-[40px] font-bold text-[#636B69] leading-tight'>
             Diseñamos desde la colaboración
           </h2>
           <p className='max-w-md text-right text-lg text-black'>
@@ -195,10 +164,7 @@ export default function HomePage() {
           </p>
         </div>
 
-        <div
-          className='scrollbar-none relative left-1/2 right-1/2 ml-[-50vw] mr-[-50vw] w-screen
-            overflow-x-scroll'
-        >
+        <div className='scrollbar-none relative left-1/2 right-1/2 ml-[-50vw] mr-[-50vw] w-screen overflow-x-scroll'>
           <div className='space-y-6'>
             <Marquee items={items1} direction='left' />
             <Marquee items={items2} direction='right' />

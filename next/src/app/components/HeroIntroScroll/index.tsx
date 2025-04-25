@@ -71,9 +71,7 @@ export default function HeroIntroScroll() {
                 16 países, diseñamos lugares donde la vida sucede, las comunidades
                 crecen y las personas se conectan.
               </p>
-              <button className='font-bold text-base text-black py-3 px-7 tracking-tight-032 rounded-full bg-white'>
-                Nuestros Proyectos
-              </button>
+              <Button label="Nuestros Proyectos" variant="secondary" href="/projects" />
             </motion.div>
           </div>
         </div>

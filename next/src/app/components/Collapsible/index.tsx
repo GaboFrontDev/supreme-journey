@@ -22,13 +22,23 @@ export default function CollapsibleList({ items, onChange }: Props) {
       {items.map(({ id, title, content }) => {
         const isOpen = openId === id;
 
+        const handleClick = () => {
+          if (!isOpen) {
+            setOpenId(id);
+            onChange?.(id);
+          }
+        };
+
         return (
           <div key={id} className="py-4">
-            <div className="flex items-center">
+            <button
+              onClick={handleClick}
+              className="flex items-center w-full text-left"
+              disabled={isOpen}
+            >
               <motion.div
                 animate={{ width: isOpen ? 0 : 32, marginRight: isOpen ? 0 : 16 }}
                 transition={{ duration: 0.3 }}
-                className=""
               >
                 <AnimatePresence>
                   {!isOpen && (
@@ -38,7 +48,7 @@ export default function CollapsibleList({ items, onChange }: Props) {
                       animate={{ opacity: 1, scale: 1 }}
                       exit={{ opacity: 0, scale: 0.95 }}
                       transition={{ duration: 0.3 }}
-                      className="w-8 h-8 pt-[1px] pl-[9px] rounded-full bg-[#EFEFEF]"
+                      className="flex items-center justify-center w-8 h-8 rounded-full bg-[#EFEFEF]"
                     >
                       <span className="font-light text-2xl text-[#636B69]">+</span>
                     </motion.div>
@@ -46,21 +56,14 @@ export default function CollapsibleList({ items, onChange }: Props) {
                 </AnimatePresence>
               </motion.div>
 
-              <motion.button
-                onClick={() => {
-                  const newId = isOpen ? null : id;
-                  setOpenId(newId);
-                  onChange?.(newId);
-                }}
-                animate={{
-                  color: isOpen ? '#407978' : '#000000',
-                }}
+              <motion.span
+                animate={{ color: isOpen ? '#407978' : '#000000' }}
                 transition={{ duration: 0.3 }}
-                className="text-left font-bold text-2xl w-full"
+                className="font-bold text-2xl"
               >
                 {title}
-              </motion.button>
-            </div>
+              </motion.span>
+            </button>
 
             <AnimatePresence initial={false}>
               {isOpen && (

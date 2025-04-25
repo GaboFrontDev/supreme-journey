@@ -24,7 +24,7 @@ export default function ProjectCard({ title, location, categories, image }: Proj
         </div>
         <div className="flex flex-wrap gap-2">
           {categories.map((cat, i) => (
-            <span key={i} className="font-semibold text-xs text-black px-4 py-[6px] rounded-full border border-black/15">
+            <span key={i} className="font-semibold text-xs text-black px-4 py-[6px] rounded-full border border-black/15 hover:underline">
               {cat}
             </span>
           ))}

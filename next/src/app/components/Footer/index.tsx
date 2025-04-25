@@ -69,38 +69,38 @@ export default function Footer() {
         </div>
         <div className="grid grid-cols-4 text-sm gap-10">
           <ul className="font-bold text-base text-c-gray-200 space-y-3">
-            <li><a href="#">Proyectos</a></li>
-            <li><a href="#">El Estudio</a></li>
-            <li><a href="#">Cultura Ares</a></li>
-            <li><a href="#">Blog</a></li>
-            <li><a href="#">Contacto</a></li>
+            <li><a href="#" className="hover:underline">Proyectos</a></li>
+            <li><a href="#" className="hover:underline">El Estudio</a></li>
+            <li><a href="#" className="hover:underline">Cultura Ares</a></li>
+            <li><a href="#" className="hover:underline">Blog</a></li>
+            <li><a href="#" className="hover:underline">Contacto</a></li>
           </ul>
           <ul className="font-bold text-base text-c-gray-200 space-y-3">
-            <li><a href="#">Usos Mixtos</a></li>
-            <li><a href="#">Centros comerciales</a></li>
-            <li><a href="#">Vivienda</a></li>
-            <li><a href="#">Hoteles</a></li>
-            <li><a href="#">Master plan</a></li>
+            <li><a href="#" className="hover:underline">Usos Mixtos</a></li>
+            <li><a href="#" className="hover:underline">Centros comerciales</a></li>
+            <li><a href="#" className="hover:underline">Vivienda</a></li>
+            <li><a href="#" className="hover:underline">Hoteles</a></li>
+            <li><a href="#" className="hover:underline">Master plan</a></li>
           </ul>
           <ul className="font-bold text-base text-c-gray-200 space-y-3">
-            <li><a href="#">LATAM</a></li>
-            <li><a href="#">Retail</a></li>
-            <li><a href="#">Deportivo</a></li>
-            <li><a href="#">Movilidad</a></li>
-            <li><a href="#">Renovaciones y expansiones</a></li>
+            <li><a href="#" className="hover:underline">LATAM</a></li>
+            <li><a href="#" className="hover:underline">Retail</a></li>
+            <li><a href="#" className="hover:underline">Deportivo</a></li>
+            <li><a href="#" className="hover:underline">Movilidad</a></li>
+            <li><a href="#" className="hover:underline">Renovaciones y expansiones</a></li>
           </ul>
           <ul className="font-bold text-base text-c-gray-200 space-y-3">
-            <li><a href="#">Instagram</a></li>
-            <li><a href="#">Facebook</a></li>
-            <li><a href="#">Linkedin</a></li>
-            <li><a href="#">Twitter</a></li>
+            <li><a href="#" className="hover:underline">Instagram</a></li>
+            <li><a href="#" className="hover:underline">Facebook</a></li>
+            <li><a href="#" className="hover:underline">Linkedin</a></li>
+            <li><a href="#" className="hover:underline">Twitter</a></li>
           </ul>
         </div>
         <div className="pt-20">
           <div className="grid grid-cols-4 text-sm gap-10">
             <p className="font-bold text-xs text-c-gray-200">Ares 2025 ©</p>
-            <a href="#" className="font-bold text-xs text-c-gray-200">Uso de cookies</a>
-            <a href="#" className="font-bold text-xs text-c-gray-200">Aviso de privacidad</a>
+            <a href="#" className="font-bold text-xs text-c-gray-200 hover:underline">Uso de cookies</a>
+            <a href="#" className="font-bold text-xs text-c-gray-200 hover:underline">Aviso de privacidad</a>
           </div>
         </div>
       </div>

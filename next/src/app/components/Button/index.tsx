@@ -6,15 +6,23 @@ import clsx from 'clsx';
 interface ButtonProps {
   label: string;
   href?: string;
+  variant?: 'primary' | 'secondary';
   className?: string;
 }
 
-export default function Button({ label, href = '#', className = '' }: ButtonProps) {
+export default function Button({ 
+  label, 
+  href = '#', 
+  variant = 'primary', 
+  className = ''
+}: ButtonProps) {
   return (
     <motion.a
       href={href}
       className={clsx(
-        'relative inline-block overflow-hidden rounded-full font-bold text-base text-white py-3 px-7 tracking-tight-032 bg-[#636B69] group',
+        'relative inline-block overflow-hidden rounded-full font-bold text-base py-3 px-7 tracking-tight-032 group',
+        variant === 'primary' && 'text-white bg-[#636B69]',
+        variant === 'secondary' && 'text-black bg-[#EFEFEF]',
         className
       )}
       whileHover="hover"
@@ -27,7 +35,11 @@ export default function Button({ label, href = '#', className = '' }: ButtonProp
           hover: { scaleX: 1, opacity: 0.15 },
         }}
         transition={{ duration: 0.4, ease: 'easeInOut' }}
-        className="absolute inset-0 bg-white opacity-20 origin-center scale-x-0 rounded-full group-hover:scale-x-100 z-0"
+        className={clsx(
+          "absolute inset-0 origin-center scale-x-0 rounded-full group-hover:scale-x-100 z-0",
+          variant === 'primary' && 'bg-white opacity-20',
+          variant === 'secondary' && 'bg-c-gray-600 opacity-20'
+        )}
       />
       <span className="relative z-10">{label}</span>
     </motion.a>
