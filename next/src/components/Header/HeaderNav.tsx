@@ -9,7 +9,7 @@ const Links = ({ navigationLinks, currentLocale, className }: ILayout) => {
   const urlLocale = getUrlLocaleFromLang(currentLocale);
   const classes = twMerge('flex items-center justify-center', className);
   return navigationLinks?.map((itm, i) => (
-    <section className={classes}>
+    <section className={classes} key={i}>
       <Link href={`${urlLocale}/${itm.url}`}>{itm.title}</Link>
     </section>
   ));

@@ -22,6 +22,7 @@ const Path: FC<IPath> = (props) => (
 export const MenuButton = ({ onClickHandler }: MenuButton) => {
   return (
     <button
+      title='Menu'
       className='relative z-10 flex h-11 w-11 items-center justify-center rounded-full bg-white/4
         focus:outline-none'
       onClick={onClickHandler}
