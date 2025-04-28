@@ -22,7 +22,7 @@ export default function Section({
   children,
 }: SectionProps) {
   return (
-    <section className={clsx(paddingTop, paddingBottom, paddingLeft, paddingRight, background, 'mx-auto rounded-t-2xl')}>
+    <section className={clsx(paddingTop, paddingBottom, paddingLeft, paddingRight, background, 'mx-auto rounded-t-3xl')}>
       <div className={clsx(width, 'mx-auto')}>{children}</div>
     </section>
   );

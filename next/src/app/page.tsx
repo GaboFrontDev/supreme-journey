@@ -77,25 +77,25 @@ const services = [
     id: '1',
     title: 'Arquitectura',
     content: 'Diseñamos espacios únicos que resuelven necesidades, potencian el uso del espacio y generan valor a largo plazo. Combinando funcionalidad, estética y sostenibilidad para crear entornos que mejoran la calidad de vida y una experiencia única en cada proyecto.',
-    image: '/images/averanda_project.png',
+    image: '/images/services/1.png',
   },
   {
     id: '2',
     title: 'Master Planning',
     content: 'Diseñamos espacios únicos que resuelven necesidades, potencian el uso del espacio y generan valor a largo plazo. Combinando funcionalidad, estética y sostenibilidad para crear entornos que mejoran la calidad de vida y una experiencia única en cada proyecto.',
-    image: '/images/diverplaza_project.png',
+    image: '/images/hotels/2.png',
   },
   {
     id: '3',
     title: 'Master Planning',
     content: 'Diseñamos espacios únicos que resuelven necesidades, potencian el uso del espacio y generan valor a largo plazo. Combinando funcionalidad, estética y sostenibilidad para crear entornos que mejoran la calidad de vida y una experiencia única en cada proyecto.',
-    image: '/images/valle_oriente_project.png',
+    image: '/images/shopping_centers/3.png',
   },
   {
     id: '4',
     title: 'Branding y Diseño Gráfico',
     content: 'Diseñamos espacios únicos que resuelven necesidades, potencian el uso del espacio y generan valor a largo plazo. Combinando funcionalidad, estética y sostenibilidad para crear entornos que mejoran la calidad de vida y una experiencia única en cada proyecto.',
-    image: '/images/river_place.png',
+    image: '/images/dwelling/4.png',
   },
 ];
 
@@ -198,34 +198,36 @@ export default function HomePage() {
             title='Averanda'
             location='Cuernavaca, Morelos, México'
             categories={['Usos Mixtos']}
-            image='/images/averanda_project.png'
+            image='/images/mixed_uses/1.png'
           />
           <ProjectCard
-            title='Diverplaza'
-            location='Bogotá, Colombia'
+            title='The Point'
+            location='CDMX, México'
+            categories={[
+              'Usos Mixtos',
+              'Vivienda',
+            ]}
+            image='/images/mixed_uses/2.png'
+          />
+          <ProjectCard
+            title='Paseo Villalta'
+            location='Saltillo, Coahuila, México'
             categories={[
               'Centros Comerciales',
               'Usos Mixtos',
-              'Hoteles',
-              'Corporativo',
             ]}
-            image='/images/diverplaza_project.png'
+            image='/images/mixed_uses/3.png'
           />
           <ProjectCard
             title='Galerías Valle Oriente'
             location='Monterrey, Nuevo León, México'
             categories={[
               'Centros Comerciales',
-              'Renovación y Expansiones',
-              'LATAM',
+              'Usos Mixtos',
+              'Hoteles',
+              'Corporativo',
             ]}
-            image='/images/valle_oriente_project.png'
-          />
-          <ProjectCard
-            title='River Place'
-            location='Georgetown, Guyana'
-            categories={['Centro Comerciales', 'LATAM']}
-            image='/images/river_place.png'
+            image='/images/mixed_uses/4.png'
           />
         </CarouselWrapper>
 

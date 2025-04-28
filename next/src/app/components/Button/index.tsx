@@ -2,11 +2,13 @@
 
 import { motion } from 'framer-motion';
 import clsx from 'clsx';
+import Image from 'next/image';
 
 interface ButtonProps {
   label: string;
   href?: string;
   variant?: 'primary' | 'secondary';
+  iconFilter?: boolean;
   className?: string;
 }
 
@@ -14,13 +16,14 @@ export default function Button({
   label, 
   href = '#', 
   variant = 'primary', 
+  iconFilter = false,
   className = ''
 }: ButtonProps) {
   return (
     <motion.a
       href={href}
       className={clsx(
-        'relative inline-block overflow-hidden rounded-full font-bold text-base py-3 px-7 tracking-tight-032 group',
+        `relative inline-block overflow-hidden rounded-full font-bold text-base py-3 ${iconFilter ? 'pl-14 pr-7' : 'px-7'} tracking-tight-032 group`,
         variant === 'primary' && 'text-white bg-[#636B69]',
         variant === 'secondary' && 'text-black bg-[#EFEFEF]',
         className
@@ -41,6 +44,16 @@ export default function Button({
           variant === 'secondary' && 'bg-c-gray-600 opacity-20'
         )}
       />
+      {
+        iconFilter && 
+          <Image 
+            src="/icons/filter.png" 
+            alt="Ordenar" 
+            width={24} 
+            height={24} 
+            className="object-cover pointer-events-none ml-5 left-0 absolute" 
+          />
+      }
       <span className="relative z-10">{label}</span>
     </motion.a>
   );

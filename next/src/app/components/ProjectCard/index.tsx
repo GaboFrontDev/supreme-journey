@@ -4,13 +4,14 @@ import Button from "../Button";
 interface ProjectCardProps {
   title: string;
   location: string;
-  categories: string[];
+  categories?: string[];
   image: string;
+  contentWhite?: boolean;
 }
 
-export default function ProjectCard({ title, location, categories, image }: ProjectCardProps) {
+export default function ProjectCard({ title, location, categories, image, contentWhite = false }: ProjectCardProps) {
   return (
-    <div className="min-w-[620px] max-w-sm rounded-xl overflow-hidden bg-[#F5F5F5]">
+    <div className={`min-w-[620px] max-w-sm rounded-xl overflow-hidden ${contentWhite ? 'bg-white' : 'bg-[#F5F5F5]'}`}>
       <div className="w-full h-[380px] overflow-hidden rounded-2xl relative">
         <Image src={image} alt={title} fill className="object-cover pointer-events-none" />
       </div>
@@ -20,10 +21,10 @@ export default function ProjectCard({ title, location, categories, image }: Proj
             <h3 className="font-bold text-xl text-black mb-1">{title}</h3>
             <p className="font-light text-lg text-[#A1A1A1]">{location}</p>
           </div>
-          <Button label='Ver proyecto' className="text-xs" />
+          <Button href="/projects/slug_project" label='Ver proyecto' className="text-xs" />
         </div>
         <div className="flex flex-wrap gap-2">
-          {categories.map((cat, i) => (
+          {categories?.map((cat, i) => (
             <span key={i} className="font-semibold text-xs text-black px-4 py-[6px] rounded-full border border-black/15 hover:underline">
               {cat}
             </span>

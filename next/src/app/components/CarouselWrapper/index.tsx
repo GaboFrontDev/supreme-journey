@@ -3,7 +3,12 @@
 import { useRef, useState } from 'react';
 import Image from 'next/image';
 
-export default function CarouselWrapper({ children }: { children: React.ReactNode }) {
+interface CarouselWrapperProps {
+  children: React.ReactNode;
+  arrowOffsetY?: string;
+}
+
+export default function CarouselWrapper({ children, arrowOffsetY = '50%' }: CarouselWrapperProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const isDragging = useRef(false);
   const startX = useRef(0);
@@ -58,6 +63,7 @@ export default function CarouselWrapper({ children }: { children: React.ReactNod
     <div className="relative left-1/2 right-1/2 ml-[-50vw] mr-[-50vw] w-screen">
       <button
         onClick={() => scroll('left')}
+        style={{ top: arrowOffsetY }}
         className="flex items-center justify-center absolute w-12 h-12 top-1/2 left-4 -translate-y-1/2 z-10 bg-white rounded-full shadow-lg"
       >
         <Image src="/icons/arrow_left.png" width={24} height={24} alt="Left" />
@@ -65,6 +71,7 @@ export default function CarouselWrapper({ children }: { children: React.ReactNod
 
       <button
         onClick={() => scroll('right')}
+        style={{ top: arrowOffsetY }}
         className="flex items-center justify-center absolute w-12 h-12 top-1/2 right-4 -translate-y-1/2 z-10 bg-white rounded-full shadow-lg"
       >
         <Image src="/icons/arrow_right.png" width={24} height={24} alt="Right" />

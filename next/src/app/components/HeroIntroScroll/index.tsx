@@ -39,7 +39,7 @@ export default function HeroIntroScroll() {
       <div className='sticky top-0 h-screen w-full overflow-hidden'>
         <motion.div style={{ scale }} className='absolute inset-0 z-0'>
           <Image
-            src='/images/hero_intro.png'
+            src='/images/hero.png'
             alt='Hero background'
             fill
             className='object-cover'
