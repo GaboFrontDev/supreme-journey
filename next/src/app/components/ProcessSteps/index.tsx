@@ -37,65 +37,82 @@ export default function ProcessSteps() {
   const totalSteps = steps.length;
   const activeWidth = 366;
 
+  const Step = ({ step, index, isActive, isAdjacent, activeWidth, totalSteps, onSelect }: {
+    step: typeof steps[0],
+    index: number,
+    isActive: boolean,
+    isAdjacent: boolean,
+    activeWidth: number,
+    totalSteps: number,
+    onSelect: (index: number) => void
+  }) => {
+    const [showDescription, setShowDescription] = useState(false);
+    const closedWidth = `calc((100% - ${activeWidth}px) / ${totalSteps - 1})`;
+
+    useEffect(() => {
+      if (isActive) {
+        const timer = setTimeout(() => {
+          setShowDescription(true);
+        }, 250);
+        return () => clearTimeout(timer);
+      } else {
+        setShowDescription(false);
+      }
+    }, [isActive]);
+
+    return (
+      <div
+        className={`flex flex-col justify-between items-center h-full transition-all duration-300 overflow-hidden ${
+          isActive ? 'rounded-xl bg-[#F5F5F5] border-r border-transparent' : 
+          isAdjacent ? 'border-r border-[#EFEFEF] bg-white' :
+          'border-r border-[#EFEFEF] bg-white'
+        }`}
+        style={{
+          width: isActive ? `${activeWidth}px` : closedWidth,
+          minWidth: isActive ? `${activeWidth}px` : closedWidth,
+          maxWidth: isActive ? `${activeWidth}px` : closedWidth,
+        }}
+      >
+        <div onClick={() => onSelect(index)} className="cursor-pointer flex flex-col items-start p-6 h-full w-full">
+          <h2 className={`text-[70px] transition-colors ${ isActive ? 'text-[#407978]' : 'text-[#A1A1A1]' }`}>
+            {step.number}
+          </h2>
+          <h3 className={`font-bold text-lg whitespace-nowrap ${ isActive ? 'text-[#407978]' : 'text-black' }`}>
+            {step.title}
+          </h3>
+
+          {showDescription && (
+            <p className="mt-20 text-black text-base leading-relaxed">
+              {step.description}
+            </p>
+          )}
+          
+          {!isActive && (
+            <div className="mt-auto mb-4">
+              <div className="w-8 h-8 flex items-center justify-center pt-[2px] bg-[#EFEFEF] rounded-full text-[#636B69] text-2xl">
+                +
+              </div>
+            </div>
+          )}
+        </div>
+      </div>
+    );
+  };
+
   return (
     <div className="flex w-full h-[450px] overflow-hidden">
-      {steps.map((step, index) => {
-        const [showDescription, setShowDescription] = useState(false);
-
-        const isActive = activeIndex === index;
-        const isAdjacent = index === activeIndex! - 1 || index === activeIndex! + 1;
-        const closedWidth = `calc((100% - ${activeWidth}px) / ${totalSteps - 1})`;
-
-        useEffect(() => {
-          if (isActive) {
-            const timer = setTimeout(() => {
-              setShowDescription(true);
-            }, 250);
-            return () => clearTimeout(timer);
-          } else {
-            setShowDescription(false);
-          }
-        }, [isActive]);
-
-        return (
-          <div
-            key={index}
-            className={`flex flex-col justify-between items-center h-full transition-all duration-300 overflow-hidden ${
-              isActive ? 'rounded-xl bg-[#F5F5F5] border-r border-transparent' : 
-              isAdjacent ? 'border-r border-[#EFEFEF] bg-white' :
-              'border-r border-[#EFEFEF] bg-white'
-            }`}
-            style={{
-              width: isActive ? `${activeWidth}px` : closedWidth,
-              minWidth: isActive ? `${activeWidth}px` : closedWidth,
-              maxWidth: isActive ? `${activeWidth}px` : closedWidth,
-            }}
-          >
-            <div onClick={() => setActiveIndex(index)} className="cursor-pointer flex flex-col items-start p-6 h-full w-full">
-              <h2 className={`text-[70px] transition-colors ${ isActive ? 'text-[#407978]' : 'text-[#A1A1A1]' }`}>
-                {step.number}
-              </h2>
-              <h3 className={`font-bold text-lg whitespace-nowrap ${ isActive ? 'text-[#407978]' : 'text-black' }`}>
-                {step.title}
-              </h3>
-
-              {showDescription && (
-                <p className="mt-20 text-black text-base leading-relaxed">
-                  {step.description}
-                </p>
-              )}
-              
-              {!isActive && (
-                <div className="mt-auto mb-4">
-                  <div className="w-8 h-8 flex items-center justify-center pt-[2px] bg-[#EFEFEF] rounded-full text-[#636B69] text-2xl">
-                    +
-                  </div>
-                </div>
-              )}
-            </div>
-          </div>
-        );
-      })}
+      {steps.map((step, index) => (
+        <Step
+          key={index}
+          step={step}
+          index={index}
+          isActive={activeIndex === index}
+          isAdjacent={index === activeIndex! - 1 || index === activeIndex! + 1}
+          activeWidth={activeWidth}
+          totalSteps={totalSteps}
+          onSelect={setActiveIndex}
+        />
+      ))}
     </div>
   );
 }

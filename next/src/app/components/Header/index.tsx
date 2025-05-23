@@ -58,7 +58,7 @@ export default function Header({ forceScrolledStyle = false, scrollLimit = 2100 
     });
 
     return () => unsubscribe();
-  }, [scrollY, forceScrolledStyle]);
+  }, [scrollY, forceScrolledStyle, SCROLL_TRIGGER]);
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
