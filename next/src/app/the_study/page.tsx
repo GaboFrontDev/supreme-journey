@@ -291,7 +291,7 @@ export default function TheStudyPage() {
             cards={[
               {
                 title: 'Centro comercial Río Tijuana',
-                description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor indicidunt ut labore et dolore magna aliqua.',
+                description: 'Es el primer centro comercial de estilo estadounidense en la ciudad y un hito en la modernización comercial de la zona del Río.',
                 image: '/images/history/2.png',
               },
             ]}
@@ -303,7 +303,7 @@ export default function TheStudyPage() {
             cards={[
               {
                 title: 'Las Américas Cancún',
-                description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor indicidunt ut labore et dolore magna aliqua.',
+                description: 'Se convierte en un referente comercial que transformó la experiencia de compra en la ciudad y el inicio de una nueva era en el retail de Quintana Roo.',
                 image: '/images/history/3.png',
               },
             ]}
@@ -443,7 +443,7 @@ export default function TheStudyPage() {
               },
               {
                 title: 'Alianza con L35',
-                description: 'Primer proyecto de arquitectura educativa.',
+                description: 'Fortaleciendo nuestra proyección internacional y colaboración en proyectos estratégicos de gran escala.',
                 image: '/images/history/16.png',
               },
             ]}
