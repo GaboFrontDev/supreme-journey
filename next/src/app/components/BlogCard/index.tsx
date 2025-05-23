@@ -2,23 +2,25 @@ import Image from "next/image";
 import Button from "../Button";
 
 interface BlogCardProps {
-  image: string;
+  images: string[];
   date: string;
   title: string;
+  slug: string;
   buttonLabel?: string;
 }
 
 export default function BlogCard({
-  image,
+  images,
   date,
   title,
+  slug,
   buttonLabel = "Continuar Leyendo",
 }: BlogCardProps) {
   return (
     <div className="flex items-center justify-between gap-6">
       <div className="min-w-[196px] min-h-[218px] overflow-hidden rounded-2xl relative">
         <Image
-          src={image}
+          src={images[0]}
           alt="Imagen de blog"
           fill
           className="object-cover"
@@ -31,7 +33,7 @@ export default function BlogCard({
             {title}
           </h2>
         </div>
-        <Button label={buttonLabel} variant="secondary" className="text-sm" />
+        <Button href={`/blog/${slug}`} label={buttonLabel} variant="secondary" className="text-sm" />
       </div>
     </div>
   );
