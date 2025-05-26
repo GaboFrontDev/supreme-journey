@@ -83,23 +83,23 @@ const services = [
   },
   {
     id: '2',
-    title: 'Master Planning',
+    title: 'Diseño de Interiores',
     content:
-      'Diseñamos espacios únicos que resuelven necesidades, potencian el uso del espacio y generan valor a largo plazo. Combinando funcionalidad, estética y sostenibilidad para crear entornos que mejoran la calidad de vida y una experiencia única en cada proyecto.',
+      'Creamos espacios que combinan estilo, funcionalidad y personalidad. Cada proyecto es pensado cuidadosamente, desde la selección de materiales hasta los detalles finales, para ofrecer ambientes únicos que se adapten a las necesidades y el carácter de cada cliente.',
     image: '/images/hotels/2.png',
   },
   {
     id: '3',
     title: 'Master Planning',
     content:
-      'Diseñamos espacios únicos que resuelven necesidades, potencian el uso del espacio y generan valor a largo plazo. Combinando funcionalidad, estética y sostenibilidad para crear entornos que mejoran la calidad de vida y una experiencia única en cada proyecto.',
+      'Desarrollamos proyectos de Master Plan que integran diseño, funcionalidad y visión a largo plazo. Creamos entornos donde lo residencial, comercial y recreativo se conectan estratégicamente para fomentar el crecimiento sostenible. Cada proyecto está pensado para adaptarse y evolucionar, asegurando un impacto positivo en el entorno.',
     image: '/images/shopping_centers/3.png',
   },
   {
     id: '4',
     title: 'Branding y Diseño Gráfico',
     content:
-      'Diseñamos espacios únicos que resuelven necesidades, potencian el uso del espacio y generan valor a largo plazo. Combinando funcionalidad, estética y sostenibilidad para crear entornos que mejoran la calidad de vida y una experiencia única en cada proyecto.',
+      'Creamos marcas que cuentan historias y generan conexiones significativas. Cada proyecto está pensado para construir una narrativa visual que el usuario vivirá, desde el primer contacto hasta su experiencia en el espacio. Nuestro enfoque combina estrategia, diseño y emoción, transformando cada elemento en una herramienta que comunica y refuerza la identidad de la marca.',
     image: '/images/dwelling/4.png',
   },
 ];
