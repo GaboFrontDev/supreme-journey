@@ -217,7 +217,7 @@ export default function TheStudyPage() {
             <FilterButton
               key={year}
               label={year}
-              className='bg-[#407978] hover:no-underline'
+              className='hover:no-underline'
               href={`#history`}
             />
           ))}
