@@ -3,7 +3,7 @@ export const projectCards = {
     {
       title: 'Averanda',
       location: 'Cuernavaca, Morelos, México',
-      categories: ['Usos Mixtos'],
+      categories: ['Usos Mixtos', 'Centros Comerciales'],
       image: '/images/mixed_uses/1.png',
       rightPanel:
         'El concepto general arquitectónico se fundamentó en crear un espacio de usos mixtos que incluye centro comercial, oficinas, vivienda y hotel, este espacio cuenta con pasillos abiertos o semi-cubierto y un jardín central que manifiesta espacios agradables y tranquilos.',
