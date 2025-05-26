@@ -563,7 +563,7 @@ export const projectCards = {
         description: [
           'El Centro comercial Hojarasca está ubicado a las afueras de la Cd. de Popayán, en la zona de mayor desarrollo habitacional de la ciudad. El proyecto está hermanado con el desarrollo habitacional del mismo nombre llamado Hojarasca Residencial que le da sentido y complementará de servicios comerciales al complejo.',
           'El diseño representa de manera cálida el espíritu de la ciudad con caminamientos a través de un portal de acero y cubiertas que protegen la entrada de los locales. El CC cuenta con comercios enfocados en la conveniencia, con supermercado y Gimnasio como anclajes, así como una agradable área destinada a la comida, con restaurantes y locales tipo mercado gourmet que colindan con una área arbolada muy importante localizada en el area mas baja del terreno.',
-          'El proyecto buscará integrarse a la vegetación y topografía de la zona, respetando las áreas arboladas existentes en el terreno.'
+          'El proyecto buscará integrarse a la vegetación y topografía de la zona, respetando las áreas arboladas existentes en el terreno.',
         ],
       },
       bigImages: [
@@ -618,10 +618,7 @@ export const projectCards = {
         '/images/MALL-PLAZA-03.jpg',
       ],
       lideres: ['Iván Ortiz'],
-      equipo: [
-        'Javier Quintero',
-        'Rosangélica Triviño',
-      ],
+      equipo: ['Javier Quintero', 'Rosangélica Triviño'],
     },
     {
       title: 'Rotonda',
@@ -657,15 +654,9 @@ export const projectCards = {
           'En términos de áreas comerciales el proyecto sugiere la generación de áreas nuevas de locales menores en dos niveles asi como nuevas áreas de Parqueadero en Sótano para complementar el requerimiento por los nuevos requerimientos.',
         ],
       },
-      bigImages: [
-        '/images/ROTONDA-01.jpg',
-        '/images/ROTONDA-02.jpg',
-      ],
+      bigImages: ['/images/ROTONDA-01.jpg', '/images/ROTONDA-02.jpg'],
       lideres: ['Iván Ortiz', 'Carlos Márquez'],
-      equipo: [
-        'Moisés Quintero',
-        'Gaddiel Villa',
-      ],
+      equipo: ['Moisés Quintero', 'Gaddiel Villa'],
     },
   ],
   retail: [
@@ -700,7 +691,7 @@ export const projectCards = {
           'El diseño consta de perímetros móviles que permiten crear un espacio de exhibición dinámico y flexible, adaptándose totalmente a las diferentes piezas de cada temporada.',
           'Esto brinda la posibilidad de exhibir desde una escultura hasta una motocicleta para resaltar la exposición de los productos de lujo disponibles en la tienda y reinventarse para ofrecer diferentes experiencias a los clientes.',
           'Para crear una atmósfera sofisticada e innovadora que resalten tales prendas se emplearon materiales como placas de mármol de gran formato, maderas finas, metales y detalles en hoja de oro sobre cristales y espejos, así como, iluminación de la marca Iguzzini para resaltar cada detalle.',
-          'Este proyecto fue galardonado con el Premio de Oro en los ICSC Global Awards Latin American & Caribbean 2019.'
+          'Este proyecto fue galardonado con el Premio de Oro en los ICSC Global Awards Latin American & Caribbean 2019.',
         ],
       },
       bigImages: [
@@ -711,11 +702,7 @@ export const projectCards = {
         '/images/LOUDER-05.jpg',
       ],
       lideres: ['Pedro Solaegui'],
-      equipo: [
-        'Diana Plascencia',
-        'Andrea Sotelo',
-        'Yurie Tanaka',
-      ],
+      equipo: ['Diana Plascencia', 'Andrea Sotelo', 'Yurie Tanaka'],
     },
     {
       title: 'Sport Master',
@@ -766,6 +753,44 @@ export const projectCards = {
       location: 'La Perla  Zapopan, Jalisco, México',
       categories: ['Retail'],
       image: '/images/LA-GRAN-VIA-01.jpg',
+      rightPanel:
+        'El concepto de la boutique nace de la necesidad de crear un espacio versátil y sofisticado, capaz de adaptarse a la exhibición de calzado, ropa y accesorios de lujo.',
+      ficha: {
+        año: '2019',
+        ubicacion: 'Andares Zapopan, Jalisco, México',
+        landArea: '150.66m²',
+        builtArea: '150.66m²',
+        cliente: 'La Gran Vía',
+        tipo: 'Retail',
+      },
+      concepto:
+        'Realzar la escencia del producto en un entorno sofisticado y neutro. Un espacio versátil y atemporal donde el producto habla, se expresa y se convierte en experiencia.',
+      galeria: [
+        '/images/LA-GRAN-VIA-01.jpg',
+        '/images/LA-GRAN-VIA-02.jpg',
+        '/images/LA-GRAN-VIA-03.jpg',
+        '/images/LA-GRAN-VIA-04.jpg',
+        '/images/LA-GRAN-VIA-05.jpg',
+        '/images/LA-GRAN-VIA-06.jpg',
+      ],
+      servicios: {
+        imagen: '/images/LA-GRAN-VIA-02.jpg',
+        description: [
+          'El concepto de la boutique nace de la necesidad de crear un espacio versátil y sofisticado, capaz de adaptarse a la exhibición de calzado, ropa y accesorios de lujo. Bajo la idea de una galería de arte —un white canvas—, el diseño busca que cada pieza destaque como una obra única, permitiendo que el producto sea siempre el protagonista dentro de un ambiente neutro, elegante y atemporal.',
+          'Gracias a su planta regular, esta ubicación favorece una lectura clara del concepto, potenciando su expresión al máximo.',
+          'En esta tercera implementación del prototipo, se perfeccionaron los detalles del diseño original, consolidando esta tienda como la versión más refinada y funcional del concepto.',
+        ],
+      },
+      bigImages: [
+        '/images/LA-GRAN-VIA-01.jpg',
+        '/images/LA-GRAN-VIA-02.jpg',
+        '/images/LA-GRAN-VIA-03.jpg',
+        '/images/LA-GRAN-VIA-04.jpg',
+        '/images/LA-GRAN-VIA-05.jpg',
+        '/images/LA-GRAN-VIA-06.jpg',
+      ],
+      lideres: ['Pedro Solaegui', 'Eduardo Domínguez'],
+      equipo: ['Vidal Montero Lomelí'],
     },
     {
       title: 'Nike Factory',
