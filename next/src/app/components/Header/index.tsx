@@ -105,15 +105,15 @@ export default function Header({ forceScrolledStyle = false, scrollLimit = 2100 
             {openDropdown === 'proyectos' && (
               <div className={`dropdown-menu grid grid-cols-3 w-[700px] ${textColorClass} top-full left-0 mt-10 p-6 rounded-lg shadow-lg backdrop-blur-sm ${backgroundColorClass} absolute`}>
                 <ul className="text-[15px] space-y-6">
-                  <li><Link href="/projects" className="hover:underline">Usos Mixtos</Link></li>
-                  <li><Link href="/projects" className="hover:underline">Centros Comerciales</Link></li>
-                  <li><Link href="/projects" className="hover:underline">Vivienda</Link></li>
-                  <li><Link href="/projects" className="hover:underline">Hoteles</Link></li>
+                  <li><Link href="/projects/mixedUses" className="hover:underline">Usos Mixtos</Link></li>
+                  <li><Link href="/projects/centrosComerciales" className="hover:underline">Centros Comerciales</Link></li>
+                  <li><Link href="/projects/dwellings" className="hover:underline">Vivienda</Link></li>
+                  <li><Link href="/projects/hotels" className="hover:underline">Hoteles</Link></li>
                 </ul>
                 <ul className="text-[15px] space-y-6">
                   <li><Link href="/projects" className="hover:underline">Master planning</Link></li>
-                  <li><Link href="/projects" className="hover:underline">LATAM</Link></li>
-                  <li><Link href="/projects" className="hover:underline">Retail</Link></li>
+                  <li><Link href="/projects/latam" className="hover:underline">LATAM</Link></li>
+                  <li><Link href="/projects/retail" className="hover:underline">Retail</Link></li>
                   <li><Link href="/projects" className="hover:underline">Deportivo</Link></li>
                 </ul>
                 <ul className="text-[15px] space-y-6">

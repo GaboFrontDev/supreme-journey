@@ -7,27 +7,6 @@ import ProjectCard from '@/app/components/ProjectCard';
 import CarouselWrapper from '@/app/components/CarouselWrapper';
 import { keysToCategories, projectCards } from '../consts';
 
-export function generateStaticParams() {
-  const slugs = projectCards.mixedUses.map((project) => ({
-    slug: project.title,
-  }));
-  const slugs2 = projectCards.hotels.map((project) => ({
-    slug: project.title,
-  }));
-  const slugs3 = projectCards.dwellings.map((project) => ({
-    slug: project.title,
-  }));
-  const slugs4 = projectCards.centrosComerciales.map((project) => ({
-    slug: project.title,
-  }));
-  const slugs5 = projectCards.latam.map((project) => ({
-    slug: project.title,
-  }));
-  const slugs6 = projectCards.retail.map((project) => ({
-    slug: project.title,
-  }));
-  return [...slugs, ...slugs2, ...slugs3, ...slugs4, ...slugs5, ...slugs6];
-}
 
 type ProjectSection = {
   title: string;
@@ -48,16 +27,6 @@ type ProjectSection = {
 }
 
 export default function SlugProjectPage({ params }: { params: { slug: string } }) {
-  let project: Partial<ProjectSection> | undefined;
-  let keyWhereFound: string | undefined;
-  for (const key of Object.keys(projectCards)) {
-    project = projectCards[key as keyof typeof projectCards].find((project) => project.title === params.slug);
-    keyWhereFound = key;
-    if (project) {
-      break;
-    }
-  }
-
   return (
     <>
       <Header forceScrolledStyle />
@@ -83,7 +52,7 @@ export default function SlugProjectPage({ params }: { params: { slug: string } }
                   className='rotate-180 object-cover'
                 />
                 <span className='text-sm font-bold text-[#A1A1A1]'>
-                  {keysToCategories[keyWhereFound as keyof typeof keysToCategories] || 'Proyectos'}
+                  Proyectos
                 </span>
               </Link>
               <div className='flex items-center gap-2'>

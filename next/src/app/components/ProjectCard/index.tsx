@@ -7,9 +7,29 @@ interface ProjectCardProps {
   categories?: string[];
   image: string;
   contentWhite?: boolean;
+  parentCategory?: string;
 }
 
-export default function ProjectCard({ title, location, categories, image, contentWhite = false }: ProjectCardProps) {
+
+const formatTitleToUrl = (title: string) => {
+  // replace tildes too
+  return title
+    .toLowerCase()
+    .replace(/ /g, '-')
+    .replace(/~/g, '')
+    .replace('i', 'i')
+    .replace('é', 'e')
+    .replace('ú', 'u')
+    .replace('ó', 'o')
+    .replace('á', 'a')
+    .replace('í', 'i')
+    .replace('ñ', 'n')
+    .replace('ü', 'u')
+    .replace('ç', 'c')
+    .replace('ñ', 'n');
+};
+
+export default function ProjectCard({ title, location, categories, image, contentWhite = false, parentCategory }: ProjectCardProps) {
   return (
     <div className={`min-w-[620px] max-w-sm rounded-xl overflow-hidden ${contentWhite ? 'bg-white' : 'bg-[#F5F5F5]'} select-none`}>
       <div className="w-full h-[380px] overflow-hidden rounded-2xl relative">
@@ -21,7 +41,7 @@ export default function ProjectCard({ title, location, categories, image, conten
             <h3 className="font-bold text-xl text-black mb-1">{title}</h3>
             <p className="font-light text-lg text-[#A1A1A1]">{location}</p>
           </div>
-          <Button href="/projects/slug_project" label='Ver proyecto' className="text-xs" />
+          <Button href={`/projects/${parentCategory}/${formatTitleToUrl(title)}`} label='Ver proyecto' className="text-xs" />
         </div>
         <div className="flex flex-wrap gap-2">
           {categories?.map((cat, i) => (
