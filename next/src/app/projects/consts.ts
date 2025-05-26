@@ -483,7 +483,11 @@ export const projectCards = {
           'La relocalización del Food Court era un elemento clave para la recuperación del área común central de la plaza. La conexión del lago con una nueva área de restaurantes a nivel  y con la nueva plazoleta de comidas en el segundo nivel a través de terrazas y balcones. Todos estos conceptos hicieron que Centro Chía renaciera con un concepto integrador e innovador.',
         ],
       },
-      bigImages: ['/images/CHIA-01.jpg', '/images/CHIA-02.jpg', '/images/CHIA-03.jpg'],
+      bigImages: [
+        '/images/CHIA-01.jpg',
+        '/images/CHIA-02.jpg',
+        '/images/CHIA-03.jpg',
+      ],
       lideres: ['Iván Ortiz', 'Carlos Márquez'],
       equipo: ['Javier Quintero', 'Hugo Cortés', 'Rosangélica Triviño'],
     },
@@ -537,6 +541,46 @@ export const projectCards = {
       location: 'Popayán, Cauca, Colombia',
       categories: ['Centros Comerciales', 'LATAM'],
       image: '/images/POPAYAN-01.jpg',
+      rightPanel:
+        'El Centro comercial Hojarasca está ubicado a las afueras de la Cd. de Popayán, en la zona de mayor desarrollo habitacional de la ciudad.',
+      ficha: {
+        año: '2018',
+        ubicacion: 'Popayán, Cauca, Colombia',
+        landArea: '20,000m²',
+        builtArea: '10,000m²',
+        cliente: 'Garzón & Holguin',
+        tipo: 'Centros Comerciales, LATAM',
+      },
+      concepto:
+        'Integrar un espacio comercial al entorno natural y la vida residencial. Hojarasca nace para reconectar con lo esencial: la calidez de la naturaleza y el valor de convivir.',
+      galeria: [
+        '/images/POPAYAN-01.jpg',
+        '/images/POPAYAN-02.jpg',
+        '/images/POPAYAN-03.jpg',
+      ],
+      servicios: {
+        imagen: '/images/POPAYAN-02.jpg',
+        description: [
+          'El Centro comercial Hojarasca está ubicado a las afueras de la Cd. de Popayán, en la zona de mayor desarrollo habitacional de la ciudad. El proyecto está hermanado con el desarrollo habitacional del mismo nombre llamado Hojarasca Residencial que le da sentido y complementará de servicios comerciales al complejo.',
+          'El diseño representa de manera cálida el espíritu de la ciudad con caminamientos a través de un portal de acero y cubiertas que protegen la entrada de los locales. El CC cuenta con comercios enfocados en la conveniencia, con supermercado y Gimnasio como anclajes, así como una agradable área destinada a la comida, con restaurantes y locales tipo mercado gourmet que colindan con una área arbolada muy importante localizada en el area mas baja del terreno.',
+          'El proyecto buscará integrarse a la vegetación y topografía de la zona, respetando las áreas arboladas existentes en el terreno.'
+        ],
+      },
+      bigImages: [
+        '/images/POPAYAN-01.jpg',
+        '/images/POPAYAN-02.jpg',
+        '/images/POPAYAN-03.jpg',
+      ],
+      lideres: ['Iván Ortiz'],
+      equipo: [
+        'Moisés Quintero',
+        'Ricardo Torres',
+        'Gabriel García',
+        'Jeffrey Robles',
+        'José Luis Aguilar Salas',
+        'Juan Carlos Saldívar',
+        'Juan de Dios Martínez Alba',
+      ],
     },
     {
       title: 'Mall Plaza',
