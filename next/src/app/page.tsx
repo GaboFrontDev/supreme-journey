@@ -118,7 +118,7 @@ export default function HomePage() {
       <Section width='max-w-7xl' paddingBottom='pt-0' paddingTop='pt-0'>
         <OfficesGrid  items={offices} />
         <div className='flex justify-items-start'>
-          <Button label='Conoce el estudio' />
+          <Button label='Conoce el estudio' href='/the_study' />
         </div>
       </Section>
 
