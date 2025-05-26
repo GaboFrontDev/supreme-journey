@@ -166,7 +166,6 @@ export default function TheStudyPage() {
               arquitectura, diseño de interiores y diseño urbano, ofreciendo
               soluciones integrales que destacan por su innovación y calidad.
             </p>
-            <Button label='Directores' variant='secondary' />
           </div>
         </div>
       </div>
