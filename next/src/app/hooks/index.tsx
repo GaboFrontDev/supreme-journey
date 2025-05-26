@@ -48,7 +48,7 @@ export default function useProjectSearch() {
         return {
             mixedUses: "Usos Mixtos",
             hotels: "Hoteles",
-            dwellings: "Viviendas",
+            dwellings: "Vivienda",
             centrosComerciales: "Centros Comerciales",
             latam: "LATAM",
             retail: "Retail",
