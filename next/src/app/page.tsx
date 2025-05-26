@@ -16,6 +16,7 @@ import Header from './components/Header';
 import CarouselWrapper from './components/CarouselWrapper';
 import CompanyStats from './components/CompanyStats';
 import OfficesGrid from './components/OfficesGrid';
+import { projectCards } from './projects/consts';
 
 const stats = [
   { value: '50', label: 'Años de experiencia', fixedWidth: true },
@@ -30,7 +31,7 @@ const offices = [
   { title: 'CDMX', country: 'México' },
   { title: 'L35 Barcelona', country: 'España' },
   { title: 'L35 Madrid', country: 'España' },
-]
+];
 
 const items1 = [
   { name: 'Artha Capital' },
@@ -76,31 +77,37 @@ const services = [
   {
     id: '1',
     title: 'Arquitectura',
-    content: 'Diseñamos espacios únicos que resuelven necesidades, potencian el uso del espacio y generan valor a largo plazo. Combinando funcionalidad, estética y sostenibilidad para crear entornos que mejoran la calidad de vida y una experiencia única en cada proyecto.',
+    content:
+      'Diseñamos espacios únicos que resuelven necesidades, potencian el uso del espacio y generan valor a largo plazo. Combinando funcionalidad, estética y sostenibilidad para crear entornos que mejoran la calidad de vida y una experiencia única en cada proyecto.',
     image: '/images/services/1.png',
   },
   {
     id: '2',
     title: 'Master Planning',
-    content: 'Diseñamos espacios únicos que resuelven necesidades, potencian el uso del espacio y generan valor a largo plazo. Combinando funcionalidad, estética y sostenibilidad para crear entornos que mejoran la calidad de vida y una experiencia única en cada proyecto.',
+    content:
+      'Diseñamos espacios únicos que resuelven necesidades, potencian el uso del espacio y generan valor a largo plazo. Combinando funcionalidad, estética y sostenibilidad para crear entornos que mejoran la calidad de vida y una experiencia única en cada proyecto.',
     image: '/images/hotels/2.png',
   },
   {
     id: '3',
     title: 'Master Planning',
-    content: 'Diseñamos espacios únicos que resuelven necesidades, potencian el uso del espacio y generan valor a largo plazo. Combinando funcionalidad, estética y sostenibilidad para crear entornos que mejoran la calidad de vida y una experiencia única en cada proyecto.',
+    content:
+      'Diseñamos espacios únicos que resuelven necesidades, potencian el uso del espacio y generan valor a largo plazo. Combinando funcionalidad, estética y sostenibilidad para crear entornos que mejoran la calidad de vida y una experiencia única en cada proyecto.',
     image: '/images/shopping_centers/3.png',
   },
   {
     id: '4',
     title: 'Branding y Diseño Gráfico',
-    content: 'Diseñamos espacios únicos que resuelven necesidades, potencian el uso del espacio y generan valor a largo plazo. Combinando funcionalidad, estética y sostenibilidad para crear entornos que mejoran la calidad de vida y una experiencia única en cada proyecto.',
+    content:
+      'Diseñamos espacios únicos que resuelven necesidades, potencian el uso del espacio y generan valor a largo plazo. Combinando funcionalidad, estética y sostenibilidad para crear entornos que mejoran la calidad de vida y una experiencia única en cada proyecto.',
     image: '/images/dwelling/4.png',
   },
 ];
 
 export default function HomePage() {
-  const [activeServiceId, setActiveServiceId] = useState<string | null>(services[0].id);
+  const [activeServiceId, setActiveServiceId] = useState<string | null>(
+    services[0].id
+  );
   const activeService = services.find((s) => s.id === activeServiceId);
 
   return (
@@ -116,7 +123,7 @@ export default function HomePage() {
       <HeroScroll />
 
       <Section width='max-w-7xl' paddingBottom='pt-0' paddingTop='pt-0'>
-        <OfficesGrid  items={offices} />
+        <OfficesGrid items={offices} />
         <div className='flex justify-items-start'>
           <Button label='Conoce el estudio' href='/the_study' />
         </div>
@@ -126,21 +133,21 @@ export default function HomePage() {
         <h2 className=' text-5xl font-bold text-[#636B69]'>Servicios</h2>
         <div className='flex items-center justify-between gap-36'>
           <CollapsibleList items={services} onChange={setActiveServiceId} />
-          <div className="min-w-[564px] min-h-[564px] overflow-hidden rounded-2xl relative">
-            <AnimatePresence mode="wait">
+          <div className='relative min-h-[564px] min-w-[564px] overflow-hidden rounded-2xl'>
+            <AnimatePresence mode='wait'>
               <motion.div
                 key={activeService?.id || 'default'}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.2 }}
-                className="absolute inset-0"
+                className='absolute inset-0'
               >
                 <Image
                   src={activeService?.image || ''}
-                  alt="Imagen de servicio"
+                  alt='Imagen de servicio'
                   fill
-                  className="object-cover"
+                  className='object-cover'
                 />
               </motion.div>
             </AnimatePresence>
@@ -155,7 +162,7 @@ export default function HomePage() {
         background='bg-[#F5F5F5]'
       >
         <div className='mb-20 flex items-center justify-between'>
-          <h2 className='max-w-md text-[40px] font-bold text-[#636B69] leading-tight'>
+          <h2 className='max-w-md text-[40px] font-bold leading-tight text-[#636B69]'>
             Diseñamos desde la colaboración
           </h2>
           <p className='max-w-md text-right text-lg text-black'>
@@ -164,7 +171,10 @@ export default function HomePage() {
           </p>
         </div>
 
-        <div className='scrollbar-none relative left-1/2 right-1/2 ml-[-50vw] mr-[-50vw] w-screen overflow-x-scroll'>
+        <div
+          className='scrollbar-none relative left-1/2 right-1/2 ml-[-50vw] mr-[-50vw] w-screen
+            overflow-x-scroll'
+        >
           <div className='space-y-6'>
             <Marquee items={items1} direction='left' />
             <Marquee items={items2} direction='right' />
@@ -183,52 +193,51 @@ export default function HomePage() {
           Proyectos destacados
         </h2>
         <div className='mb-16 space-x-4'>
-          <FilterButton label='Usos Mixtos' />
-          <FilterButton label='Centros Comerciales' />
-          <FilterButton label='Vivienda' />
-          <FilterButton label='Hoteles' />
-          <FilterButton label='Master plan' />
-          <FilterButton label='LATAM' />
-          <FilterButton label='Retail' />
-          <FilterButton label='Renovaciones y Expansiones' />
+          <FilterButton href='/projects/mixedUses' label='Usos Mixtos' />
+          <FilterButton
+            href='/projects/centrosComerciales'
+            label='Centros Comerciales'
+          />
+          <FilterButton href='/projects/dwellings' label='Vivienda' />
+          <FilterButton href='/projects/hotels' label='Hoteles' />
+          <FilterButton href='/projects' label='Master plan' />
+          <FilterButton href='/projects/latam' label='LATAM' />
+          <FilterButton href='/projects/retail' label='Retail' />
+          <FilterButton href='/projects' label='Renovaciones y Expansiones' />
         </div>
 
         <CarouselWrapper>
-          <ProjectCard
-            title='Averanda'
-            location='Cuernavaca, Morelos, México'
-            categories={['Usos Mixtos']}
-            image='/images/mixed_uses/1.png'
-          />
-          <ProjectCard
-            title='The Point'
-            location='CDMX, México'
-            categories={[
-              'Usos Mixtos',
-              'Vivienda',
-            ]}
-            image='/images/mixed_uses/2.png'
-          />
-          <ProjectCard
-            title='Paseo Villalta'
-            location='Saltillo, Coahuila, México'
-            categories={[
-              'Centros Comerciales',
-              'Usos Mixtos',
-            ]}
-            image='/images/mixed_uses/3.png'
-          />
-          <ProjectCard
-            title='Galerías Valle Oriente'
-            location='Monterrey, Nuevo León, México'
-            categories={[
-              'Centros Comerciales',
-              'Usos Mixtos',
-              'Hoteles',
-              'Corporativo',
-            ]}
-            image='/images/mixed_uses/4.png'
-          />
+          {projectCards.mixedUses.map((project) => (
+            <ProjectCard
+              title={project.title}
+              location={project.location}
+              categories={project.categories}
+              image={project.image}
+              parentCategory='mixedUses'
+              key={project.title}
+            />
+          ))}
+          {projectCards.centrosComerciales.map((project) => (
+            <ProjectCard
+              title={project.title}
+              location={project.location}
+              categories={project.categories}
+              image={project.image}
+              parentCategory='centrosComerciales'
+              key={project.title}
+            />
+          ))}
+
+          {projectCards.dwellings.map((project) => (
+            <ProjectCard
+              title={project.title}
+              location={project.location}
+              categories={project.categories}
+              image={project.image}
+              parentCategory='centrosComerciales'
+              key={project.title}
+            />
+          ))}
         </CarouselWrapper>
 
         <div className='mt-20 flex justify-items-start'>
@@ -242,7 +251,7 @@ export default function HomePage() {
             Diseñemos de la mano espacios que trasciendan e historias que
             conectan
           </h2>
-          <Button label='Trabajemos Juntos' />
+          <Button label='Trabajemos Juntos' href='/contact' />
         </div>
       </Section>
 

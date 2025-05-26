@@ -243,7 +243,7 @@ export default function ProjectPage() {
           <h2 className='mb-20 text-5xl text-black'>
             Transformemos en conjunto las ideas en diseños que trasciendan
           </h2>
-          <Button label='Trabajemos Juntos' />
+          <Button label='Trabajemos Juntos' href='/contact' />
         </div>
       </Section>
 
