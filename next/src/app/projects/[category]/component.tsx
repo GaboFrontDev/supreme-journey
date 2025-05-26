@@ -97,7 +97,7 @@ export default function CategoryPageComponent({
       >
         <div className='relative h-[810px] w-full overflow-hidden rounded-t-3xl'>
           <Image
-            src='/images/categories/1.png'
+            src={categoryData.image}
             alt='Imagen de categoría'
             fill
             className='object-cover'
@@ -108,8 +108,7 @@ export default function CategoryPageComponent({
       <Section width='max-w-7xl' paddingBottom='pb-20'>
         <div className='flex items-center'>
           <h2 className='font-regular max-w-2xl text-[40px] leading-tight text-black'>
-            Cada proyecto de Usos Mixtos redefine la vida urbana, creando
-            espacios que integran funciones y mejoran la calidad de vida.
+            {categoryData.secondDescription}
           </h2>
         </div>
         <div className='mt-20 flex items-center gap-4'>
