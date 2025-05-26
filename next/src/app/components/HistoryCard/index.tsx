@@ -24,7 +24,7 @@ export default function HistoryItem({
   const isDouble = cards.length > 1;
 
   return (
-    <div className={`${isDouble ? 'w-[800px]' : 'w-[400px]'}`}>
+    <div className={`${isDouble ? 'w-[800px]' : 'w-[400px]'} select-none`}>
       <div className="mb-20 border-b border-[#EFEFEF]">
         <h2
           className="relative inline-block text-[70px]"
