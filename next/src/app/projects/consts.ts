@@ -797,6 +797,43 @@ export const projectCards = {
       location: 'San Luis Potosí, San Luis Potosí, México',
       categories: ['Retail'],
       image: '/images/NIKE-FACTORY-01.jpg',
+      rightPanel:
+        'Las tiendas Nike factory Stores son las únicas tiendas del país que son propiedad de Nike. Está ubicada en el edificio de usos mixtos Citadella en la ciudad de San Luis Potosí, es la primer tienda en Latinoamérica con certificación LEED Gold, lo cual rigió el diseño de la misma desde la conceptualización hasta la apertura física de la tienda.',
+      ficha: {
+        año: '2014',
+        ubicacion: 'San Luis Potosí, San Luis Potosí, México',
+        landArea: '770m²',
+        builtArea: '748m²',
+        cliente: 'Nike',
+        tipo: 'Retail',
+      },
+      concepto:
+        'Exhibir el producto en un entorno funcional, urbano y auténtico. La expresión local de una marca mundial, guiada por el propósito y el contexto.',
+      galeria: [
+        '/images/NIKE-FACTORY-01.jpg',
+        '/images/NIKE-FACTORY-02.jpg',
+        '/images/NIKE-FACTORY-03.jpg',
+        '/images/NIKE-FACTORY-04.jpg',
+        '/images/NIKE-FACTORY-05.jpg',
+      ],
+      servicios: {
+        imagen: '/images/NIKE-FACTORY-02.jpg',
+        description: [
+          'El concepto de la tienda parte del prototipo de las tiendas factory de Nike, este prototipo se adaptó con materiales regionales y especificaciones que nos permitieran lograr la certificación.',
+          'Gracias a su planta regular, esta ubicación favorece una lectura clara del concepto, potenciando su expresión al máximo.',
+          'Se basa en un área de lockers y entrenamiento que exhibe de una manera muy dinámica los textiles y calzado deportivos. La fachada de la tienda se convierte en un gran aparador de cristal que sirve de respaldo para el área de cajas, en el interior del piso de ventas podemos encontrar materiales neutros como piso de concreto de color natural y algunas zonas de concreto con color negro, los muros son de tablaroca con pintura de color claro y no hay plafond en la tienda. La iluminación es a base de luminarias fluorescentes lineales y algunas incandescentes como decorativas y acentos. El mobiliario y display de la tienda complementan el diseño de la misma y está desarrollado a base de estructuras metálicas y maderas.',
+          'La tienda se compone de 2 áreas operativas, la primera es el piso de venta y la segunda es el área de trastienda, bodegas y servicios.'
+        ],
+      },
+      bigImages: [
+        '/images/NIKE-FACTORY-01.jpg',
+        '/images/NIKE-FACTORY-02.jpg',
+        '/images/NIKE-FACTORY-03.jpg',
+        '/images/NIKE-FACTORY-04.jpg',
+        '/images/NIKE-FACTORY-05.jpg',
+      ],
+      lideres: ['Pedro Solaegui', 'Eduardo Domínguez'],
+      equipo: [''],
     },
   ],
 };
