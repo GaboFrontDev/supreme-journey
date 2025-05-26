@@ -8,7 +8,7 @@ type Category = {
     secondDescription: string;
 }
 
-export type CategoryKey = "mixedUses" | "centrosComerciales" | "hotels" | "corporativo" | "dwellings" | "retail" | "latam";
+export type CategoryKey = "mixedUses" | "centrosComerciales" | "hotels" | "dwellings" | "retail" | "latam";
 
 
 export const categories: {
@@ -24,42 +24,42 @@ export const categories: {
     "centrosComerciales": {
         title: 'Centros Comerciales',
         description: 'La integración física y funcional de espacios residenciales, comerciales, culturales y de transporte, diseñados para crear entornos equilibrados y dinámicos que fomentan la convivencia, la movilidad eficiente y el desarrollo sotenible.',
-        projects: [],
+        projects: projectCards.centrosComerciales,
         image: '/images/categories/1.png',
         secondDescription: 'Cada proyecto de Usos Mixtos redefine la vida urbana, creando espacios que integran funciones y mejoran la calidad de vida.',
     },
     "hotels": {
         title: 'Hoteles',
         description: 'La integración física y funcional de espacios residenciales, comerciales, culturales y de transporte, diseñados para crear entornos equilibrados y dinámicos que fomentan la convivencia, la movilidad eficiente y el desarrollo sotenible.',
-        projects: [],
+        projects: projectCards.hotels,
         image: '/images/categories/1.png',
         secondDescription: 'Cada proyecto de Usos Mixtos redefine la vida urbana, creando espacios que integran funciones y mejoran la calidad de vida.',
     },
-    "corporativo": {
-        title: 'Corporativo',
-        description: 'La integración física y funcional de espacios residenciales, comerciales, culturales y de transporte, diseñados para crear entornos equilibrados y dinámicos que fomentan la convivencia, la movilidad eficiente y el desarrollo sotenible.',
-        projects: [],
-        image: '/images/categories/1.png',
-        secondDescription: 'Cada proyecto de Usos Mixtos redefine la vida urbana, creando espacios que integran funciones y mejoran la calidad de vida.',
-    },
+    // "corporativo": {
+    //     title: 'Corporativo',
+    //     description: 'La integración física y funcional de espacios residenciales, comerciales, culturales y de transporte, diseñados para crear entornos equilibrados y dinámicos que fomentan la convivencia, la movilidad eficiente y el desarrollo sotenible.',
+    //     projects: projectCards.corporativo,
+    //     image: '/images/categories/1.png',
+    //     secondDescription: 'Cada proyecto de Usos Mixtos redefine la vida urbana, creando espacios que integran funciones y mejoran la calidad de vida.',
+    // },
     "dwellings": {
         title: 'Dwellings',
         description: 'La integración física y funcional de espacios residenciales, comerciales, culturales y de transporte, diseñados para crear entornos equilibrados y dinámicos que fomentan la convivencia, la movilidad eficiente y el desarrollo sotenible.',
-        projects: [],
+        projects: projectCards.dwellings,
         image: '/images/categories/1.png',
         secondDescription: 'Cada proyecto de Usos Mixtos redefine la vida urbana, creando espacios que integran funciones y mejoran la calidad de vida.',
     },
     "retail": {
         title: 'Retail',
         description: 'La integración física y funcional de espacios residenciales, comerciales, culturales y de transporte, diseñados para crear entornos equilibrados y dinámicos que fomentan la convivencia, la movilidad eficiente y el desarrollo sotenible.',
-        projects: [],
+        projects: projectCards.retail,
         image: '/images/categories/1.png',
         secondDescription: 'Cada proyecto de Usos Mixtos redefine la vida urbana, creando espacios que integran funciones y mejoran la calidad de vida.',
     },
     "latam": {
         title: 'LATAM',
         description: 'La integración física y funcional de espacios residenciales, comerciales, culturales y de transporte, diseñados para crear entornos equilibrados y dinámicos que fomentan la convivencia, la movilidad eficiente y el desarrollo sotenible.',
-        projects: [],
+        projects: projectCards.latam,
         image: '/images/categories/1.png',
         secondDescription: 'Cada proyecto de Usos Mixtos redefine la vida urbana, creando espacios que integran funciones y mejoran la calidad de vida.',
     },
