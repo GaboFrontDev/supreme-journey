@@ -95,9 +95,9 @@ export default function PersonPage({ params }: { params: { person: string } }) {
               />
             </div>
             <div className='flex justify-end mt-4 gap-3'>
-              <Link href={person.link.Instagram || ''} className='text-sm font-bold text-[#A1A1A1] hover:underline'>Instagram</Link>
-              <Link href={person.link.LinkedIn || ''} className='text-sm font-bold text-[#A1A1A1] hover:underline'>Linkedin</Link>
-              <Link href={person.link.Facebook || ''} className='text-sm font-bold text-[#A1A1A1] hover:underline'>Facebook</Link>
+              <Link href={person.link.Instagram || ''} target='_blank' className='text-sm font-bold text-[#A1A1A1] hover:underline'>Instagram</Link>
+              <Link href={person.link.LinkedIn || ''} target='_blank' className='text-sm font-bold text-[#A1A1A1] hover:underline'>Linkedin</Link>
+              <Link href={person.link.Facebook || ''} target='_blank' className='text-sm font-bold text-[#A1A1A1] hover:underline'>Facebook</Link>
             </div>
           </div>
         </div>
