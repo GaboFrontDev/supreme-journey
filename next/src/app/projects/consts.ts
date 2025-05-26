@@ -674,12 +674,92 @@ export const projectCards = {
       location: 'Andares Zapopan, Jalisco, México',
       categories: ['Retail'],
       image: '/images/LOUDER-01.jpg',
+      rightPanel:
+        'Louder es un concepto único y sofisticado de retail en México donde las prendas de diversos diseñadores de alta costura son el principal protagonista del espacio.',
+      ficha: {
+        año: '2019',
+        ubicacion: 'Andares Zapopan, Jalisco, México',
+        landArea: '118.22m²',
+        builtArea: '',
+        cliente: 'Gran Vía',
+        tipo: 'Retail',
+      },
+      concepto:
+        'Elevar la experiencia del lujo transformándola en cada colección. Una experiencia de retail que reinventa la sofisticación a través del diseño y el arte.',
+      galeria: [
+        '/images/LOUDER-01.jpg',
+        '/images/LOUDER-02.jpg',
+        '/images/LOUDER-03.jpg',
+        '/images/LOUDER-04.jpg',
+        '/images/LOUDER-05.jpg',
+      ],
+      servicios: {
+        imagen: '/images/LOUDER-02.jpg',
+        description: [
+          'Louder es un concepto único y sofisticado de retail en México donde las prendas de diversos diseñadores de alta costura son el principal protagonista del espacio.',
+          'El diseño consta de perímetros móviles que permiten crear un espacio de exhibición dinámico y flexible, adaptándose totalmente a las diferentes piezas de cada temporada.',
+          'Esto brinda la posibilidad de exhibir desde una escultura hasta una motocicleta para resaltar la exposición de los productos de lujo disponibles en la tienda y reinventarse para ofrecer diferentes experiencias a los clientes.',
+          'Para crear una atmósfera sofisticada e innovadora que resalten tales prendas se emplearon materiales como placas de mármol de gran formato, maderas finas, metales y detalles en hoja de oro sobre cristales y espejos, así como, iluminación de la marca Iguzzini para resaltar cada detalle.',
+          'Este proyecto fue galardonado con el Premio de Oro en los ICSC Global Awards Latin American & Caribbean 2019.'
+        ],
+      },
+      bigImages: [
+        '/images/LOUDER-01.jpg',
+        '/images/LOUDER-02.jpg',
+        '/images/LOUDER-03.jpg',
+        '/images/LOUDER-04.jpg',
+        '/images/LOUDER-05.jpg',
+      ],
+      lideres: ['Pedro Solaegui'],
+      equipo: [
+        'Diana Plascencia',
+        'Andrea Sotelo',
+        'Yurie Tanaka',
+      ],
     },
     {
       title: 'Sport Master',
       location: 'Puebla de Zaragoza, Puebla, México',
       categories: ['Retail'],
       image: '/images/SPORT-MASTER-01.jpg',
+      rightPanel:
+        'Es una tienda de especialidad deportiva multimarcas con un concepto urbano que explora los fondos obscuros y metales',
+      ficha: {
+        año: '2018',
+        ubicacion: 'Puebla de Zaragoza, Puebla, México',
+        landArea: '20,000m²',
+        builtArea: '',
+        cliente: 'Manuel Jiménez',
+        tipo: 'Retail',
+      },
+      concepto:
+        'Impulsar al usuario a descubrir su potencial deportivo. Una experiencia que transforma el retail deportivo en impulso, decisión y desafío personal.',
+      galeria: [
+        '/images/SPORT-MASTER-01.jpg',
+        '/images/SPORT-MASTER-02.jpg',
+        '/images/SPORT-MASTER-03.jpg',
+        '/images/SPORT-MASTER-04.jpg',
+      ],
+      servicios: {
+        imagen: '/images/SPORT-MASTER-02.jpg',
+        description: [
+          'Es una tienda de especialidad deportiva multimarcas con un concepto urbano que explora los fondos obscuros y metales, con señalización vanguardista apoyada en luces neón y gigantografías.',
+          'El customer journey provoca al usuario a explorar las posibilidades de compra dentro de sus espacios, invitándolo a descubrir sus potenciales en el deporte que practica. Cada zona está diseñada para generar una experiencia inmersiva, donde el producto, el ambiente y la iluminación convergen para motivar, inspirar e impulsar la acción.',
+        ],
+      },
+      bigImages: [
+        '/images/SPORT-MASTER-01.jpg',
+        '/images/SPORT-MASTER-02.jpg',
+        '/images/SPORT-MASTER-03.jpg',
+        '/images/SPORT-MASTER-04.jpg',
+      ],
+      lideres: ['Iván Ortiz'],
+      equipo: [
+        'Diana Plascencia',
+        'Jeffrey Robles',
+        'Andrea Sotelo',
+        'Juan Carlos Saldívar',
+      ],
     },
     {
       title: 'La Gran Vía',
