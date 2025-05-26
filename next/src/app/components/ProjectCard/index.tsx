@@ -11,7 +11,7 @@ interface ProjectCardProps {
 
 export default function ProjectCard({ title, location, categories, image, contentWhite = false }: ProjectCardProps) {
   return (
-    <div className={`min-w-[620px] max-w-sm rounded-xl overflow-hidden ${contentWhite ? 'bg-white' : 'bg-[#F5F5F5]'}`}>
+    <div className={`min-w-[620px] max-w-sm rounded-xl overflow-hidden ${contentWhite ? 'bg-white' : 'bg-[#F5F5F5]'} select-none`}>
       <div className="w-full h-[380px] overflow-hidden rounded-2xl relative">
         <Image src={image} alt={title} fill className="object-cover pointer-events-none" />
       </div>
