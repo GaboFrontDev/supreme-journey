@@ -10,6 +10,7 @@ import FilterButton from '../components/FilterButton';
 import CarouselWrapper from '../components/CarouselWrapper';
 import HistoryItem from '../components/HistoryCard';
 import ProcessSteps from '../components/ProcessSteps';
+import { associates } from './[person]/const';
 
 const directors = [
   {
@@ -19,7 +20,7 @@ const directors = [
     link: 'the_study/slug_about',
   },
   {
-    name: 'Arturo Martínes',
+    name: 'Arturo Martínez',
     image: '/images/the_study/directors/2.png',
     position: 'Principal Partner',
     link: '',
@@ -50,48 +51,6 @@ const directors = [
   },
 ];
 
-const associates = [
-  {
-    name: 'Eduardo Dominguez',
-    image: '/images/the_study/associates/1.png',
-    position: 'Accosiate',
-  },
-  {
-    name: 'Hugo Cortés',
-    image: '/images/the_study/associates/2.png',
-    position: 'Accosiate',
-  },
-  {
-    name: 'Jose Luis Aguilar',
-    image: '/images/the_study/associates/3.png',
-    position: 'Accosiate',
-  },
-  {
-    name: 'Jose Manuel Real',
-    image: '/images/the_study/associates/4.png',
-    position: 'Accosiate',
-  },
-  {
-    name: 'Manijeh Lozarraga',
-    image: '/images/the_study/associates/5.png',
-    position: 'Accosiate',
-  },
-  {
-    name: 'Marlen García',
-    image: '/images/the_study/associates/6.png',
-    position: 'Accosiate',
-  },
-  {
-    name: 'Ricardo Torres',
-    image: '/images/the_study/associates/7.png',
-    position: 'Accosiate',
-  },
-  {
-    name: 'Zyanya Quero',
-    image: '/images/the_study/associates/8.png',
-    position: 'Accosiate',
-  },
-];
 
 const architects = [
   {
@@ -476,7 +435,11 @@ export default function TheStudyPage() {
                   </h2>
                   <span className='text-[#A1A1A1]'>{director.position}</span>
 
-                  <Button href={director.link} label='Ver biografía' className='mt-8' />
+                  <Button
+                    href={`/the_study/${director.name.toLowerCase().replace(/\s+/g, '-').replace(/á/g, 'a').replace(/é/g, 'e').replace(/í/g, 'i').replace(/ó/g, 'o').replace(/ú/g, 'u')}`}
+                    label='Ver biografía'
+                    className='mt-8'
+                  />
                 </div>
               </div>
             ))}
@@ -503,7 +466,11 @@ export default function TheStudyPage() {
                   </h2>
                   <span className='text-[#A1A1A1]'>{directo.position}</span>
 
-                  <Button label='Ver biografía' className='mt-8' />
+                  <Button
+                    label='Ver biografía'
+                    href={`/the_study/${directo.name.toLowerCase().replace(/\s+/g, '-').replace(/á/g, 'a').replace(/é/g, 'e').replace(/í/g, 'i').replace(/ó/g, 'o').replace(/ú/g, 'u')}`}
+                    className='mt-8'
+                  />
                 </div>
               </div>
             ))}
