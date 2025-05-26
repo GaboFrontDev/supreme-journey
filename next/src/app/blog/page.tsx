@@ -1,3 +1,4 @@
+'use client';
 import Image from "next/image";
 import Button from "../components/Button";
 import FilterButton from "../components/FilterButton";
@@ -6,8 +7,11 @@ import Header from "../components/Header";
 import Section from "../components/Section";
 import BlogCard from "../components/BlogCard";
 import posts from "../data/posts.json";
+import { useMemo, useState } from "react";
 
 export default function BlogPage() {
+
+  const [search, setSearch] = useState('');
   const sortedPosts = [...posts].sort(
     (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
   );
@@ -28,6 +32,15 @@ export default function BlogPage() {
   function truncateText(text: string, maxLength: number): string {
     return text.length > maxLength ? text.slice(0, maxLength).trim() + "..." : text;
   }
+
+  const filteredPosts = useMemo(() => {
+    if (search) {
+      return remainingPosts.filter((post) =>
+        post.title.toLowerCase().includes(search.toLowerCase())
+      );
+    }
+    return remainingPosts;
+  }, [search, remainingPosts]);
 
   return (
     <>
@@ -74,6 +87,8 @@ export default function BlogPage() {
               type="text" 
               placeholder="Buscar un proyecto en específico" 
               className="w-full h-12 text-base rounded-full pl-12 pr-4 focus:outline-0 border border-[#e0e0e0] placeholder:text-[#A1A1A1] hover:bg-[#e0e0e0] transition-all"
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
             />
           </div>
           <Button label="Ordenar" variant="secondary" iconFilter />
@@ -82,7 +97,7 @@ export default function BlogPage() {
 
       <Section width='max-w-7xl' paddingTop="pt-0">
         <div className="grid grid-cols-2 gap-y-10 gap-x-32">
-          {remainingPosts.map((post, index) => (
+          {filteredPosts.map((post, index) => (
             <BlogCard
               key={index}
               images={post.images}
