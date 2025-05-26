@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const steps = [
@@ -37,7 +37,7 @@ export default function ProcessSteps() {
   const totalSteps = steps.length;
   const activeWidth = 366;
 
-  const Step = ({ step, index, isActive, isAdjacent, activeWidth, totalSteps, onSelect }: {
+  const Step = useMemo(() => ({ step, index, isActive, isAdjacent, activeWidth, totalSteps, onSelect }: {
     step: typeof steps[0],
     index: number,
     isActive: boolean,
@@ -97,7 +97,7 @@ export default function ProcessSteps() {
         </div>
       </div>
     );
-  };
+  }, [activeWidth, totalSteps]);
 
   return (
     <div className="flex w-full h-[450px] overflow-hidden">
