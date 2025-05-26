@@ -69,25 +69,25 @@ export default function Footer() {
         </div>
         <div className="grid grid-cols-4 text-sm gap-10">
           <ul className="font-bold text-base text-c-gray-200 space-y-3">
-            <li><a href="#" className="hover:underline">Proyectos</a></li>
-            <li><a href="#" className="hover:underline">El Estudio</a></li>
-            <li><a href="#" className="hover:underline">Cultura Ares</a></li>
-            <li><a href="#" className="hover:underline">Blog</a></li>
-            <li><a href="#" className="hover:underline">Contacto</a></li>
+            <li><a href="/projects" className="hover:underline">Proyectos</a></li>
+            <li><a href="/the_study" className="hover:underline">El Estudio</a></li>
+            <li><a href="/culture" className="hover:underline">Cultura Ares</a></li>
+            <li><a href="/blog" className="hover:underline">Blog</a></li>
+            <li><a href="/contact" className="hover:underline">Contacto</a></li>
           </ul>
           <ul className="font-bold text-base text-c-gray-200 space-y-3">
-            <li><a href="#" className="hover:underline">Usos Mixtos</a></li>
-            <li><a href="#" className="hover:underline">Centros comerciales</a></li>
-            <li><a href="#" className="hover:underline">Vivienda</a></li>
-            <li><a href="#" className="hover:underline">Hoteles</a></li>
-            <li><a href="#" className="hover:underline">Master plan</a></li>
+            <li><a href="/projects/mixedUses" className="hover:underline">Usos Mixtos</a></li>
+            <li><a href="/projects/centrosComerciales" className="hover:underline">Centros comerciales</a></li>
+            <li><a href="/projects/dwellings" className="hover:underline">Vivienda</a></li>
+            <li><a href="/projects/hotels" className="hover:underline">Hoteles</a></li>
+            <li><a href="/projects" className="hover:underline">Master plan</a></li>
           </ul>
           <ul className="font-bold text-base text-c-gray-200 space-y-3">
-            <li><a href="#" className="hover:underline">LATAM</a></li>
-            <li><a href="#" className="hover:underline">Retail</a></li>
-            <li><a href="#" className="hover:underline">Deportivo</a></li>
-            <li><a href="#" className="hover:underline">Movilidad</a></li>
-            <li><a href="#" className="hover:underline">Renovaciones y expansiones</a></li>
+            <li><a href="/projects/latam" className="hover:underline">LATAM</a></li>
+            <li><a href="/projects/retail" className="hover:underline">Retail</a></li>
+            <li><a href="/projects" className="hover:underline">Deportivo</a></li>
+            <li><a href="/projects" className="hover:underline">Movilidad</a></li>
+            <li><a href="/projects" className="hover:underline">Renovaciones y expansiones</a></li>
           </ul>
           <ul className="font-bold text-base text-c-gray-200 space-y-3">
             <li><a href="#" className="hover:underline">Instagram</a></li>
