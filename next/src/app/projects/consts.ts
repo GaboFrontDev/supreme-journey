@@ -295,16 +295,15 @@ export const projectCards = {
       galeria: [
         '/images/NOBU-01.jpg',
         '/images/NOBU-02.jpg',
-        '/images/NOBU-03.jpg',
+        '/images/NOBU-03.png',
       ],
       servicios: {
-        imagen: '/images/SANTO-DOMINGO-03.jpg',
+        imagen: '/images/NOBU-05.png',
         description: [],
       },
       bigImages: [
-        '/images/NOBU-01.jpg',
-        '/images/NOBU-02.jpg',
-        '/images/NOBU-03.jpg',
+        '/images/NOBU-02.png',
+        '/images/NOBU-04.png',
       ],
       lideres: ['Pedro Solaegui', 'Manijeh Lizárraga'],
       equipo: ['Olaya Moro'],
