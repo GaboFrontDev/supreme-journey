@@ -683,15 +683,13 @@ export const projectCards = {
         '/images/CHOLUTECA-04.jpg',
       ],
       servicios: {
-        imagen: '/images/CHOLUTECA-01.jpg',
+        imagen: '/images/CHOLUTECA-02.jpg',
         description: [
           'El concepto principal fue continuar el track actual hasta lograr una integración de las nuevas  áreas que estaría a más enfocadas al entretenimiento y comida, vinculando este nuevo pasillo con una nueva área de estacionamiento posterior, también se generó un nuevoremate de la avenida de ingreso con un drop off que diera una nueva cara a la entradaprincipal del complejo comercial. ',
           'El reto más importante fue lograr que la nueva fachada de la expansión se logrará integrar al lenguaje existente del centro comercial a través de los colores tierras existentes así como de las modulaciones propuestas de la fachada original.',
         ],
       },
       bigImages: [
-        '/images/CHOLUTECA-01.jpg',
-        '/images/CHOLUTECA-02.jpg',
         '/images/CHOLUTECA-03.jpg',
         '/images/CHOLUTECA-04.jpg',
       ],
