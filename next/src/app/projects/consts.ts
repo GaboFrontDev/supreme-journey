@@ -727,8 +727,6 @@ export const projectCards = {
         ],
       },
       bigImages: [
-        '/images/POPAYAN-01.jpg',
-        '/images/POPAYAN-02.jpg',
         '/images/POPAYAN-03.jpg',
       ],
       lideres: ['Iván Ortiz'],
@@ -773,8 +771,6 @@ export const projectCards = {
         ],
       },
       bigImages: [
-        '/images/MALL-PLAZA-01.jpg',
-        '/images/MALL-PLAZA-02.jpg',
         '/images/MALL-PLAZA-03.jpg',
       ],
       lideres: ['Iván Ortiz'],
@@ -802,19 +798,19 @@ export const projectCards = {
       concepto:
         'Reimaginar la experiencia comercial desde la fuerza simbólica de su historia.',
       galeria: [
-        '/images/POPAYAN-01.jpg',
-        '/images/POPAYAN-02.jpg',
-        '/images/POPAYAN-03.jpg',
+        '/images/ROTONDA-01.jpg',
+        '/images/ROTONDA-02.jpg',
+        '/images/ROTONDA-03.jpg',
       ],
       servicios: {
-        imagen: '/images/POPAYAN-02.jpg',
+        imagen: '/images/ROTONDA-02.jpg',
         description: [
           'El Centro comercial rotonda se encuentra en Guayaquil y  consta de la unión comercial de dos lotes existentes con tiendas existentes cada uno, a través de un espacio de conservación urbana intermedio lo que implicaba una limitante importante desde el punto de vista comercial y arquitectónico',
           'La propuesta plantea la unión de elementos a través de un track comercial que unía ambos predios generando un pasaje comercial en curva envolviendo la torre de coltejer que era el elemento central a conservar principalmente en la Fachada Frontal del proyecto. Esta Torre, al ser un elemento de protección patrimonial, sirvió de eje conceptual para la imagen del proyecto, haciéndola destacar sobre el resto enmarcando con elementos arquitectónicos en vertical para destacar su jerarquía como elemento integrador y de identificación principal del Centro comercial.',
           'En términos de áreas comerciales el proyecto sugiere la generación de áreas nuevas de locales menores en dos niveles asi como nuevas áreas de Parqueadero en Sótano para complementar el requerimiento por los nuevos requerimientos.',
         ],
       },
-      bigImages: ['/images/ROTONDA-01.jpg', '/images/ROTONDA-02.jpg'],
+      bigImages: ['/images/ROTONDA-03.jpg'],
       lideres: ['Iván Ortiz', 'Carlos Márquez'],
       equipo: ['Moisés Quintero', 'Gaddiel Villa'],
     },
