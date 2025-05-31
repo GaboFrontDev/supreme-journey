@@ -323,51 +323,6 @@ export const projectCards = {
       image: '/images/dwelling/2.png',
     },
     {
-      title: 'Galerías Valle Oriente',
-      location: 'Monterrey, Nuevo León, México',
-      categories: [
-        'Centros Comerciales',
-        'Usos Mixtos',
-        'Hoteles',
-        'Corporativo',
-      ],
-      image: '/images/GVO-01.jpg',
-      rightPanel:
-        'The Point será un exclusivo desarrollo inmobiliario de vanguardia, que ofrece un estilo de vida único en el México actual, al ubicarse en Prolongación Paseo de la Reforma, el nuevo centro financiero, de negocios y habitacional a la entrada de Santa Fe.',
-      ficha: {
-        año: '2019',
-        ubicacion: 'Monterrey, Nuevo León, México',
-        landArea: '12,112.45 m²',
-        builtArea: '126,895.06 m²',
-        cliente: 'Fibra UNO',
-        tipo: 'Usos Mixtos, Centro Comercial, Hoteles, Corporativo',
-      },
-      concepto:
-        'Reconfigurar un ícono comercial con una visión contemporánea e integral. Revivir un espacio desde lo contemporáneo y reconectar su esencia con el presente.',
-      galeria: [
-        '/images/GVO-01.jpg',
-        '/images/GVO-02.jpg',
-        '/images/GVO-03.jpg',
-        '/images/GVO-04.jpg',
-      ],
-      servicios: {
-        imagen: '/images/GVO-03.jpg',
-        description: [
-          'Galerías Valle Oriente (GVO) recientemente adquirido por Fibra UNO, ha sido uno de los principales centros comerciales de moda y entretenimiento en la ciudad de Monterrey en los últimos años. La expansión de GVO incluirá un nuevo mercado gourmet, nuevas áreas comerciales, restaurantes, un hotel de 190 cuartos y un edificio de oficinas de 11,000 metros cuadrados rentables. Todo lo anterior, así como la renovación del centro comercial existente, hará de GVO un nuevo concepto de usos mixtos en la ciudad.',
-          'Accediendo por Av. Fundadores, un gran motor lobby será la zona de acceso a una explanada que vinculará los restaurantes, el edificio de oficinas y el hotel. Este mismo acceso llevará al usuario al núcleo de escalera que comunica la explanada con el nivel comercial.',
-          'El lenguaje arquitectónico del proyecto, busca dar una nueva contemporaneidad al centro comercial, utilizando diferentes soluciones de diseño para cada uno de los usos, pero que a su vez,  proyectan una unidad de todo el conjunto. Estructuras en colores oscuros, maderas, piedras naturales y fachadas de cristal con diferentes soluciones, son los elementos de diseño que redefinen la morfología del proyecto. ',
-        ],
-      },
-      bigImages: [
-        '/images/GVO-01.jpg',
-        '/images/GVO-02.jpg',
-        '/images/GVO-03.jpg',
-        '/images/GVO-04.jpg',
-      ],
-      lideres: ['Arturo Martínez'],
-      equipo: ['Hugo Cortés', 'Priscila Zúñiga'],
-    },
-    {
       title: 'Tlanepantla Fase II',
       location: 'Tlalnepantla, Estado de México, México',
       categories: ['Vivienda'],
@@ -410,6 +365,53 @@ export const projectCards = {
       equipo: [
         'Fabiola Felix',
         'Alfonso Amaya',
+      ],
+    },
+    {
+      title: 'The Point',
+      location: 'CDMX, México',
+      categories: ['Usos Mixtos', 'Vivienda'],
+      image: '/images/THE-POINT-01.jpg',
+      rightPanel:
+        'The Point será un exclusivo desarrollo inmobiliario de vanguardia, que ofrece un estilo de vida único en el México actual, al ubicarse en Prolongación Paseo de la Reforma, el nuevo centro financiero, de negocios y habitacional a la entrada de Santa Fe.',
+      ficha: {
+        año: '2019',
+        ubicacion: 'CDMX, México',
+        landArea: '10,760 m²',
+        builtArea: '10,760 m²',
+        cliente: 'Pelmar Group',
+        tipo: 'Usos Mixtos',
+      },
+      concepto:
+        'Ser un ícono arquitectónico que impacte en el estilo de vida actual y en la economía local.',
+      galeria: [
+        '/images/THE-POINT-02.jpg',
+        '/images/THE-POINT-04.jpg',
+        '/images/THE-POINT-05.jpg',
+        '/images/THE-POINT-06.jpg',
+        '/images/THE-POINT-07.jpg',
+        '/images/THE-POINT-08.jpg',
+      ],
+      servicios: {
+        imagen: '/images/THE-POINT-03.jpg',
+        description: [
+          'The Point es un exclusivo desarrollo inmobiliario de vanguardia que ofrece un estilo de vida único en el México actual. Su ubicación privilegiada en Prolongación Paseo de la Reforma —la nueva puerta de entrada al distrito financiero, corporativo y residencial de Santa Fe— lo posiciona como un referente clave en la evolución urbana de la ciudad.',
+          'Además de su aportación arquitectónica, The Point generará un impacto positivo en la economía local, impulsando el empleo directo e indirecto en la zona. Una vez en operación, más de 2,500 personas trabajarán o habitarán en sus áreas residencial, comercial y corporativa. Destacado por su diseño arquitectónico contemporáneo y elegante, el proyecto se reconoce por su identidad fuerte y distintiva, con un frente de 155 metros que ha captado el interés de inversionistas de alto nivel. Sus tres componentes —Commerce, Residences y Corporate— se integran armónicamente en un conjunto que redefine el panorama urbano de Santa Fe.',
+        ],
+      },
+      bigImages: [
+        '/images/THE-POINT-04.jpg',
+        '/images/THE-POINT-05.jpg',
+        '/images/THE-POINT-06.jpg',
+        '/images/THE-POINT-07.jpg',
+      ],
+      lideres: ['Arturo Martínez', 'Carlos Márquez'],
+      equipo: [
+        'Jacob Villa',
+        'Fabiola Félix',
+        'Hugo Cortés',
+        'Jose Luis Aguilar',
+        'Manuel González',
       ],
     },
   ],
