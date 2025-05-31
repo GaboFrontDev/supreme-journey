@@ -763,14 +763,14 @@ export const projectCards = {
         '/images/MALL-PLAZA-03.jpg',
       ],
       servicios: {
-        imagen: '/images/MALL-PLAZA-02.jpg',
+        imagen: '/images/MALL-PLAZA-05.jpg',
         description: [
-          'El proyecto de Mallplaza Medellín consta de la unión comercial de dos lotes existentes con tiendas existentes cada uno, a través de un espacio de conservación urbana intermedio lo que implicaba una limitante importante desde el punto de vista comercial y arquitectónico.',
           'La propuesta plantea la unión de elementos a través de un track comercial que unía ambos predios generando un pasaje comercial en curva envolviendo la torre de coltejer que era el elemento central a conservar principalmente en la Fachada Frontal del proyecto. Esta Torre, al ser un elemento de protección patrimonial, sirvió de eje conceptual para la imagen del proyecto, haciéndola destacar sobre el resto enmarcando con elementos arquitectónicos en vertical para destacar su jerarquía como elemento integrador y de identificación principal del Centro comercial.',
-          'En términos de áreas comerciales el proyecto sugiere la generación de áreas nuevas de locales menores en dos niveles asi como nuevas áreas de Parqueadero en Sótano para complementar el requerimiento por los nuevos requerimientos.',
         ],
       },
       bigImages: [
+        '/images/MALL-PLAZA-04.jpg',
+        'En términos de áreas comerciales el proyecto sugiere la generación de áreas nuevas de locales menores en dos niveles asi como nuevas áreas de Parqueadero en Sótano para complementar el requerimiento por los nuevos requerimientos.',
         '/images/MALL-PLAZA-03.jpg',
       ],
       lideres: ['Iván Ortiz'],
