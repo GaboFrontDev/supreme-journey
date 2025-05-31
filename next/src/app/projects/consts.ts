@@ -235,9 +235,9 @@ export const projectCards = {
         cliente: 'Parks',
         tipo: 'Hoteles',
       },
-      concepto: 'Proyecto de interiorismo para el hotel Hilton dentro del conjunto de Galerías Valle Oriente.',
-      galeria: [
-      ],
+      concepto:
+        'Proyecto de interiorismo para el hotel Hilton dentro del conjunto de Galerías Valle Oriente.',
+      galeria: [],
       bigImages: [
         '/images/HILTON-GVO-O3.jpg',
         '/images/HILTON-GVO-02.jpg',
@@ -263,16 +263,12 @@ export const projectCards = {
       },
       concepto:
         'Proyecto de diseño interior de la marca Aloft por Marriott, este hotel es un prototipo y es categoría Select.',
-      galeria: [
-      ],
+      galeria: [],
       servicios: {
         imagen: '/images/ALOFT-03.jpg',
         description: [],
       },
-      bigImages: [
-        '/images/ALOFT-03.jpg',
-        '/images/ALOFT-04.jpg',
-      ],
+      bigImages: ['/images/ALOFT-03.jpg', '/images/ALOFT-04.jpg'],
       lideres: ['Pedro Solaegui', 'Manijeh Lizárraga B.'],
       equipo: ['Nadya Aguilar', 'Beatriz Verduzco Aldana'],
     },
@@ -301,10 +297,7 @@ export const projectCards = {
         imagen: '/images/NOBU-05.png',
         description: [],
       },
-      bigImages: [
-        '/images/NOBU-02.png',
-        '/images/NOBU-04.png',
-      ],
+      bigImages: ['/images/NOBU-02.png', '/images/NOBU-04.png'],
       lideres: ['Pedro Solaegui', 'Manijeh Lizárraga'],
       equipo: ['Olaya Moro'],
     },
@@ -362,10 +355,7 @@ export const projectCards = {
         '/images/TLALNEPANTLA-FASE-II-04.jpg',
       ],
       lideres: ['Arturo Martínez', 'Hugo Cortés', 'Ricardo Torres'],
-      equipo: [
-        'Fabiola Felix',
-        'Alfonso Amaya',
-      ],
+      equipo: ['Fabiola Felix', 'Alfonso Amaya'],
     },
     {
       title: 'The Point',
@@ -603,20 +593,30 @@ export const projectCards = {
         '/images/SAN-FERNANDO-05.jpg',
       ],
       servicios: {
-        imagen: '/images/SAN-FERNANDO-03.jpg',
+        imagen: '/images/INE_7307.JPG',
         description: [
           'La necesidad de espacios comerciales de calidad que respondan a la creciente demanda es la razón por la cual se ha decidido remodelar el centro comercial más importante de la ciudad: la plaza "San Fernando". El complejo se encuentra cerca del centro histórico, en el cruce de dos de las avenidas más importantes: Los Maestros y Constitución.',
           'Antes de su renovación, la plaza presentaba un rezago en su imagen y operación desde su apertura en 1982. La distribución interior y el diseño exterior no habían cambiado sustancialmente desde entonces.',
           'Aunque su posicionamiento en el mercado era favorable, el conjunto en su totalidad exigía una transformación y reconfiguración en diversos aspectos para refrescar y revitalizar, así como la necesidad de adaptarse a las nuevas tendencias comerciales de la época.',
         ],
       },
-      bigImages: ['/images/SAN-FERNANDO-05.jpg'],
+      bigImages: [
+        '/images/Comparativa_San Fernando 01.jpg',
+        'Antes de su renovación, la plaza presentaba un rezago en su imagen y operación desde su apertura en 1982. La distribución interior y el diseño exterior no habían cambiado sustancialmente desde entonces',
+        '/images/Comparativa_San Fernando 02.jpg',
+        'Aunque su posicionamiento en el mercado era favorable, el conjunto en su totalidad exigía una transformación y reconfiguración en diversos aspectos para refrescar y revitalizar, así como la necesidad de adaptarse a las nuevas tendencias comerciales de la época.',
+        '/images/SAN-FERNANDO-05.jpg',
+      ],
       lideres: ['Arturo Martínez', 'Manuel González'],
       equipo: [
         'Manijeh Lizárraga',
         'José Manuel Real',
         'Joris Ledevin',
         'Roberta Martínez',
+      ],
+      premios: [
+        'Recon ICSC Latin America 2015',
+        'Gold Award en la Categoría Ampliación y Remodelación',
       ],
     },
     {
@@ -690,10 +690,7 @@ export const projectCards = {
           'El reto más importante fue lograr que la nueva fachada de la expansión se logrará integrar al lenguaje existente del centro comercial a través de los colores tierras existentes así como de las modulaciones propuestas de la fachada original.',
         ],
       },
-      bigImages: [
-        '/images/CHOLUTECA-03.jpg',
-        '/images/CHOLUTECA-04.jpg',
-      ],
+      bigImages: ['/images/CHOLUTECA-03.jpg', '/images/CHOLUTECA-04.jpg'],
       lideres: ['Iván Ortiz', 'Carlos Márquez'],
       equipo: ['Moisés Quintero', 'Gaddiel Villa', 'Ivana López'],
     },
@@ -727,9 +724,7 @@ export const projectCards = {
           'El proyecto buscará integrarse a la vegetación y topografía de la zona, respetando las áreas arboladas existentes en el terreno.',
         ],
       },
-      bigImages: [
-        '/images/POPAYAN-03.jpg',
-      ],
+      bigImages: ['/images/POPAYAN-03.jpg'],
       lideres: ['Iván Ortiz'],
       equipo: [
         'Moisés Quintero',
@@ -809,7 +804,12 @@ export const projectCards = {
           'El Centro comercial rotonda se encuentra en Guayaquil y  consta de la unión comercial de dos lotes existentes con tiendas existentes cada uno, a través de un espacio de conservación urbana intermedio lo que implicaba una limitante importante desde el punto de vista comercial y arquitectónico',
         ],
       },
-      bigImages: ['/images/ROTONDA-03.jpg', 'La propuesta plantea la unión de elementos a través de un track comercial que unía ambos predios generando un pasaje comercial en curva envolviendo la torre de coltejer que era el elemento central a conservar principalmente en la Fachada Frontal del proyecto. Esta Torre, al ser un elemento de protección patrimonial, sirvió de eje conceptual para la imagen del proyecto, haciéndola destacar sobre el resto enmarcando con elementos arquitectónicos en vertical para destacar su jerarquía como elemento integrador y de identificación principal del Centro comercial.', 'En términos de áreas comerciales el proyecto sugiere la generación de áreas nuevas de locales menores en dos niveles así como nuevas áreas de Parqueadero en Sótano para complementar el requerimiento por los nuevos requerimientos.', '/images/ROTONDA-01.jpg'],
+      bigImages: [
+        '/images/ROTONDA-03.jpg',
+        'La propuesta plantea la unión de elementos a través de un track comercial que unía ambos predios generando un pasaje comercial en curva envolviendo la torre de coltejer que era el elemento central a conservar principalmente en la Fachada Frontal del proyecto. Esta Torre, al ser un elemento de protección patrimonial, sirvió de eje conceptual para la imagen del proyecto, haciéndola destacar sobre el resto enmarcando con elementos arquitectónicos en vertical para destacar su jerarquía como elemento integrador y de identificación principal del Centro comercial.',
+        'En términos de áreas comerciales el proyecto sugiere la generación de áreas nuevas de locales menores en dos niveles así como nuevas áreas de Parqueadero en Sótano para complementar el requerimiento por los nuevos requerimientos.',
+        '/images/ROTONDA-01.jpg',
+      ],
       lideres: ['Iván Ortiz', 'Carlos Márquez'],
       equipo: ['Moisés Quintero', 'Gaddiel Villa'],
     },
