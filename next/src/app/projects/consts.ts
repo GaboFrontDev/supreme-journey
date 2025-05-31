@@ -781,16 +781,16 @@ export const projectCards = {
       location: 'Guayaquil, Ecuador',
       categories: [
         'Centros Comerciales',
-        'Renovaciones y Expansiones',
         'LATAM',
+        'Renovaciones y Expansiones',
       ],
       image: '/images/ROTONDA-01.jpg',
       rightPanel:
-        'El Centro comercial Hojarasca está ubicado a las afueras de la Cd. de Popayán, en la zona de mayor desarrollo habitacional de la ciudad.',
+        'El Centro comercial Rotonda se encuentra en Guayaquil y  consta de la unión comercial de dos lotes existentes con tiendas existentes cada uno, a través de un espacio de conservación urbana intermedio lo que implicaba una limitante importante desde el punto de vista comercial y arquitectónico',
       ficha: {
         año: '2015',
         ubicacion: 'Guayaquil, Ecuador',
-        landArea: '20,000m²',
+        landArea: '10,000m²',
         builtArea: '',
         cliente: 'Centro comercial Rotonda',
         tipo: 'Centros Comerciales, Renovaciones y Expansiones, LATAM',
@@ -806,11 +806,9 @@ export const projectCards = {
         imagen: '/images/ROTONDA-02.jpg',
         description: [
           'El Centro comercial rotonda se encuentra en Guayaquil y  consta de la unión comercial de dos lotes existentes con tiendas existentes cada uno, a través de un espacio de conservación urbana intermedio lo que implicaba una limitante importante desde el punto de vista comercial y arquitectónico',
-          'La propuesta plantea la unión de elementos a través de un track comercial que unía ambos predios generando un pasaje comercial en curva envolviendo la torre de coltejer que era el elemento central a conservar principalmente en la Fachada Frontal del proyecto. Esta Torre, al ser un elemento de protección patrimonial, sirvió de eje conceptual para la imagen del proyecto, haciéndola destacar sobre el resto enmarcando con elementos arquitectónicos en vertical para destacar su jerarquía como elemento integrador y de identificación principal del Centro comercial.',
-          'En términos de áreas comerciales el proyecto sugiere la generación de áreas nuevas de locales menores en dos niveles asi como nuevas áreas de Parqueadero en Sótano para complementar el requerimiento por los nuevos requerimientos.',
         ],
       },
-      bigImages: ['/images/ROTONDA-03.jpg'],
+      bigImages: ['/images/ROTONDA-03.jpg', 'La propuesta plantea la unión de elementos a través de un track comercial que unía ambos predios generando un pasaje comercial en curva envolviendo la torre de coltejer que era el elemento central a conservar principalmente en la Fachada Frontal del proyecto. Esta Torre, al ser un elemento de protección patrimonial, sirvió de eje conceptual para la imagen del proyecto, haciéndola destacar sobre el resto enmarcando con elementos arquitectónicos en vertical para destacar su jerarquía como elemento integrador y de identificación principal del Centro comercial.', 'En términos de áreas comerciales el proyecto sugiere la generación de áreas nuevas de locales menores en dos niveles así como nuevas áreas de Parqueadero en Sótano para complementar el requerimiento por los nuevos requerimientos.', '/images/ROTONDA-01.jpg'],
       lideres: ['Iván Ortiz', 'Carlos Márquez'],
       equipo: ['Moisés Quintero', 'Gaddiel Villa'],
     },
