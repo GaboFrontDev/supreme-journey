@@ -44,6 +44,7 @@ export const projectCards = {
         'Ulises Rivera',
         'Fernando Ayala',
       ],
+      premios: [''],
     },
     {
       title: 'The Point',
@@ -63,9 +64,7 @@ export const projectCards = {
       concepto:
         'Ser un ícono arquitectónico que impacte en el estilo de vida actual y en la economía local.',
       galeria: [
-        '/images/THE-POINT-01.jpg',
         '/images/THE-POINT-02.jpg',
-        '/images/THE-POINT-03.jpg',
         '/images/THE-POINT-04.jpg',
         '/images/THE-POINT-05.jpg',
         '/images/THE-POINT-06.jpg',
@@ -98,7 +97,7 @@ export const projectCards = {
       title: 'Paseo Villalta',
       location: 'Saltillo, Coahuila, México',
       categories: ['Centros Comerciales', 'Usos Mixtos'],
-      image: '/images/mixed_uses/3.png',
+      image: '/images/PASEO-VILLALTA-01.jpg',
       rightPanel:
         'The Point será un exclusivo desarrollo inmobiliario de vanguardia, que ofrece un estilo de vida único en el México actual, al ubicarse en Prolongación Paseo de la Reforma, el nuevo centro financiero, de negocios y habitacional a la entrada de Santa Fe.',
       ficha: {
@@ -112,7 +111,6 @@ export const projectCards = {
       concepto:
         'Conectar al usuario con la naturaleza y su comunidad a través de un espacio abierto. Un paseo que enlaza experiencias, inspira encuentro y abraza la vida en comunidad.',
       galeria: [
-        '/images/PASEO-VILLALTA-01.jpg',
         '/images/PASEO-VILLALTA-02.jpg',
         '/images/PASEO-VILLALTA-03.jpg',
         '/images/PASEO-VILLALTA-04.jpg',
@@ -128,9 +126,7 @@ export const projectCards = {
         ],
       },
       bigImages: [
-        '/images/PASEO-VILLALTA-01.jpg',
         '/images/PASEO-VILLALTA-02.jpg',
-        '/images/PASEO-VILLALTA-03.jpg',
         '/images/PASEO-VILLALTA-04.jpg',
         '/images/PASEO-VILLALTA-05.jpg',
       ],
@@ -226,16 +222,35 @@ export const projectCards = {
       equipo: [''],
     },
     {
-      title: 'Residence Inn Cancún',
-      location: 'Cancún, Quintana Roo, México',
+      title: 'Hilton GVO',
+      location: 'Monterrey, Nuevo León, México',
       categories: ['Hoteles'],
-      image: '/images/hotels/2.png',
+      image: '/images/HILTON-GVO-O4.jpg',
+      rightPanel: '',
+      ficha: {
+        año: '2021',
+        ubicacion: 'Monterrey, Nuevo León, México',
+        landArea: '3833.14 m²',
+        builtArea: '20,363.31 m²',
+        cliente: 'Parks',
+        tipo: 'Hoteles',
+      },
+      concepto: 'Proyecto de interiorismo para el hotel Hilton dentro del conjunto de Galerías Valle Oriente.',
+      galeria: [
+      ],
+      bigImages: [
+        '/images/HILTON-GVO-O3.jpg',
+        '/images/HILTON-GVO-02.jpg',
+        '/images/HILTON-GVO-01.jpg',
+      ],
+      lideres: ['Pedro Solaegui', 'Manijeh Lizárraga B.'],
+      equipo: ['Abraham Velázquez', 'Eduardo Hernández Pinales'],
     },
     {
       title: 'Aloft Santo Domingo',
       location: 'Santo Domingo, República Dominicana',
       categories: ['Hoteles'],
-      image: '/images/hotels/3.png',
+      image: '/images/ALOFT-02.jpg',
       rightPanel: '',
       ficha: {
         año: '2018-2022',
@@ -249,16 +264,12 @@ export const projectCards = {
       concepto:
         'Proyecto de diseño interior de la marca Aloft por Marriott, este hotel es un prototipo y es categoría Select.',
       galeria: [
-        '/images/ALOFT-02.jpg',
-        '/images/ALOFT-03.jpg',
-        '/images/ALOFT-04.jpg',
       ],
       servicios: {
         imagen: '/images/ALOFT-03.jpg',
         description: [],
       },
       bigImages: [
-        '/images/ALOFT-02.jpg',
         '/images/ALOFT-03.jpg',
         '/images/ALOFT-04.jpg',
       ],
@@ -313,10 +324,49 @@ export const projectCards = {
       image: '/images/dwelling/2.png',
     },
     {
-      title: 'The Point',
-      location: 'Mérida, Yucatán, México',
-      categories: ['Vivienda'],
-      image: '/images/dwelling/3.png',
+      title: 'Galerías Valle Oriente',
+      location: 'Monterrey, Nuevo León, México',
+      categories: [
+        'Centros Comerciales',
+        'Usos Mixtos',
+        'Hoteles',
+        'Corporativo',
+      ],
+      image: '/images/GVO-01.jpg',
+      rightPanel:
+        'The Point será un exclusivo desarrollo inmobiliario de vanguardia, que ofrece un estilo de vida único en el México actual, al ubicarse en Prolongación Paseo de la Reforma, el nuevo centro financiero, de negocios y habitacional a la entrada de Santa Fe.',
+      ficha: {
+        año: '2019',
+        ubicacion: 'Monterrey, Nuevo León, México',
+        landArea: '12,112.45 m²',
+        builtArea: '126,895.06 m²',
+        cliente: 'Fibra UNO',
+        tipo: 'Usos Mixtos, Centro Comercial, Hoteles, Corporativo',
+      },
+      concepto:
+        'Reconfigurar un ícono comercial con una visión contemporánea e integral. Revivir un espacio desde lo contemporáneo y reconectar su esencia con el presente.',
+      galeria: [
+        '/images/GVO-01.jpg',
+        '/images/GVO-02.jpg',
+        '/images/GVO-03.jpg',
+        '/images/GVO-04.jpg',
+      ],
+      servicios: {
+        imagen: '/images/GVO-03.jpg',
+        description: [
+          'Galerías Valle Oriente (GVO) recientemente adquirido por Fibra UNO, ha sido uno de los principales centros comerciales de moda y entretenimiento en la ciudad de Monterrey en los últimos años. La expansión de GVO incluirá un nuevo mercado gourmet, nuevas áreas comerciales, restaurantes, un hotel de 190 cuartos y un edificio de oficinas de 11,000 metros cuadrados rentables. Todo lo anterior, así como la renovación del centro comercial existente, hará de GVO un nuevo concepto de usos mixtos en la ciudad.',
+          'Accediendo por Av. Fundadores, un gran motor lobby será la zona de acceso a una explanada que vinculará los restaurantes, el edificio de oficinas y el hotel. Este mismo acceso llevará al usuario al núcleo de escalera que comunica la explanada con el nivel comercial.',
+          'El lenguaje arquitectónico del proyecto, busca dar una nueva contemporaneidad al centro comercial, utilizando diferentes soluciones de diseño para cada uno de los usos, pero que a su vez,  proyectan una unidad de todo el conjunto. Estructuras en colores oscuros, maderas, piedras naturales y fachadas de cristal con diferentes soluciones, son los elementos de diseño que redefinen la morfología del proyecto. ',
+        ],
+      },
+      bigImages: [
+        '/images/GVO-01.jpg',
+        '/images/GVO-02.jpg',
+        '/images/GVO-03.jpg',
+        '/images/GVO-04.jpg',
+      ],
+      lideres: ['Arturo Martínez'],
+      equipo: ['Hugo Cortés', 'Priscila Zúñiga'],
     },
     {
       title: 'Tlanepantla Fase II',

@@ -18,8 +18,8 @@ export const years = [
   export const historyItems = [
     {
       year: '1974',
-      yearColor: '#407978',
-      lineColor: '#407978',
+      yearColor: '#A1A1A1',
+      lineColor: '#636B69',
       cards: [
         {
           title: 'Plaza Patria',

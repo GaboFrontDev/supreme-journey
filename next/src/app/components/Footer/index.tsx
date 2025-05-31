@@ -90,10 +90,10 @@ export default function Footer() {
             <li><a href="/projects" className="hover:underline">Renovaciones y expansiones</a></li>
           </ul>
           <ul className="font-bold text-base text-c-gray-200 space-y-3">
-            <li><a href="#" className="hover:underline">Instagram</a></li>
-            <li><a href="#" className="hover:underline">Facebook</a></li>
-            <li><a href="#" className="hover:underline">Linkedin</a></li>
-            <li><a href="#" className="hover:underline">Twitter</a></li>
+            <li><a href="https://www.instagram.com/aresarquitectos" className="hover:underline">Instagram</a></li>
+            <li><a href="https://www.facebook.com/aresarquitectoss/?locale=es_LA" className="hover:underline">Facebook</a></li>
+            <li><a href="https://www.linkedin.com/company/ares-arquitectos/?viewAsMember=true" className="hover:underline">Linkedin</a></li>
+            <li><a href="https://x.com/AresArquitectos" className="hover:underline">Twitter</a></li>
           </ul>
         </div>
         <div className="pt-20">

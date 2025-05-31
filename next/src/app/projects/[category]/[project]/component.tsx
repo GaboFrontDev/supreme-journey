@@ -159,25 +159,6 @@ export default function ProjectPage({
         </div>
       </Section>
 
-      <Section width='max-w-7xl' paddingTop='pt-0 select-none'>
-        <h2 className='mb-16 text-5xl font-bold text-[#636B69]'>Galería</h2>
-        <CarouselWrapper>
-          {project.galeria?.map((image, index) => (
-            <div
-              className='relative h-[180px] w-[300px] overflow-hidden rounded-xl'
-              key={index}
-            >
-              <Image
-                src={image}
-                alt='Imagen de categoría'
-                fill
-                className='object-cover'
-              />
-            </div>
-          ))}
-        </CarouselWrapper>
-      </Section>
-
       <Section
         width='w-full'
         paddingTop='pt-10'
@@ -195,27 +176,29 @@ export default function ProjectPage({
         </div>
       </Section>
 
-      <Section width='max-w-7xl'>
-        <div className='flex items-center justify-between gap-36'>
-          <div className='relative min-h-[564px] min-w-[564px] overflow-hidden rounded-2xl'>
-            <Image
-              src={project.servicios?.imagen ?? ''}
-              alt='Imagen de servicio'
-              fill
-              className='object-cover'
-            />
+      {project.servicios && (
+        <Section width='max-w-7xl'>
+          <div className='flex items-center justify-between gap-36'>
+            <div className='relative min-h-[564px] min-w-[564px] overflow-hidden rounded-2xl'>
+              <Image
+                src={project.servicios?.imagen ?? ''}
+                alt='Imagen de servicio'
+                fill
+                className='object-cover'
+              />
+            </div>
+            <div>
+              {project.servicios?.description.map((description, index) => (
+                <p className='max-w-2xl pb-2 text-lg text-black' key={index}>
+                  {description}
+                </p>
+              ))}
+            </div>
           </div>
-          <div>
-            {project.servicios?.description.map((description, index) => (
-              <p className='max-w-2xl pb-2 text-lg text-black' key={index}>
-                {description}
-              </p>
-            ))}
-          </div>
-        </div>
-      </Section>
+        </Section>
+      )}
 
-      {project.bigImages?.map((image, index) => (
+      {project.bigImages?.slice(1).map((image, index) => (
         <Section
           width='w-full'
           paddingTop='pt-10'
@@ -226,7 +209,7 @@ export default function ProjectPage({
         >
           {image.includes('jpg') || image.includes('png') ? (
             <div className='flex items-center justify-center gap-12'>
-              <div className='relative min-h-[564px] min-w-[1024px] overflow-hidden rounded-2xl'>
+              <div className='relative min-h-[800px] min-w-[1124px] overflow-hidden rounded-2xl'>
                 <Image
                   src={image}
                   alt='Imagen de categoría'
@@ -236,7 +219,7 @@ export default function ProjectPage({
               </div>
             </div>
           ) : (
-            <div className='flex items-center justify-between gap-36'>
+            <div className='flex items-center justify-between gap-36 mx-55'>
               <div className='relative min-w-[564px] overflow-hidden p-10'>
                 <p className='max-w-2xl text-lg text-black'>{image}</p>
               </div>
@@ -254,7 +237,11 @@ export default function ProjectPage({
             </h2>
             <ul className='font-regular space-y-3 text-lg text-black'>
               {project.lideres?.map((lider, index) => (
-                <li key={index}>{lider}</li>
+                <li className='hover:underline' key={index}>
+                  <Link href={`/the_study/${formatTitleToUrl(lider)}`}>
+                    {lider}
+                  </Link>
+                </li>
               ))}
             </ul>
           </div>
@@ -268,6 +255,18 @@ export default function ProjectPage({
               ))}
             </ul>
           </div>
+          {project.premios && (
+            <div>
+              <h2 className='mb-6 text-[20px] font-bold leading-tight text-[#A1A1A1]'>
+                Premios
+              </h2>
+              <ul className='font-regular space-y-3 text-lg text-black'>
+                {project.premios?.map((premio, index) => (
+                  <li key={index}>{premio}</li>
+                ))}
+              </ul>
+            </div>
+          )}
         </div>
       </Section>
 

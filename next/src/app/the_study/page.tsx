@@ -56,78 +56,78 @@ const architects = [
   {
     name: 'Jacobo Villa',
     image: '/images/the_study/architect/1.png',
-    position: 'Architect',
+    position: 'Arquitecto',
   },
   {
     name: 'Alejandro Arenas',
     image: '/images/the_study/architect/2.png',
-    position: 'Architect',
+    position: 'Arquitecto',
   },
   {
     name: 'Beatriz Verduzco',
     image: '/images/the_study/architect/3.png',
-    position: 'Architect',
+    position: 'Arquitecto',
   },
   {
     name: 'Griselda Juárez',
     image: '/images/the_study/architect/4.png',
-    position: 'Architect',
+    position: 'Arquitecto',
   },
   {
     name: 'Vidal Montero',
     image: '/images/the_study/architect/5.png',
-    position: 'Architect',
+    position: 'Arquitecto',
   },
   {
     name: 'Fabiola Féliz',
     image: '/images/the_study/architect/6.png',
-    position: 'Architect',
+    position: 'Arquitecto',
   },
   {
     name: 'Andrea Camarena',
     image: '/images/the_study/architect/7.png',
-    position: 'Architect',
+    position: 'Arquitecto',
   },
   {
     name: 'Miguel Guajardo',
     image: '/images/the_study/architect/8.png',
-    position: 'Architect',
+    position: 'Arquitecto',
   },
   {
     name: 'Rigoberto Saldívas',
     image: '/images/the_study/architect/9.png',
-    position: 'Architect',
+    position: 'Arquitecto',
   },
   {
     name: 'Iván Torres',
     image: '/images/the_study/architect/10.png',
-    position: 'Architect',
+    position: 'Arquitecto',
   },
   {
     name: 'Ulises Rivera',
     image: '/images/the_study/architect/11.png',
-    position: 'Architect',
+    position: 'Arquitecto',
   },
   {
     name: 'Diana Pacheco',
     image: '/images/the_study/architect/12.png',
-    position: 'Architect',
+    position: 'Arquitecto',
   },
 ];
 
 const professionals = [
   {
-    title: 'Architects',
+    title: 'Arquitecto',
     imageUrl:
       'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3731.87936882796!2d-103.3895095241311!3d20.71512258085691!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8428afb402bea60b%3A0xc14c66c13f1080b7!2sAv.%20de%20las%20Am%C3%A9ricas%201250%2C%20San%20Miguel%20de%20la%20Colina%2C%2045160%20Zapopan%2C%20Jal.%2C%20M%C3%A9xico!5e0!3m2!1ses-419!2scl!4v1745774152456!5m2!1ses-419!2scl',
   },
   {
-    title: 'Interior Design & Specifications',
+    title: 'Diseño & Acabados',
     imageUrl:
       'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3763.7148299543737!2d-99.17937382416082!3d19.381496681887068!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1ff9d1cae5a15%3A0x2a1eba8b97486c3b!2sAv.%20Insurgentes%20Sur%201079%2C%20Noche%20Buena%2C%20Benito%20Ju%C3%A1rez%2C%2003720%20Ciudad%20de%20M%C3%A9xico%2C%20CDMX%2C%20M%C3%A9xico!5e0!3m2!1ses-419!2scl!4v1745775289153!5m2!1ses-419!2scl',
   },
   {
-    title: 'Visual Design & MKT',
+    title: 'Diseño Gráfico & Marketing',
     imageUrl:
       'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2992.9856514065677!2d2.1541527765579067!3d41.39611797129864!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a4a297339addff%3A0x2d30bf3eef38db19!2sAv.%20Diagonal%2C%20466%2C%20Gracia%2C%2008006%20Barcelona%2C%20Espa%C3%B1a!5e0!3m2!1ses-419!2scl!4v1745775347889!5m2!1ses-419!2scl',
   },
@@ -137,6 +137,108 @@ const professionals = [
       'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3037.468296291743!2d-3.714212823483541!3d40.42062827143904!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd42287af374619b%3A0xd6ecf46c1434e218!2sPl.%20de%20la%20Marina%20Espa%C3%B1ola%2C%203%2C%20Centro%2C%2028013%20Madrid%2C%20Espa%C3%B1a!5e0!3m2!1ses-419!2scl!4v1745775420489!5m2!1ses-419!2scl',
   },
 ];
+
+
+const acabados = [
+  {
+    name: 'Itza López',
+    image: '/images/Itza-Lopez.jpg',
+    position: 'Diseñador Líder',
+  },
+  {
+    name: 'Fernando Ayala',
+    image: '/images/Fernando-Ayala.jpg',
+    position: 'Diseñador',
+  },
+  {
+    name: 'Alejandro Arenas',
+    image: '/images/Alejandro-Arenas.jpg',
+    position: 'Diseñador',
+  },
+  {
+    name: 'Nadya Aguilar',
+    image: '/images/Nadya-Aguilar.jpg',
+    position: 'Diseñador',
+  },
+  {
+    name: 'Diana Talavera',
+    image: '/images/Diana-Talavera.jpg',
+    position: 'Diseñador',
+  },
+  {
+    name: 'Gabriela Arregui',
+    image: '/images/Gabriela-Arregui.jpg',
+    position: 'Diseñador',
+  },
+  {
+    name: 'Ofelia Aguilar',
+    image: '/images/Aguilar.jpg',
+    position: 'Acabados',
+  },
+];
+
+const disenos = [
+  {
+    name: 'Andrea Sotelo',
+    image: '/images/Andrea-Sotelo.jpg',
+    position: 'Gerente de Diseño Gráfico',
+  },
+  {
+    name: 'Lourdes Barba',
+    image: '/images/Lourdes-Barba.jpg',
+    position: 'Diseñadora Gráfica Senior',
+  },
+  {
+    name: 'Belén Coronado',
+    image: '/images/Belen-Coronado.jpg',
+    position: 'Diseñadora Gráfica',
+  },
+  
+];
+
+const operaciones = [
+  {
+    name: 'Pedro López',
+    image: '/images/Pedro-Lopez.jpg',
+    position: 'Director de Operaciones',
+  },
+  {
+    name: 'Ana Fernández',
+    image: '/images/Ana-Fernandez.jpg',
+    position: 'Recursos Humanos',
+  },
+  {
+    name: 'José Barrios',
+    image: '/images/Jose-Barrios.jpg',
+    position: 'Contador',
+  },
+  {
+    name: 'Sandra Salazar',
+    image: '/images/Sandra-Salazar.jpg',
+    position: 'Contador',
+  },
+  {
+    name: 'Dana Plascencia',
+    image: '/images/Dana-Plascencia.jpg',
+    position: 'Administración',
+  },
+  {
+    name: 'Martín Salazar',
+    image: '/images/Martin-Salazar.jpg',
+    position: 'Administración',
+  },
+  {
+    name: 'Alma Ramos',
+    image: '/images/Alma-Something.jpg',
+    position: 'Administración',
+  },
+  {
+    name: 'Marco Mendoza',
+    image: '/images/Marco-Mendoza.jpg',
+    position: 'Gerente de TI',
+  },
+];
+
 
 export default function TheStudyPage() {
   const [clickedYear, setClickedYear] = useState(years[0]);
@@ -218,7 +320,7 @@ export default function TheStudyPage() {
             <FilterButton
               key={year}
               label={year}
-              className='hover:no-underline'
+              className='hover:no-underline scroll-smooth'
               href={`#history-${year}`}
               isActive={clickedYear === year}
               onClick={() => setClickedYear(year)}
@@ -231,7 +333,7 @@ export default function TheStudyPage() {
               key={item.year}
               year={item.year}
               yearColor={clickedYear === item.year ? '#407978' : item.yearColor}
-              lineColor={item.lineColor}
+              lineColor={clickedYear === item.year ? '#407978' : item.lineColor}
               cards={item.cards}
               id={`history-${item.year}`}
             />
@@ -354,7 +456,7 @@ export default function TheStudyPage() {
               <div className='relative mb-4 h-[380px] w-full overflow-hidden rounded-xl'>
                 <Image
                   src={architect.image}
-                  alt='Imagen de servicio'
+                  alt={architect.name}
                   fill
                   className='object-cover'
                 />
@@ -369,7 +471,73 @@ export default function TheStudyPage() {
           ))}
         </div>
       </Section>
+      <Section width='max-w-7xl' paddingTop='pt-0' paddingBottom='pb-48'>
+        <div className='grid grid-cols-3 gap-10'>
+          {acabados.map((acabado, index) => (
+            <div key={index} className='flex flex-col'>
+              <div className='relative mb-4 h-[380px] w-full overflow-hidden rounded-xl'>
+                <Image
+                  src={acabado.image}
+                  alt={acabado.name}
+                  fill
+                  className='object-cover'
+                />
+              </div>
+              <div className='flex flex-col items-start'>
+                <h2 className='text-lg font-bold text-black'>
+                  {acabado.name}
+                </h2>
+                <span className='text-[#A1A1A1]'>{acabado.position}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </Section>
 
+      <Section width='max-w-7xl' paddingTop='pt-0' paddingBottom='pb-48'>
+        <div className='grid grid-cols-3 gap-10'>
+          {disenos.map((diseno, index) => (
+            <div key={index} className='flex flex-col'>
+              <div className='relative mb-4 h-[380px] w-full overflow-hidden rounded-xl'>
+                <Image
+                  src={diseno.image}
+                  alt={diseno.name}
+                  fill
+                  className='object-cover'
+                />
+              </div>
+              <div className='flex flex-col items-start'>
+                <h2 className='text-lg font-bold text-black'>
+                  {diseno.name}
+                </h2>
+                <span className='text-[#A1A1A1]'>{diseno.position}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </Section>
+      <Section width='max-w-7xl' paddingTop='pt-0' paddingBottom='pb-48'>
+        <div className='grid grid-cols-3 gap-10'>
+          {operaciones.map((operacion, index) => (
+            <div key={index} className='flex flex-col'>
+              <div className='relative mb-4 h-[380px] w-full overflow-hidden rounded-xl'>
+                <Image
+                  src={operacion.image}
+                  alt={operacion.name}
+                  fill
+                  className='object-cover'
+                />
+              </div>
+              <div className='flex flex-col items-start'>
+                <h2 className='text-lg font-bold text-black'>
+                  {operacion.name}
+                </h2>
+                <span className='text-[#A1A1A1]'>{operacion.position}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </Section>
       <Footer />
     </>
   );
