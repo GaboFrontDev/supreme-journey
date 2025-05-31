@@ -194,7 +194,6 @@ export default function ProjectPage({ params }: { params: { project: string, cat
       </Section>
 
       <Section width='max-w-7xl'>
-        <h2 className=' text-5xl font-bold text-[#636B69]'>Servicios</h2>
         <div className='flex items-center justify-between gap-36'>
           <div className='relative min-h-[564px] min-w-[564px] overflow-hidden rounded-2xl'>
             <Image

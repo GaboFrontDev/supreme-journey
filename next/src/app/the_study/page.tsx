@@ -139,6 +139,8 @@ const professionals = [
 ];
 
 export default function TheStudyPage() {
+  const [clickedYear, setClickedYear] = useState(years[0]);
+  
   const [selectedProfessional, setSelectedProfessional] = useState(
     professionals[0]
   );
@@ -217,7 +219,9 @@ export default function TheStudyPage() {
               key={year}
               label={year}
               className='hover:no-underline'
-              href={`#history`}
+              href={`#history-${year}`}
+              isActive={clickedYear === year}
+              onClick={() => setClickedYear(year)}
             />
           ))}
         </div>
@@ -226,9 +230,10 @@ export default function TheStudyPage() {
             <HistoryItem
               key={item.year}
               year={item.year}
-              yearColor={item.yearColor}
+              yearColor={clickedYear === item.year ? '#407978' : item.yearColor}
               lineColor={item.lineColor}
               cards={item.cards}
+              id={`history-${item.year}`}
             />
           ))}
         </CarouselWrapper>
