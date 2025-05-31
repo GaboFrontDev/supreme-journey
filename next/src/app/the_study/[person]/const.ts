@@ -4,6 +4,7 @@ export const directors: Person[] = [
   {
     name: 'Jacinto Arenas',
     image: '/images/the_study/directors/1.png',
+    detail: '/images/the_study/directors/1.png',
     position: 'CEO',
     link: {
       Instagram: 'https://www.instagram.com/jacintoarenas_arq/',
@@ -20,6 +21,7 @@ export const directors: Person[] = [
   {
     name: 'Arturo Martínez',
     image: '/images/the_study/directors/2.png',
+    detail: '/images/the_study/directors/2_detalle.jpg',
     position: 'Principal Partner',
     link: {
       Instagram:
@@ -39,6 +41,7 @@ export const directors: Person[] = [
   {
     name: 'Raúl Méndez',
     image: '/images/the_study/directors/3.png',
+    detail: '/images/the_study/directors/3_detalle.jpg',
     position: 'Principal Partner / Business Developer',
     link: {
       Instagram: 'https://www.instagram.com/raulmendezrincon/',
@@ -55,6 +58,7 @@ export const directors: Person[] = [
   {
     name: 'Iván Ortíz',
     image: '/images/the_study/directors/5.png',
+    detail: '/images/the_study/directors/5_detalle.jpg',
     position: 'Principal Partner / Business Developer LATAM y Retail',
     link: {
       Instagram: 'https://www.instagram.com/ivanortizmartinez/',
@@ -72,6 +76,7 @@ export const directors: Person[] = [
   {
     name: 'Pedro Solaegui',
     image: '/images/the_study/directors/4.png',
+    detail: '/images/the_study/directors/4_detalle.jpg',
     position: 'Principal Partner / Business Developer',
     link: {
       Instagram: 'https://www.instagram.com/pedro.solaegui/',
@@ -90,6 +95,7 @@ export const directors: Person[] = [
   {
     name: 'Carlos Márquez',
     image: '/images/the_study/directors/6.png',
+    detail: '/images/the_study/directors/6.png',
     position: 'Principal Partner',
     link: {
       Instagram: 'https://www.instagram.com/arq.marcodi/',

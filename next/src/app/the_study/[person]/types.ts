@@ -9,4 +9,5 @@ export type Person = {
   };
   description: string[];
   role?: string;
+  detail?: string;
 };
