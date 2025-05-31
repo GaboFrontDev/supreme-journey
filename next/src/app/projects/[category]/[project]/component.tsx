@@ -9,7 +9,6 @@ import CarouselWrapper from '@/app/components/CarouselWrapper';
 import { keysToCategories, projectCards } from '../../consts';
 import type { Project } from '@/app/projects/consts';
 
-
 const formatTitleToUrl = (title: string) => {
   // replace tildes too
   return title
@@ -28,12 +27,16 @@ const formatTitleToUrl = (title: string) => {
     .replace('ñ', 'n');
 };
 
-export default function ProjectPage({ params }: { params: { project: string, category: string } }) {
+export default function ProjectPage({
+  params,
+}: {
+  params: { project: string; category: string };
+}) {
   let project: Partial<Project> | undefined;
   project = projectCards[params.category as keyof typeof projectCards].find(
     (project) => formatTitleToUrl(project.title) === params.project
   );
-  
+
   if (!project) {
     return <div>Project not found</div>;
   }
@@ -63,7 +66,9 @@ export default function ProjectPage({ params }: { params: { project: string, cat
                   className='rotate-180 object-cover'
                 />
                 <span className='text-sm font-bold text-[#A1A1A1]'>
-                  {keysToCategories[params.category as keyof typeof keysToCategories] || 'Proyectos'}
+                  {keysToCategories[
+                    params.category as keyof typeof keysToCategories
+                  ] || 'Proyectos'}
                 </span>
               </Link>
               <div className='flex items-center gap-2'>
@@ -83,9 +88,7 @@ export default function ProjectPage({ params }: { params: { project: string, cat
               {project.title}
             </h2>
           </div>
-          <p className='max-w-2xl text-lg text-black'>
-            {project.rightPanel}
-          </p>
+          <p className='max-w-2xl text-lg text-black'>{project.rightPanel}</p>
         </div>
       </Section>
 
@@ -96,7 +99,7 @@ export default function ProjectPage({ params }: { params: { project: string, cat
         paddingLeft='pl-0'
         paddingRight='pr-0'
       >
-        <div className='relative h-[810px] w-full overflow-hidden rounded-t-3xl select-none'>
+        <div className='relative h-[810px] w-full select-none overflow-hidden rounded-t-3xl'>
           <Image
             src={project.image ?? '/images/projects/1.png'}
             alt='Imagen de categoría'
@@ -119,9 +122,7 @@ export default function ProjectPage({ params }: { params: { project: string, cat
               </div>
               <div className='space-y-1'>
                 <span className='text-base text-[#A1A1A1]'>Ubicación</span>
-                <p className='text-lg text-black'>
-                  {project.ficha?.ubicacion}
-                </p>
+                <p className='text-lg text-black'>{project.ficha?.ubicacion}</p>
               </div>
               <div className='space-y-1'>
                 <span className='text-base text-[#A1A1A1]'>
@@ -143,9 +144,7 @@ export default function ProjectPage({ params }: { params: { project: string, cat
                 <span className='text-base text-[#A1A1A1]'>
                   Tipo de proyecto
                 </span>
-                <p className='text-lg text-black'>
-                  {project.ficha?.tipo}
-                </p>
+                <p className='text-lg text-black'>{project.ficha?.tipo}</p>
               </div>
             </div>
           </div>
@@ -164,13 +163,16 @@ export default function ProjectPage({ params }: { params: { project: string, cat
         <h2 className='mb-16 text-5xl font-bold text-[#636B69]'>Galería</h2>
         <CarouselWrapper>
           {project.galeria?.map((image, index) => (
-            <div className='relative h-[180px] w-[300px] overflow-hidden rounded-xl' key={index}>
+            <div
+              className='relative h-[180px] w-[300px] overflow-hidden rounded-xl'
+              key={index}
+            >
               <Image
                 src={image}
-              alt='Imagen de categoría'
-              fill
-              className='object-cover'
-            />
+                alt='Imagen de categoría'
+                fill
+                className='object-cover'
+              />
             </div>
           ))}
         </CarouselWrapper>
@@ -205,14 +207,12 @@ export default function ProjectPage({ params }: { params: { project: string, cat
           </div>
           <div>
             {project.servicios?.description.map((description, index) => (
-              <p className='max-w-2xl text-lg text-black pb-2' key={index}>
+              <p className='max-w-2xl pb-2 text-lg text-black' key={index}>
                 {description}
               </p>
             ))}
-
           </div>
         </div>
-        
       </Section>
 
       {project.bigImages?.map((image, index) => (
@@ -224,14 +224,25 @@ export default function ProjectPage({ params }: { params: { project: string, cat
           paddingRight='pr-0'
           key={index}
         >
-          <div className='relative h-[810px] w-full overflow-hidden rounded-t-3xl'>
-            <Image
-              src={image}
-              alt='Imagen de categoría'
-              fill
-              className='object-cover'
-            />
-          </div>
+          {image.includes('jpg') || image.includes('png') ? (
+            <div className='flex items-center justify-center gap-12'>
+              <div className='relative min-h-[564px] min-w-[1024px] overflow-hidden rounded-2xl'>
+                <Image
+                  src={image}
+                  alt='Imagen de categoría'
+                  fill
+                  className='object-cover'
+                />
+              </div>
+            </div>
+          ) : (
+            <div className='flex items-center justify-between gap-36'>
+              <div className='relative min-w-[564px] overflow-hidden p-10'>
+                <p className='max-w-2xl text-lg text-black'>{image}</p>
+              </div>
+              <div className='relative min-w-[564px] overflow-hidden '></div>
+            </div>
+          )}
         </Section>
       ))}
 
@@ -267,17 +278,19 @@ export default function ProjectPage({ params }: { params: { project: string, cat
           </h2>
         </div>
         <CarouselWrapper>
-        {projectCards[params.category as keyof typeof projectCards].map((project, index) => (
-          <ProjectCard
-            title={project.title}
-            location={project.location ?? ''}
-            categories={project.categories ?? []}
-            image={project.image ?? ''}
-            contentWhite={true}
-            key={index}
-            parentCategory={params.category}
-          />
-        ))}
+          {projectCards[params.category as keyof typeof projectCards].map(
+            (project, index) => (
+              <ProjectCard
+                title={project.title}
+                location={project.location ?? ''}
+                categories={project.categories ?? []}
+                image={project.image ?? ''}
+                contentWhite={true}
+                key={index}
+                parentCategory={params.category}
+              />
+            )
+          )}
         </CarouselWrapper>
       </Section>
 

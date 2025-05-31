@@ -1,6 +1,7 @@
-import Image from "next/image";
-import Button from "../Button";
-import Link from "next/link";
+import Image from 'next/image';
+import Button from '../Button';
+import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
 interface ProjectCardProps {
   title: string;
@@ -48,33 +49,64 @@ const categoryToUrl = (category: string) => {
   }
 };
 
-export default function ProjectCard({ title, location, categories, image, contentWhite = false, parentCategory }: ProjectCardProps) {
+export default function ProjectCard({
+  title,
+  location,
+  categories,
+  image,
+  contentWhite = false,
+  parentCategory,
+}: ProjectCardProps) {
+  const router = useRouter();
   return (
-    <div className={`min-w-[620px] max-w-sm rounded-xl overflow-hidden ${contentWhite ? 'bg-white' : 'bg-[#F5F5F5]'} select-none`}>
-      <div className="w-full h-[380px] overflow-hidden rounded-2xl relative">
-        <Image src={image} alt={title} fill className="object-cover pointer-events-none" />
+    <div
+      className={`min-w-[620px] max-w-sm overflow-hidden rounded-xl ${
+        contentWhite ? 'bg-white' : 'bg-[#F5F5F5]'
+      } select-none`}
+    >
+      <div
+        className='relative h-[380px] w-full overflow-hidden rounded-2xl cursor-pointer'
+        onClick={() => {
+          router.push(`/projects/${parentCategory}/${formatTitleToUrl(title)}`);
+        }}
+      >
+        <Image
+          src={image}
+          alt={title}
+          fill
+          className='pointer-events-none object-cover'
+        />
       </div>
-      <div className="p-6">
-        <div className="flex items-start justify-between">
-          <div className="mb-8">
-            <h3 className="font-bold text-xl text-black mb-1">{title}</h3>
-            <p className="font-light text-lg text-[#A1A1A1]">{location}</p>
+      <div className='p-6'>
+        <div className='flex items-start justify-between'>
+          <div className='mb-8'>
+            <h3 className='mb-1 text-xl font-bold text-black'>{title}</h3>
+            <p className='text-lg font-light text-[#A1A1A1]'>{location}</p>
           </div>
-          <Button href={`/projects/${parentCategory}/${formatTitleToUrl(title)}`} label='Ver proyecto' className="text-xs" />
+          <Button
+            href={`/projects/${parentCategory}/${formatTitleToUrl(title)}`}
+            label='Ver proyecto'
+            className='text-xs'
+          />
         </div>
-        <div className="flex flex-wrap gap-2">
+        <div className='flex flex-wrap gap-2'>
           {categories?.map((cat, i) => {
             const categoryUrl = categoryToUrl(cat);
             return categoryUrl ? (
-              <Link 
-                key={i} 
+              <Link
+                key={i}
                 href={`/projects/${categoryUrl}`}
-                className="font-semibold text-xs text-black px-4 py-[6px] rounded-full border border-black/15 hover:underline"
+                className='rounded-full border border-black/15 px-4 py-[6px] text-xs font-semibold
+                  text-black hover:underline'
               >
                 {cat}
               </Link>
             ) : (
-              <span key={i} className="font-semibold text-xs text-black px-4 py-[6px] rounded-full border border-black/15">
+              <span
+                key={i}
+                className='rounded-full border border-black/15 px-4 py-[6px] text-xs font-semibold
+                  text-black'
+              >
                 {cat}
               </span>
             );

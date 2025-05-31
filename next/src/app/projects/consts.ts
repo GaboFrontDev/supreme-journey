@@ -313,16 +313,55 @@ export const projectCards = {
       image: '/images/dwelling/2.png',
     },
     {
-      title: 'Aqua Living',
+      title: 'The Point',
       location: 'Mérida, Yucatán, México',
       categories: ['Vivienda'],
       image: '/images/dwelling/3.png',
     },
     {
-      title: 'Merak',
-      location: 'Zapopan, Jalisco, México',
+      title: 'Tlanepantla Fase II',
+      location: 'Tlalnepantla, Estado de México, México',
       categories: ['Vivienda'],
-      image: '/images/dwelling/4.png',
+      image: '/images/TLALNEPANTLA-FASE-II-03.jpg',
+      rightPanel:
+        'Localizado en el municipio de Tlalnepantla al noreste del Estado de México, considerado uno de los centros urbanos regionales más importante de la zona, se desarrolla el Conjunto Urbano Mixto CARSO Tlalnepantla, en un terreno de 47,581 m².',
+      ficha: {
+        año: '2019',
+        ubicacion: 'Tlalnepantla, Estado de México, México',
+        landArea: '14,375m²',
+        builtArea: '222,073 m²',
+        cliente: 'Grupo CARSO',
+        tipo: 'Vivienda',
+      },
+      concepto:
+        'Ser un núcleo comercial que redefine la forma de vivir, comprar y conectar.',
+      galeria: [
+        '/images/projects/2.png',
+        '/images/projects/4.png',
+        '/images/projects/5.png',
+        '/images/projects/1.png',
+        '/images/projects/6.png',
+      ],
+      servicios: {
+        imagen: '/images/projects/3.png',
+        description: [
+          'El proyecto se compone por un cuerpo de 2 niveles de área comercial, 4 niveles de estacionamiento, que incluyen 3 torres de vivienda de 18 niveles cada una y alrededor de 60 departamentos por torre, una torre de oficinas de 10 niveles y 2 hoteles business class.',
+          'En general el centro comercial se levantó en diferentes plataformas que se adaptan a la morfología del terreno, además cuenta con pasillos, circulaciones verticales y elevadores que se comunican entre sí para poder hacer el traslado rápido y fácil entre los diferentes estacionamientos y las plantas del área comercial.',
+        ],
+      },
+      bigImages: [
+        '/images/TLALNEPANTLA-FASE-II-01.jpg',
+        'El proyecto se llevó a cabo en dos fases, la primera se compone de un centro comercial regional, en donde existen dos tiendas departamentales, cinco subanclas, una tienda Sanborns, 103 locales comerciales, 14 restaurantes, 12 locales de food court con área de terraza, un local de entretenimiento y un complejo de cines con capacidad para 2,358 espectadores, todo esto sumando un total de 89,347 m² de área de venta.',
+        '/images/TLALNEPANTLA-FASE-II-02.jpg',
+        'La segunda fase consiste en una ampliación de 14,000 m² de área de venta del centro comercial existente, así como 4 torres de vivienda y un centro médico con hospital y consultorios de la marca Star Médica.',
+        'El desarrollo en su totalidad tendrá una superficie total construída de 405,998 m², siendo este el proyecto de usos mixtos más relevante del norte de la Ciudad de México.',
+        '/images/TLALNEPANTLA-FASE-II-04.jpg',
+      ],
+      lideres: ['Arturo Martínez', 'Hugo Cortés', 'Ricardo Torres'],
+      equipo: [
+        'Fabiola Felix',
+        'Alfonso Amaya',
+      ],
     },
   ],
   centrosComerciales: [
@@ -454,7 +493,8 @@ export const projectCards = {
       location: 'Chía, Cundinamarca, Colombia',
       categories: ['Centros Comerciales', 'Renovaciones y Expansiones'],
       image: '/images/CHIA-01.jpg',
-      rightPanel: 'La propuesta se centró en explotar el sentido de pertenencia que tenía Centro Chía con la población de la zona norte de Bogotá, Chía y zonas aledañas. así como el reaprovechamiento del Lago Natural con que cuenta como detonador de una nueva sinergia comercial y de experiencia.',
+      rightPanel:
+        'La propuesta se centró en explotar el sentido de pertenencia que tenía Centro Chía con la población de la zona norte de Bogotá, Chía y zonas aledañas. así como el reaprovechamiento del Lago Natural con que cuenta como detonador de una nueva sinergia comercial y de experiencia.',
       ficha: {
         año: '2015',
         ubicacion: 'Chía, Cundinamarca, Colombia',
@@ -463,7 +503,8 @@ export const projectCards = {
         cliente: 'Centro Chía',
         tipo: 'Centros Comerciales, Renovaciones y Expansiones',
       },
-      concepto: 'Una nueva sinergia entre entorno y comunidad, donde la luz, el agua y la tierra reactivan la memoria del lugar.',
+      concepto:
+        'Una nueva sinergia entre entorno y comunidad, donde la luz, el agua y la tierra reactivan la memoria del lugar.',
       galeria: [
         '/images/CHIA-01.jpg',
         '/images/CHIA-05.JPG',
@@ -482,23 +523,17 @@ export const projectCards = {
           'La relocalización del Food Court era un elemento clave para la recuperación del área común central de la plaza. La conexión del lago con una nueva área de restaurantes a nivel y con la nueva plazoleta de comidas en el segundo nivel a través de terrazas y balcones. Todos estos conceptos hicieron que Centro Chía renaciera con un concepto integrador e innovador.',
         ],
       },
-      bigImages: [
-        '/images/CHIA-01.jpg',
-        '/images/CHIA-02.jpg',
-      ],
+      bigImages: ['/images/CHIA-01.jpg', '/images/CHIA-02.jpg'],
       lideres: ['Iván Ortíz', 'Carlos Márquez'],
-      equipo: [
-        'Javier Quintero',
-        'Hugo Cortés',
-        'Rosangélica Triviño',
-      ],
+      equipo: ['Javier Quintero', 'Hugo Cortés', 'Rosangélica Triviño'],
     },
     {
       title: 'Plaza San Fernando',
       location: 'Colima, Colima, México',
       categories: ['Centros Comerciales', 'Renovaciones y Expansiones'],
       image: '/images/SAN-FERNANDO-03.jpg',
-      rightPanel: 'La ciudad de Colima se ubica al suroeste del centro de México y cuenta con una población de más de 146,900 habitantes en el municipio. En conjunto con los municipios vecinos, forma una zona metropolitana con más de 314,847 habitantes.',
+      rightPanel:
+        'La ciudad de Colima se ubica al suroeste del centro de México y cuenta con una población de más de 146,900 habitantes en el municipio. En conjunto con los municipios vecinos, forma una zona metropolitana con más de 314,847 habitantes.',
       ficha: {
         año: '2014',
         ubicacion: 'Colima, Colima, México',
@@ -507,7 +542,8 @@ export const projectCards = {
         cliente: 'Bodesa',
         tipo: 'Centros Comerciales, Renovaciones y Expansiones',
       },
-      concepto: 'Transformar la tradición y la historia de la ciudad en un punto de encuentro contemporáneo.',
+      concepto:
+        'Transformar la tradición y la historia de la ciudad en un punto de encuentro contemporáneo.',
       galeria: [
         '/images/Comparativa_San Fernando 01.jpg',
         '/images/INE_7307.JPG',
@@ -523,9 +559,7 @@ export const projectCards = {
           'Aunque su posicionamiento en el mercado era favorable, el conjunto en su totalidad exigía una transformación y reconfiguración en diversos aspectos para refrescar y revitalizar, así como la necesidad de adaptarse a las nuevas tendencias comerciales de la época.',
         ],
       },
-      bigImages: [
-        '/images/SAN-FERNANDO-05.jpg',
-      ],
+      bigImages: ['/images/SAN-FERNANDO-05.jpg'],
       lideres: ['Arturo Martínez', 'Manuel González'],
       equipo: [
         'Manijeh Lizárraga',
@@ -539,7 +573,8 @@ export const projectCards = {
       location: 'Tlalnepantla, Estado de México, México',
       categories: ['Centros Comerciales', 'Usos Mixtos'],
       image: '/images/TLALNEPANTLA-04.jpg',
-      rightPanel: 'Localizado en el municipio de Tlalnepantla al noreste del Estado de México, considerado uno de los centros urbanos regionales más importante de la zona, se desarrolla el Conjunto Urbano Mixto CARSO Tlalnepantla, en un terreno de 47,581 m².',
+      rightPanel:
+        'Localizado en el municipio de Tlalnepantla al noreste del Estado de México, considerado uno de los centros urbanos regionales más importante de la zona, se desarrolla el Conjunto Urbano Mixto CARSO Tlalnepantla, en un terreno de 47,581 m².',
       ficha: {
         año: '2016',
         ubicacion: 'Tlalnepantla, Estado de México, México',
@@ -548,7 +583,8 @@ export const projectCards = {
         cliente: 'Grupo CARSO',
         tipo: 'Centros Comerciales, Usos Mixtos',
       },
-      concepto: 'Ser un núcleo comercial que redefine la forma de vivir, comprar y conectar.',
+      concepto:
+        'Ser un núcleo comercial que redefine la forma de vivir, comprar y conectar.',
       galeria: [
         '/images/TLALNEPANTLA-04.jpg',
         '/images/TLALNEPANTLA-05.jpg',
@@ -563,15 +599,9 @@ export const projectCards = {
           'El desarrollo en su totalidad tendrá una superficie total construída de 405,998 m², siendo este el proyecto de usos mixtos más relevante del norte de la Ciudad de México.',
         ],
       },
-      bigImages: [
-        '/images/TLALNEPANTLA-02.jpg',
-        '/images/TLALNEPANTLA-03.jpg',
-      ],
+      bigImages: ['/images/TLALNEPANTLA-02.jpg', '/images/TLALNEPANTLA-03.jpg'],
       lideres: ['Arturo Martínez', 'Hugo Cortés', 'Ricardo Torres'],
-      equipo: [
-        'Fabiola Felix',
-        'Alfonso Amaya',
-      ],
+      equipo: ['Fabiola Felix', 'Alfonso Amaya'],
     },
   ],
   latam: [
@@ -743,9 +773,14 @@ export const projectCards = {
     {
       title: 'Centro Comercial Unimall Choluteca',
       location: 'Choluteca, Honduras',
-      categories: ['Centros Comerciales', 'Renovaciones y Expansiones', 'LATAM'],
+      categories: [
+        'Centros Comerciales',
+        'Renovaciones y Expansiones',
+        'LATAM',
+      ],
       image: '/images/CHOLUTECA-03.jpg',
-      rightPanel: 'El Centro Comercial Choluteca es un complejo existente que requería expandirse en un terreno anexo de 22,000 m² de los cuales se asignaron unos 15,000 m² para la zona de expansión comercial y el resto para vivienda en el fondo del terreno.',
+      rightPanel:
+        'El Centro Comercial Choluteca es un complejo existente que requería expandirse en un terreno anexo de 22,000 m² de los cuales se asignaron unos 15,000 m² para la zona de expansión comercial y el resto para vivienda en el fondo del terreno.',
       ficha: {
         año: '2017',
         ubicacion: 'Choluteca, Honduras',
@@ -754,7 +789,8 @@ export const projectCards = {
         cliente: 'Unimall',
         tipo: 'Centros Comerciales, Renovaciones y Expansiones, LATAM',
       },
-      concepto: 'Una evolución que une lo nuevo con lo existente para mejorar la forma en que se vive el espacio.',
+      concepto:
+        'Una evolución que une lo nuevo con lo existente para mejorar la forma en que se vive el espacio.',
       galeria: [
         '/images/CHOLUTECA-02.jpg',
         '/images/CHOLUTECA-05.jpg',
@@ -769,23 +805,17 @@ export const projectCards = {
           'El reto más importante fue lograr que la nueva fachada de la expansión se logrará integrar al lenguaje existente del centro comercial a través de los colores tierras existentes así como de las modulaciones propuestas de la fachada original.',
         ],
       },
-      bigImages: [
-        '/images/CHOLUTECA-02.jpg',
-        '/images/CHOLUTECA-01.jpg',
-      ],
+      bigImages: ['/images/CHOLUTECA-02.jpg', '/images/CHOLUTECA-01.jpg'],
       lideres: ['Iván Ortíz', 'Carlos Márquez'],
-      equipo: [
-        'Moisés Sosa',
-        'Gaddiel Villa',
-        'Ivana López',
-      ],
+      equipo: ['Moisés Sosa', 'Gaddiel Villa', 'Ivana López'],
     },
     {
       title: 'Jamar',
       location: 'Barranquilla, Atlántico, Colombia',
       categories: ['Retail', 'LATAM'],
       image: '/images/JAMAR-03.jpg',
-      rightPanel: 'El concepto Jamar nace del enfoque y visión por cautivar a los clientes con productos de calidad, diseño y accesibilidad potenciados por nuevas experiencias espaciales propuestas.',
+      rightPanel:
+        'El concepto Jamar nace del enfoque y visión por cautivar a los clientes con productos de calidad, diseño y accesibilidad potenciados por nuevas experiencias espaciales propuestas.',
       ficha: {
         año: '2015',
         ubicacion: 'Barranquilla, Atlántico, Colombia',
@@ -794,7 +824,8 @@ export const projectCards = {
         cliente: 'Tiendas Jamar',
         tipo: 'Retail, LATAM',
       },
-      concepto: 'Acompañar a los usuarios en la creación de su hogar ideal, donde el diseño los representa y emociona.',
+      concepto:
+        'Acompañar a los usuarios en la creación de su hogar ideal, donde el diseño los representa y emociona.',
       galeria: [
         '/images/JAMAR-01.jpg',
         '/images/JAMAR-02.jpg',
@@ -809,10 +840,7 @@ export const projectCards = {
           'La fachada con una volumetría sencilla potencializa la forma e integra el color rojo en 3 gamas; identidad de la marca y el dinamismo interior llevado a aperturas entre escaparates y comunicación de Jamar.',
         ],
       },
-      bigImages: [
-        '/images/JAMAR-01.jpg',
-        '/images/JAMAR-06.jpg',
-      ],
+      bigImages: ['/images/JAMAR-01.jpg', '/images/JAMAR-06.jpg'],
       lideres: ['Iván Ortíz'],
       equipo: [
         'Diana Plascencia',
@@ -829,7 +857,8 @@ export const projectCards = {
       location: 'Ciudad de Panamá, Panamá',
       categories: ['Retail', 'LATAM'],
       image: '/images/MULTIMAX-01.jpg',
-      rightPanel: 'Una tienda con necesidades claras de un reordenamiento de su Store Planning, evolución en el Visual Merchandising y motivar a un cliente desorientado en la experiencia de compra, así como una problemática visual con el storage de la mercancía, fueron los puntos de partida que da origen al concepto de Multimax.',
+      rightPanel:
+        'Una tienda con necesidades claras de un reordenamiento de su Store Planning, evolución en el Visual Merchandising y motivar a un cliente desorientado en la experiencia de compra, así como una problemática visual con el storage de la mercancía, fueron los puntos de partida que da origen al concepto de Multimax.',
       ficha: {
         año: '2011',
         ubicacion: 'Ciudad de Panamá, Panamá',
@@ -838,7 +867,8 @@ export const projectCards = {
         cliente: 'Multimax',
         tipo: 'Retail, LATAM',
       },
-      concepto: 'Una nueva narrativa comercial inspirada en el movimiento urbano de Panamá.',
+      concepto:
+        'Una nueva narrativa comercial inspirada en el movimiento urbano de Panamá.',
       galeria: [
         '/images/MULTIMAX-03.jpg',
         '/images/MULTIMAX-05.jpg',
@@ -850,22 +880,17 @@ export const projectCards = {
           'Basados en la idea de los contenedores que pasan por miles en la ciudad de Panamá, de sus materiales y colorido, y colgados de una necesidad de reordenar las cajas del producto dentro de la tienda, se resolvió y reordeno el sentido de la tienda y la experiencia de Compra del usuario. Los diferentes departamentos lograron a través de distintos colores identificarse y esto trasladado a los plafones de la tienda dio sentido a los recorridos dentro de la tienda. El storage de la mercancía fue resuelto con los contenedores superiores que además de Bodegaje dan identidad al nuevo concepto de la tienda. Muebles y perímetros modulares complementan el espacio haciendo útil y versátil los 3,000 m² del piso de venta.',
         ],
       },
-      bigImages: [
-        '/images/MULTIMAX-03.jpg',
-        '/images/MULTIMAX-02.jpg',
-      ],
+      bigImages: ['/images/MULTIMAX-03.jpg', '/images/MULTIMAX-02.jpg'],
       lideres: ['Iván Ortíz', 'Pedro Solaegui'],
-      equipo: [
-        'Liesolette Berckmans',
-        'Carolina Reyes',
-      ],
+      equipo: ['Liesolette Berckmans', 'Carolina Reyes'],
     },
     {
       title: 'De Prati Prototipo',
       location: 'Guayaquil, Ecuador',
       categories: ['Retail', 'LATAM'],
       image: '/images/DE-PRATI-07.jpg',
-      rightPanel: 'El prototipo se desarrolló en una primera tienda en Quicentro en Quito y se aplicó en distintas tiendas entre las que destacó Policentro una tienda de 6,000 m² en la Ciudad de Guayaquil.',
+      rightPanel:
+        'El prototipo se desarrolló en una primera tienda en Quicentro en Quito y se aplicó en distintas tiendas entre las que destacó Policentro una tienda de 6,000 m² en la Ciudad de Guayaquil.',
       ficha: {
         año: '2016',
         ubicacion: 'Guayaquil, Ecuador',
@@ -874,7 +899,8 @@ export const projectCards = {
         cliente: 'Almacenes De Prati',
         tipo: 'Retail, LATAM',
       },
-      concepto: 'Una narrativa visual que convierte cada departamento en un lugar por descubrir.',
+      concepto:
+        'Una narrativa visual que convierte cada departamento en un lugar por descubrir.',
       galeria: [
         '/images/DE-PRATI-01.jpg',
         '/images/DE-PRATI-06.jpg',
@@ -890,10 +916,7 @@ export const projectCards = {
           'Todo esto transformó a Deprati en una de las mejores tiendas de Latinoamérica. Ganadora de mejor concepto de Tienda de Retail en RECON ICSC para latinoamérica en aquel año.',
         ],
       },
-      bigImages: [
-        '/images/DE-PRATI-01.jpg',
-        '/images/DE-PRATI-08.jpg',
-      ],
+      bigImages: ['/images/DE-PRATI-01.jpg', '/images/DE-PRATI-08.jpg'],
       lideres: ['Iván Ortíz'],
       equipo: [
         'Diana Plascencia',
@@ -901,7 +924,7 @@ export const projectCards = {
         'Pedro Solaegui',
         'Itza López',
       ],
-    }
+    },
   ],
   retail: [
     {
@@ -1066,7 +1089,7 @@ export const projectCards = {
           'El concepto de la tienda parte del prototipo de las tiendas factory de Nike, este prototipo se adaptó con materiales regionales y especificaciones que nos permitieran lograr la certificación.',
           'Gracias a su planta regular, esta ubicación favorece una lectura clara del concepto, potenciando su expresión al máximo.',
           'Se basa en un área de lockers y entrenamiento que exhibe de una manera muy dinámica los textiles y calzado deportivos. La fachada de la tienda se convierte en un gran aparador de cristal que sirve de respaldo para el área de cajas, en el interior del piso de ventas podemos encontrar materiales neutros como piso de concreto de color natural y algunas zonas de concreto con color negro, los muros son de tablaroca con pintura de color claro y no hay plafond en la tienda. La iluminación es a base de luminarias fluorescentes lineales y algunas incandescentes como decorativas y acentos. El mobiliario y display de la tienda complementan el diseño de la misma y está desarrollado a base de estructuras metálicas y maderas.',
-          'La tienda se compone de 2 áreas operativas, la primera es el piso de venta y la segunda es el área de trastienda, bodegas y servicios.'
+          'La tienda se compone de 2 áreas operativas, la primera es el piso de venta y la segunda es el área de trastienda, bodegas y servicios.',
         ],
       },
       bigImages: [
