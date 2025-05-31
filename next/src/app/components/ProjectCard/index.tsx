@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Button from "../Button";
+import Link from "next/link";
 
 interface ProjectCardProps {
   title: string;
@@ -9,7 +10,6 @@ interface ProjectCardProps {
   contentWhite?: boolean;
   parentCategory?: string;
 }
-
 
 const formatTitleToUrl = (title: string) => {
   // replace tildes too
@@ -29,6 +29,25 @@ const formatTitleToUrl = (title: string) => {
     .replace('ñ', 'n');
 };
 
+const categoryToUrl = (category: string) => {
+  switch (category) {
+    case 'Usos Mixtos':
+      return 'mixedUses';
+    case 'Centros Comerciales':
+      return 'centrosComerciales';
+    case 'Hoteles':
+      return 'hotels';
+    case 'Vivienda':
+      return 'dwellings';
+    case 'LATAM':
+      return 'latam';
+    case 'Retail':
+      return 'retail';
+    default:
+      return '';
+  }
+};
+
 export default function ProjectCard({ title, location, categories, image, contentWhite = false, parentCategory }: ProjectCardProps) {
   return (
     <div className={`min-w-[620px] max-w-sm rounded-xl overflow-hidden ${contentWhite ? 'bg-white' : 'bg-[#F5F5F5]'} select-none`}>
@@ -44,11 +63,22 @@ export default function ProjectCard({ title, location, categories, image, conten
           <Button href={`/projects/${parentCategory}/${formatTitleToUrl(title)}`} label='Ver proyecto' className="text-xs" />
         </div>
         <div className="flex flex-wrap gap-2">
-          {categories?.map((cat, i) => (
-            <span key={i} className="font-semibold text-xs text-black px-4 py-[6px] rounded-full border border-black/15 hover:underline">
-              {cat}
-            </span>
-          ))}
+          {categories?.map((cat, i) => {
+            const categoryUrl = categoryToUrl(cat);
+            return categoryUrl ? (
+              <Link 
+                key={i} 
+                href={`/projects/${categoryUrl}`}
+                className="font-semibold text-xs text-black px-4 py-[6px] rounded-full border border-black/15 hover:underline"
+              >
+                {cat}
+              </Link>
+            ) : (
+              <span key={i} className="font-semibold text-xs text-black px-4 py-[6px] rounded-full border border-black/15">
+                {cat}
+              </span>
+            );
+          })}
         </div>
       </div>
     </div>
