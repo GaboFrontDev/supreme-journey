@@ -25,12 +25,7 @@ export default function ProjectPage() {
   } = useProjectSearch();
 
   const handleCategoryClick = (category: string) => {
-    setSelectedCategory((prev) => {
-      if (prev.includes(category)) {
-        return prev.filter((c) => c !== category);
-      }
-      return [...prev, category];
-    });
+    setSelectedCategory([category]);
   };
 
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
