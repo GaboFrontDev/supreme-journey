@@ -105,7 +105,7 @@ export default function PersonPage({ params }: { params: { person: string } }) {
 
       <Section width='max-w-7xl' paddingTop='pt-0' paddingBottom='pb-48'>
         <h2 className='mb-14 mt-2 text-[40px] font-bold leading-tight text-[#636B69]'>
-          Otros biografías
+          Otras biografías
         </h2>
         <CarouselWrapper>
           {getRandomListWithoutPerson(fromDirectors ? directors : associates, person).map((director, index) => (
