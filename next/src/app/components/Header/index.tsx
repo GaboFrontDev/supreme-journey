@@ -15,7 +15,10 @@ export default function Header({ forceScrolledStyle = false, scrollLimit = 2100 
   const { scrollY } = useScroll();
 
   const SCROLL_TRIGGER = scrollLimit;
+  const HIDE_THRESHOLD = typeof window !== 'undefined' ? window.innerHeight : 800; // Primera página del viewport
 
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
   const [logoSrc, setLogoSrc] = useState('/images/brand_white.png');
   const [dropdownSrc, setDropdownSrc] = useState('/icons/arrow_down_white.png');
   const [translateSrc, setTranslateSrc] = useState('/icons/translate_white.png');
@@ -38,6 +41,7 @@ export default function Header({ forceScrolledStyle = false, scrollLimit = 2100 
     }
 
     const unsubscribe = scrollY.on('change', (latest) => {
+      // Cambio de estilos basado en scroll
       if (latest > SCROLL_TRIGGER) {
         setLogoSrc('/images/brand.png');
         setDropdownSrc('/icons/arrow_down.png');
@@ -55,10 +59,27 @@ export default function Header({ forceScrolledStyle = false, scrollLimit = 2100 
         setBackgroundColorClass('bg-white/20');
         setHoverColorClass('hover:bg-white/10');
       }
+
+      // Lógica de auto-ocultar
+      if (latest < HIDE_THRESHOLD) {
+        // Siempre visible en la primera página
+        setIsVisible(true);
+      } else {
+        // Después de la primera página, ocultar/mostrar basado en dirección del scroll
+        if (latest > lastScrollY && latest > HIDE_THRESHOLD) {
+          // Scrolling down - ocultar
+          setIsVisible(false);
+        } else if (latest < lastScrollY) {
+          // Scrolling up - mostrar
+          setIsVisible(true);
+        }
+      }
+
+      setLastScrollY(latest);
     });
 
     return () => unsubscribe();
-  }, [scrollY, forceScrolledStyle, SCROLL_TRIGGER]);
+  }, [scrollY, forceScrolledStyle, SCROLL_TRIGGER, HIDE_THRESHOLD, lastScrollY]);
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -87,6 +108,17 @@ export default function Header({ forceScrolledStyle = false, scrollLimit = 2100 
   return (
     <motion.div
       className={`fixed top-6 left-1/2 z-50 -translate-x-1/2 w-full max-w-7xl px-6 py-3 shadow-lg rounded-full backdrop-blur-sm ${backgroundColorClass}`}
+      initial={{ y: 0, opacity: 1 }}
+      animate={{ 
+        y: isVisible ? 0 : -100, 
+        opacity: isVisible ? 1 : 0,
+        x: '-50%'
+      }}
+      transition={{ 
+        duration: 0.3, 
+        ease: 'easeInOut' 
+      }}
+      style={{ left: '50%' }}
     >
       <div className="flex justify-between items-center">
         <Link href="/">
