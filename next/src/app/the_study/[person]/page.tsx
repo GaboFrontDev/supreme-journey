@@ -44,7 +44,7 @@ export default function PersonPage({ params }: { params: { person: string } }) {
     <>
       <Header forceScrolledStyle />
 
-      <Section width='max-w-7xl' paddingTop='pt-52' paddingBottom='pb-0'>
+      <Section width='max-w-7xl' paddingTop='pt-32' paddingBottom='pb-0'>
         <div className='mb-10 flex items-center gap-2'>
           <Link href='/the_study' className='flex items-center gap-2'>
             <Image

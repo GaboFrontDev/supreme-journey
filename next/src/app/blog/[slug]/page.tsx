@@ -50,7 +50,7 @@ export default async function Page({ params }: { params: { slug: string }}) {
   return (
     <main>
       <Header forceScrolledStyle />
-      <Section width='max-w-7xl' paddingTop='pt-52' paddingBottom='pb-0'>
+      <Section width='max-w-7xl' paddingTop='pt-32' paddingBottom='pb-0'>
         <div className='mb-10 flex items-center gap-2'>
           <Link href='/blog' className='flex items-center gap-2'>
             <Image
