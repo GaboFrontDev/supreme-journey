@@ -12,6 +12,7 @@ import { HiwCarouselSection } from '@/containers/HiwCarouselSection';
 import { BlogArticlesList } from '@/containers/BlogArticlesList';
 import { ArticleSearchSection } from '@/containers/ArticleSearchSection';
 import { TextContentSection } from '@/containers/TextContentSection';
+import { MarkdownSection } from '@/containers/MarkdownSection';
 
 export const STRAPI_COMPONENTS_MAP = {
   'aura-imaging.landing-hero': HeroSection,
@@ -28,4 +29,5 @@ export const STRAPI_COMPONENTS_MAP = {
   'aura-photo-components.blog-articles': BlogArticlesList,
   'aura-photo-components.what-client-say': FeedbackSection,
   'page-sections.text-content-section': TextContentSection,
+  'shared.markdown': MarkdownSection,
 };

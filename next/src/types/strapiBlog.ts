@@ -85,7 +85,19 @@ export interface ImageTextComponent {
   image?: Image;
 }
 
-export type SectionComponent = TextTextComponent | BigImageComponent | ImageImageComponent | TextImageComponent | ImageTextComponent;
+export interface MarkdownComponent {
+  id: number;
+  __component: 'shared.markdown';
+  content: string;
+}
+
+export type SectionComponent = 
+  | TextTextComponent 
+  | BigImageComponent 
+  | ImageImageComponent 
+  | TextImageComponent 
+  | ImageTextComponent 
+  | MarkdownComponent;
 
 export interface DatosSeccionAttributes {
   createdAt: string;

@@ -4,6 +4,7 @@ import BigImageSection from './BigImageSection';
 import ImageImageSection from './ImageImageSection';
 import TextImageSection from './TextImageSection';
 import ImageTextSection from './ImageTextSection';
+import MarkdownSection from './MarkdownSection';
 
 interface SectionRendererProps {
   component: SectionComponent;
@@ -21,6 +22,8 @@ export default function SectionRenderer({ component }: SectionRendererProps) {
       return <TextImageSection component={component} />;
     case 'shared.image-text':
       return <ImageTextSection component={component} />;
+    case 'shared.markdown':
+      return <MarkdownSection component={component} />;
     default:
       return null;
   }
