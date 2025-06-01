@@ -246,7 +246,15 @@ export default function ContactPage() {
             </div>
           </div>
           <div className='h-[447px] rounded-xl overflow-hidden'>
-          <iframe src="https://snazzymaps.com/embed/714289" width="100%" height="600px"></iframe>
+            <iframe
+              src={selectedOffice.mapUrl}
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            ></iframe>
           </div>
         </div>
       </Section>
