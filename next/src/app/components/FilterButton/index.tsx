@@ -14,9 +14,18 @@ export default function FilterButton({ label, href, className = '', onClick, isA
   const localClasses = 'font-bold text-xs text-black py-[6px] px-4 tracking-tight-032 rounded-full bg-[#EFEFEF] hover:underline transition-colors';
   
   const classes = twMerge(localClasses, className, isActive && 'bg-[#636B69] text-white');
+  
+  if (href) {
+    return (
+      <Link href={href} onClick={onClick} className={classes}>
+        {label}
+      </Link>
+    );
+  }
+  
   return (
-    <Link href={href ?? '#'} onClick={onClick} className={classes}>
+    <button onClick={onClick} className={classes}>
       {label}
-    </Link>
+    </button>
   );
 }

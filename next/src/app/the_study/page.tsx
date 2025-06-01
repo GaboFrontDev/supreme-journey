@@ -251,6 +251,17 @@ const keyToSection = {
 export default function TheStudyPage() {
   const [clickedYear, setClickedYear] = useState(years[0]);
 
+  const scrollToYear = (year: string) => {
+    setClickedYear(year);
+    const element = document.getElementById(`history-${year}`);
+    if (element) {
+      element.scrollIntoView({
+        behavior: 'smooth',
+        block: 'nearest',
+        inline: 'center',
+      });
+    }
+  };
 
   const [selectedSection, setSelectedSection] =
     useState<keyof typeof keyToSection>('arquitectos');
@@ -329,9 +340,8 @@ export default function TheStudyPage() {
               key={year}
               label={year}
               className='scroll-smooth hover:no-underline'
-              href={`#history-${year}`}
               isActive={clickedYear === year}
-              onClick={() => setClickedYear(year)}
+              onClick={() => scrollToYear(year)}
             />
           ))}
         </div>
