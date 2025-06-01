@@ -37,7 +37,6 @@ export default function Header({ forceScrolledStyle = false, scrollLimit = 2100 
       setTextColorClass('text-[#636B69]');
       setBackgroundColorClass('bg-white');
       setHoverColorClass('hover:bg-[#EFEFEF]');
-      return;
     }
 
     const unsubscribe = scrollY.on('change', (latest) => {
@@ -50,7 +49,7 @@ export default function Header({ forceScrolledStyle = false, scrollLimit = 2100 
         setTextColorClass('text-[#636B69]');
         setBackgroundColorClass('bg-white');
         setHoverColorClass('hover:bg-[#EFEFEF]');
-      } else {
+      } else if (!forceScrolledStyle) {
         setLogoSrc('/images/brand_white.png');
         setDropdownSrc('/icons/arrow_down_white.png');
         setTranslateSrc('/icons/translate_white.png');

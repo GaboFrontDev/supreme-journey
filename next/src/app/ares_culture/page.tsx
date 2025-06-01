@@ -7,7 +7,7 @@ import Button from '@/app/components/Button';
 export default function AresCulturePage() {
   return (
     <>
-      <Header forceScrolledStyle />
+      <Header scrollLimit={1000} forceScrolledStyle />
 
       <Section width='max-w-7xl' paddingTop='pt-52' paddingBottom='pb-12'>
         <div className='flex items-center justify-between gap-36'>
