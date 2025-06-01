@@ -109,7 +109,7 @@ export default function PersonPage({ params }: { params: { person: string } }) {
         </h2>
         <CarouselWrapper>
           {getRandomListWithoutPerson(fromDirectors ? directors : associates, person).map((director, index) => (
-            <div key={index} className='flex flex-col'>
+            <div key={index} className='flex flex-col select-none'>
               <div className='relative mb-4 w-[400px] h-[380px] overflow-hidden rounded-xl'>
                 <Image
                   src={director.image}
