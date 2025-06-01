@@ -87,7 +87,7 @@ export default function PersonPage({ params }: { params: { person: string } }) {
           <div className='relative min-h-[564px] min-w-[564px]'>
             <div className='overflow-hidden rounded-2xl'>
               <Image
-                src={person.detail || ''}
+                src={person.detail || person.image}
                 alt={person.name}
                 width={564}
                 height={564}
