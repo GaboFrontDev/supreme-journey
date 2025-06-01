@@ -12,8 +12,8 @@ interface SectionRendererProps {
 
 export default function SectionRenderer({ component }: SectionRendererProps) {
   switch (component.__component) {
-    case 'shared.text-text':
-      return <TextTextSection component={component} />;
+    // case 'shared.text-text':
+    //   return <TextTextSection component={component} />;
     case 'shared.bigimage':
       return <BigImageSection component={component} />;
     case 'shared.image-image':
