@@ -52,7 +52,6 @@ export default async function Page({ params }: { params: { slug: string } }) {
   }
 
   const sections = attributes.datosSeccion.data.attributes.data;
-  console.log(attributes.articulos_relacionados);
   return (
     <main>
       <Header forceScrolledStyle />
