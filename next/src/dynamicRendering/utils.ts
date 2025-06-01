@@ -77,3 +77,14 @@ export const summarizeDescription = (desc: string) => {
 
   return summarized.trim();
 };
+
+
+
+export const fetchWithToken = async (url: string) => {
+  const response = await fetch(url, {
+    headers: {
+      Authorization: `Bearer ${process.env.NEXT_PUBLIC_STRAPI_API_TOKEN}`,
+    },
+  });
+  return response;
+};
