@@ -107,7 +107,7 @@ export default function Header({ forceScrolledStyle = false, scrollLimit = 2100 
   return (
     <motion.div
       className={`fixed top-6 left-1/2 z-50 -translate-x-1/2 w-full max-w-7xl px-6 py-3 shadow-lg rounded-full backdrop-blur-sm ${backgroundColorClass}`}
-      initial={{ y: 0, opacity: 1 }}
+      initial={{ y: 0, opacity: 1, x: '-50%' }}
       animate={{ 
         y: isVisible ? 0 : -100, 
         opacity: isVisible ? 1 : 0,
