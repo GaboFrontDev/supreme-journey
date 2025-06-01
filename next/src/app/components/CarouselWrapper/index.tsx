@@ -60,7 +60,7 @@ export default function CarouselWrapper({ children, arrowOffsetY = '50%' }: Caro
   };
 
   return (
-    <div className="relative left-1/2 right-1/2 ml-[-50vw] mr-[-50vw] w-screen">
+    <div className="relative left-1/2 right-1/2 ml-[-50vw] mr-[-50vw] w-screen select-none">
       <button
         onClick={() => scroll('left')}
         style={{ top: arrowOffsetY }}

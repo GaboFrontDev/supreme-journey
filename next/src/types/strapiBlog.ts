@@ -117,6 +117,25 @@ export interface DatosSeccion {
   data: DatosSeccionData;
 }
 
+export interface ArticuloRelacionadoAttributes {
+  slug: string;
+  createdAt: string;
+  updatedAt: string;
+  publishedAt: string;
+  locale: string;
+  datosSeccion: DatosSeccion;
+  miniatura: Image;
+}
+
+export interface ArticuloRelacionadoData {
+  id: number;
+  attributes: ArticuloRelacionadoAttributes;
+}
+
+export interface ArticulosRelacionados {
+  data: ArticuloRelacionadoData[];
+}
+
 export interface PageAttributes {
   slug: string;
   createdAt: string;
@@ -124,6 +143,7 @@ export interface PageAttributes {
   publishedAt: string;
   locale: string;
   datosSeccion: DatosSeccion;
+  articulos_relacionados: ArticulosRelacionados;
   miniatura: Image;
 }
 
