@@ -34,7 +34,7 @@ export default function Map({ lat, lng, title = '', zoom = 16, styles }: SnazzyM
       map,
       title
     });
-  }, [lat, lng, title, zoom]);
+  }, [lat, lng, title, zoom, styles]);
 
   return <div ref={mapRef} style={{ width: '100%', height: '600px', borderRadius: '1rem' }} />;
 }

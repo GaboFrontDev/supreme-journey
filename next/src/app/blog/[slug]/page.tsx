@@ -28,7 +28,7 @@ export async function generateStaticParams(): Promise<
   const res = await fetchWithToken(
     `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/blogs?${qs.stringify(queryParams)}`
   );
-  const data = (await res.json()) as StrapiResponse;
+  const data = (await res) as StrapiResponse;
   const slugs = data.data.map((page) => {
     return {
       slug: page.attributes.slug,
@@ -42,7 +42,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
   const res = await fetchWithToken(
     `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/blogs?filters[slug][$eq]=${params.slug}&${qs.stringify(queryParams)}`
   );
-  const data = (await res.json()) as StrapiResponse;
+  const data = (await res) as StrapiResponse;
   const page = data.data[0];
 
   const { attributes } = page;

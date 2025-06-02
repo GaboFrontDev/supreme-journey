@@ -6,7 +6,7 @@ import { listQueryParams } from "./consts";
 
 const fetchFromStrapi = async () => {
   const response = await fetchWithToken(`${process.env.NEXT_PUBLIC_STRAPI_API_URL}/blogs?${qs.stringify(listQueryParams)}`);
-  const data = await response.json() as StrapiResponse;
+  const data = await response as StrapiResponse;
   return data;
 };
 

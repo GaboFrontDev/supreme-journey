@@ -17,6 +17,7 @@ export default async function ContactPage() {
   const remoteOffices = await getCoordinates() || [];
   const offices = remoteOffices;
 
+  
   const stylesrequest = await fetchWithToken<StrapiResponse>(
     `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/json-snazzy-map?populate=*`
   );
