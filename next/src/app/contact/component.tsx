@@ -81,7 +81,7 @@ export default function ContactComponent({ offices, styles }: ContactComponentPr
         formData.append('mensaje', formRef.current.message?.value || '' );
         formData.append('tipo', EnumServices[activeServiceId as keyof typeof EnumServices]);
         // upload to strapi 
-        await fetchWithToken<any>(`${process.env.NEXT_PUBLIC_STRAPI_API_URL}/contact`, {
+        await fetch(`${process.env.NEXT_PUBLIC_STRAPI_API_URL}/contact`, {
           method: 'POST',
           body: formData,
         });
