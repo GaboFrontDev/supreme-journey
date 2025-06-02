@@ -7,7 +7,7 @@ import Script from 'next/script';
 
 import { fetchWithToken } from '@/dynamicRendering/utils';
 import { StrapiResponse } from './strapi';
-import { mapStyles, offices, services } from './consts';
+import { mapStyles, offices as localOffices, services } from './consts';
 
 import Button from '../components/Button';
 import Footer from '../components/Footer';
@@ -15,20 +15,31 @@ import Header from '../components/Header';
 import Section from '../components/Section';
 import CollapsibleList from '../components/Collapsible';
 
-
 const Map = dynamic(() => import('./map'), {
   ssr: false,
 });
 
+type Offices = typeof localOffices;
+
+const getCoordinates = async () => {
+  const response = await fetchWithToken<StrapiResponse>(
+    `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/json-snazzy-map?populate=*`
+  );
+  return response.data.attributes.data as Offices;
+};
 
 export default async function ContactPage() {
   const [activeServiceId, setActiveServiceId] = useState<string | null>(
     services[0].id
   );
+
+  const offices = await getCoordinates() || localOffices;
   const [fileName, setFileName] = useState<string>('Sin seleccionar');
   const [selectedOffice, setSelectedOffice] = useState(offices[0]);
-  
-  const stylesrequest = await fetchWithToken<StrapiResponse>(`${process.env.NEXT_PUBLIC_STRAPI_API_URL}/json-snazzy-map?populate=*`)
+
+  const stylesrequest = await fetchWithToken<StrapiResponse>(
+    `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/json-snazzy-map?populate=*`
+  );
   const styles = stylesrequest.data.attributes.data;
 
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -169,7 +180,7 @@ export default async function ContactPage() {
 
       <Section width='max-w-7xl' paddingBottom='pt-4' paddingTop='pt-10'>
         <div className='mb-16 grid grid-cols-4 gap-10'>
-          {offices.map((office, index) => {
+          {offices.map((office: any, index: number) => {
             const isActive = office.title === selectedOffice.title;
 
             return (
