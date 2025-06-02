@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import Image from 'next/image';
 import dynamic from 'next/dynamic';
 import Script from 'next/script';
@@ -12,6 +12,7 @@ import Footer from '../components/Footer';
 import Header from '../components/Header';
 import Section from '../components/Section';
 import CollapsibleList from '../components/Collapsible';
+import { fetchWithToken } from '@/dynamicRendering/utils';
 
 const Map = dynamic(() => import('./map'), {
     ssr: false,
@@ -25,10 +26,20 @@ interface ContactComponentProps {
   styles: any;
 }
 
+const EnumServices = {
+  '1': 'asesoria',
+  '2': 'atencion-proveedor',
+  '3': 'curriculum'
+}
+
 export default function ContactComponent({ offices, styles }: ContactComponentProps) {
   const [activeServiceId, setActiveServiceId] = useState<string | null>(
     services[0].id
   );
+
+  const [isLoading, setIsLoading] = useState(false);
+
+  const formRef = useRef<HTMLFormElement>(null);
 
   const [fileName, setFileName] = useState<string>('Sin seleccionar');
   const [selectedOffice, setSelectedOffice] = useState(offices[0]);
@@ -39,6 +50,50 @@ export default function ContactComponent({ offices, styles }: ContactComponentPr
       setFileName(file.name);
     } else {
       setFileName('Sin seleccionar');
+    }
+  };
+
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setIsLoading(true);
+    let id = null;
+    try {
+      if (formRef.current) {
+        const formData = new FormData();
+
+        if ( activeServiceId === '3') {
+          if (!formRef.current.cv.value) {
+            alert('Por favor, sube tu currículum');
+            return;
+          }
+          // serialize the file
+          const file = formRef.current.cv.files?.[0];
+          if (file) {
+            formData.append('resume', file);
+          }
+        }
+        // read all the form data
+        formData.append('nombre', formRef.current.userName?.value || '');
+        formData.append('email', formRef.current.email?.value || '');
+        formData.append('tel', formRef.current.phone?.value || '');
+        formData.append('puesto', formRef.current.position?.value || '');
+        formData.append('empresa', formRef.current.company?.value || '');
+        formData.append('mensaje', formRef.current.message?.value || '' );
+        formData.append('tipo', EnumServices[activeServiceId as keyof typeof EnumServices]);
+        // upload to strapi 
+        await fetchWithToken<any>(`${process.env.NEXT_PUBLIC_STRAPI_API_URL}/contact`, {
+          method: 'POST',
+          body: formData,
+        });
+
+        // get the url from the response
+        formRef.current?.reset();
+        alert('Formulario enviado correctamente, gracias por contactarnos');
+      }
+    } catch (error) {
+      console.error(error);
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -61,12 +116,13 @@ export default function ContactComponent({ offices, styles }: ContactComponentPr
             </div>
           </div>
           <div>
-            <form action='#' className='flex flex-col gap-4'>
+            <form ref={formRef} onSubmit={handleSubmit} className='flex flex-col gap-4'>
               <div className='space-y-2'>
                 <label htmlFor='name'>
                   Nombre completo <span className='text-[#EE3F3F]'>*</span>
                 </label>
                 <input
+                  name='userName'
                   id='name'
                   type='text'
                   className='h-12 w-full rounded-xl border border-[#e0e0e0] px-4 text-base
@@ -78,6 +134,7 @@ export default function ContactComponent({ offices, styles }: ContactComponentPr
                   Correo eléctrónico <span className='text-[#EE3F3F]'>*</span>
                 </label>
                 <input
+                  name='email'
                   id='email'
                   type='email'
                   className='h-12 w-full rounded-xl border border-[#e0e0e0] px-4 text-base
@@ -89,6 +146,7 @@ export default function ContactComponent({ offices, styles }: ContactComponentPr
                   Teléfono <span className='text-[#EE3F3F]'>*</span>
                 </label>
                 <input
+                  name='phone'
                   id='phone'
                   type='tel'
                   className='h-12 w-full rounded-xl border border-[#e0e0e0] px-4 text-base
@@ -120,6 +178,7 @@ export default function ContactComponent({ offices, styles }: ContactComponentPr
                     <label htmlFor='position'>Puesto</label>
                     <input
                       id='position'
+                      name='position'
                       type='text'
                       className='h-12 w-full rounded-xl border border-[#e0e0e0] px-4 text-base
                         placeholder:text-[#A1A1A1] focus:outline-0'
@@ -138,15 +197,17 @@ export default function ContactComponent({ offices, styles }: ContactComponentPr
                     </label>
                     <input
                       id='company'
+                      name='company'
                       type='text'
                       className='h-12 w-full rounded-xl border border-[#e0e0e0] px-4 text-base
                         placeholder:text-[#A1A1A1] focus:outline-0'
                     />
                   </div>
                   <div className='space-y-2'>
-                    <label htmlFor='message'>Empresa</label>
+                    <label htmlFor='message'>Mensaje</label>
                     <textarea
                       id='message'
+                      name='message'
                       className='h-[96px] w-full rounded-xl border border-[#e0e0e0] px-4 py-4 text-base
                         placeholder:text-[#A1A1A1] focus:outline-0'
                     />
@@ -157,6 +218,8 @@ export default function ContactComponent({ offices, styles }: ContactComponentPr
                 label='Enviar'
                 variant='primary'
                 className='mt-4 text-center'
+                type='submit'
+                disabled={isLoading}
               />
             </form>
           </div>
