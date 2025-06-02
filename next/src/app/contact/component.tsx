@@ -12,7 +12,6 @@ import Footer from '../components/Footer';
 import Header from '../components/Header';
 import Section from '../components/Section';
 import CollapsibleList from '../components/Collapsible';
-import { fetchWithToken } from '@/dynamicRendering/utils';
 
 const Map = dynamic(() => import('./map'), {
     ssr: false,
