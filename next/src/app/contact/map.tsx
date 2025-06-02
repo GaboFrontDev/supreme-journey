@@ -10,7 +10,7 @@ interface SnazzyMapProps {
   styles: any;
 }
 
-export default function Map({ lat, lng, title = '', zoom = 16, styles }: SnazzyMapProps) {
+export default function Map({ lat, lng, title = '', zoom = 17, styles }: SnazzyMapProps) {
   const mapRef = useRef(null);
 
   useEffect(() => {
