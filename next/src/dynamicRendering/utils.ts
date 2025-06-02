@@ -80,11 +80,11 @@ export const summarizeDescription = (desc: string) => {
 
 
 
-export const fetchWithToken = async (url: string) => {
+export const fetchWithToken = async <T>(url: string): Promise<T> => {
   const response = await fetch(url, {
     headers: {
       Authorization: `Bearer ${process.env.NEXT_PUBLIC_STRAPI_API_TOKEN}`,
     },
   });
-  return response;
+  return response.json() as Promise<T>;
 };
