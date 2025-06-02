@@ -32,7 +32,18 @@ export default function Map({ lat, lng, title = '', zoom = 16, styles }: SnazzyM
     new window.google.maps.Marker({
       position: center,
       map,
-      title
+      icon: {
+        url: 'https://maps.google.com/mapfiles/ms/icons/red-dot.png',
+        // @ts-ignore
+        labelOrigin: new window.google.maps.Point(0, -20), // Cambia la posición del label
+      },
+      label: {
+        text: title,
+        color: 'black',
+        fontSize: '18px',
+        fontWeight: 'bold',
+      },
+
     });
   }, [lat, lng, title, zoom, styles]);
 
