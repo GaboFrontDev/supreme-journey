@@ -18,6 +18,8 @@ export default function Footer({ offices }: FooterProps) {
                 <p className='text-xs leading-5 text-c-gray-200'>
                   {office.address}
                 </p>
+                <p>{office.postalCode}</p>
+                <p>{office.cityName}</p>
               </div>
               <div className='space-y-4'>
                 <p className='text-xs font-bold'>{office.name}</p>
