@@ -1,7 +1,6 @@
 'use client';
 import Image from 'next/image';
 import Header from '@/app/components/Header';
-import Footer from '@/app/components/Footer';
 import Section from '@/app/components/Section';
 import Link from 'next/link';
 import Button from '@/app/components/Button';
@@ -135,7 +134,7 @@ export default function CategoryPageComponent({
 
       <ProjectList projects={projects} category={category} />
 
-      <Footer />
+       
     </>
   );
 }

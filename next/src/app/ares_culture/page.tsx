@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import Header from '@/app/components/Header';
-import Footer from '@/app/components/Footer';
 import Section from '@/app/components/Section';
 import Button from '@/app/components/Button';
 
@@ -98,7 +97,7 @@ export default function AresCulturePage() {
         </div>
       </Section>
 
-      <Footer />
+       
     </>
   );
 }

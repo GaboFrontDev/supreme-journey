@@ -194,6 +194,7 @@ export const offices = [
     country: 'México',
     lat: 20.71512258085691,
     lng: -103.3895095241311,
+    name: 'Guadalajara HQ',
     address:
       'Av. Américas 1250, Planta Baja-B, San Miguel de la Colina, Zapopan, Jalisco, México, C.P. 45160',
     phone: '(+52) 33 3642 2224',
@@ -204,6 +205,7 @@ export const offices = [
     country: 'México',
     lat: 19.381496681887068,
     lng: -99.17937382416082,
+    name: 'CDMX',
     address:
       'Insurgentes Sur 1079, Colonia del Valle Centro, Benito Juarez, Ciudad de, México, C.P. 03100',
     phone: '(+52) 33 3642 2224',
@@ -214,6 +216,7 @@ export const offices = [
     country: 'España',
     lat: 41.39611797129864,
     lng: 2.1541527765579067,
+    name: 'L35 Barcelona',
     address: 'Avda. Diagonal 466, 6ª planta 08006 BARCELONA',
     phone: '(+34) 93 2922 299',
     email: 'bcn@L35.com',
@@ -223,6 +226,7 @@ export const offices = [
     country: 'España',
     lat: 40.42062827143904,
     lng: -3.714212823483541,
+    name: 'L35 Madrid',
     address: 'Plaza de la Marina Española, 3 28013 MADRID',
     phone: '(+34) 91 5474 96',
     email: 'mad@L35.com',

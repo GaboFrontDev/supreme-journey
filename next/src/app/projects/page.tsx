@@ -242,7 +242,7 @@ export default function ProjectPage() {
         </div>
       </Section>
 
-      <Footer />
+       
     </>
   );
 }

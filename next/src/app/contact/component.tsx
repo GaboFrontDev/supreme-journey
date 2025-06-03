@@ -8,7 +8,6 @@ import Script from 'next/script';
 import { offices, services } from './consts';
 
 import Button from '../components/Button';
-import Footer from '../components/Footer';
 import Header from '../components/Header';
 import Section from '../components/Section';
 import CollapsibleList from '../components/Collapsible';
@@ -278,7 +277,7 @@ export default function ContactComponent({ offices, styles }: ContactComponentPr
           <div>
             <p className='mb-5 text-lg text-black'>{selectedOffice.address}</p>
             <div className='space-y-6'>
-              <p className='text-lg font-bold'>Nombre pendiente</p>
+              <p className='text-lg font-bold'>{selectedOffice.name || 'Nombre pendiente'}</p>
               <ul className='space-y-4 text-lg leading-5 text-black'>
                 <li>{selectedOffice.phone}</li>
                 <li>{selectedOffice.email}</li>
@@ -295,8 +294,6 @@ export default function ContactComponent({ offices, styles }: ContactComponentPr
           </div>
         </div>
       </Section>
-
-      <Footer />
     </>
   );
 }

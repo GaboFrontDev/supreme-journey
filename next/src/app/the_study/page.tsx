@@ -587,7 +587,7 @@ export default function TheStudyPage() {
           </Section>
         </>
       )}
-      <Footer />
+       
     </>
   );
 }

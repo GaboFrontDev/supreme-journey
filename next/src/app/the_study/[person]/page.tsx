@@ -1,6 +1,5 @@
 import Button from '@/app/components/Button';
 import CarouselWrapper from '@/app/components/CarouselWrapper';
-import Footer from '@/app/components/Footer';
 import Header from '@/app/components/Header';
 import Section from '@/app/components/Section';
 import Image from 'next/image';
@@ -130,7 +129,7 @@ export default function PersonPage({ params }: { params: { person: string } }) {
         </CarouselWrapper>
       </Section>
 
-      <Footer />
+       
     </>
   );
 }

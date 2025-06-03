@@ -1,23 +1,15 @@
-
 import { fetchWithToken } from '@/dynamicRendering/utils';
 import { StrapiResponse } from './strapi';
-import { mapStyles, offices as localOffices, services } from './consts';
+import { offices as localOffices } from './consts';
 import ContactComponent from './component';
+import { getCoordinates } from '../utils/coordinates';
 
 type Offices = typeof localOffices;
 
-const getCoordinates = async () => {
-  const response = await fetchWithToken<StrapiResponse>(
-    `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/coordenada?populate=*`
-  );
-  return response.data.attributes.data as Offices;
-};
-
 export default async function ContactPage() {
-  const remoteOffices = await getCoordinates() || [];
+  const remoteOffices = (await getCoordinates()) || [];
   const offices = remoteOffices;
 
-  
   const stylesrequest = await fetchWithToken<StrapiResponse>(
     `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/json-snazzy-map?populate=*`
   );

@@ -1,5 +1,4 @@
 import Header from '@/app/components/Header';
-import Footer from '@/app/components/Footer';
 import { notFound } from 'next/navigation';
 import { PageAttributes, StrapiResponse } from '@/types/strapiBlog';
 import qs from 'qs';
@@ -105,7 +104,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
         </CarouselWrapper>
       </Section>
 
-      <Footer />
+       
     </main>
   );
 }

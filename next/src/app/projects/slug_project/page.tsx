@@ -1,30 +1,9 @@
 import Image from 'next/image';
 import Header from '@/app/components/Header';
-import Footer from '@/app/components/Footer';
 import Section from '@/app/components/Section';
 import Link from 'next/link';
 import ProjectCard from '@/app/components/ProjectCard';
 import CarouselWrapper from '@/app/components/CarouselWrapper';
-import { keysToCategories, projectCards } from '../consts';
-
-
-type ProjectSection = {
-  title: string;
-  location: string;
-  year: string;
-  landArea: string;
-  builtArea: string;
-  client: string;
-  projectType: string[];
-  concept: string;
-  description: string;
-  services: string;
-  leaders: string[];
-  team: string[];
-  gallery: string[];
-  mainImages: string[];
-  categories: string[];
-}
 
 export default function SlugProjectPage({ params }: { params: { slug: string } }) {
   return (
@@ -383,7 +362,7 @@ export default function SlugProjectPage({ params }: { params: { slug: string } }
         </CarouselWrapper>
       </Section>
 
-      <Footer />
+       
     </>
   );
 }

@@ -1,7 +1,7 @@
 import '@/styles/globals.css';
-import Head from 'next/head';
-import Script from 'next/script';
 import { ReactNode } from 'react';
+import Footer from './components/Footer';
+import { getCoordinates } from './utils/coordinates';
 
 export const metadata = {
   title: 'Ares Arquitectos',
@@ -9,11 +9,13 @@ export const metadata = {
     'Basada en Guadalajara, Jalisco, México, la empresa ha diseñado los más exitosos proyectos comerciales del país, creciendo de la mano de los desarrolladores inmobiliarios que los han hecho realidad, lo que nos ha llevado a posicionarnos como líder de la industria.',
 };
 
-export default function RootLayout({ children }: { children: ReactNode }) {
+export default async function RootLayout({ children }: { children: ReactNode }) {
+  const offices = await getCoordinates();
   return (
     <html lang='es'>
       <body className='min-h-screen bg-white'>
         <main>{children}</main>
+        <Footer offices={offices} />
       </body>
     </html>
   );

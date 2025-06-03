@@ -138,7 +138,7 @@ export default function BlogPageComponent({ posts }: BlogPageComponentProps) {
         </div>
       </Section>
 
-      <Footer />
+       
     </>
   );
 }

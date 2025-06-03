@@ -6,7 +6,6 @@ import Image from 'next/image';
 import Button from './components/Button';
 import CollapsibleList from './components/Collapsible';
 import FilterButton from './components/FilterButton';
-import Footer from './components/Footer';
 import Marquee from './components/Marquee';
 import ProjectCard from './components/ProjectCard';
 import Section from './components/Section';
@@ -254,8 +253,6 @@ export default function HomePage() {
           <Button label='Trabajemos Juntos' href='/contact' />
         </div>
       </Section>
-
-      <Footer />
     </>
   );
 }
