@@ -15,10 +15,7 @@ export default function Header({ forceScrolledStyle = false, scrollLimit = 2100 
   const { scrollY } = useScroll();
 
   const SCROLL_TRIGGER = scrollLimit;
-  const HIDE_THRESHOLD = typeof window !== 'undefined' ? window.innerHeight : 800; // Primera página del viewport
 
-  const [isVisible, setIsVisible] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
   const [logoSrc, setLogoSrc] = useState('/images/brand_white.png');
   const [dropdownSrc, setDropdownSrc] = useState('/icons/arrow_down_white.png');
   const [translateSrc, setTranslateSrc] = useState('/icons/translate_white.png');
@@ -58,27 +55,10 @@ export default function Header({ forceScrolledStyle = false, scrollLimit = 2100 
         setBackgroundColorClass('bg-white/20');
         setHoverColorClass('hover:bg-white/10');
       }
-
-      // Lógica de auto-ocultar
-      if (latest < HIDE_THRESHOLD) {
-        // Siempre visible en la primera página
-        setIsVisible(true);
-      } else {
-        // Después de la primera página, ocultar/mostrar basado en dirección del scroll
-        if (latest > lastScrollY && latest > HIDE_THRESHOLD) {
-          // Scrolling down - ocultar
-          setIsVisible(false);
-        } else if (latest < lastScrollY) {
-          // Scrolling up - mostrar
-          setIsVisible(true);
-        }
-      }
-
-      setLastScrollY(latest);
     });
 
     return () => unsubscribe();
-  }, [scrollY, forceScrolledStyle, SCROLL_TRIGGER, HIDE_THRESHOLD, lastScrollY]);
+  }, [scrollY, forceScrolledStyle, SCROLL_TRIGGER]);
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -102,20 +82,15 @@ export default function Header({ forceScrolledStyle = false, scrollLimit = 2100 
       document.removeEventListener('mousedown', handleClickOutside);
     };
   }, []);
-  
 
   return (
     <motion.div
       className={`fixed top-6 left-1/2 z-50 -translate-x-1/2 w-full max-w-7xl px-6 py-3 shadow-lg rounded-full backdrop-blur-sm ${backgroundColorClass}`}
       initial={{ y: 0, opacity: 1, x: '-50%' }}
       animate={{ 
-        y: isVisible ? 0 : -100, 
-        opacity: isVisible ? 1 : 0,
+        y: 0, 
+        opacity: 1,
         x: '-50%'
-      }}
-      transition={{ 
-        duration: 0.3, 
-        ease: 'easeInOut' 
       }}
       style={{ left: '50%' }}
     >
@@ -129,7 +104,10 @@ export default function Header({ forceScrolledStyle = false, scrollLimit = 2100 
               <Link href="/projects">
                 Proyectos
               </Link>
-              <button onClick={() => setOpenDropdown(openDropdown === 'proyectos' ? null : 'proyectos')}>
+              <button 
+                onClick={() => setOpenDropdown(openDropdown === 'proyectos' ? null : 'proyectos')}
+                title="Mostrar menú de proyectos"
+              >
                 <Image src={dropdownSrc} alt="Arrow" width={20} height={20} priority />
               </button>
             </div>
@@ -161,7 +139,10 @@ export default function Header({ forceScrolledStyle = false, scrollLimit = 2100 
               <Link href="/ares_culture">
                 Cultura Ares
               </Link>
-              <button onClick={() => setOpenDropdown(openDropdown === 'cultura' ? null : 'cultura')}>
+              <button 
+                onClick={() => setOpenDropdown(openDropdown === 'cultura' ? null : 'cultura')}
+                title="Mostrar menú de cultura"
+              >
                 <Image src={dropdownSrc} alt="Arrow" width={20} height={20} priority />
               </button>
             </div>
