@@ -1,5 +1,6 @@
 import '@/styles/globals.css';
 import { ReactNode } from 'react';
+import { GoogleAnalytics } from '@next/third-parties/google'
 import Footer from './components/Footer';
 import { getCoordinates } from './utils/coordinates';
 
@@ -13,6 +14,7 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
   const offices = await getCoordinates();
   return (
     <html lang='es'>
+      <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID || ''} />
       <body className='min-h-screen bg-white'>
         <main>{children}</main>
         <Footer offices={offices} />
