@@ -183,7 +183,7 @@ export default function HomePage() {
         </div>
 
         <div className='mt-20 flex justify-items-start'>
-          <Button label='Ver todos los proyectos' href='/projects' />
+          <Button label='Explora nuestros proyectos' href='/projects' />
         </div>
       </Section>
 
@@ -239,9 +239,6 @@ export default function HomePage() {
           ))}
         </CarouselWrapper>
 
-        <div className='mt-20 flex justify-items-start'>
-          <Button label='Ver todos los proyectos' href='/projects' />
-        </div>
       </Section>
 
       <Section width='max-w-4xl' paddingTop='pt-4' paddingBottom='pb-36'>
