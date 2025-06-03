@@ -199,6 +199,8 @@ export const offices = [
       'Av. Américas 1250, Planta Baja-B, San Miguel de la Colina, Zapopan, Jalisco, México, C.P. 45160',
     phone: '(+52) 33 3642 2224',
     email: 'gdl@aresarquitectos.com',
+    postalCode: '45160',
+    cityName: '',
   },
   {
     title: 'CDMX',
@@ -210,6 +212,8 @@ export const offices = [
       'Insurgentes Sur 1079, Colonia del Valle Centro, Benito Juarez, Ciudad de, México, C.P. 03100',
     phone: '(+52) 33 3642 2224',
     email: 'cdmx@aresarquitectos.com',
+    postalCode: '03100',
+    cityName: '',
   },
   {
     title: 'L35 Barcelona',
@@ -220,6 +224,8 @@ export const offices = [
     address: 'Avda. Diagonal 466, 6ª planta 08006 BARCELONA',
     phone: '(+34) 93 2922 299',
     email: 'bcn@L35.com',
+    postalCode: '08006',
+    cityName: 'BARCELONA',
   },
   {
     title: 'L35 Madrid',
@@ -230,5 +236,7 @@ export const offices = [
     address: 'Plaza de la Marina Española, 3 28013 MADRID',
     phone: '(+34) 91 5474 96',
     email: 'mad@L35.com',
+    postalCode: '28013',
+    cityName: 'MADRID',
   },
 ];
