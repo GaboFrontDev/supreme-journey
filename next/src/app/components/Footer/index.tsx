@@ -23,7 +23,9 @@ export default function Footer({ offices }: FooterProps) {
                 <p className='text-xs font-bold'>{office.name}</p>
                 <ul className='space-y-1 text-xs leading-5 text-c-gray-200'>
                   <li>{office.phone}</li>
-                  <li>{office.email}</li>
+                  <li>
+                    <a href={`mailto:${office.email}`}>{office.email}</a>
+                  </li>
                 </ul>
               </div>
             </div>
