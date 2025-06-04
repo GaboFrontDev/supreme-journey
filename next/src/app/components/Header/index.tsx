@@ -37,7 +37,6 @@ export default function Header({ scrollLimit = 2100, categories = [] }: HeaderPr
   const pathname = usePathname();
   const forceScrolledStyle = useMemo(() => {
     // Forzar el estilo scrolled si estamos en la página de inicio
-    console.log(pathname)
     return pathname !== '/';
   }, [pathname]);
 
