@@ -1,5 +1,7 @@
-import { projectCards } from '../../consts';
+import { getProjects } from '@/dynamicRendering/utils';
 import ProjectPageComponent from './component';
+import { formatSlug } from '@/utils/formatSlug';
+import { notFound } from 'next/navigation';
 
 const formatTitleToUrl = (title: string) => {
   // replace tildes too
@@ -19,38 +21,36 @@ const formatTitleToUrl = (title: string) => {
     .replace('ñ', 'n');
 };
 
-export function generateStaticParams() {
-  const slugs = projectCards.mixedUses.map((project) => ({
-    category: 'mixedUses',
-    project: formatTitleToUrl(project.title),
+export async function generateStaticParams() {
+  const projects = await getProjects();
+  return projects?.data?.map((project) => ({
+    category: formatSlug(
+      project.attributes.categoria_proyecto.data[0].attributes.nombre
+    ),
+    project: formatTitleToUrl(project.attributes.nombre),
   }));
-  const slugs2 = projectCards.hotels.map((project) => ({
-    category: 'hotels',
-    project: formatTitleToUrl(project.title),
-  }));
-  const slugs3 = projectCards.dwellings.map((project) => ({
-    category: 'dwellings',
-    project: formatTitleToUrl(project.title),
-  }));
-  const slugs4 = projectCards.centrosComerciales.map((project) => ({
-    category: 'centrosComerciales',
-    project: formatTitleToUrl(project.title),
-  }));
-  const slugs5 = projectCards.latam.map((project) => ({
-    category: 'latam',
-    project: formatTitleToUrl(project.title),
-  }));
-  const slugs6 = projectCards.retail.map((project) => ({
-    category: 'retail',
-    project: formatTitleToUrl(project.title),
-  }));
-  return [...slugs, ...slugs2, ...slugs3, ...slugs4, ...slugs5, ...slugs6];
 }
 
-export default function ProjectPage({
+export default async function ProjectPage({
   params,
 }: {
-  params: { project: string, category: string };
+  params: { project: string; category: string };
 }) {
-  return <ProjectPageComponent params={params} />;
+  const projects = await getProjects();
+  const project = projects?.data?.find(
+    (project) =>
+      formatSlug(
+        project.attributes.categoria_proyecto.data[0].attributes.nombre
+      ) === params.category &&
+      formatTitleToUrl(project.attributes.nombre) === params.project
+  );
+  if (!project) {
+    return notFound();
+  }
+  return (
+    <ProjectPageComponent
+      project={project}
+      category={project.attributes.categoria_proyecto.data[0].attributes.nombre}
+    />
+  );
 }

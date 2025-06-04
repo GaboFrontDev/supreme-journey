@@ -268,8 +268,6 @@ export default function TheStudyPage() {
 
   return (
     <>
-      <Header scrollLimit={1000} />
-
       <div className='relative h-[120vh] w-screen'>
         <Image
           src='/images/the_study/1.png'

@@ -31,25 +31,6 @@ const formatTitleToUrl = (title: string) => {
     .replace('ñ', 'n');
 };
 
-const categoryToUrl = (category: string) => {
-  switch (category) {
-    case 'Usos Mixtos':
-      return 'mixedUses';
-    case 'Centros Comerciales':
-      return 'centrosComerciales';
-    case 'Hoteles':
-      return 'hotels';
-    case 'Vivienda':
-      return 'dwellings';
-    case 'LATAM':
-      return 'latam';
-    case 'Retail':
-      return 'retail';
-    default:
-      return '';
-  }
-};
-
 export default function ProjectCard({
   title,
   location,
@@ -92,7 +73,7 @@ export default function ProjectCard({
         </div>
         <div className='flex flex-wrap gap-2'>
           {categories?.map((cat, i) => {
-            const categoryUrl = categoryToUrl(cat);
+            const categoryUrl = formatTitleToUrl(cat);
             return categoryUrl ? (
               <Link
                 key={i}

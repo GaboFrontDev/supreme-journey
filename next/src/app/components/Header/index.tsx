@@ -1,20 +1,45 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { useScroll, motion } from 'framer-motion';
 import Image from 'next/image';
 import Button from '../Button';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 interface HeaderProps {
-  forceScrolledStyle?: boolean;
   scrollLimit?: number;
+  categories?: string[];
 }
 
-export default function Header({ forceScrolledStyle = false, scrollLimit = 2100 }: HeaderProps) {
+const formatTitleToUrl = (title: string) => {
+  // replace tildes too
+  return title
+    .toLowerCase()
+    .replace(/ /g, '-')
+    .replace(/~/g, '')
+    .replace('i', 'i')
+    .replace('é', 'e')
+    .replace('ú', 'u')
+    .replace('ó', 'o')
+    .replace('á', 'a')
+    .replace('í', 'i')
+    .replace('ñ', 'n')
+    .replace('ü', 'u')
+    .replace('ç', 'c')
+    .replace('ñ', 'n');
+};
+
+export default function Header({ scrollLimit = 2100, categories = [] }: HeaderProps) {
   const { scrollY } = useScroll();
 
   const SCROLL_TRIGGER = scrollLimit;
+  const pathname = usePathname();
+  const forceScrolledStyle = useMemo(() => {
+    // Forzar el estilo scrolled si estamos en la página de inicio
+    console.log(pathname)
+    return pathname !== '/';
+  }, [pathname]);
 
   const [logoSrc, setLogoSrc] = useState('/images/brand_white.png');
   const [dropdownSrc, setDropdownSrc] = useState('/icons/arrow_down_white.png');
@@ -58,7 +83,7 @@ export default function Header({ forceScrolledStyle = false, scrollLimit = 2100 
     });
 
     return () => unsubscribe();
-  }, [scrollY, forceScrolledStyle, SCROLL_TRIGGER]);
+  }, [scrollY, SCROLL_TRIGGER, forceScrolledStyle]);
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -113,22 +138,15 @@ export default function Header({ forceScrolledStyle = false, scrollLimit = 2100 
             </div>
             {openDropdown === 'proyectos' && (
               <div className={`dropdown-menu grid grid-cols-3 w-[700px] ${textColorClass} top-full left-0 mt-10 p-6 rounded-lg shadow-lg backdrop-blur-sm ${backgroundColorClass} absolute`}>
-                <ul className="text-[15px] space-y-6">
-                  <li><Link href="/projects/mixedUses" className="hover:underline">Usos Mixtos</Link></li>
-                  <li><Link href="/projects/centrosComerciales" className="hover:underline">Centros Comerciales</Link></li>
-                  <li><Link href="/projects/dwellings" className="hover:underline">Vivienda</Link></li>
-                  <li><Link href="/projects/hotels" className="hover:underline">Hoteles</Link></li>
-                </ul>
-                <ul className="text-[15px] space-y-6">
-                  <li><Link href="/projects" className="hover:underline">Master planning</Link></li>
-                  <li><Link href="/projects/latam" className="hover:underline">LATAM</Link></li>
-                  <li><Link href="/projects/retail" className="hover:underline">Retail</Link></li>
-                  <li><Link href="/projects" className="hover:underline">Deportivo</Link></li>
-                </ul>
-                <ul className="text-[15px] space-y-6">
-                  <li><Link href="/projects" className="hover:underline">Renovaciones y Expansiones</Link></li>
-                  <li><Link href="/projects" className="hover:underline">Movilidad</Link></li>
-                </ul>
+                {categories.map((category, index) => (
+                  <Link 
+                    key={index} 
+                    href={`/projects/${formatTitleToUrl(category)}`} 
+                    className="hover:underline"
+                  >
+                    {category}
+                  </Link>
+                ))}
               </div>
             )}
           </div>

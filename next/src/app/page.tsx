@@ -111,8 +111,6 @@ export default function HomePage() {
 
   return (
     <>
-      <Header />
-
       <HeroIntroScroll />
 
       <Section width='max-w-7xl' paddingBottom='pt-0'>

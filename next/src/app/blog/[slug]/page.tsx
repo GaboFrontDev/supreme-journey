@@ -30,8 +30,8 @@ export async function generateStaticParams(): Promise<
   const data = (await res) as StrapiResponse;
   const slugs = data.data.map((page) => {
     return {
-      slug: page.attributes.slug,
-      attributes: page.attributes,
+      slug: page?.attributes.slug,
+      attributes: page?.attributes,
     };
   });
   return slugs;
@@ -52,7 +52,6 @@ export default async function Page({ params }: { params: { slug: string } }) {
   const sections = attributes.secciones;
   return (
     <main>
-      <Header forceScrolledStyle />
       <Section width='max-w-7xl' paddingTop='pt-32' paddingBottom='pb-0'>
         <div className='mb-10 flex items-center gap-2'>
           <Link href='/blog' className='flex items-center gap-2'>
@@ -79,7 +78,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
           </div>
         </div>
       </Section>
-      {sections.map((section, index) => (
+      {sections?.map((section, index) => (
         <SectionRenderer
           key={`${section.__component}-${index}`}
           component={section}
@@ -94,7 +93,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
               <div className='relative aspect-square w-full max-w-[500px] overflow-hidden rounded-lg'>
                 <Image
                   src={
-                    attributes.autor.data.attributes.foto.data.attributes.url
+                    attributes.autor.data?.attributes.foto.data?.attributes.url
                   }
                   alt='author'
                   fill
@@ -103,10 +102,10 @@ export default async function Page({ params }: { params: { slug: string } }) {
               </div>
               <div className='space-y-1'>
                 <p className='text-md font-bold text-black'>
-                  {attributes.autor.data.attributes.nombre}
+                  {attributes.autor.data?.attributes.nombre}
                 </p>
                 <p className='text-sm text-[#A1A1A1]'>
-                  {attributes.autor.data.attributes.titulo}
+                  {attributes.autor.data?.attributes.titulo}
                 </p>
               </div>
             </div>
@@ -116,7 +115,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
               <p className='text-md mb-6 font-bold text-[#A1A1A1]'>
                 Involucrados
               </p>
-              {attributes.involucrados.map((involucrado, index) => (
+              {attributes.involucrados?.map((involucrado, index) => (
                 <p key={index} className='text-md text-black'>
                   {involucrado}
                 </p>
@@ -126,9 +125,9 @@ export default async function Page({ params }: { params: { slug: string } }) {
               <p className='text-md mb-6 font-bold text-[#A1A1A1]'>
                 Mercado relacionado
               </p>
-              {attributes.categoria_proyectos.data.map((categoria, index) => (
+              {attributes.categoria_proyectos.data?.map((categoria, index) => (
                 <p key={index} className='text-md text-black'>
-                  {categoria.attributes.nombre}
+                  {categoria?.attributes.nombre}
                 </p>
               ))}
             </div>
@@ -141,13 +140,13 @@ export default async function Page({ params }: { params: { slug: string } }) {
           Artículos relacionados
         </h2>
         <div className='grid grid-cols-2 gap-10'>
-          {attributes.relacionados.data.map((blog, index) => (
+          {attributes.relacionados.data?.map((blog, index) => (
             <BlogCard
               key={index}
-              images={[blog.attributes.miniatura.data.attributes.url]}
-              date={formatDateToSpanish(blog.attributes.createdAt)}
-              title={blog.attributes.nombre}
-              slug={blog.attributes.slug}
+              images={[blog?.attributes.miniatura.data?.attributes.url]}
+              date={formatDateToSpanish(blog?.attributes.createdAt)}
+              title={blog?.attributes.nombre}
+              slug={blog?.attributes.slug}
             />
           ))}
         </div>

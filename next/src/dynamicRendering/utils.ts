@@ -1,3 +1,7 @@
+import { categoryQueryParams, projectQueryParams } from "@/app/blog/consts";
+import { CategoriaProyectoData, PageData, StrapiResponse } from "@/app/projects/strapi";
+import qs from "qs";
+
 export async function getAllLocales(): Promise<LocaleItem[]> {
   try {
     const resp = await fetch(`${process.env.STRAPI_API_URL}/i18n/locales`, {
@@ -78,8 +82,6 @@ export const summarizeDescription = (desc: string) => {
   return summarized.trim();
 };
 
-
-
 export const fetchWithToken = async <T>(url: string, options?: RequestInit): Promise<T> => {
   const response = await fetch(url, {
     headers: {
@@ -89,3 +91,16 @@ export const fetchWithToken = async <T>(url: string, options?: RequestInit): Pro
   });
   return response.json() as Promise<T>;
 };
+
+
+export const getProjects = async () => {
+  const response = await fetchWithToken(`${process.env.NEXT_PUBLIC_STRAPI_API_URL}/proyects?${qs.stringify(projectQueryParams)}`);
+  const data = await response as StrapiResponse<PageData>;
+  return data;
+}
+
+export const getCategories = async () => {
+  const response = await fetchWithToken(`${process.env.NEXT_PUBLIC_STRAPI_API_URL}/categoria-proyectos?${qs.stringify(categoryQueryParams)}`);
+  const data = await response as StrapiResponse<CategoriaProyectoData>;
+  return data;
+}

@@ -67,8 +67,6 @@ export default function BlogPageComponent({ posts }: BlogPageComponentProps) {
 
   return (
     <>
-      <Header forceScrolledStyle />
-
       <Section
         width='max-w-7xl'
         paddingTop="pt-52"

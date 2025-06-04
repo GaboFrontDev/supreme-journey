@@ -657,44 +657,6 @@ export const projectCards = {
   ],
   latam: [
     {
-      title: 'Choluteca',
-      location: 'Honduras',
-      categories: [
-        'Centros Comerciales',
-        'Renovaciones y Expansiones',
-        'LATAM',
-      ],
-      image: '/images/CHOLUTECA-01.jpg',
-      rightPanel:
-        'El Centro Comercial Choluteca es un complejo existente que requería expandirse en un terreno anexo de 22,000 m² de los cuales se asignaron unos 15,000 m² para la zona de expansión comercial y el resto para vivienda en el fondo del terreno.',
-      ficha: {
-        año: '2017',
-        ubicacion: 'Chía, Cundinamarca, Colombia',
-        landArea: '22,000m²',
-        builtArea: '10,000m²',
-        cliente: 'Centro Chía',
-        tipo: 'Centros Comerciales, Renovaciones y Expansiones',
-      },
-      concepto:
-        'Una nueva sinergia entre entorno y comunidad, donde la luz, el agua y la tierra reactivan la memoria del lugar.',
-      galeria: [
-        '/images/CHOLUTECA-01.jpg',
-        '/images/CHOLUTECA-02.jpg',
-        '/images/CHOLUTECA-03.jpg',
-        '/images/CHOLUTECA-04.jpg',
-      ],
-      servicios: {
-        imagen: '/images/CHOLUTECA-02.jpg',
-        description: [
-          'El concepto principal fue continuar el track actual hasta lograr una integración de las nuevas  áreas que estaría a más enfocadas al entretenimiento y comida, vinculando este nuevo pasillo con una nueva área de estacionamiento posterior, también se generó un nuevoremate de la avenida de ingreso con un drop off que diera una nueva cara a la entradaprincipal del complejo comercial. ',
-          'El reto más importante fue lograr que la nueva fachada de la expansión se logrará integrar al lenguaje existente del centro comercial a través de los colores tierras existentes así como de las modulaciones propuestas de la fachada original.',
-        ],
-      },
-      bigImages: ['/images/CHOLUTECA-03.jpg', '/images/CHOLUTECA-04.jpg'],
-      lideres: ['Iván Ortiz', 'Carlos Márquez'],
-      equipo: ['Moisés Quintero', 'Gaddiel Villa', 'Ivana López'],
-    },
-    {
       title: 'Hojarasca Popayán',
       location: 'Popayán, Cauca, Colombia',
       categories: ['Centros Comerciales', 'LATAM'],

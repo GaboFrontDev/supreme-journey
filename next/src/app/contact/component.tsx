@@ -101,7 +101,6 @@ export default function ContactComponent({ offices, styles }: ContactComponentPr
         src={`https://maps.googleapis.com/maps/api/js?key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}`}
         strategy='beforeInteractive'
       />
-      <Header forceScrolledStyle />
 
       <Section width='max-w-7xl' paddingTop='pt-52' paddingBottom='pb-20'>
         <div className='grid grid-cols-2 gap-36'>

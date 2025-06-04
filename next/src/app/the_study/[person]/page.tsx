@@ -41,7 +41,6 @@ export default function PersonPage({ params }: { params: { person: string } }) {
   }
   return (
     <>
-      <Header forceScrolledStyle />
 
       <Section width='max-w-7xl' paddingTop='pt-32' paddingBottom='pb-0'>
         <div className='mb-10 flex items-center gap-2'>

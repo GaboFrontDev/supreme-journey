@@ -20,8 +20,6 @@ export default function AresPevaPage() {
 
   return (
     <>
-      <Header forceScrolledStyle />
-
       <Section width='max-w-7xl' paddingTop='pt-32' paddingBottom='pb-12'>
         <div className='flex items-center justify-between gap-36'>
           <div className='flex-col'>

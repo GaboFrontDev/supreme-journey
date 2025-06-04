@@ -159,20 +159,6 @@ export const associates: Person[] = [
     },
   },
   {
-    name: 'Pedro López',
-    position: 'Director de Operaciones',
-    role: 'COO',
-    image: '/images/the_study/associates/pedro-lopez.jpg',
-    description: [
-      'Forma parte de Ares Arquitectos desde 2003, con una trayectoria de crecimiento interno desde Recursos Humanos hasta asumir en 2017 la Dirección de Operaciones. Ha liderado la consolidación de procesos administrativos, financieros y organizacionales, alineando la operación con los objetivos estratégicos de la firma.',
-    ],
-    link: {
-      Instagram: '',
-      Facebook: '',
-      LinkedIn: '',
-    },
-  },
-  {
     name: 'Zyanya Quero',
     position: 'Director de Proyecto',
     role: 'Project Director',

@@ -1,27 +1,29 @@
-import type { CategoryKey } from './consts';
 import CategoryPageComponent from './component';
 import { notFound } from 'next/navigation';
+import { getCategories } from '@/dynamicRendering/utils';
+import { formatSlug } from '@/utils/formatSlug';
 
-const categories = [
-    { category: 'mixedUses' },
-    { category: 'centrosComerciales' },
-    { category: 'hotels' },
-    { category: 'dwellings' },
-    { category: 'retail' },
-    { category: 'latam' },
-  ];
+export async function generateStaticParams() {
+  const categories = await getCategories();
+  const slugs = categories.data.map((category) => ({
+    category: formatSlug(category.attributes.nombre),
+  }));
 
-export function generateStaticParams() {
-  return categories;
+  return slugs;
 }
-export default function CategoryPage({
+
+export default async function CategoryPage({
   params,
 }: {
-  params: { category: CategoryKey };
+  params: { category: string };
 }) {
-  if (!categories.map((category) => category.category).includes(params.category)) {
+  const categories = await getCategories();
+  const category = categories.data.find(
+    (category) => formatSlug(category.attributes.nombre) === params.category
+  );
+  if (!category) {
     return notFound();
   }
 
-  return <CategoryPageComponent params={params} />;
+  return <CategoryPageComponent category={category} />;
 }

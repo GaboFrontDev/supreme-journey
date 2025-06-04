@@ -5,9 +5,6 @@ const { getArticleById: getById } = new ArticleController();
 export async function getArticleById(id: string, locale: string) {
   try {
     const article = await getById(id, locale);
-    if (!article) {
-      console.log({ article });
-    }
     return article;
   } catch (error) {
     console.log({ error });

@@ -8,16 +8,17 @@ import ProjectCard from '@/app/components/ProjectCard';
 import useProjectSearch from '@/app/hooks';
 import { categories } from './consts';
 import type { CategoryKey } from './consts';
+import { CategoriaProyectoData, PageData } from '../strapi';
+import { formatSlug } from '@/utils/formatSlug';
+import { useMemo } from 'react';
 
 const HeadSection = ({
   category,
   description,
 }: {
-  category: CategoryKey;
+  category: string;
   description: string;
 }) => {
-  const { keyToCategory } = useProjectSearch();
-
   return (
     <Section width='max-w-7xl' paddingTop='pt-32' paddingBottom='pb-12'>
       <div className='flex items-center justify-between gap-36'>
@@ -37,7 +38,7 @@ const HeadSection = ({
             </Link>
           </div>
           <h2 className='mb-6 mt-2 max-w-2xl text-[40px] font-bold leading-tight text-[#636B69]'>
-            {keyToCategory[category as keyof typeof keyToCategory]}
+            {category}
           </h2>
         </div>
         <p className='max-w-2xl text-lg text-black'>{description}</p>
@@ -46,17 +47,27 @@ const HeadSection = ({
   );
 };
 
-const ProjectList = ({ projects, category }: { projects: any[]; category: CategoryKey }) => {
+const ProjectList = ({
+  projects,
+  category,
+}: {
+  projects: PageData[];
+  category: string;
+}) => {
   return (
     <Section width='max-w-7xl' paddingTop='pt-0'>
       <div className='grid grid-cols-2 gap-10'>
         {projects.map((project) => (
           <ProjectCard
-            key={project.title}
-            title={project.title}
-            location={project.location}
-            categories={project.categories}
-            image={project.image}
+            key={project.attributes.nombre}
+            title={project.attributes.nombre}
+            location={project.attributes.ficha.ubicacion}
+            categories={project.attributes.categoria_proyecto.data.map(
+              (cat) => cat.attributes.nombre
+            )}
+            image={
+              project.attributes.miniatura.data.attributes.formats.medium.url
+            }
             parentCategory={category}
           />
         ))}
@@ -66,16 +77,21 @@ const ProjectList = ({ projects, category }: { projects: any[]; category: Catego
 };
 
 export default function CategoryPageComponent({
-  params,
+  category,
 }: {
-  params: { category: CategoryKey };
+  category: CategoriaProyectoData;
 }) {
-  const { category } = params;
-  const { searchQuery, setSearchQuery, projectsToKey } = useProjectSearch();
+  const { searchQuery, setSearchQuery } = useProjectSearch();
 
-  const categoryData = categories[category];
+  const categoryData = category.attributes;
 
-  const projects = projectsToKey[category as keyof typeof projectsToKey];
+  const projects = useMemo(() => {
+    return category.attributes.proyectos_ares.data.filter((project) => {
+      const projectName = project.attributes.nombre.toLowerCase();
+      const query = searchQuery.toLowerCase();
+      return projectName.includes(query);
+    });
+  }, [category.attributes.proyectos_ares.data, searchQuery]);
 
   if (!category) {
     return <div>Category not found</div>;
@@ -83,9 +99,10 @@ export default function CategoryPageComponent({
 
   return (
     <>
-      <Header forceScrolledStyle />
-
-      <HeadSection category={category} description={categoryData.description} />
+      <HeadSection
+        category={categoryData.nombre}
+        description={categoryData.concepto}
+      />
 
       <Section
         width='w-full'
@@ -96,7 +113,7 @@ export default function CategoryPageComponent({
       >
         <div className='relative h-[810px] w-full overflow-hidden rounded-t-3xl'>
           <Image
-            src={categoryData.image}
+            src={categoryData.portada.data.attributes.formats.medium.url}
             alt='Imagen de categoría'
             fill
             className='object-cover'
@@ -107,7 +124,7 @@ export default function CategoryPageComponent({
       <Section width='max-w-7xl' paddingBottom='pb-20'>
         <div className='flex items-center'>
           <h2 className='font-regular max-w-2xl text-[40px] leading-tight text-black'>
-            {categoryData.secondDescription}
+            {categoryData.texto}
           </h2>
         </div>
         <div className='mt-20 flex items-center gap-4'>
@@ -132,9 +149,10 @@ export default function CategoryPageComponent({
         </div>
       </Section>
 
-      <ProjectList projects={projects} category={category} />
-
-       
+      <ProjectList
+        projects={projects}
+        category={formatSlug(categoryData.nombre)}
+      />
     </>
   );
 }
