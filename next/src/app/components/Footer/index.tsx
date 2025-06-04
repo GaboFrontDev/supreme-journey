@@ -126,6 +126,7 @@ export default function Footer({ offices }: FooterProps) {
               <a
                 href='https://www.instagram.com/aresarquitectos'
                 className='hover:underline'
+                target='_blank'
               >
                 Instagram
               </a>
@@ -134,6 +135,7 @@ export default function Footer({ offices }: FooterProps) {
               <a
                 href='https://www.facebook.com/aresarquitectoss/?locale=es_LA'
                 className='hover:underline'
+                target='_blank'
               >
                 Facebook
               </a>
@@ -142,6 +144,7 @@ export default function Footer({ offices }: FooterProps) {
               <a
                 href='https://www.linkedin.com/company/ares-arquitectos/?viewAsMember=true'
                 className='hover:underline'
+                target='_blank'
               >
                 Linkedin
               </a>
