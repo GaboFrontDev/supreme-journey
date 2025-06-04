@@ -50,6 +50,13 @@ export interface Image {
   data: ImageData;
 }
 
+export interface CenteredImageComponent {
+  id: number;
+  __component: 'shared.centered-image';
+  image: Image;
+  alt: string;
+}
+
 export interface TextTextComponent {
   id: number;
   __component: 'shared.text-text';
@@ -97,25 +104,9 @@ export type SectionComponent =
   | ImageImageComponent 
   | TextImageComponent 
   | ImageTextComponent 
-  | MarkdownComponent;
+  | MarkdownComponent
+  | CenteredImageComponent;
 
-export interface DatosSeccionAttributes {
-  createdAt: string;
-  updatedAt: string;
-  publishedAt: string;
-  name: string;
-  identificador: string;
-  data: SectionComponent[];
-}
-
-export interface DatosSeccionData {
-  id: number;
-  attributes: DatosSeccionAttributes;
-}
-
-export interface DatosSeccion {
-  data: DatosSeccionData;
-}
 
 export interface ArticuloRelacionadoAttributes {
   slug: string;
@@ -123,17 +114,15 @@ export interface ArticuloRelacionadoAttributes {
   updatedAt: string;
   publishedAt: string;
   locale: string;
-  datosSeccion: DatosSeccion;
+  secciones: SectionComponent[];
   miniatura: Image;
+  nombre: string;
+  autor: string;
 }
 
 export interface ArticuloRelacionadoData {
   id: number;
   attributes: ArticuloRelacionadoAttributes;
-}
-
-export interface ArticulosRelacionados {
-  data: ArticuloRelacionadoData[];
 }
 
 export interface PageAttributes {
@@ -142,9 +131,14 @@ export interface PageAttributes {
   updatedAt: string;
   publishedAt: string;
   locale: string;
-  datosSeccion: DatosSeccion;
-  articulos_relacionados: ArticulosRelacionados;
+  secciones: SectionComponent[];
+  relacionados: {
+    data: ArticuloRelacionadoData[]
+  };
   miniatura: Image;
+  nombre: string;
+  autor: string;
+  preview: string;
 }
 
 export interface PageData {

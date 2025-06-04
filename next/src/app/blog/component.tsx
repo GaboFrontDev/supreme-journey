@@ -19,16 +19,13 @@ export default function BlogPageComponent({ posts }: BlogPageComponentProps) {
   // Transformar los datos de Strapi al formato que necesitamos
   const transformedPosts = useMemo(() => {
     return posts.data.map(post => {
-      const firstText = post.attributes.datosSeccion.data.attributes.data.find(
-        section => section.__component === 'shared.text-text'
-      );
 
       return {
         slug: post.attributes.slug,
-        title: post.attributes.datosSeccion.data.attributes.name,
+        title: post.attributes.nombre,
         date: post.attributes.createdAt,
         image: post.attributes.miniatura?.data?.attributes?.url || '',
-        paragraphs: firstText && 'leftText' in firstText ? [firstText.leftText] : []
+        paragraphs: post.attributes.preview || '',
       };
     });
   }, [posts]);
@@ -95,11 +92,9 @@ export default function BlogPageComponent({ posts }: BlogPageComponentProps) {
               {featuredPost.title}
             </h2>
             <FilterButton label='Usos Mixtos' />
-            {featuredPost.paragraphs[0] && (
               <p className="text-lg text-black py-5 my-6">
-                {truncateText(featuredPost.paragraphs[0], 200)}
+                {truncateText(featuredPost.paragraphs, 200)}
               </p>
-            )}
             <Button href={`/blog/${featuredPost.slug}`} label="Continuar Leyendo" />
           </div>
         </div>

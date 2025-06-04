@@ -1,7 +1,7 @@
 export const queryParams = {
-    populate: ['datosSeccion', 'datosSeccion.data', 'datosSeccion.data.imagen', 'datosSeccion.data.leftImage', 'datosSeccion.data.rightImage', 'datosSeccion.data.image', 'articulos_relacionados', 'articulos_relacionados.miniatura', 'articulos_relacionados.datosSeccion'],
+    populate: ['relacionados', 'relacionados.miniatura', 'miniatura','secciones', 'secciones.imagen', 'secciones.leftImage', 'secciones.rightImage', 'secciones.image', 'secciones.relacionados', 'secciones.relacionados.miniatura', 'secciones.relacionados', 'secciones.minuatura'],
 }
 
 export const listQueryParams = {
-    populate: ['datosSeccion', 'datosSeccion.data', 'datosSeccion.data.imagen', 'datosSeccion.data.leftImage', 'datosSeccion.data.rightImage', 'datosSeccion.data.image', 'miniatura', 'articulos_relacionados', 'articulos_relacionados.miniatura', 'articulos_relacionados.datosSeccion'	],
+    populate: ['secciones', 'secciones.imagen', 'secciones.leftImage', 'secciones.rightImage', 'secciones.image', 'miniatura', 'relacionados', 'relacionados.miniatura', 'relacionados.secciones'],
 }

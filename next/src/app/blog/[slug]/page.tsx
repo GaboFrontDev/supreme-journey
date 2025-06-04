@@ -45,12 +45,11 @@ export default async function Page({ params }: { params: { slug: string } }) {
   const page = data.data[0];
 
   const { attributes } = page;
-
   if (!page) {
     return notFound();
   }
 
-  const sections = attributes.datosSeccion.data.attributes.data;
+  const sections = attributes.secciones;
   return (
     <main>
       <Header forceScrolledStyle />
@@ -72,7 +71,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
         <div className='flex items-start justify-between gap-36'>
           <div>
             <h2 className='my-2 max-w-2xl text-[40px] font-bold leading-tight text-[#636B69]'>
-              {attributes.datosSeccion.data.attributes.name}
+              {attributes.nombre}
             </h2>
             <span className='text-lg font-bold text-[#A1A1A1]'>
               {formatDateToSpanish(attributes.createdAt)}
@@ -92,12 +91,12 @@ export default async function Page({ params }: { params: { slug: string } }) {
           Artículos relacionados
         </h2>
         <CarouselWrapper>
-          {attributes.articulos_relacionados.data.map((blog, index) => (
+          {attributes.relacionados.data.map((blog, index) => (
             <BlogCard
               key={index}
               images={[blog.attributes.miniatura.data.attributes.url]}
               date={formatDateToSpanish(blog.attributes.createdAt)}
-              title={blog.attributes.datosSeccion.data.attributes.name}
+              title={blog.attributes.nombre}
               slug={blog.attributes.slug}
             />
           ))}

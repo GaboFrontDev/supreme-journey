@@ -5,6 +5,7 @@ import ImageImageSection from './ImageImageSection';
 import TextImageSection from './TextImageSection';
 import ImageTextSection from './ImageTextSection';
 import MarkdownSection from './MarkdownSection';
+import CenteredImageSection from './CenteredImageSection';
 
 interface SectionRendererProps {
   component: SectionComponent;
@@ -12,10 +13,12 @@ interface SectionRendererProps {
 
 export default function SectionRenderer({ component }: SectionRendererProps) {
   switch (component.__component) {
-    // case 'shared.text-text':
-    //   return <TextTextSection component={component} />;
+    case 'shared.text-text':
+      return <TextTextSection component={component} />;
     case 'shared.bigimage':
       return <BigImageSection component={component} />;
+    case 'shared.centered-image':
+      return <CenteredImageSection component={component} />;
     case 'shared.image-image':
       return <ImageImageSection component={component} />;
     case 'shared.text-image':
