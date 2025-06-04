@@ -64,3 +64,9 @@ export const categoryQueryParams = {
     'proyectos_ares.categoria_proyecto',
   ],
 };
+
+export const clienteQueryParams = {
+  populate: [
+    'cliente.data',
+  ],
+};

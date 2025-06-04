@@ -1,5 +1,6 @@
-import { categoryQueryParams, projectQueryParams } from "@/app/blog/consts";
+import { categoryQueryParams, projectQueryParams, clienteQueryParams } from "@/app/blog/consts";
 import { CategoriaProyectoData, PageData, StrapiResponse } from "@/app/projects/strapi";
+import { ClienteData, StrapiResponse as ClienteStrapiResponse } from "@/app/strapi";
 import qs from "qs";
 
 export async function getAllLocales(): Promise<LocaleItem[]> {
@@ -102,5 +103,12 @@ export const getProjects = async () => {
 export const getCategories = async () => {
   const response = await fetchWithToken(`${process.env.NEXT_PUBLIC_STRAPI_API_URL}/categoria-proyectos?${qs.stringify(categoryQueryParams)}`);
   const data = await response as StrapiResponse<CategoriaProyectoData>;
+  return data;
+}
+
+export const getClientes = async () => {
+  const response = await fetchWithToken(`${process.env.NEXT_PUBLIC_STRAPI_API_URL}/cliente?populate=*`);
+  const data = await response as ClienteStrapiResponse<ClienteData>;
+  
   return data;
 }
