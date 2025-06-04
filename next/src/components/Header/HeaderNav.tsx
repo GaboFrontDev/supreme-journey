@@ -19,7 +19,7 @@ const Logo = () => {
   return (
     <section>
       <Link href={`/`}>
-        <AppLogoIcon className='' />
+        <AppLogoIcon />
       </Link>
     </section>
   );

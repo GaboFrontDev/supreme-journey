@@ -14,6 +14,29 @@ interface ProjectsComponentProps {
   categories: StrapiResponse<CategoriaProyectoData>;
 }
 
+interface CategoryFilterProps {
+  categories: StrapiResponse<CategoriaProyectoData>;
+  selectedCategory: string[];
+  onCategoryClick: (category: string) => void;
+}
+
+const CategoryFilters = ({ categories, selectedCategory, onCategoryClick }: CategoryFilterProps) => (
+  <div className='space-x-4'>
+    {categories.data.map((category, index) => (
+      <FilterButton
+        key={index}
+        label={category.attributes.nombre}
+        onClick={() => onCategoryClick(category.attributes.nombre)}
+        className={
+          selectedCategory.includes(category.attributes.nombre)
+            ? 'bg-[#636B69] text-white'
+            : 'bg-[#EFEFEF] text-black'
+        }
+      />
+    ))}
+  </div>
+);
+
 export default function ProjectsComponent({
   categories,
 }: ProjectsComponentProps) {
@@ -63,20 +86,11 @@ export default function ProjectsComponent({
             onChange={handleSearch}
           />
         </div>
-        <div className='space-x-4'>
-          {categories.data.map((category, index) => (
-            <FilterButton
-              key={index}
-              label={category.attributes.nombre}
-              onClick={() => handleCategoryClick(category.attributes.nombre)}
-              className={
-                selectedCategory.includes(category.attributes.nombre)
-                  ? 'bg-[#636B69] text-white'
-                  : 'bg-[#EFEFEF] text-black'
-              }
-            />
-          ))}
-        </div>
+        <CategoryFilters 
+          categories={categories}
+          selectedCategory={selectedCategory}
+          onCategoryClick={handleCategoryClick}
+        />
       </Section>
       {categoriesRendered.length > 0 ? (
         categoriesRendered

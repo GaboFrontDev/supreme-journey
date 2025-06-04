@@ -1,10 +1,44 @@
+'use client';
 import Image from 'next/image';
-import Header from '@/app/components/Header';
 import Section from '@/app/components/Section';
 import Button from '@/app/components/Button';
+import { useRouter } from 'next/navigation';
+
+interface Iniciativa {
+  id: string;
+  titulo: string;
+  descripcion: string;
+  imagen: string;
+  ruta: string;
+}
+
+const iniciativas: Iniciativa[] = [
+  {
+    id: 'dis',
+    titulo: 'DIS',
+    descripcion: 'Digital Innovation & Sustainability',
+    imagen: 'images/ares_culture/2.png',
+    ruta: '/ares_sustainability',
+  },
+  {
+    id: 'peva',
+    titulo: 'Ares PEVA',
+    descripcion: 'Digital Innovation & Sustainability',
+    imagen: 'images/ares_culture/3.jpg',
+    ruta: '/ares_peva',
+  },
+  {
+    id: 'architects',
+    titulo: 'Formando arquitectos',
+    descripcion: 'Impulsando nuevas generaciones',
+    imagen: 'images/ares_culture/4.png',
+    ruta: '/ares_architects',
+  },
+];
 
 export default function AresCulturePage() {
-  
+  const router = useRouter();
+
   return (
     <>
       <Section width='max-w-7xl' paddingTop='pt-52' paddingBottom='pb-12'>
@@ -49,54 +83,45 @@ export default function AresCulturePage() {
         </div>
       </Section>
 
-      <Section width='max-w-7xl' paddingTop="pt-10" paddingBottom='pb-48'>
+      <Section width='max-w-7xl' paddingTop='pt-10' paddingBottom='pb-48'>
         <div className='grid grid-cols-2 gap-10'>
-          <div className="min-w-[620px] max-w-sm rounded-xl overflow-hidden bg-[#F5F5F5]">
-            <div className="w-full h-[380px] overflow-hidden rounded-2xl relative">
-              <Image src="images/ares_culture/2.png" alt="DIS" fill className="object-cover pointer-events-none" />
-            </div>
-            <div className="p-6">
-              <div className="flex items-start justify-between">
-                <div className="mb-8">
-                  <h3 className="font-bold text-xl text-black mb-1">DIS</h3>
-                  <p className="font-light text-lg text-[#A1A1A1]">Digital Innovation & Sustainability</p>
+          {iniciativas.map((iniciativa) => (
+            <div
+              key={iniciativa.id}
+              className='min-w-[620px] max-w-sm overflow-hidden rounded-xl bg-[#F5F5F5]'
+            >
+              <div
+                className='relative h-[380px] w-full overflow-hidden rounded-2xl'
+                onClick={() => router.push(iniciativa.ruta)}
+              >
+                <Image
+                  src={iniciativa.imagen}
+                  alt={iniciativa.titulo}
+                  fill
+                  className='pointer-events-none object-cover'
+                />
+              </div>
+              <div className='p-6'>
+                <div className='flex items-start justify-between'>
+                  <div className='mb-8'>
+                    <h3 className='mb-1 text-xl font-bold text-black'>
+                      {iniciativa.titulo}
+                    </h3>
+                    <p className='text-lg font-light text-[#A1A1A1]'>
+                      {iniciativa.descripcion}
+                    </p>
+                  </div>
+                  <Button
+                    href={iniciativa.ruta}
+                    label='Ver Iniciativa'
+                    className='text-xs'
+                  />
                 </div>
-                <Button href="/ares_sustainability" label='Ver Iniciativa' className="text-xs" />
               </div>
             </div>
-          </div>
-          <div className="min-w-[620px] max-w-sm rounded-xl overflow-hidden bg-[#F5F5F5]">
-            <div className="w-full h-[380px] overflow-hidden rounded-2xl relative">
-              <Image src="images/ares_culture/3.jpg" alt="DIS" fill className="object-cover pointer-events-none" />
-            </div>
-            <div className="p-6">
-              <div className="flex items-start justify-between">
-                <div className="mb-8">
-                  <h3 className="font-bold text-xl text-black mb-1">Ares PEVA</h3>
-                  <p className="font-light text-lg text-[#A1A1A1]">Digital Innovation & Sustainability</p>
-                </div>
-                <Button href="/ares_peva" label='Ver Iniciativa' className="text-xs" />
-              </div>
-            </div>
-          </div>
-          <div className="min-w-[620px] max-w-sm rounded-xl overflow-hidden bg-[#F5F5F5]">
-            <div className="w-full h-[380px] overflow-hidden rounded-2xl relative">
-              <Image src="images/ares_culture/4.png" alt="DIS" fill className="object-cover pointer-events-none" />
-            </div>
-            <div className="p-6">
-              <div className="flex items-start justify-between">
-                <div className="mb-8">
-                  <h3 className="font-bold text-xl text-black mb-1">Formando arquitectos</h3>
-                  <p className="font-light text-lg text-[#A1A1A1]">Impulsando nuevas generaciones</p>
-                </div>
-                <Button href="/ares_architects" label='Ver Iniciativa' className="text-xs" />
-              </div>
-            </div>
-          </div>
+          ))}
         </div>
       </Section>
-
-       
     </>
   );
 }
