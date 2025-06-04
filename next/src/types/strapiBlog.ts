@@ -125,6 +125,28 @@ export interface ArticuloRelacionadoData {
   attributes: ArticuloRelacionadoAttributes;
 }
 
+export interface CategoriaProyectoAttributes {
+  nombre: string;
+  textLateral: string;
+  portada: Image;
+}
+
+export interface CategoriaProyectoData {
+  id: number;
+  attributes: CategoriaProyectoAttributes;
+}
+
+export interface AutorAttributes {
+  nombre: string;
+  foto: Image;
+  titulo: string;
+}
+
+export interface AutorData {
+  id: number;
+  attributes: AutorAttributes;
+}
+
 export interface PageAttributes {
   slug: string;
   createdAt: string;
@@ -137,8 +159,14 @@ export interface PageAttributes {
   };
   miniatura: Image;
   nombre: string;
-  autor: string;
   preview: string;
+  categoria_proyectos: {
+    data: CategoriaProyectoData[]
+  };
+  autor: {
+    data: AutorData
+  };
+  involucrados: string[];
 }
 
 export interface PageData {

@@ -18,11 +18,12 @@ export default function BlogPageComponent({ posts }: BlogPageComponentProps) {
 
   // Transformar los datos de Strapi al formato que necesitamos
   const transformedPosts = useMemo(() => {
+
     return posts.data.map(post => {
 
       return {
         slug: post.attributes.slug,
-        title: post.attributes.nombre,
+        title: post.attributes.nombre || '',
         date: post.attributes.createdAt,
         image: post.attributes.miniatura?.data?.attributes?.url || '',
         paragraphs: post.attributes.preview || '',
@@ -121,6 +122,11 @@ export default function BlogPageComponent({ posts }: BlogPageComponentProps) {
 
       <Section width='max-w-7xl' paddingTop="pt-0">
         <div className="grid grid-cols-2 gap-y-10 gap-x-32">
+          {filteredPosts.length === 0 && (
+            <div className="col-span-2">
+              <p className="text-lg text-black">No se encontraron resultados</p>
+            </div>
+          )}
           {filteredPosts.map((post, index) => (
             <BlogCard
               key={index}

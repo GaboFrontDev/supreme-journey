@@ -87,10 +87,60 @@ export default async function Page({ params }: { params: { slug: string } }) {
       ))}
 
       <Section width='max-w-7xl' paddingTop='pt-0' paddingBottom='pb-48'>
+        <div className='grid grid-cols-2 gap-10'>
+          <div className='grid grid-cols-3 gap-10'>
+            <div className='space-y-4'>
+              <p className='text-md font-bold text-[#A1A1A1]'>Elaborado por</p>
+              <div className='relative aspect-square w-full max-w-[500px] overflow-hidden rounded-lg'>
+                <Image
+                  src={
+                    attributes.autor.data.attributes.foto.data.attributes.url
+                  }
+                  alt='author'
+                  fill
+                  className='object-cover'
+                />
+              </div>
+              <div className='space-y-1'>
+                <p className='text-md font-bold text-black'>
+                  {attributes.autor.data.attributes.nombre}
+                </p>
+                <p className='text-sm text-[#A1A1A1]'>
+                  {attributes.autor.data.attributes.titulo}
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className='grid grid-cols-2 gap-10'>
+            <div className='space-y-2'>
+              <p className='text-md mb-6 font-bold text-[#A1A1A1]'>
+                Involucrados
+              </p>
+              {attributes.involucrados.map((involucrado, index) => (
+                <p key={index} className='text-md text-black'>
+                  {involucrado}
+                </p>
+              ))}
+            </div>
+            <div className='space-y-2'>
+              <p className='text-md mb-6 font-bold text-[#A1A1A1]'>
+                Mercado relacionado
+              </p>
+              {attributes.categoria_proyectos.data.map((categoria, index) => (
+                <p key={index} className='text-md text-black'>
+                  {categoria.attributes.nombre}
+                </p>
+              ))}
+            </div>
+          </div>
+        </div>
+      </Section>
+
+      <Section width='max-w-7xl' paddingTop='pt-0' paddingBottom='pb-48'>
         <h2 className='mb-14 mt-2 text-[40px] font-bold leading-tight text-[#636B69]'>
           Artículos relacionados
         </h2>
-        <CarouselWrapper>
+        <div className='grid grid-cols-2 gap-10'>
           {attributes.relacionados.data.map((blog, index) => (
             <BlogCard
               key={index}
@@ -100,10 +150,8 @@ export default async function Page({ params }: { params: { slug: string } }) {
               slug={blog.attributes.slug}
             />
           ))}
-        </CarouselWrapper>
+        </div>
       </Section>
-
-       
     </main>
   );
 }
