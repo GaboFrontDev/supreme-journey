@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import { BigImageComponent } from '@/types/strapiBlog';
-import Section from '../Section';
 
 interface BigImageSectionProps {
   component: BigImageComponent;
