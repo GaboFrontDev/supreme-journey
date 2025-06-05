@@ -8,7 +8,7 @@ interface CenteredImageProps {
 
 export default function CenteredImage({ component }: CenteredImageProps) {
   const { image } = component;
-  const imageUrl = image.data.attributes.url;
+  const imageUrl = image.data.attributes.formats.large.url;
 
   return (
     <Section width="max-w-7xl">
@@ -20,6 +20,7 @@ export default function CenteredImage({ component }: CenteredImageProps) {
           className="object-cover"
           sizes="(max-width: 2048px) 100vw, 1280px"
           priority
+          quality={100}
         />
       </div>
     </Section>

@@ -34,7 +34,7 @@ export const CategoryComponent = ({ category, searchTerm }: { category: Categori
           />
         </div>
         <CarouselWrapper arrowOffsetY='75%'>
-          {projects.map((project) => (
+          {projects.slice(0, 4).map((project) => (
             <ProjectCard
               key={project.attributes.nombre}
               title={project.attributes.nombre}
@@ -43,7 +43,7 @@ export const CategoryComponent = ({ category, searchTerm }: { category: Categori
                 (category) => category.attributes.nombre
               )}
               image={
-                project.attributes.miniatura.data.attributes.formats.small.url
+                project.attributes.miniatura.data.attributes.formats.medium.url
               }
               parentCategory={formatSlug(category.attributes.nombre)}
             />

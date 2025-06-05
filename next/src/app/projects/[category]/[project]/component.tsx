@@ -238,7 +238,7 @@ export default function ProjectPage({
                   ) ?? []
                 }
                 image={
-                  project_rel.attributes.miniatura.data.attributes.formats.small
+                  project_rel.attributes.miniatura.data.attributes.formats.medium
                     .url ?? ''
                 }
                 contentWhite={true}

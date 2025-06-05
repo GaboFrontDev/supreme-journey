@@ -66,7 +66,7 @@ const ProjectList = ({
               (cat) => cat.attributes.nombre
             )}
             image={
-              project.attributes.miniatura.data.attributes.formats.small.url
+              project.attributes.miniatura.data.attributes.formats.medium.url
             }
             parentCategory={category}
           />
