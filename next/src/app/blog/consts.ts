@@ -70,3 +70,12 @@ export const clienteQueryParams = {
     'cliente.data',
   ],
 };
+
+export const destacadoQueryParams = {
+  populate: [
+    'proyectos',
+    'proyectos.categoria_proyecto',
+    'proyectos.miniatura',
+    ...projectQueryParams.populate,
+  ],
+};

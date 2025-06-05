@@ -14,8 +14,9 @@ import HeroIntroScroll from './components/HeroIntroScroll';
 import CarouselWrapper from './components/CarouselWrapper';
 import CompanyStats from './components/CompanyStats';
 import OfficesGrid from './components/OfficesGrid';
-import { projectCards } from './projects/consts';
-import { Cliente, ClienteData } from './strapi';
+import { Cliente, DestacadoData } from './strapi';
+import { CategoriaProyectoData } from './projects/strapi';
+import { formatTitleToUrl } from '@/dynamicRendering/utils';
 
 const stats = [
   { value: '50', label: 'Años de experiencia', fixedWidth: true },
@@ -105,9 +106,14 @@ const services = [
 
 export default function HomeComponent({
   clients,
+  destacados,
+  categorias,
 }: {
   clients: Cliente[];
+  destacados: DestacadoData;
+  categorias: CategoriaProyectoData[];
 }) {
+  console.log(destacados.attributes.proyectos.data[0].attributes.categoria_proyecto.data[0].attributes.nombre);
   const [activeServiceId, setActiveServiceId] = useState<string | null>(
     services[0].id
   );
@@ -215,49 +221,20 @@ export default function HomeComponent({
           Proyectos destacados
         </h2>
         <div className='mb-16 space-x-4'>
-          <FilterButton href='/projects/mixedUses' label='Usos Mixtos' />
-          <FilterButton
-            href='/projects/centrosComerciales'
-            label='Centros Comerciales'
-          />
-          <FilterButton href='/projects/dwellings' label='Vivienda' />
-          <FilterButton href='/projects/hotels' label='Hoteles' />
-          <FilterButton href='/projects' label='Master plan' />
-          <FilterButton href='/projects/latam' label='LATAM' />
-          <FilterButton href='/projects/retail' label='Retail' />
-          <FilterButton href='/projects' label='Renovaciones y Expansiones' />
+          {categorias.map((categoria) => (
+            <FilterButton href={`/projects/${formatTitleToUrl(categoria.attributes.nombre)}`} label={categoria.attributes.nombre} />
+          ))}
         </div>
 
         <CarouselWrapper>
-          {projectCards.mixedUses.map((project) => (
+          {destacados.attributes.proyectos.data.map((project) => (
             <ProjectCard
-              title={project.title}
-              location={project.location}
-              categories={project.categories}
-              image={project.image}
-              parentCategory='mixedUses'
-              key={project.title}
-            />
-          ))}
-          {projectCards.centrosComerciales.map((project) => (
-            <ProjectCard
-              title={project.title}
-              location={project.location}
-              categories={project.categories}
-              image={project.image}
-              parentCategory='centrosComerciales'
-              key={project.title}
-            />
-          ))}
-
-          {projectCards.dwellings.map((project) => (
-            <ProjectCard
-              title={project.title}
-              location={project.location}
-              categories={project.categories}
-              image={project.image}
-              parentCategory='centrosComerciales'
-              key={project.title}
+              title={project.attributes.nombre}
+              location={project.attributes.ficha.ubicacion}
+              categories={project.attributes.categoria_proyecto.data.map((categoria) => categoria.attributes.nombre)}
+              image={project.attributes.miniatura.data.attributes.url}
+              parentCategory={project.attributes.categoria_proyecto.data[0].attributes.nombre}
+              key={project.id}
             />
           ))}
         </CarouselWrapper>

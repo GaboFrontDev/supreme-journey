@@ -1,3 +1,5 @@
+import { DestacadoData } from "../strapi";
+
 export type ComponentType =
   | 'shared.text-text'
   | 'shared.bigimage'
@@ -114,12 +116,16 @@ export interface Meta {
 
 export interface PageData {
   id: number;
-  attributes: PageAttributes;
+  attributes: ProyectoPageAttributes;
 }
-type Template = CategoriaProyectoData | PageData;
+type Template = CategoriaProyectoData | PageData | DestacadoData;
 
 export interface StrapiResponse<T extends Template> {
   data: T[];
+  meta: Meta;
+}
+export interface StrapiResponseSingle<T extends Template> {
+  data: T;
   meta: Meta;
 }
 
@@ -158,7 +164,7 @@ export interface CategoriaProyectoData {
   attributes: CategoriaProyectoAttributes;
 }
 
-export interface PageAttributes {
+export interface ProyectoPageAttributes {
   createdAt: string;
   updatedAt: string;
   publishedAt: string;

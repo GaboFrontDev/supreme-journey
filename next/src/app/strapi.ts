@@ -1,3 +1,4 @@
+import { PageData, Image, ProyectoPageAttributes } from "./projects/strapi";
 export interface Meta {
   pagination: PaginationMeta;
 }
@@ -21,7 +22,25 @@ export interface ClienteData {
   };
 }
 
-type Template = ClienteData;
+export interface Destacado {
+  proyectos: Proyecto[];
+}
+
+export interface DestacadoData {
+  id: number;
+  attributes: {
+    proyectos: {
+      data: Proyecto[];
+    };
+  };
+}
+
+export interface Proyecto {
+  id: number;
+  attributes: ProyectoPageAttributes
+}
+
+type Template = ClienteData | DestacadoData;
 
 export interface StrapiResponse<T extends Template> {
   data: T;

@@ -1,8 +1,26 @@
-import { categoryQueryParams, projectQueryParams, clienteQueryParams } from "@/app/blog/consts";
-import { CategoriaProyectoData, PageData, StrapiResponse } from "@/app/projects/strapi";
-import { ClienteData, StrapiResponse as ClienteStrapiResponse } from "@/app/strapi";
+import { categoryQueryParams, projectQueryParams, destacadoQueryParams } from "@/app/blog/consts";
+import { CategoriaProyectoData, PageData, StrapiResponse, StrapiResponseSingle } from "@/app/projects/strapi";
+import { ClienteData, StrapiResponse as ClienteStrapiResponse, DestacadoData } from "@/app/strapi";
 import qs from "qs";
 
+
+export const formatTitleToUrl = (title: string) => {
+  // replace tildes too
+  return title
+    .toLowerCase()
+    .replace(/ /g, '-')
+    .replace(/~/g, '')
+    .replace('i', 'i')
+    .replace('é', 'e')
+    .replace('ú', 'u')
+    .replace('ó', 'o')
+    .replace('á', 'a')
+    .replace('í', 'i')
+    .replace('ñ', 'n')
+    .replace('ü', 'u')
+    .replace('ç', 'c')
+    .replace('ñ', 'n');
+};
 export async function getAllLocales(): Promise<LocaleItem[]> {
   try {
     const resp = await fetch(`${process.env.STRAPI_API_URL}/i18n/locales`, {
@@ -110,5 +128,11 @@ export const getClientes = async () => {
   const response = await fetchWithToken(`${process.env.NEXT_PUBLIC_STRAPI_API_URL}/cliente?populate=*`);
   const data = await response as ClienteStrapiResponse<ClienteData>;
   
+  return data;
+}
+
+export const getDestacados = async () => {
+  const response = await fetchWithToken(`${process.env.NEXT_PUBLIC_STRAPI_API_URL}/destacado?${qs.stringify(destacadoQueryParams)}`);
+  const data = await response as StrapiResponseSingle<DestacadoData>;
   return data;
 }
