@@ -222,7 +222,7 @@ export default function HomeComponent({
         </h2>
         <div className='mb-16 space-x-4'>
           {categorias.map((categoria) => (
-            <FilterButton href={`/projects/${formatTitleToUrl(categoria.attributes.nombre)}`} label={categoria.attributes.nombre} />
+            <FilterButton href={`/projects/${formatTitleToUrl(categoria.attributes.nombre)}`} label={categoria.attributes.nombre} key={categoria.id} />
           ))}
         </div>
 
