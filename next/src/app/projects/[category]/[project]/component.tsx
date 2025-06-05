@@ -243,7 +243,7 @@ export default function ProjectPage({
                 }
                 contentWhite={true}
                 key={index}
-                parentCategory={category}
+                parentCategory={formatTitleToUrl(category)}
               />
             )
           )}

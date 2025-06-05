@@ -1,6 +1,6 @@
 'use client';
 
-import { useMemo, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import Image from 'next/image';
 import dynamic from 'next/dynamic';
 import Script from 'next/script';
@@ -35,6 +35,8 @@ export default function ContactComponent({ offices, styles }: ContactComponentPr
     services[0].id
   );
 
+  const [firstLoad, setFirstLoad] = useState(true);
+
   const [isLoading, setIsLoading] = useState(false);
 
   const formRef = useRef<HTMLFormElement>(null);
@@ -51,13 +53,21 @@ export default function ContactComponent({ offices, styles }: ContactComponentPr
     }
   };
 
+  useEffect(() => {
+    setFirstLoad(false);
+  }, []);
+
   const preloadedMaps = useMemo(() => {
+    if(firstLoad) {
+      return {};
+    }
+    
     const maps = {} as Record<string, React.ReactNode>;
     offices.forEach((office) => {
       maps[office.id] = <Map lat={office.lat} lng={office.lng} id={office.id} title={office.title} styles={styles} /> 
     })
     return maps;
-  }, [offices]);
+  }, [offices, firstLoad]);
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
