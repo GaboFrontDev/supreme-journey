@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef, useState } from 'react';
+import { useMemo, useRef, useState } from 'react';
 import Image from 'next/image';
 import dynamic from 'next/dynamic';
 import Script from 'next/script';
@@ -50,6 +50,14 @@ export default function ContactComponent({ offices, styles }: ContactComponentPr
       setFileName('Sin seleccionar');
     }
   };
+
+  const preloadedMaps = useMemo(() => {
+    const maps = {} as Record<string, React.ReactNode>;
+    offices.forEach((office) => {
+      maps[office.id] = <Map lat={office.lat} lng={office.lng} id={office.id} title={office.title} styles={styles} /> 
+    })
+    return maps;
+  }, [offices]);
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -284,12 +292,7 @@ export default function ContactComponent({ offices, styles }: ContactComponentPr
             </div>
           </div>
           <div className='h-[447px] overflow-hidden rounded-xl'>
-            <Map
-              lat={selectedOffice.lat}
-              lng={selectedOffice.lng}
-              title={selectedOffice.title}
-              styles={styles}
-            />
+            {preloadedMaps[selectedOffice.id]}
           </div>
         </div>
       </Section>

@@ -201,6 +201,7 @@ export const offices = [
     email: 'gdl@aresarquitectos.com',
     postalCode: '45160',
     cityName: '',
+    id: '1',
   },
   {
     title: 'CDMX',
@@ -214,6 +215,7 @@ export const offices = [
     email: 'cdmx@aresarquitectos.com',
     postalCode: '03100',
     cityName: '',
+    id: '2',
   },
   {
     title: 'L35 Barcelona',
@@ -226,6 +228,7 @@ export const offices = [
     email: 'bcn@L35.com',
     postalCode: '08006',
     cityName: 'BARCELONA',
+    id: '3',
   },
   {
     title: 'L35 Madrid',
@@ -238,5 +241,6 @@ export const offices = [
     email: 'mad@L35.com',
     postalCode: '28013',
     cityName: 'MADRID',
+    id: '4',
   },
 ];

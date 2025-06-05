@@ -8,9 +8,10 @@ interface SnazzyMapProps {
   title?: string;
   zoom?: number;
   styles: any;
+  id: string;
 }
 
-export default function Map({ lat, lng, title = '', zoom = 17, styles }: SnazzyMapProps) {
+export default function Map({ lat, lng, title = '', zoom = 17, styles, id }: SnazzyMapProps) {
   const mapRef = useRef(null);
 
   useEffect(() => {
@@ -47,5 +48,5 @@ export default function Map({ lat, lng, title = '', zoom = 17, styles }: SnazzyM
     });
   }, [lat, lng, title, zoom, styles]);
 
-  return <div ref={mapRef} style={{ width: '100%', height: '600px', borderRadius: '1rem' }} />;
+  return <iframe src={`https://snazzymaps.com/embed/${id}`} width="100%" height="600px" style={{border: 'none'}}></iframe>
 }
