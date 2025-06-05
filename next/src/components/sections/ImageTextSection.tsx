@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import { ImageTextComponent } from '@/types/strapiBlog';
 import Section from '../Section';
+import ReactMarkdown from 'react-markdown';
 
 interface ImageTextSectionProps {
   component: ImageTextComponent;
@@ -24,8 +25,8 @@ export default function ImageTextSection({ component }: ImageTextSectionProps) {
           </div>
         )}
         {text && (
-          <div className="prose prose-lg">
-            <p>{text}</p>
+          <div className="prose prose-lg flex flex-col items-center justify-center">
+            <ReactMarkdown>{text}</ReactMarkdown>
           </div>
         )}
       </div>

@@ -113,7 +113,10 @@ export default function HomeComponent({
   destacados: DestacadoData;
   categorias: CategoriaProyectoData[];
 }) {
-  console.log(destacados.attributes.proyectos.data[0].attributes.categoria_proyecto.data[0].attributes.nombre);
+  console.log(
+    destacados.attributes.proyectos.data[0].attributes.categoria_proyecto
+      .data[0].attributes.nombre
+  );
   const [activeServiceId, setActiveServiceId] = useState<string | null>(
     services[0].id
   );
@@ -222,7 +225,11 @@ export default function HomeComponent({
         </h2>
         <div className='mb-16 space-x-4'>
           {categorias.map((categoria) => (
-            <FilterButton href={`/projects/${formatTitleToUrl(categoria.attributes.nombre)}`} label={categoria.attributes.nombre} key={categoria.id} />
+            <FilterButton
+              href={`/projects/${formatTitleToUrl(categoria.attributes.nombre)}`}
+              label={categoria.attributes.nombre}
+              key={categoria.id}
+            />
           ))}
         </div>
 
@@ -231,9 +238,15 @@ export default function HomeComponent({
             <ProjectCard
               title={project.attributes.nombre}
               location={project.attributes.ficha.ubicacion}
-              categories={project.attributes.categoria_proyecto.data.map((categoria) => categoria.attributes.nombre)}
-              image={project.attributes.miniatura.data.attributes.url}
-              parentCategory={project.attributes.categoria_proyecto.data[0].attributes.nombre}
+              categories={project.attributes.categoria_proyecto.data.map(
+                (categoria) => categoria.attributes.nombre
+              )}
+              image={
+                project.attributes.miniatura.data.attributes.formats.small.url
+              }
+              parentCategory={
+                project.attributes.categoria_proyecto.data[0].attributes.nombre
+              }
               key={project.id}
             />
           ))}

@@ -41,6 +41,7 @@ export const projectQueryParams = {
     'categoria_proyecto',
     'secciones',
     'secciones.imagen',
+    'secciones.image',
     'secciones.leftImage',
     'secciones.rightImage',
     'proyectos_relacionados',

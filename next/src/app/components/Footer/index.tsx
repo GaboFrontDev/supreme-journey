@@ -66,31 +66,31 @@ export default function Footer({ offices }: FooterProps) {
           </ul>
           <ul className='space-y-3 text-base font-bold text-c-gray-200'>
             <li>
-              <a href='/projects/mixedUses' className='hover:underline'>
+              <a href='/projects/usos-mixtos' className='hover:underline'>
                 Usos Mixtos
               </a>
             </li>
             <li>
               <a
-                href='/projects/centrosComerciales'
+                href='/projects/centros-comerciales'
                 className='hover:underline'
               >
                 Centros comerciales
               </a>
             </li>
             <li>
-              <a href='/projects/dwellings' className='hover:underline'>
+              <a href='/projects/vivienda' className='hover:underline'>
                 Vivienda
               </a>
             </li>
             <li>
-              <a href='/projects/hotels' className='hover:underline'>
+              <a href='/projects/hoteles' className='hover:underline'>
                 Hoteles
               </a>
             </li>
             <li>
-              <a href='/projects' className='hover:underline'>
-                Master plan
+              <a href='/projects/master-planning' className='hover:underline'>
+                Master planning
               </a>
             </li>
           </ul>
@@ -106,17 +106,17 @@ export default function Footer({ offices }: FooterProps) {
               </a>
             </li>
             <li>
-              <a href='/projects' className='hover:underline'>
+              <a href='/projects/deportivo' className='hover:underline'>
                 Deportivo
               </a>
             </li>
             <li>
-              <a href='/projects' className='hover:underline'>
+              <a href='/projects/movilidad' className='hover:underline'>
                 Movilidad
               </a>
             </li>
             <li>
-              <a href='/projects' className='hover:underline'>
+              <a href='/projects/renovaciones-y-expansiones' className='hover:underline'>
                 Renovaciones y expansiones
               </a>
             </li>

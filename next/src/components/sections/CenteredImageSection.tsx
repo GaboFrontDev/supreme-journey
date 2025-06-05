@@ -2,15 +2,13 @@ import Image from 'next/image';
 import { CenteredImageComponent } from '@/types/strapiBlog';
 import Section from '../Section';
 
-interface BigImageSectionProps {
+interface CenteredImageProps {
   component: CenteredImageComponent;
 }
 
-export default function BigImageSection({ component }: BigImageSectionProps) {
+export default function CenteredImage({ component }: CenteredImageProps) {
   const { image } = component;
   const imageUrl = image.data.attributes.url;
-  const imageWidth = image.data.attributes.width;
-  const imageHeight = image.data.attributes.height;
 
   return (
     <Section width="max-w-7xl">
