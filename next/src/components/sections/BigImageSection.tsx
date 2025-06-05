@@ -9,14 +9,8 @@ interface BigImageSectionProps {
 export default function BigImageSection({ component }: BigImageSectionProps) {
   const { imagen } = component;
   const imageUrl = imagen.data.attributes.url;
-  const imageWidth = imagen.data.attributes.width;
-  const imageHeight = imagen.data.attributes.height;
   return (
-    <Section
-      width='w-full'
-      className='px-0'
-    >
-      <div className='relative h-[810px] w-full overflow-hidden'>
+    <div className='relative h-[810px] w-full select-none overflow-hidden rounded-t-3xl'>
         <Image
           src={imageUrl}
           alt={component.alt}
@@ -26,6 +20,5 @@ export default function BigImageSection({ component }: BigImageSectionProps) {
           priority
         />
       </div>
-    </Section>
   );
 }
