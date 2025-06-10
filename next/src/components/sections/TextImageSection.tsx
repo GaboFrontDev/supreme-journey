@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import { TextImageComponent } from '@/types/strapiBlog';
 import Section from '../Section';
+import ReactMarkdown from 'react-markdown';
 
 interface TextImageSectionProps {
   component: TextImageComponent;
@@ -12,7 +13,7 @@ export default function TextImageSection({ component }: TextImageSectionProps) {
     <Section width='max-w-7xl text-image-section'>
       <div className='grid grid-cols-2 gap-16'>
         <div className='prose prose-lg'>
-          <p>{text}</p>
+          <ReactMarkdown className='parsedown'>{text}</ReactMarkdown>
         </div>
         <div className='relative aspect-[4/3] overflow-hidden rounded-2xl'>
           <Image

@@ -26,7 +26,7 @@ export default function ImageTextSection({ component }: ImageTextSectionProps) {
         )}
         {text && (
           <div className="prose prose-lg flex flex-col items-center justify-center">
-            <ReactMarkdown>{text}</ReactMarkdown>
+            <ReactMarkdown className='parsedown'>{text}</ReactMarkdown>
           </div>
         )}
       </div>
