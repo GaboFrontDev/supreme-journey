@@ -43,7 +43,7 @@ export const CategoryComponent = ({ category, searchTerm }: { category: Categori
                 (category) => category.attributes.nombre
               )}
               image={
-                project.attributes.miniatura.data.attributes.formats.medium.url
+                project.attributes.miniatura.data.attributes.url
               }
               parentCategory={formatSlug(category.attributes.nombre)}
             />

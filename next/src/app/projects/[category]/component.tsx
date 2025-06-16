@@ -66,7 +66,7 @@ const ProjectList = ({
               (cat) => cat.attributes.nombre
             )}
             image={
-              project.attributes.miniatura.data.attributes.formats.medium.url
+              project.attributes.miniatura.data.attributes.url
             }
             parentCategory={category}
           />
@@ -113,7 +113,7 @@ export default function CategoryPageComponent({
       >
         <div className='relative h-[810px] w-full overflow-hidden rounded-t-3xl'>
           <Image
-            src={categoryData.portada.data.attributes.formats.medium.url}
+            src={categoryData.portada.data.attributes.url}
             alt='Imagen de categoría'
             fill
             className='object-cover'

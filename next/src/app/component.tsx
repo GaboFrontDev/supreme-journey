@@ -242,7 +242,7 @@ export default function HomeComponent({
                 (categoria) => categoria.attributes.nombre
               )}
               image={
-                project.attributes.miniatura.data.attributes.formats.medium.url
+                project.attributes.miniatura.data.attributes.url
               }
               parentCategory={
                 project.attributes.categoria_proyecto.data[0].attributes.nombre

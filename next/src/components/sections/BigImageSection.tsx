@@ -7,7 +7,7 @@ interface BigImageSectionProps {
 
 export default function BigImageSection({ component }: BigImageSectionProps) {
   const { imagen } = component;
-  const imageUrl = imagen.data.attributes.formats.large.url;
+  const imageUrl = imagen.data.attributes.url;
   return (
     <div className='relative h-[810px] w-full select-none overflow-hidden rounded-t-3xl'>
         <Image
