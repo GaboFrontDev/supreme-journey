@@ -40,22 +40,14 @@ export default function Header({ scrollLimit = 2100, categories = [] }: HeaderPr
     return pathname !== '/';
   }, [pathname]);
 
-  // Reorganizar categorías para efecto de matriz transpuesta
-  const transposedCategories = useMemo(() => {
-    const cols = 3;
-    const rows = Math.ceil(categories.length / cols);
-    const transposed = [];
+  const groupedCategoriesByCol = useMemo(() => {
+    const itemsPerCol = 4;
+    const grouped = [];
     
-    for (let col = 0; col < cols; col++) {
-      for (let row = 0; row < rows; row++) {
-        const index = row * cols + col;
-        if (index < categories.length) {
-          transposed.push(categories[index]);
-        }
-      }
+    for (let i = 0; i < categories.length; i += itemsPerCol) {
+      grouped.push(categories.slice(i, i + itemsPerCol));
     }
-    
-    return transposed;
+    return grouped;
   }, [categories]);
 
   const [logoSrc, setLogoSrc] = useState('/images/brand_white.png');
@@ -154,15 +146,14 @@ export default function Header({ scrollLimit = 2100, categories = [] }: HeaderPr
               </button>
             </div>
             {openDropdown === 'proyectos' && (
-              <div className={`dropdown-menu grid grid-cols-3 w-[700px] ${textColorClass} top-full left-0 mt-10 p-6 rounded-lg shadow-lg backdrop-blur-sm ${backgroundColorClass} absolute`}>
-                {transposedCategories.map((category, index) => (
-                  <Link 
-                    key={index} 
-                    href={`/projects/${formatTitleToUrl(category)}`} 
-                    className="hover:underline mt-6"
-                  >
-                    {category}
-                  </Link>
+              <div className={`dropdown-menu grid grid-cols-3 w-[700px] ${textColorClass} top-full left-0 mt-10 px-8 py-4 rounded-lg shadow-lg backdrop-blur-sm ${backgroundColorClass} absolute`}>
+               
+                {groupedCategoriesByCol.map((group, index) => (
+                  <div key={index} className="flex flex-col gap-1">
+                    {group.map((category, index) => (
+                      <Link key={index} href={`/projects/${formatTitleToUrl(category)}`} className="hover:underline mt-4">{category}</Link>
+                    ))}
+                  </div>
                 ))}
               </div>
             )}
