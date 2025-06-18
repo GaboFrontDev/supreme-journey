@@ -209,7 +209,7 @@ export default function HomeComponent({
         >
           <div className='space-y-6'>
             {clientsGroups.map((group, index) => (
-              <Marquee items={group} direction='left' key={index} />
+              <Marquee items={group} direction={index % 2 === 0 ? 'left' : 'right'} key={index} />
             ))}
           </div>
         </div>
