@@ -167,6 +167,7 @@ export interface PageAttributes {
     data: AutorData
   };
   involucrados: string[];
+  fecha: string;
 }
 
 export interface PageData {

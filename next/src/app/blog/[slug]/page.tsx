@@ -73,7 +73,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
               {attributes.nombre}
             </h2>
             <span className='text-lg font-bold text-[#A1A1A1]'>
-              {formatDateToSpanish(attributes.createdAt)}
+              {formatDateToSpanish(attributes.fecha || attributes.createdAt)}
             </span>
           </div>
         </div>

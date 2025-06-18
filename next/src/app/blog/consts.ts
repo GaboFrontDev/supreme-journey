@@ -18,6 +18,9 @@ export const queryParams = {
     'involucrados',
     'categoria_proyectos',
   ],
+  pagination: {
+    pageSize: 100,
+  },
 };
 
 export const listQueryParams = {
