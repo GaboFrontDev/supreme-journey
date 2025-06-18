@@ -119,7 +119,7 @@ export default function ProjectPage({
               <div className='space-y-1'>
                 <span className='text-base text-[#A1A1A1]'>Año</span>
                 <p className='text-lg text-black'>
-                  {project.attributes.ficha?.year}
+                  {project.attributes.ficha?.year ||  project.attributes.ficha?.año}
                 </p>
               </div>
               <div className='space-y-1'>
@@ -158,6 +158,16 @@ export default function ProjectPage({
                   {project.attributes.ficha?.tipo}
                 </p>
               </div>
+              {project.attributes.ficha?.habitaciones && (
+              <div className='space-y-1'>
+                <span className='text-base text-[#A1A1A1]'>
+                  Habitaciones
+                </span>
+                <p className='text-lg text-black'>
+                  {project.attributes.ficha?.habitaciones}
+                </p>
+              </div>
+              )}
             </div>
           </div>
           <div>

@@ -184,11 +184,13 @@ export interface ProyectoPageAttributes {
   premios: string[];
   ficha: {
     year: string;
+    año?: string;
     ubicacion: string;
     tipo: string;
     landArea: string;
     builtArea: string;
     cliente: string;
+    habitaciones?: string;
   };
   concepto: string;
   texto: string;
