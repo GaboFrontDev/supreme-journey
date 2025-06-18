@@ -33,7 +33,7 @@ export const CategoryComponent = ({ category, searchTerm }: { category: Categori
             variant='secondary'
           />
         </div>
-        <CarouselWrapper arrowOffsetY='75%'>
+        <CarouselWrapper arrowOffsetY='45%'>
           {projects.slice(0, 4).map((project) => (
             <ProjectCard
               key={project.attributes.nombre}

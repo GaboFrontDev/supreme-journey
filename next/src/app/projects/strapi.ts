@@ -157,6 +157,7 @@ export interface CategoriaProyectoAttributes {
     data: PageData[];
   };
   concepto: string;
+  orden: number;
 }
 
 export interface CategoriaProyectoData {

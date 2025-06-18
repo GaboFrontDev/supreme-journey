@@ -141,7 +141,7 @@ export default function Header({ scrollLimit = 2100, categories = [] }: HeaderPr
                   <Link 
                     key={index} 
                     href={`/projects/${formatTitleToUrl(category)}`} 
-                    className="hover:underline"
+                    className="hover:underline mt-6"
                   >
                     {category}
                   </Link>

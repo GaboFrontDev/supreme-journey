@@ -38,10 +38,12 @@ const CategoryFilters = ({ categories, selectedCategory, onCategoryClick }: Cate
 );
 
 export default function ProjectsComponent({
-  categories,
+  categories: _categories,
 }: ProjectsComponentProps) {
   const { searchQuery, setSearchQuery, selectedCategory, setSelectedCategory } =
     useProjectSearch();
+  let categories = {..._categories};
+  categories.data = categories.data.sort((a, b) => a.attributes.orden - b.attributes.orden);
 
   const handleCategoryClick = (category: string) => {
     setSelectedCategory([category]);

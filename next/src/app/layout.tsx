@@ -15,12 +15,13 @@ export const metadata = {
 export default async function RootLayout({ children }: { children: ReactNode }) {
   const offices = await getCoordinates();
   const categories = await getCategories();
+  const sortedCategories = categories.data.sort((a, b) => a.attributes.orden - b.attributes.orden);
   // check if page is home 
   return (
     <html lang='es'>
       <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID || ''} />
       <body className='min-h-screen bg-white'>
-        <Header categories={categories.data.map((category) => category.attributes.nombre)} />
+        <Header categories={sortedCategories.map((category) => category.attributes.nombre)} />
         <main>{children}</main>
         <Footer offices={offices} />
       </body>
