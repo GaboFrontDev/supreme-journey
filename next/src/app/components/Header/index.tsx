@@ -40,6 +40,24 @@ export default function Header({ scrollLimit = 2100, categories = [] }: HeaderPr
     return pathname !== '/';
   }, [pathname]);
 
+  // Reorganizar categorías para efecto de matriz transpuesta
+  const transposedCategories = useMemo(() => {
+    const cols = 3;
+    const rows = Math.ceil(categories.length / cols);
+    const transposed = [];
+    
+    for (let col = 0; col < cols; col++) {
+      for (let row = 0; row < rows; row++) {
+        const index = row * cols + col;
+        if (index < categories.length) {
+          transposed.push(categories[index]);
+        }
+      }
+    }
+    
+    return transposed;
+  }, [categories]);
+
   const [logoSrc, setLogoSrc] = useState('/images/brand_white.png');
   const [dropdownSrc, setDropdownSrc] = useState('/icons/arrow_down_white.png');
   const [translateSrc, setTranslateSrc] = useState('/icons/translate_white.png');
@@ -137,7 +155,7 @@ export default function Header({ scrollLimit = 2100, categories = [] }: HeaderPr
             </div>
             {openDropdown === 'proyectos' && (
               <div className={`dropdown-menu grid grid-cols-3 w-[700px] ${textColorClass} top-full left-0 mt-10 p-6 rounded-lg shadow-lg backdrop-blur-sm ${backgroundColorClass} absolute`}>
-                {categories.map((category, index) => (
+                {transposedCategories.map((category, index) => (
                   <Link 
                     key={index} 
                     href={`/projects/${formatTitleToUrl(category)}`} 

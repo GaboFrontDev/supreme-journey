@@ -43,6 +43,7 @@ export default function ProjectsComponent({
   const { searchQuery, setSearchQuery, selectedCategory, setSelectedCategory } =
     useProjectSearch();
   let categories = {..._categories};
+  // sort categories by orden ascending
   categories.data = categories.data.sort((a, b) => a.attributes.orden - b.attributes.orden);
 
   const handleCategoryClick = (category: string) => {
