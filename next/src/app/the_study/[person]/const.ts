@@ -159,6 +159,24 @@ export const associates: Person[] = [
     },
   },
   {
+    name: 'Pedro López',
+    position: 'Director de Operaciones',
+    role: 'COO',
+    image: '/images/the_study/associates/pedro-lopez.jpg',
+    description: [
+      'En 2003 que es contratado directamente por la empresa como Responsable de recursos humanos y servicios internos, función que desempeña hasta el 2006, año en que se le asignan nuevas responsabilidades como auxiliar contable - administrativo.',
+      'En el año 2011 es promovido a Gerente Administrativo, función que ha venido desempeñando hasta este nuevo nombramiento en febrero de 2017 como Director de Operaciones.',
+      'Pedro forma parte de Ares Arquitectos desde 2003, año en que se integró al equipo como Responsable de Recursos Humanos y Servicios Internos. Su compromiso, visión organizacional y capacidad para adaptarse a nuevos retos lo llevaron a asumir funciones dentro del área contable y administrativa a partir de 2006, ampliando así su participación en los procesos internos de la firma.',
+      'En 2011 fue promovido a Gerente Administrativo, cargo desde el cual fortaleció la estructura operativa de Ares mediante una gestión eficiente de los recursos, implementación de mejoras en los procesos internos y la consolidación del equipo administrativo. Su desempeño y liderazgo continuo lo llevaron a ser nombrado Director de Operaciones en febrero de 2017.',
+      'Desde esta posición, ha sido pieza clave en la profesionalización del estudio, liderando áreas estratégicas como la gestión financiera, manteniendo siempre un enfoque alineado a los valores, filosofía y objetivos de crecimiento de la marca.'
+    ],
+    link: {
+      Instagram: '',
+      Facebook: '',
+      LinkedIn: '',
+    },
+  },
+  {
     name: 'Zyanya Quero',
     position: 'Director de Proyecto',
     role: 'Project Director',
