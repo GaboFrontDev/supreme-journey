@@ -35,6 +35,9 @@ export const listQueryParams = {
     'relacionados.miniatura',
     'relacionados.secciones',
   ],
+  pagination: {
+    pageSize: 100,
+  },
 };
 
 export const projectQueryParams = {
