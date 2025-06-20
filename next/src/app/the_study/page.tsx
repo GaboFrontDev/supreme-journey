@@ -74,7 +74,7 @@ const architects = [
     position: 'Arquitecto',
   },
   {
-    name: 'Fabiola Féliz',
+    name: 'Fabiola Félix',
     image: '/images/the_study/architect/6.png',
     position: 'Arquitecto',
   },
@@ -89,7 +89,7 @@ const architects = [
     position: 'Arquitecto',
   },
   {
-    name: 'Rigoberto Saldívas',
+    name: 'Rigoberto Saldívar',
     image: '/images/the_study/architect/9.png',
     position: 'Arquitecto',
   },

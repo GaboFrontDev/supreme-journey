@@ -196,7 +196,7 @@ export const years = [
           title: 'Alianza con L35',
           description:
             'Fortaleciendo nuestra proyección internacional y colaboración en proyectos estratégicos de gran escala.',
-          image: '/images/history/16.png',
+          image: '/images/Alianza-L35-2024.jpg',
         },
       ],
     },
