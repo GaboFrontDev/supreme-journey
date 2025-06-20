@@ -54,7 +54,7 @@ const directors = [
 
 const architects = [
   {
-    name: 'Jacobo Villa',
+    name: 'Jacob Villa',
     image: '/images/the_study/architect/1.png',
     position: 'Arquitecto',
   },
