@@ -140,7 +140,7 @@ const professionals = [
 const acabados = [
   {
     name: 'Itza López',
-    image: '/images/Itza-Lopez.jpg',
+    image: '/images/Itza.jpg',
     position: 'Diseñador Líder',
   },
   {
@@ -170,7 +170,7 @@ const acabados = [
   },
   {
     name: 'Ofelia Aguilar',
-    image: '/images/Aguilar.jpg',
+    image: '/images/Ofelia.jpg',
     position: 'Acabados',
   },
 ];
@@ -206,7 +206,7 @@ const operaciones = [
   },
   {
     name: 'José Barrios',
-    image: '/images/Jose-Barrios.jpg',
+    image: '/images/Pepe_barrios.jpg',
     position: 'Contador',
   },
   {
