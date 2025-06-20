@@ -59,11 +59,6 @@ const architects = [
     position: 'Arquitecto',
   },
   {
-    name: 'Alejandro Arenas',
-    image: '/images/the_study/architect/2.png',
-    position: 'Arquitecto',
-  },
-  {
     name: 'Beatriz Verduzco',
     image: '/images/the_study/architect/3.png',
     position: 'Arquitecto',
