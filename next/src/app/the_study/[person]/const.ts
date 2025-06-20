@@ -4,7 +4,7 @@ export const directors: Person[] = [
   {
     name: 'Jacinto Arenas',
     image: '/images/the_study/directors/1.png',
-    detail: '/images/the_study/directors/1.png',
+    detail: '/images/Jacinto-Arenas_Detalle.jpg',
     position: 'CEO',
     link: {
       Instagram: 'https://www.instagram.com/jacintoarenas_arq/',
@@ -95,7 +95,7 @@ export const directors: Person[] = [
   {
     name: 'Carlos Márquez',
     image: '/images/the_study/directors/6.png',
-    detail: '/images/the_study/directors/6.png',
+    detail: '/images/Carlos-Marquez_Detalle.jpg',
     position: 'Principal Partner',
     link: {
       Instagram: 'https://www.instagram.com/arq.marcodi/',
