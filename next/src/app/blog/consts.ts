@@ -61,6 +61,9 @@ export const projectQueryParams = {
     'relacionados',
     'relacionados.miniatura',
   ],
+  pagination: {
+    pageSize: 100,
+  },
 };
 
 export const categoryQueryParams = {
