@@ -70,12 +70,18 @@ export const categoryQueryParams = {
     'proyectos_ares.miniatura',
     'proyectos_ares.categoria_proyecto',
   ],
+  pagination: {
+    pageSize: 100,
+  },
 };
 
 export const clienteQueryParams = {
   populate: [
     'cliente.data',
   ],
+  pagination: {
+    pageSize: 100,
+  },
 };
 
 export const destacadoQueryParams = {
@@ -85,4 +91,7 @@ export const destacadoQueryParams = {
     'proyectos.miniatura',
     ...projectQueryParams.populate,
   ],
+  pagination: {
+    pageSize: 100,
+  },
 };
