@@ -209,7 +209,11 @@ export default function HomeComponent({
         >
           <div className='space-y-6'>
             {clientsGroups.map((group, index) => (
-              <Marquee items={group} direction={index % 2 === 0 ? 'left' : 'right'} key={index} />
+              <Marquee
+                items={group}
+                direction={index % 2 === 0 ? 'left' : 'right'}
+                key={index}
+              />
             ))}
           </div>
         </div>
@@ -241,12 +245,10 @@ export default function HomeComponent({
               categories={project.attributes.categoria_proyecto.data.map(
                 (categoria) => categoria.attributes.nombre
               )}
-              image={
-                project.attributes.miniatura.data.attributes.url
-              }
-              parentCategory={
+              image={project.attributes.miniatura.data.attributes.url}
+              parentCategory={formatTitleToUrl(
                 project.attributes.categoria_proyecto.data[0].attributes.nombre
-              }
+              )}
               key={project.id}
             />
           ))}
