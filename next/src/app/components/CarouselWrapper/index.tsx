@@ -98,7 +98,7 @@ export default function CarouselWrapper({
         onMouseLeave={handleMouseLeave}
         onMouseMove={handleMouseMove}
       >
-        <div className='flex w-max gap-6 pr-6 md:pr-0'>{children}</div>
+        <div className='flex w-max gap-6 pr-0 md:pr-0'>{children}</div>
       </div>
     </div>
   );
