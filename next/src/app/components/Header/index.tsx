@@ -167,13 +167,13 @@ export default function Header({
             >
               <div className='flex h-6 w-6 flex-col items-center justify-center'>
                 <span
-                  className={`border-solid-white bg-current h-2 w-5`}
+                  className={`border-2 border-white bg-white h-0.5 w-5`}
                 ></span>
                 <span
-                  className={`border-solid-white bg-current mt-1 h-2 w-5`}
+                  className={`border-2 border-white bg-white mt-1 h-0.5 w-5`}
                 ></span>
                 <span
-                  className={`border-solid-white bg-current mt-1 h-2 w-5`}
+                  className={`border-2 border-white bg-white mt-1 h-0.5 w-5`}
                 ></span>
               </div>
             </button>
