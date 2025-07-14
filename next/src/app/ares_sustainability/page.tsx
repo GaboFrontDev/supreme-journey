@@ -7,7 +7,7 @@ export default function AresSustainabilityPage() {
   return (
     <>
       <Section width='max-w-7xl' paddingTop='pt-32' paddingBottom='pb-12'>
-        <div className='flex items-center justify-between gap-36'>
+        <div className='md:flex items-center justify-between gap-36'>
           <div className='flex-col'>
             <div className='mb-10 flex items-center gap-2'>
               <Link href='/ares_culture' className='flex items-center gap-2'>
@@ -59,7 +59,7 @@ export default function AresSustainabilityPage() {
       </Section>
 
       <Section width='max-w-7xl' paddingTop='pt-20' paddingBottom='pb-20'>
-        <div className='grid grid-cols-2 gap-36'>
+        <div className='md:grid grid-cols-2 gap-36'>
           <h2 className='font-regular max-w-2xl text-[40px] leading-tight text-black'>
             DIS Digital Innovation & Sustainability
           </h2>
@@ -100,7 +100,7 @@ export default function AresSustainabilityPage() {
       </Section>
 
       <Section width='max-w-7xl' paddingTop='pt-20' paddingBottom='pb-20'>
-        <div className='grid grid-cols-2 gap-36'>
+        <div className='md:grid grid-cols-2 gap-36'>
           <h2 className='font-regular max-w-2xl text-[40px] leading-tight text-black'>
             BIM Building Information Modeling
           </h2>
@@ -132,7 +132,7 @@ export default function AresSustainabilityPage() {
       </Section>
 
       <Section width='max-w-7xl' paddingTop='pt-10' paddingBottom='pb-20'>
-        <div className='grid grid-cols-5 gap-36'>
+        <div className='grid grid-cols-2 md:grid-cols-5 md:gap-36 gap-6'>
           <div>
             <h4 className='relative flex items-start text-8xl text-[#989F9C]'>
               1
@@ -217,7 +217,7 @@ export default function AresSustainabilityPage() {
         paddingRight='pr-0'
         background='bg-[#F5F5F5]'
       >
-        <div className='grid grid-cols-[1fr_466px] gap-10'>
+        <div className='md:grid md:grid-cols-[1fr_466px] gap-10'>
           <div className='relative h-[440px] w-full overflow-hidden rounded-3xl'>
             <Image
               src='/images/ares_sustainability/3.png'

@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import Image from 'next/image';
 import Header from '../components/Header';
 import Section from '../components/Section';
@@ -258,8 +258,31 @@ export default function TheStudyPage() {
     }
   };
 
-  const [selectedSection, setSelectedSection] =
+  const [_selectedSection, setSelectedSection] =
     useState<keyof typeof keyToSection>('arquitectos');
+
+  const selectedSection = useMemo(() => {
+    return keyToSection[_selectedSection];
+  }, [_selectedSection]);
+
+  const memoizedSelectedSection = useMemo(() => {
+    return selectedSection.map((architect, index) => (
+      <div key={index} className='flex flex-col'>
+        <div className='relative mb-4 h-[185px] w-full overflow-hidden rounded-xl md:h-[380px]'>
+          <Image
+            src={architect.image}
+            alt={architect.name}
+            fill
+            className='object-cover'
+          />
+        </div>
+        <div className='flex flex-col items-start'>
+          <h2 className='text-lg font-bold text-black'>{architect.name}</h2>
+          <span className='text-[#A1A1A1]'>{architect.position}</span>
+        </div>
+      </div>
+    ));
+  }, [selectedSection]);
 
   return (
     <>
@@ -287,8 +310,8 @@ export default function TheStudyPage() {
       </div>
 
       <Section width='max-w-7xl'>
-        <div className='md:flex items-center justify-between gap-36'>
-          <div className='md:flex flex-col gap-16'>
+        <div className='items-center justify-between gap-36 md:flex'>
+          <div className='flex-col gap-16 md:flex'>
             <h2 className='max-w-3xl text-5xl font-bold text-[#636B69]'>
               Con sede en Guadalajara, Jalisco, México
             </h2>
@@ -300,7 +323,10 @@ export default function TheStudyPage() {
               industria.
             </p>
           </div>
-          <div className='relative min-h-[320px] md:min-h-[564px] min-w-[320px] md:min-w-[564px] w-full md:w-auto'>
+          <div
+            className='relative min-h-[320px] w-full min-w-[320px] md:min-h-[564px] md:w-auto
+              md:min-w-[564px]'
+          >
             <div className='overflow-hidden rounded-2xl'>
               <Image
                 src='/images/the_study/2.png'
@@ -323,7 +349,13 @@ export default function TheStudyPage() {
         <ProcessSteps />
       </Section>
 
-      <Section width='max-w-7xl' paddingTop='pt-20' paddingBottom='pt-0' paddingLeft='pl-6 md:pl-0' paddingRight='pr-6 md:pr-0'>
+      <Section
+        width='max-w-7xl'
+        paddingTop='pt-20'
+        paddingBottom='pt-0'
+        paddingLeft='pl-6 md:pl-0'
+        paddingRight='pr-6 md:pr-0'
+      >
         <h2 className='mb-16 text-5xl font-bold text-[#636B69]' id='history'>
           Ares, <br /> a través del tiempo
         </h2>
@@ -360,15 +392,15 @@ export default function TheStudyPage() {
           <h2 className='mb-10 text-[32px] font-bold leading-tight text-[#636B69]'>
             Directores
           </h2>
-          <div className='md:grid grid-cols-3 gap-10'>
+          <div className='grid grid-cols-2 gap-4 md:grid-cols-3 md:gap-10 '>
             {directors.map((director, index) => (
-              <div key={index} className='flex flex-col md:py-0 py-6'>
-                <div className='relative mb-4 h-[380px] w-full overflow-hidden rounded-xl'>
+              <div key={index} className='flex flex-col py-6 md:py-0'>
+                <div className='relative mb-4 h-[185px] w-full overflow-hidden rounded-xl md:h-[380px]'>
                   <Image
                     src={director.image}
                     alt='Imagen de servicio'
                     fill
-                    className='object-cover'
+                    className='object-contain md:object-cover'
                   />
                 </div>
                 <div className='flex flex-col items-start'>
@@ -391,10 +423,10 @@ export default function TheStudyPage() {
           <h2 className='mb-10 text-[32px] font-bold leading-tight text-[#636B69]'>
             Asociados
           </h2>
-          <div className='md:grid grid-cols-3 gap-10'>
+          <div className='grid grid-cols-2 gap-4 md:grid-cols-3 md:gap-10'>
             {associates.map((directo, index) => (
-              <div key={index} className='flex flex-col md:py-0 py-6'>
-                <div className='relative mb-4 h-[380px] w-full overflow-hidden rounded-xl'>
+              <div key={index} className='flex flex-col py-6 md:py-0'>
+                <div className='relative mb-4 h-[185px] w-full overflow-hidden rounded-xl md:h-[380px]'>
                   <Image
                     src={directo.image}
                     alt='Imagen de servicio'
@@ -421,9 +453,9 @@ export default function TheStudyPage() {
       </Section>
 
       <Section width='max-w-7xl' paddingBottom='pt-0'>
-        <div className='mb-16 md:flex items-center justify-between gap-10 select-none'>
+        <div className='mb-16 grid select-none grid-cols-2 items-center justify-between gap-4 md:gap-10'>
           {professionals.map((professional, index) => {
-            const isActive = professional.key === selectedSection;
+            const isActive = professional.key === _selectedSection;
 
             return (
               <div
@@ -436,8 +468,8 @@ export default function TheStudyPage() {
                 }
               >
                 <div
-                  className='relative h-8 min-h-8 w-8 min-w-8 items-center justify-center rounded-full
-                    bg-[#EFEFEF] hidden md:flex'
+                  className='relative hidden h-8 min-h-8 w-8 min-w-8 items-center justify-center rounded-full
+                    bg-[#EFEFEF] md:flex'
                 >
                   <Image
                     src={
@@ -466,31 +498,14 @@ export default function TheStudyPage() {
 
       {selectedSection ? (
         <Section width='max-w-7xl' paddingTop='pt-0' paddingBottom='pb-48'>
-          <div className='md:grid grid-cols-3 gap-10'>
-            {keyToSection[selectedSection].map((architect, index) => (
-              <div key={index} className='flex flex-col'>
-                <div className='relative mb-4 h-[380px] w-full overflow-hidden rounded-xl'>
-                  <Image
-                    src={architect.image}
-                    alt={architect.name}
-                    fill
-                    className='object-cover'
-                  />
-                </div>
-                <div className='flex flex-col items-start'>
-                  <h2 className='text-lg font-bold text-black'>
-                    {architect.name}
-                  </h2>
-                  <span className='text-[#A1A1A1]'>{architect.position}</span>
-                </div>
-              </div>
-            ))}
+          <div className='grid grid-cols-2 gap-4 md:grid-cols-3 md:gap-10'>
+            {memoizedSelectedSection}
           </div>
         </Section>
       ) : (
         <>
           <Section width='max-w-7xl' paddingTop='pt-0' paddingBottom='pb-48'>
-            <div className='md:grid grid-cols-3 gap-10'>
+            <div className='grid-cols-3 gap-10 md:grid'>
               {architects.map((architect, index) => (
                 <div key={index} className='flex flex-col'>
                   <div className='relative mb-4 h-[380px] w-full overflow-hidden rounded-xl'>
@@ -512,7 +527,7 @@ export default function TheStudyPage() {
             </div>
           </Section>
           <Section width='max-w-7xl' paddingTop='pt-0' paddingBottom='pb-48'>
-            <div className='md:grid grid-cols-3 gap-10'>
+            <div className='grid-cols-3 gap-10 md:grid'>
               {acabados.map((acabado, index) => (
                 <div key={index} className='flex flex-col'>
                   <div className='relative mb-4 h-[380px] w-full overflow-hidden rounded-xl'>
@@ -535,7 +550,7 @@ export default function TheStudyPage() {
           </Section>
 
           <Section width='max-w-7xl' paddingTop='pt-0' paddingBottom='pb-48'>
-            <div className='md:grid grid-cols-3 gap-10'>
+            <div className='grid-cols-3 gap-10 md:grid'>
               {disenos.map((diseno, index) => (
                 <div key={index} className='flex flex-col'>
                   <div className='relative mb-4 h-[380px] w-full overflow-hidden rounded-xl'>
@@ -557,7 +572,7 @@ export default function TheStudyPage() {
             </div>
           </Section>
           <Section width='max-w-7xl' paddingTop='pt-0' paddingBottom='pb-48'>
-            <div className='md:grid grid-cols-3 gap-10'>
+            <div className='grid-cols-3 gap-10 md:grid'>
               {operaciones.map((operacion, index) => (
                 <div key={index} className='flex flex-col'>
                   <div className='relative mb-4 h-[380px] w-full overflow-hidden rounded-xl'>
@@ -580,7 +595,6 @@ export default function TheStudyPage() {
           </Section>
         </>
       )}
-       
     </>
   );
 }

@@ -7,7 +7,7 @@ export default function AresArchitectsPage() {
   return (
     <>
       <Section width='max-w-7xl' paddingTop='pt-32' paddingBottom='pb-12'>
-        <div className='flex items-center justify-between gap-36'>
+        <div className='md:flex items-center justify-between gap-36'>
           <div className='flex-col'>
             <div className='mb-10 flex items-center gap-2'>
               <Link href='/ares_culture' className='flex items-center gap-2'>
@@ -49,18 +49,18 @@ export default function AresArchitectsPage() {
         paddingLeft='pl-0'
         paddingRight='pr-0'
       >
-        <div className='relative h-[810px] w-full overflow-hidden rounded-t-3xl'>
+        <div className='relative h-[320px] md:h-[810px] w-full overflow-hidden rounded-t-3xl'>
           <Image
             src='/images/ares_architects/1.png'
             alt='Ares Architects'
             fill
-            className='object-cover'
+            className='object-contain md:object-cover'
           />
         </div>
       </Section>
 
       <Section width='max-w-7xl' paddingTop='pt-20' paddingBottom='pb-20'>
-        <div className='grid grid-cols-2 gap-36'>
+        <div className='md:grid grid-cols-2 gap-36'>
           <h2 className='font-regular max-w-2xl text-[40px] leading-tight text-black'>
             Creemos en el poder de compartir conocimiento y experiencia para
             motivar a generaciones futuras
@@ -94,7 +94,7 @@ export default function AresArchitectsPage() {
         paddingLeft='pl-0'
         paddingRight='pr-0'
       >
-        <div className='relative h-[810px] w-full overflow-hidden rounded-t-3xl'>
+        <div className='relative h-[320px] md:h-[810px] w-full overflow-hidden rounded-t-3xl'>
           <Image
             src='/images/ares_architects/2.png'
             alt='Ares Architects'
@@ -105,7 +105,7 @@ export default function AresArchitectsPage() {
       </Section>
 
       <Section width='max-w-7xl' paddingTop='pt-20' paddingBottom='pb-20'>
-        <div className='grid grid-cols-2 gap-36'>
+        <div className='md:grid grid-cols-2 gap-36'>
           <h2 className='font-regular max-w-2xl text-[40px] leading-tight text-black'>
             Desarrollar una conexión directa con la realidad profesional
           </h2>
@@ -128,7 +128,7 @@ export default function AresArchitectsPage() {
       </Section>
 
       <Section width='max-w-7xl' paddingTop='pt-10' paddingBottom='pb-20'>
-        <div className='grid grid-cols-5 gap-36'>
+        <div className='md:grid grid-cols-5 gap-36'>
           <div>
             <h4 className="flex items-start text-[#989F9C] text-8xl relative">
               1
@@ -203,7 +203,7 @@ export default function AresArchitectsPage() {
         paddingRight='pr-0'
         background='bg-[#F5F5F5]'
       >
-        <div className='grid grid-cols-[1fr_466px] gap-10'>
+        <div className='md:grid grid-cols-[1fr_466px] gap-10'>
           <div className='relative h-[440px] w-full overflow-hidden rounded-3xl'>
             <Image
               src='/images/ares_architects/3.png'
