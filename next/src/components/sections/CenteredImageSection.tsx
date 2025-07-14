@@ -11,13 +11,13 @@ export default function CenteredImage({ component }: CenteredImageProps) {
   const imageUrl = image.data.attributes.url;
 
   return (
-    <Section width="max-w-7xl">
-      <div className="relative w-full aspect-[16/9] overflow-hidden rounded-2xl">
+    <Section width="max-w-7xl" data-testid="centered-image-section">
+      <div className="relative w-full aspect-[16/9] overflow-hidden rounded-2xl" data-testid="centered-image-section-image">
         <Image
           src={imageUrl}
           alt={component.alt}
           fill
-          className="object-cover"
+          className="object-contain md:object-cover"
           sizes="(max-width: 2048px) 100vw, 1280px"
           priority
           quality={100}

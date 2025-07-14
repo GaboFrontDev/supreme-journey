@@ -20,7 +20,11 @@ interface CategoryFilterProps {
   onCategoryClick: (category: string) => void;
 }
 
-const CategoryFilters = ({ categories, selectedCategory, onCategoryClick }: CategoryFilterProps) => (
+const CategoryFilters = ({
+  categories,
+  selectedCategory,
+  onCategoryClick,
+}: CategoryFilterProps) => (
   <div className='space-x-4'>
     {categories.data.map((category, index) => (
       <FilterButton
@@ -42,9 +46,11 @@ export default function ProjectsComponent({
 }: ProjectsComponentProps) {
   const { searchQuery, setSearchQuery, selectedCategory, setSelectedCategory } =
     useProjectSearch();
-  let categories = {..._categories};
+  let categories = { ..._categories };
   // sort categories by orden ascending
-  categories.data = categories.data.sort((a, b) => a.attributes.orden - b.attributes.orden);
+  categories.data = categories.data.sort(
+    (a, b) => a.attributes.orden - b.attributes.orden
+  );
 
   const handleCategoryClick = (category: string) => {
     setSelectedCategory([category]);
@@ -89,11 +95,11 @@ export default function ProjectsComponent({
             onChange={handleSearch}
           />
         </div>
-        <CategoryFilters 
+        {/* <CategoryFilters
           categories={categories}
           selectedCategory={selectedCategory}
           onCategoryClick={handleCategoryClick}
-        />
+        /> */}
       </Section>
       {categoriesRendered.length > 0 ? (
         categoriesRendered

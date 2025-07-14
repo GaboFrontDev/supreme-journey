@@ -9,7 +9,7 @@ interface ProjectCardProps {
 
 export default function PevaCard({ title, author, image }: ProjectCardProps) {
   return (
-    <div className='min-w-[620px] max-w-sm rounded-xl overflow-hidden bg-[#F5F5F5]'>
+    <div className='w-[85dvw] md:min-w-[620px] max-w-sm rounded-xl overflow-hidden bg-[#F5F5F5]'>
       <div className="w-full h-[380px] overflow-hidden rounded-2xl relative">
         <Image src={image} alt={title} fill className="object-cover pointer-events-none" />
       </div>

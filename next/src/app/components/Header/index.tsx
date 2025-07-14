@@ -57,6 +57,8 @@ export default function Header({
 
   const [logoSrc, setLogoSrc] = useState('/images/brand_white.png');
   const [dropdownSrc, setDropdownSrc] = useState('/icons/arrow_down_white.png');
+  const [hamburgerColorClass, setHamburgerColorClass] = useState('border-2 border-white bg-white');
+
   const [translateSrc, setTranslateSrc] = useState(
     '/icons/translate_white.png'
   );
@@ -78,6 +80,7 @@ export default function Header({
       setTextColorClass('text-[#636B69]');
       setBackgroundColorClass('bg-white');
       setHoverColorClass('hover:bg-[#EFEFEF]');
+      setHamburgerColorClass('border-2 border-[#636B69] bg-[#EFEFEF]');
     }
 
     const unsubscribe = scrollY.on('change', (latest) => {
@@ -90,6 +93,7 @@ export default function Header({
         setTextColorClass('text-[#636B69]');
         setBackgroundColorClass('bg-white');
         setHoverColorClass('hover:bg-[#EFEFEF]');
+        setHamburgerColorClass('border-2 border-[#636B69] bg-[#EFEFEF]');
       } else if (!forceScrolledStyle) {
         setLogoSrc('/images/brand_white.png');
         setDropdownSrc('/icons/arrow_down_white.png');
@@ -98,6 +102,7 @@ export default function Header({
         setTextColorClass('text-white');
         setBackgroundColorClass('bg-white/20');
         setHoverColorClass('hover:bg-white/10');
+        setHamburgerColorClass('border-2 border-white bg-white');
       }
     });
 
@@ -141,7 +146,7 @@ export default function Header({
       <>
         <motion.div
           className={`fixed left-1/2 top-6 z-50 w-full max-w-7xl -translate-x-1/2 rounded-full px-6
-          py-3 shadow-lg backdrop-blur-sm ${backgroundColorClass}`}
+          py-3 shadow-lg backdrop-blur-sm ${backgroundColorClass} w-[85dvw] select-none`}
           initial={{ y: 0, opacity: 1, x: '-50%' }}
           animate={{
             y: 0,
@@ -167,13 +172,13 @@ export default function Header({
             >
               <div className='flex h-6 w-6 flex-col items-center justify-center'>
                 <span
-                  className={`border-2 border-white bg-white h-0.5 w-5`}
+                  className={`${hamburgerColorClass} h-0.5 w-5`}
                 ></span>
                 <span
-                  className={`border-2 border-white bg-white mt-1 h-0.5 w-5`}
+                  className={`${hamburgerColorClass} mt-1 h-0.5 w-5`}
                 ></span>
                 <span
-                  className={`border-2 border-white bg-white mt-1 h-0.5 w-5`}
+                  className={`${hamburgerColorClass} mt-1 h-0.5 w-5`}
                 ></span>
               </div>
             </button>

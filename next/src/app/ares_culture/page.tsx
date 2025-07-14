@@ -42,7 +42,7 @@ export default function AresCulturePage() {
   return (
     <>
       <Section width='max-w-7xl' paddingTop='pt-52' paddingBottom='pb-12'>
-        <div className='flex items-center justify-between gap-36'>
+        <div className='md:flex items-center justify-between gap-36'>
           <div className='flex-col'>
             <h2 className='mb-6 mt-2 max-w-2xl text-[40px] font-bold leading-tight text-[#636B69]'>
               Cultura Ares
@@ -84,11 +84,11 @@ export default function AresCulturePage() {
       </Section>
 
       <Section width='max-w-7xl' paddingTop='pt-10' paddingBottom='pb-48'>
-        <div className='grid grid-cols-2 gap-10'>
+        <div className='md:grid grid-cols-2 gap-10'>
           {iniciativas.map((iniciativa) => (
             <div
               key={iniciativa.id}
-              className='min-w-[620px] max-w-sm overflow-hidden rounded-xl bg-[#F5F5F5]'
+              className='w-full md:min-w-[620px] max-w-sm overflow-hidden rounded-xl bg-[#F5F5F5]'
             >
               <div
                 className='relative h-[380px] w-full overflow-hidden rounded-2xl'

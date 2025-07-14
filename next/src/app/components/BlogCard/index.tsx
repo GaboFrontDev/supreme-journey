@@ -17,7 +17,7 @@ export default function BlogCard({
   buttonLabel = "Continuar Leyendo",
 }: BlogCardProps) {
   return (
-    <div className="flex items-center justify-between gap-6">
+    <div className="md:flex items-center justify-between gap-6 px-2 py-4 md:px-0 md:py-0">
       <div className="min-w-[196px] min-h-[218px] overflow-hidden rounded-2xl relative">
         <Image
           src={images[0]}

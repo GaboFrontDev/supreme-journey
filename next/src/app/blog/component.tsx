@@ -72,8 +72,8 @@ export default function BlogPageComponent({ posts }: BlogPageComponentProps) {
         paddingTop="pt-52"
         paddingBottom="pb-12"
       >
-        <div className="flex items-center justify-between gap-36">
-          <div className="min-w-[564px] min-h-[530px] overflow-hidden rounded-2xl relative">
+        <div className="md:flex items-center justify-between gap-36">
+          <div className="w-full md:min-w-[564px] min-h-[530px] overflow-hidden rounded-2xl relative">
             {featuredPost.image && (
               <Image
                 src={featuredPost.image}
@@ -97,7 +97,7 @@ export default function BlogPageComponent({ posts }: BlogPageComponentProps) {
             <Button href={`/blog/${featuredPost.slug}`} label="Continuar Leyendo" />
           </div>
         </div>
-        <div className="flex items-center mt-20 gap-4">
+        <div className="md:flex items-center mt-20 gap-4">
           <div className="relative flex-1">
             <Image 
               src="/icons/search.png" 
@@ -119,7 +119,7 @@ export default function BlogPageComponent({ posts }: BlogPageComponentProps) {
       </Section>
 
       <Section width='max-w-7xl' paddingTop="pt-0">
-        <div className="grid grid-cols-2 gap-y-10 gap-x-32">
+        <div className="md:grid grid-cols-2 gap-y-10 gap-x-32">
           {filteredPosts.length === 0 && (
             <div className="col-span-2">
               <p className="text-lg text-black">No se encontraron resultados</p>

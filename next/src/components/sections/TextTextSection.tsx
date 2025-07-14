@@ -9,7 +9,7 @@ interface TextTextSectionProps {
 export default function TextTextSection({ component }: TextTextSectionProps) {
   return (
     <Section width="max-w-7xl">
-      <div className="grid grid-cols-2 gap-16">
+      <div className="md:grid grid-cols-2 gap-16">
         <div className="prose prose-lg flex flex-col items-center justify-center">
           <ReactMarkdown className='parsedown'>{component.leftText}</ReactMarkdown>
         </div>

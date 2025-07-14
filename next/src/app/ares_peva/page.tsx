@@ -21,7 +21,7 @@ export default function AresPevaPage() {
   return (
     <>
       <Section width='max-w-7xl' paddingTop='pt-32' paddingBottom='pb-12'>
-        <div className='flex items-center justify-between gap-36'>
+        <div className='md:flex items-center justify-between gap-36'>
           <div className='flex-col'>
             <div className='mb-10 flex items-center gap-2'>
               <Link href='/ares_culture' className='flex items-center gap-2'>
@@ -75,7 +75,7 @@ export default function AresPevaPage() {
       </Section>
 
       <Section width='max-w-7xl' paddingBottom='pb-20'>
-        <div className='flex items-center'>
+        <div className='md:flex items-center'>
           <h2 className='font-regular max-w-2xl text-[40px] leading-tight text-black'>
             El dibujo es el primer paso en la creación de una narrativa visual
             que da vida a un espacio
@@ -101,7 +101,7 @@ export default function AresPevaPage() {
       </Section>
 
       <Section width='max-w-7xl' paddingTop='pt-20' paddingBottom='pb-20'>
-        <div className='grid grid-cols-2 gap-36'>
+        <div className='md:grid grid-cols-2 gap-36'>
           <h2 className='font-regular max-w-2xl text-[40px] leading-tight text-black'>
             Ares Archivos de Arquitectura
           </h2>
@@ -132,7 +132,7 @@ export default function AresPevaPage() {
         paddingRight='pr-0'
         background='bg-[#F5F5F5]'
       >
-        <div className='mb-20 grid grid-cols-[1fr_466px] gap-10'>
+        <div className='mb-20 md:grid grid-cols-[1fr_466px] gap-10'>
           <div>
             <div className='relative h-[440px] w-full overflow-hidden rounded-3xl'>
               <Image
@@ -231,7 +231,7 @@ export default function AresPevaPage() {
             </div>
           </div>
         </div>
-        <div className='mb-20 grid grid-cols-[466px_1fr] gap-10'>
+        <div className='mb-20 md:grid grid-cols-[466px_1fr] gap-10'>
           <div>
             <div className='relative h-[440px] w-full overflow-hidden rounded-3xl'>
               <Image
@@ -241,7 +241,7 @@ export default function AresPevaPage() {
                 className='object-cover'
               />
             </div>
-            <div className='flex items-start justify-between'>
+            <div className='md:flex items-start justify-between'>
               <div className='mt-4'>
                 <h3 className='mb-1 text-lg font-bold text-black'>ITESO</h3>
                 <p className='text-sm font-light text-[#A1A1A1]'>Iván Ortíz</p>
@@ -325,8 +325,8 @@ export default function AresPevaPage() {
         </div>
       </Section>
 
-      <Section width='max-w-7xl'>
-        <div className='mb-10 flex'>
+      <Section width='max-w-7xl' paddingLeft='pl-0 md:pl-6' paddingRight='pr-0 md:pr-6'>
+        <div className='mb-10 md:flex px-6'>
           <h2 className='max-w-md text-[32px] font-bold leading-tight text-[#636B69]'>
             Inicios conceptuales de proyectos
           </h2>

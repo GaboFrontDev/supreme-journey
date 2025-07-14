@@ -53,7 +53,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
   return (
     <main>
       <Section width='max-w-7xl' paddingTop='pt-32' paddingBottom='pb-0'>
-        <div className='mb-10 flex items-center gap-2'>
+        <div className='mb-10 md:flex items-center gap-2'>
           <Link href='/blog' className='flex items-center gap-2'>
             <Image
               src='/icons/breadcrumb_left.png'
@@ -86,8 +86,8 @@ export default async function Page({ params }: { params: { slug: string } }) {
       ))}
 
       <Section width='max-w-7xl' paddingTop='pt-0' paddingBottom='pb-48'>
-        <div className='grid grid-cols-2 gap-10'>
-          <div className='grid grid-cols-3 gap-10'>
+        <div className='md:grid grid-cols-2 gap-10'>
+          <div className='md:grid grid-cols-3 gap-10'>
             <div className='space-y-4'>
               <p className='text-md font-bold text-[#A1A1A1]'>Elaborado por</p>
               <div className='relative aspect-square w-full max-w-[500px] overflow-hidden rounded-lg'>
@@ -110,7 +110,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
               </div>
             </div>
           </div>
-          <div className='grid grid-cols-2 gap-10'>
+          <div className='md:grid grid-cols-2 gap-10'>
             <div className='space-y-2'>
               <p className='text-md mb-6 font-bold text-[#A1A1A1]'>
                 Involucrados
@@ -139,7 +139,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
         <h2 className='mb-14 mt-2 text-[40px] font-bold leading-tight text-[#636B69]'>
           Artículos relacionados
         </h2>
-        <div className='grid grid-cols-2 gap-10'>
+        <div className='md:grid grid-cols-2 gap-10'>
           {attributes.relacionados.data?.map((blog, index) => (
             <BlogCard
               key={index}

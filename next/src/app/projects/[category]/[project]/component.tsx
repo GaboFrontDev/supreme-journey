@@ -43,7 +43,7 @@ export default function ProjectPage({
     <>
 
       <Section width='max-w-7xl' paddingTop='pt-32' paddingBottom='pb-12'>
-        <div className='flex items-center justify-between gap-36'>
+        <div className='md:flex items-center justify-between gap-36'>
           <div className='flex-col'>
             <div className='mb-10 flex items-center gap-2'>
               <Link href='/projects' className='flex items-center gap-2'>
@@ -110,7 +110,7 @@ export default function ProjectPage({
       </Section>
 
       <Section width='max-w-7xl'>
-        <div className='grid grid-cols-[1fr_580px]'>
+        <div className='md:grid grid-cols-[1fr_580px]'>
           <div>
             <h2 className='mb-6 text-[20px] font-bold leading-tight text-[#A1A1A1]'>
               Ficha
@@ -188,7 +188,7 @@ export default function ProjectPage({
       ))}
 
       <Section width='max-w-7xl'>
-        <div className='flex gap-52'>
+        <div className='md:flex gap-52'>
           <div>
             <h2 className='mb-6 text-[20px] font-bold leading-tight text-[#A1A1A1]'>
               Líderes
@@ -230,8 +230,8 @@ export default function ProjectPage({
         </div>
       </Section>
 
-      <Section width='max-w-7xl' background='bg-[#F5F5F5]'>
-        <div className='mb-10 flex'>
+      <Section width='max-w-7xl' background='bg-[#F5F5F5]' paddingLeft='pl-0 md:pl-6' paddingRight='pr-0 md:pr-6'>
+        <div className='mb-10 md:flex px-6'>
           <h2 className='max-w-md text-[32px] font-bold leading-tight text-[#636B69]'>
             Proyectos relacionados
           </h2>

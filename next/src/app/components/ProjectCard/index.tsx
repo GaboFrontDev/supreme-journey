@@ -49,12 +49,12 @@ export default function ProjectCard({
 
   return (
     <div
-      className={`w-[300px] overflow-hidden rounded-xl md:min-w-[620px] ${
+      className={`w-[85dvw] overflow-hidden rounded-xl md:min-w-[620px] ${
         contentWhite ? 'bg-white' : 'bg-[#F5F5F5]'
       } select-none`}
     >
       <div
-        className='relative h-[300px] w-[300px] cursor-pointer overflow-hidden rounded-2xl
+        className='relative h-[300px] w-full cursor-pointer overflow-hidden rounded-2xl
           md:h-[380px] md:w-full'
         onClick={() => {
           router.push(`/projects/${parentCategory}/${formatTitleToUrl(title)}`);

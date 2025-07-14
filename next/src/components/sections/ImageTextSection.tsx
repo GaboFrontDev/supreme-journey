@@ -12,7 +12,7 @@ export default function ImageTextSection({ component }: ImageTextSectionProps) {
 
   return (
     <Section width="max-w-7xl">
-      <div className="grid grid-cols-2 gap-16">
+      <div className="md:grid grid-cols-2 gap-16">
         {image && (
           <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
             <Image

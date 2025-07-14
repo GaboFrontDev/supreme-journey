@@ -20,8 +20,8 @@ const HeadSection = ({
   description: string;
 }) => {
   return (
-    <Section width='max-w-7xl' paddingTop='pt-32' paddingBottom='pb-12'>
-      <div className='flex items-center justify-between gap-36'>
+    <Section width='max-w-7xl' paddingTop='pt-32' paddingBottom='pb-12' paddingLeft='pl-6 md:pl-0' paddingRight='pr-6 md:pr-0'>
+      <div className='md:flex items-center justify-between gap-36'>
         <div className='flex-col'>
           <div className='mb-10 flex items-center gap-2'>
             <Link href='/projects' className='flex items-center gap-2'>
@@ -41,7 +41,7 @@ const HeadSection = ({
             {category}
           </h2>
         </div>
-        <p className='max-w-2xl text-lg text-black'>{description}</p>
+        <p className='max-w-2xl md:text-lg text-black text-md'>{description}</p>
       </div>
     </Section>
   );
@@ -56,7 +56,7 @@ const ProjectList = ({
 }) => {
   return (
     <Section width='max-w-7xl' paddingTop='pt-0'>
-      <div className='grid grid-cols-2 gap-10'>
+      <div className='grid grid-cols-1 gap-10 md:grid-cols-2'>
         {projects.map((project) => (
           <ProjectCard
             key={project.attributes.nombre}
@@ -111,7 +111,7 @@ export default function CategoryPageComponent({
         paddingLeft='pl-0'
         paddingRight='pr-0'
       >
-        <div className='relative h-[810px] w-full overflow-hidden rounded-t-3xl'>
+        <div className='relative h-[810px] w-full overflow-hidden rounded-t-3xl md:rounded-t-none'>
           <Image
             src={categoryData.portada.data.attributes.url}
             alt='Imagen de categoría'
@@ -122,12 +122,12 @@ export default function CategoryPageComponent({
       </Section>
 
       <Section width='max-w-7xl' paddingBottom='pb-20'>
-        <div className='flex items-center'>
+        <div className='md:flex items-center'>
           <h2 className='font-regular max-w-2xl text-[40px] leading-tight text-black'>
             {categoryData.texto}
           </h2>
         </div>
-        <div className='mt-20 flex items-center gap-4'>
+        <div className='mt-20 md:flex items-center gap-4'>
           <div className='relative flex-1'>
             <Image
               src='/icons/search.png'

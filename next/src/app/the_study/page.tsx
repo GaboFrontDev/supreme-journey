@@ -287,8 +287,8 @@ export default function TheStudyPage() {
       </div>
 
       <Section width='max-w-7xl'>
-        <div className='flex items-center justify-between gap-36'>
-          <div className='flex flex-col gap-16'>
+        <div className='md:flex items-center justify-between gap-36'>
+          <div className='md:flex flex-col gap-16'>
             <h2 className='max-w-3xl text-5xl font-bold text-[#636B69]'>
               Con sede en Guadalajara, Jalisco, México
             </h2>
@@ -300,13 +300,13 @@ export default function TheStudyPage() {
               industria.
             </p>
           </div>
-          <div className='relative min-h-[564px] min-w-[564px]'>
+          <div className='relative min-h-[320px] md:min-h-[564px] min-w-[320px] md:min-w-[564px] w-full md:w-auto'>
             <div className='overflow-hidden rounded-2xl'>
               <Image
                 src='/images/the_study/2.png'
                 alt='Imagen de servicio'
                 fill
-                className='object-cover'
+                className='object-contain md:object-cover'
               />
             </div>
             <p className='absolute -bottom-8 right-0 text-sm font-bold text-[#A1A1A1]'>
@@ -323,7 +323,7 @@ export default function TheStudyPage() {
         <ProcessSteps />
       </Section>
 
-      <Section width='max-w-7xl' paddingTop='pt-20' paddingBottom='pt-0'>
+      <Section width='max-w-7xl' paddingTop='pt-20' paddingBottom='pt-0' paddingLeft='pl-6 md:pl-0' paddingRight='pr-6 md:pr-0'>
         <h2 className='mb-16 text-5xl font-bold text-[#636B69]' id='history'>
           Ares, <br /> a través del tiempo
         </h2>
@@ -360,9 +360,9 @@ export default function TheStudyPage() {
           <h2 className='mb-10 text-[32px] font-bold leading-tight text-[#636B69]'>
             Directores
           </h2>
-          <div className='grid grid-cols-3 gap-10'>
+          <div className='md:grid grid-cols-3 gap-10'>
             {directors.map((director, index) => (
-              <div key={index} className='flex flex-col'>
+              <div key={index} className='flex flex-col md:py-0 py-6'>
                 <div className='relative mb-4 h-[380px] w-full overflow-hidden rounded-xl'>
                   <Image
                     src={director.image}
@@ -391,9 +391,9 @@ export default function TheStudyPage() {
           <h2 className='mb-10 text-[32px] font-bold leading-tight text-[#636B69]'>
             Asociados
           </h2>
-          <div className='grid grid-cols-3 gap-10'>
+          <div className='md:grid grid-cols-3 gap-10'>
             {associates.map((directo, index) => (
-              <div key={index} className='flex flex-col'>
+              <div key={index} className='flex flex-col md:py-0 py-6'>
                 <div className='relative mb-4 h-[380px] w-full overflow-hidden rounded-xl'>
                   <Image
                     src={directo.image}
@@ -421,7 +421,7 @@ export default function TheStudyPage() {
       </Section>
 
       <Section width='max-w-7xl' paddingBottom='pt-0'>
-        <div className='mb-16 flex items-center justify-between'>
+        <div className='mb-16 md:flex items-center justify-between gap-10 select-none'>
           {professionals.map((professional, index) => {
             const isActive = professional.key === selectedSection;
 
@@ -436,8 +436,8 @@ export default function TheStudyPage() {
                 }
               >
                 <div
-                  className='relative flex h-8 min-h-8 w-8 min-w-8 items-center justify-center rounded-full
-                    bg-[#EFEFEF]'
+                  className='relative h-8 min-h-8 w-8 min-w-8 items-center justify-center rounded-full
+                    bg-[#EFEFEF] hidden md:flex'
                 >
                   <Image
                     src={
@@ -466,7 +466,7 @@ export default function TheStudyPage() {
 
       {selectedSection ? (
         <Section width='max-w-7xl' paddingTop='pt-0' paddingBottom='pb-48'>
-          <div className='grid grid-cols-3 gap-10'>
+          <div className='md:grid grid-cols-3 gap-10'>
             {keyToSection[selectedSection].map((architect, index) => (
               <div key={index} className='flex flex-col'>
                 <div className='relative mb-4 h-[380px] w-full overflow-hidden rounded-xl'>
@@ -490,7 +490,7 @@ export default function TheStudyPage() {
       ) : (
         <>
           <Section width='max-w-7xl' paddingTop='pt-0' paddingBottom='pb-48'>
-            <div className='grid grid-cols-3 gap-10'>
+            <div className='md:grid grid-cols-3 gap-10'>
               {architects.map((architect, index) => (
                 <div key={index} className='flex flex-col'>
                   <div className='relative mb-4 h-[380px] w-full overflow-hidden rounded-xl'>
@@ -512,7 +512,7 @@ export default function TheStudyPage() {
             </div>
           </Section>
           <Section width='max-w-7xl' paddingTop='pt-0' paddingBottom='pb-48'>
-            <div className='grid grid-cols-3 gap-10'>
+            <div className='md:grid grid-cols-3 gap-10'>
               {acabados.map((acabado, index) => (
                 <div key={index} className='flex flex-col'>
                   <div className='relative mb-4 h-[380px] w-full overflow-hidden rounded-xl'>
@@ -535,7 +535,7 @@ export default function TheStudyPage() {
           </Section>
 
           <Section width='max-w-7xl' paddingTop='pt-0' paddingBottom='pb-48'>
-            <div className='grid grid-cols-3 gap-10'>
+            <div className='md:grid grid-cols-3 gap-10'>
               {disenos.map((diseno, index) => (
                 <div key={index} className='flex flex-col'>
                   <div className='relative mb-4 h-[380px] w-full overflow-hidden rounded-xl'>
@@ -557,7 +557,7 @@ export default function TheStudyPage() {
             </div>
           </Section>
           <Section width='max-w-7xl' paddingTop='pt-0' paddingBottom='pb-48'>
-            <div className='grid grid-cols-3 gap-10'>
+            <div className='md:grid grid-cols-3 gap-10'>
               {operaciones.map((operacion, index) => (
                 <div key={index} className='flex flex-col'>
                   <div className='relative mb-4 h-[380px] w-full overflow-hidden rounded-xl'>

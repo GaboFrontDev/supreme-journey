@@ -11,7 +11,7 @@ export default function TextImageSection({ component }: TextImageSectionProps) {
   const { text, image } = component;
   return (
     <Section width='max-w-7xl text-image-section'>
-      <div className='grid grid-cols-2 gap-16'>
+      <div className='md:grid grid-cols-2 gap-16'>
         <div className='prose prose-lg'>
           <ReactMarkdown className='parsedown'>{text}</ReactMarkdown>
         </div>

@@ -6,8 +6,8 @@ import Image from 'next/image';
 import Button from '../Button';
 
 const component = {
-  title: 'Success is not final, failure is not fatal',
-  description: 'It is the courage to continue that counts',
+  title: 'Éxito a traves del diseño',
+  description: 'Somos una empresa de diseño que ayuda a crear productos exitosos.',
   image: '/images/hero.png',
   button: {
     label: 'Trabajemos Juntos',
