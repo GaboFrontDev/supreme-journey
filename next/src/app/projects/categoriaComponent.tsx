@@ -27,22 +27,23 @@ export const CategoryComponent = ({
 
   return (
     <Section
-      width='max-w-7xl'
+      width='max-w-7xl mx-0'
       paddingTop='pt-0'
       key={category.id}
-      paddingLeft='pl-0 md:pl-6'
-      paddingRight='pr-0 md:pr-6'
+      paddingLeft='pl-0'
+      paddingRight='pr-0'
+      
       data-testid={`category-${category.id}`}
     >
       <div className='mb-16 flex items-center justify-between px-6'>
-        <h2 className='text-2xl md:text-5xl font-bold text-[#636B69]'>
+        <h2 className='text-xl md:text-5xl font-bold text-[#636B69]'>
           {category.attributes.nombre}
         </h2>
         <Button
           href={`/projects/${formatSlug(category.attributes.nombre)}`}
           label='Ver todos'
           variant='secondary'
-          className='text-xs py-2 px-4'
+          className='text-xs py-2 px-4 md:text-base'
         />
       </div>
       <CarouselWrapper arrowOffsetY='45%'>

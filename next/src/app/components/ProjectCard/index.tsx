@@ -49,7 +49,7 @@ export default function ProjectCard({
 
   return (
     <div
-      className={`w-[85dvw] overflow-hidden rounded-xl md:min-w-[620px] ${
+      className={`w-[85dvw] overflow-hidden rounded-xl md:min-w-[620px] md:w-auto ${
         contentWhite ? 'bg-white' : 'bg-[#F5F5F5]'
       } select-none`}
     >

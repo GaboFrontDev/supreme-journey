@@ -63,7 +63,7 @@ export default function CarouselWrapper({
   };
 
   return (
-    <div className='relative w-screen select-none'>
+    <div className='relative w-[99dvw] select-none'>
       <button
         onClick={() => scroll('left')}
         style={{ top: arrowOffsetY }}
@@ -96,7 +96,7 @@ export default function CarouselWrapper({
         onMouseLeave={handleMouseLeave}
         onMouseMove={handleMouseMove}
       >
-        <div className='flex w-max gap-6 pl-[calc((100vw-1280px)/2)] pr-6'>
+        <div className='flex w-max gap-6 pr-6 md:pr-0'>
           {children}
         </div>
       </div>

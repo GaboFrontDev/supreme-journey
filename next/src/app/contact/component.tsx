@@ -121,7 +121,7 @@ export default function ContactComponent({ offices, styles }: ContactComponentPr
       />
 
       <Section width='max-w-7xl' paddingTop='pt-52' paddingBottom='pb-20'>
-        <div className='grid grid-cols-2 gap-36'>
+        <div className='md:grid grid-cols-2 gap-36'>
           <div className='flex-col'>
             <h2 className='mb-16 max-w-xs text-[40px] font-bold leading-tight text-[#636B69]'>
               Trabajemos juntos
@@ -248,7 +248,7 @@ export default function ContactComponent({ offices, styles }: ContactComponentPr
       </Section>
 
       <Section width='max-w-7xl' paddingBottom='pt-4' paddingTop='pt-10'>
-        <div className='mb-16 grid grid-cols-4 gap-10'>
+        <div className='mb-16 md:grid grid-cols-4 gap-10 py-8 md:py-0 select-none'>
           {offices.map((office: any, index: number) => {
             const isActive = office.title === selectedOffice.title;
 
@@ -301,7 +301,7 @@ export default function ContactComponent({ offices, styles }: ContactComponentPr
               </ul>
             </div>
           </div>
-          <div className='h-[447px] overflow-hidden rounded-xl'>
+          <div className='h-[300px] md:h-[447px] overflow-hidden rounded-xl'>
             {preloadedMaps[selectedOffice.id]}
           </div>
         </div>

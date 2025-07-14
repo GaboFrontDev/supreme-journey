@@ -146,7 +146,7 @@ export default function Header({
       <>
         <motion.section
           className={`fixed left-1/2 top-6 z-50 w-full max-w-7xl -translate-x-1/2 rounded-full px-6
-          py-3 shadow-lg backdrop-blur-sm ${backgroundColorClass} w-[85dvw] select-none`}
+          py-3 shadow-lg backdrop-blur-sm ${backgroundColorClass} w-[87dvw] select-none`}
           initial={{ y: 0, opacity: 1, x: '-50%' }}
           animate={{
             y: 0,
@@ -188,7 +188,7 @@ export default function Header({
         {/* Menú móvil */}
         {isMobileMenuOpen && (
           <motion.div
-            className='fixed inset-0 z-40 bg-black/60 backdrop-blur-sm'
+            className='fixed inset-0 z-40 bg-black/60 backdrop-blur-sm select-none'
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
