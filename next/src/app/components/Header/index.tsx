@@ -78,7 +78,7 @@ export default function Header({
       setTranslateSrc('/icons/translate.png');
       setVariantButton('primary');
       setTextColorClass('text-[#636B69]');
-      setBackgroundColorClass('bg-white');
+      setBackgroundColorClass('bg-white/20');
       setHoverColorClass('hover:bg-[#EFEFEF]');
       setHamburgerColorClass('border-2 border-[#636B69] bg-[#EFEFEF]');
     }
@@ -91,7 +91,7 @@ export default function Header({
         setTranslateSrc('/icons/translate.png');
         setVariantButton('primary');
         setTextColorClass('text-[#636B69]');
-        setBackgroundColorClass('bg-white');
+        setBackgroundColorClass('bg-white/80');
         setHoverColorClass('hover:bg-[#EFEFEF]');
         setHamburgerColorClass('border-2 border-[#636B69] bg-[#EFEFEF]');
       } else if (!forceScrolledStyle) {
@@ -144,7 +144,7 @@ export default function Header({
   if (isMobile) {
     return (
       <>
-        <motion.div
+        <motion.section
           className={`fixed left-1/2 top-6 z-50 w-full max-w-7xl -translate-x-1/2 rounded-full px-6
           py-3 shadow-lg backdrop-blur-sm ${backgroundColorClass} w-[85dvw] select-none`}
           initial={{ y: 0, opacity: 1, x: '-50%' }}
@@ -183,7 +183,7 @@ export default function Header({
               </div>
             </button>
           </div>
-        </motion.div>
+        </motion.section>
 
         {/* Menú móvil */}
         {isMobileMenuOpen && (
