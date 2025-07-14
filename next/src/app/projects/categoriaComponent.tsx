@@ -35,7 +35,7 @@ export const CategoryComponent = ({
       
       data-testid={`category-${category.id}`}
     >
-      <div className='mb-16 flex items-center justify-between px-6'>
+      <div className='mb-16 flex items-center justify-between px-6 md:px-24'>
         <h2 className='text-xl md:text-5xl font-bold text-[#636B69]'>
           {category.attributes.nombre}
         </h2>
