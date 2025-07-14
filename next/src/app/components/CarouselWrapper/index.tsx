@@ -67,7 +67,7 @@ export default function CarouselWrapper({
       <button
         onClick={() => scroll('left')}
         style={{ top: arrowOffsetY }}
-        className='absolute left-4 top-1/2 z-10 hidden h-12 w-12 -translate-y-1/2 items-center
+        className='absolute left-24 top-1/2 z-10 hidden h-12 w-12 -translate-y-1/2 items-center
           justify-center rounded-full bg-white shadow-lg md:flex'
       >
         <Image src='/icons/arrow_left.png' width={24} height={24} alt='Left' />
@@ -76,7 +76,7 @@ export default function CarouselWrapper({
       <button
         onClick={() => scroll('right')}
         style={{ top: arrowOffsetY }}
-        className='absolute right-4 top-1/2 z-10 hidden h-12 w-12 -translate-y-1/2 items-center
+        className='absolute right-24 top-1/2 z-10 hidden h-12 w-12 -translate-y-1/2 items-center
           justify-center rounded-full bg-white shadow-lg md:flex'
       >
         <Image
@@ -89,16 +89,16 @@ export default function CarouselWrapper({
 
       <div
         ref={containerRef}
-        className={`scrollbar-hide snap-x snap-mandatory overflow-x-scroll md:overflow-x-auto pl-6 pr-6 md:pl-24 md:pr-0
-        ${dragging ? 'cursor-grabbing' : 'cursor-grab'}`}
+        className={`scrollbar-hide snap-x snap-mandatory overflow-x-scroll pl-6 pr-6
+        md:overflow-x-auto md:pl-24 md:pr-0 ${
+          dragging ? 'cursor-grabbing' : 'cursor-grab'
+        }`}
         onMouseDown={handleMouseDown}
         onMouseUp={handleMouseUp}
         onMouseLeave={handleMouseLeave}
         onMouseMove={handleMouseMove}
       >
-        <div className='flex w-max gap-6 pr-6 md:pr-0'>
-          {children}
-        </div>
+        <div className='flex w-max gap-6 pr-6 md:pr-0'>{children}</div>
       </div>
     </div>
   );
