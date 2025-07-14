@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import clsx from 'clsx';
 import Image from 'next/image';
+import { twMerge } from 'tailwind-merge';
 
 interface ButtonProps {
   label: string;
@@ -64,16 +65,18 @@ export default function Button({
     </motion.button>
     );
   }
+
+  const classes = twMerge(
+    `relative inline-block overflow-hidden rounded-full font-bold text-base py-3 ${iconFilter ? 'pl-14 pr-7' : 'px-7'} tracking-tight-032 group`,
+    variant === 'primary' && 'text-white bg-[#636B69]',
+    variant === 'secondary' && 'text-black bg-[#EFEFEF]',
+    className
+  )
   
   return (
     <motion.a
       href={href}
-      className={clsx(
-        `relative inline-block overflow-hidden rounded-full font-bold text-base py-3 ${iconFilter ? 'pl-14 pr-7' : 'px-7'} tracking-tight-032 group`,
-        variant === 'primary' && 'text-white bg-[#636B69]',
-        variant === 'secondary' && 'text-black bg-[#EFEFEF]',
-        className
-      )}
+      className={classes}
       whileHover="hover"
       initial="rest"
       animate="rest"

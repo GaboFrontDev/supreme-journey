@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Button from '../Button';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
+import { useEffect, useState } from 'react';
 
 interface ProjectCardProps {
   title: string;
@@ -39,15 +40,22 @@ export default function ProjectCard({
   contentWhite = false,
   parentCategory,
 }: ProjectCardProps) {
+  const [isMobile, setIsMobile] = useState(false);
   const router = useRouter();
+
+  useEffect(() => {
+    setIsMobile(window.innerWidth < 768);
+  }, [window.innerWidth]);
+
   return (
     <div
-      className={`min-w-[620px] max-w-sm overflow-hidden rounded-xl ${
+      className={`w-[300px] overflow-hidden rounded-xl md:min-w-[620px] ${
         contentWhite ? 'bg-white' : 'bg-[#F5F5F5]'
       } select-none`}
     >
       <div
-        className='relative h-[380px] w-full overflow-hidden rounded-2xl cursor-pointer'
+        className='relative h-[300px] w-[300px] cursor-pointer overflow-hidden rounded-2xl
+          md:h-[380px] md:w-full'
         onClick={() => {
           router.push(`/projects/${parentCategory}/${formatTitleToUrl(title)}`);
         }}
@@ -65,34 +73,44 @@ export default function ProjectCard({
             <h3 className='mb-1 text-xl font-bold text-black'>{title}</h3>
             <p className='text-lg font-light text-[#A1A1A1]'>{location}</p>
           </div>
-          <Button
+          {!isMobile && <Button
             href={`/projects/${parentCategory}/${formatTitleToUrl(title)}`}
             label='Ver proyecto'
-            className='text-xs'
-          />
+            className='text-xs p-0 md:py-2 md:px-4'
+          />}
         </div>
-        <div className='flex flex-wrap gap-2'>
-          {categories?.map((cat, i) => {
-            const categoryUrl = formatTitleToUrl(cat);
-            return categoryUrl ? (
-              <Link
-                key={i}
-                href={`/projects/${categoryUrl}`}
-                className='rounded-full border border-black/15 px-4 py-[6px] text-xs font-semibold
-                  text-black hover:underline'
-              >
-                {cat}
-              </Link>
-            ) : (
-              <span
-                key={i}
-                className='rounded-full border border-black/15 px-4 py-[6px] text-xs font-semibold
-                  text-black'
-              >
-                {cat}
-              </span>
-            );
-          })}
+        <div className='flex flex-wrap gap-2 md:flex-nowrap'>
+          {categories
+            ?.slice(0, isMobile ? 1 : categories.length)
+            .map((cat, i) => {
+              const categoryUrl = formatTitleToUrl(cat);
+              return categoryUrl ? (
+                <Link
+                  key={i}
+                  href={`/projects/${categoryUrl}`}
+                  className='rounded-full border border-black/15 px-4 py-[6px] text-xs font-semibold
+                    text-black hover:underline'
+                >
+                  {cat}
+                </Link>
+              ) : (
+                <span
+                  key={i}
+                  className='rounded-full border border-black/15 px-4 py-[6px] text-xs font-semibold
+                    text-black'
+                >
+                  {cat}
+                </span>
+              );
+            })}
+          {isMobile && categories && categories.length > 1 && (
+            <span
+              className='rounded-full border border-black/15 px-4 py-[6px] text-xs font-semibold
+                text-black'
+            >
+              +{categories.length - 1}
+            </span>
+          )}
         </div>
       </div>
     </div>

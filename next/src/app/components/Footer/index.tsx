@@ -10,7 +10,7 @@ export default function Footer({ offices }: FooterProps) {
   return (
     <footer className='rounded-t-3xl bg-black px-6 pb-8 pt-10 text-white'>
       <div className='mx-auto max-w-7xl'>
-        <div className='grid grid-cols-4 gap-10 text-sm'>
+        <div className='md:grid md:grid-cols-4 gap-10 text-sm'>
           {offices.slice(0, 44).map((office, index) => (
             <div className='space-y-5' key={index}>
               <div className='space-y-6'>
@@ -34,7 +34,7 @@ export default function Footer({ offices }: FooterProps) {
         <div className='pb-8 pt-20'>
           <h4 className='text-xl font-bold'>Mapa de navegación</h4>
         </div>
-        <div className='grid grid-cols-4 gap-10 text-sm'>
+        <div className='md:grid md:grid-cols-4 gap-10 text-sm'>
           <ul className='space-y-3 text-base font-bold text-c-gray-200'>
             <li>
               <a href='/projects' className='hover:underline'>
@@ -158,17 +158,17 @@ export default function Footer({ offices }: FooterProps) {
           </ul>
         </div>
         <div className='pt-20'>
-          <div className='grid grid-cols-4 gap-10 text-sm'>
+          <div className='md:grid md:grid-cols-4 gap-10 text-sm'>
             <p className='text-xs font-bold text-c-gray-200'>Ares 2025 ©</p>
             <a
               href='#'
-              className='text-xs font-bold text-c-gray-200 hover:underline'
+              className='text-xs font-bold text-c-gray-200 hover:underline p-6'
             >
               Uso de cookies
             </a>
             <a
               href='#'
-              className='text-xs font-bold text-c-gray-200 hover:underline'
+              className='text-xs font-bold text-c-gray-200 hover:underline p-6'
             >
               Aviso de privacidad
             </a>

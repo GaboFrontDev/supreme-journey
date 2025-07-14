@@ -113,10 +113,6 @@ export default function HomeComponent({
   destacados: DestacadoData;
   categorias: CategoriaProyectoData[];
 }) {
-  console.log(
-    destacados.attributes.proyectos.data[0].attributes.categoria_proyecto
-      .data[0].attributes.nombre
-  );
   const [activeServiceId, setActiveServiceId] = useState<string | null>(
     services[0].id
   );
@@ -147,25 +143,31 @@ export default function HomeComponent({
   return (
     <>
       <HeroIntroScroll />
-
-      <Section width='max-w-7xl' paddingBottom='pt-0'>
+      <Section
+        width='max-w-7xl overflow-hidden md:overflow-visible'
+        paddingBottom='pt-0'
+      >
         <CompanyStats stats={stats} />
       </Section>
-
-      <HeroScroll />
-
-      <Section width='max-w-7xl' paddingBottom='pt-0' paddingTop='pt-0'>
+      <HeroScroll /> {/* TODO: oficinas */}
+      <Section
+        width='max-w-7xl overflow-hidden md:overflow-visible'
+        paddingBottom='pt-0'
+        paddingTop='pt-0'
+      >
         <OfficesGrid items={offices} />
         <div className='flex justify-items-start'>
           <Button label='Conoce el estudio' href='/the_study' />
         </div>
       </Section>
-
-      <Section width='max-w-7xl'>
+      <Section width='md:max-w-7xl max-w-full overflow-hidden md:overflow-visible'>
         <h2 className=' text-5xl font-bold text-[#636B69]'>Servicios</h2>
-        <div className='flex items-center justify-between gap-36'>
+        <div className='items-center justify-between gap-36 md:flex'>
           <CollapsibleList items={services} onChange={setActiveServiceId} />
-          <div className='relative min-h-[564px] min-w-[564px] overflow-hidden rounded-2xl'>
+          <div
+            className='relative min-h-[300px] min-w-[300px] overflow-hidden rounded-2xl
+              md:min-h-[564px] md:min-w-[564px]'
+          >
             <AnimatePresence mode='wait'>
               <motion.div
                 key={activeService?.id || 'default'}
@@ -179,25 +181,24 @@ export default function HomeComponent({
                   src={activeService?.image || ''}
                   alt='Imagen de servicio'
                   fill
-                  className='object-cover'
+                  className='h-full w-full object-cover md:min-h-[564px] md:min-w-[564px]'
                 />
               </motion.div>
             </AnimatePresence>
           </div>
         </div>
       </Section>
-
       <Section
         width='max-w-7xl'
-        paddingLeft='pl-0'
-        paddingRight='pr-0'
+        paddingLeft='pl-6 md:pl-0'
+        paddingRight='pr-6 md:pr-0'
         background='bg-[#F5F5F5]'
       >
-        <div className='mb-20 flex items-center justify-between'>
-          <h2 className='max-w-md text-[40px] font-bold leading-tight text-[#636B69]'>
+        <div className='mb-20 flex flex-col items-center justify-between md:flex-row'>
+          <h2 className='max-w-md text-left text-[40px] font-bold leading-tight text-[#636B69]'>
             Diseñamos desde la colaboración
           </h2>
-          <p className='max-w-md text-right text-lg text-black'>
+          <p className='max-w-md text-left text-lg text-black md:text-right'>
             Escuchamos, entendemos y colaboramos con cada cliente para dar vida
             a espacios que reflejan su esencia y superan expectativas
           </p>
@@ -222,12 +223,14 @@ export default function HomeComponent({
           <Button label='Explora nuestros proyectos' href='/projects' />
         </div>
       </Section>
-
-      <Section width='max-w-7xl' paddingLeft='pl-0' paddingRight='pr-0'>
-        <h2 className='mb-16 text-5xl font-bold text-[#636B69]'>
+      <Section
+        width='max-w-7xl overflow-hidden md:overflow-visible md:pl-0 md:pr-0'
+        data-testid='projects-section'
+      >
+        <h2 className='leading-16 mb-16 text-5xl font-bold text-[#636B69]'>
           Proyectos destacados
         </h2>
-        <div className='mb-16 space-x-4'>
+        <div className='mb-16 hidden space-x-4 md:flex'>
           {categorias.map((categoria) => (
             <FilterButton
               href={`/projects/${formatTitleToUrl(categoria.attributes.nombre)}`}
@@ -236,7 +239,15 @@ export default function HomeComponent({
             />
           ))}
         </div>
-
+      </Section>
+      <Section
+        width='overflow-hidden md:overflow-visible p-0'
+        data-testid='projects-section'
+        paddingLeft='pl-0'
+        paddingRight='pr-0'
+        paddingTop='pt-0'
+        paddingBottom='pb-0'
+      >
         <CarouselWrapper>
           {destacados.attributes.proyectos.data.map((project) => (
             <ProjectCard
@@ -254,7 +265,6 @@ export default function HomeComponent({
           ))}
         </CarouselWrapper>
       </Section>
-
       <Section width='max-w-4xl' paddingTop='pt-4' paddingBottom='pb-36'>
         <div className='text-center'>
           <h2 className='mb-20 text-5xl text-black'>
