@@ -70,7 +70,9 @@ export default function ProjectCard({
       <div className='p-6'>
         <div className='flex items-start justify-between'>
           <div className='mb-8'>
-            <h3 className='mb-1 text-xl font-bold text-black'>{title}</h3>
+            <h3 className='mb-1 text-xl font-bold text-black'>
+              <a href={`/projects/${parentCategory}/${formatTitleToUrl(title)}`}>{title}</a>
+            </h3>
             <p className='text-lg font-light text-[#A1A1A1]'>{location}</p>
           </div>
           {!isMobile && <Button
