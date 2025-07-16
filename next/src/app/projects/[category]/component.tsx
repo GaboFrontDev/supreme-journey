@@ -111,7 +111,7 @@ export default function CategoryPageComponent({
         paddingLeft='pl-0'
         paddingRight='pr-0'
       >
-        <div className='relative h-[810px] w-full overflow-hidden rounded-t-3xl md:rounded-t-none'>
+        <div className='relative h-[300px] md:h-[810px] w-full overflow-hidden rounded-t-xl md:rounded-t-3xl md:rounded-t-none'>
           <Image
             src={categoryData.portada.data.attributes.url}
             alt='Imagen de categoría'

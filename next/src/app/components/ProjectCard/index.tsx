@@ -54,7 +54,7 @@ export default function ProjectCard({
       } select-none`}
     >
       <div
-        className='relative h-[300px] w-full cursor-pointer overflow-hidden rounded-2xl
+        className='relative h-[200px] md:h-[300px] w-full cursor-pointer overflow-hidden rounded-xl md:rounded-2xl
           md:h-[380px] md:w-full'
         onClick={() => {
           router.push(`/projects/${parentCategory}/${formatTitleToUrl(title)}`);
@@ -105,14 +105,6 @@ export default function ProjectCard({
                 </span>
               );
             })}
-          {isMobile && categories && categories.length > 1 && (
-            <span
-              className='rounded-full border border-black/15 px-4 py-[6px] text-xs font-semibold
-                text-black'
-            >
-              +{categories.length - 1}
-            </span>
-          )}
         </div>
       </div>
     </div>

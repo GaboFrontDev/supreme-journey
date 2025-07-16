@@ -6,7 +6,8 @@ import Image from 'next/image';
 import Button from '../Button';
 
 const component = {
-  title: 'Éxito a traves del diseño',
+  title1: 'Éxito a través',
+  title2: 'del diseño',
   description: 'Somos una empresa de diseño que ayuda a crear productos exitosos.',
   image: '/images/hero.png',
   button: {
@@ -16,7 +17,7 @@ const component = {
 };
 
 export default function HeroIntroScroll() {
-  const { title, description, image, button } = component;
+  const { title1, title2, description, image, button } = component;
   const ref = useRef(null);
 
   const { scrollYProgress } = useScroll({
@@ -82,16 +83,17 @@ export default function HeroIntroScroll() {
             <div className="max-w-7xl px-6 w-full mx-auto">
               <motion.h1
                 style={{ y: yTitle }}
-                className='max-w-md text-[56px] leading-[64px] font-bold text-white mb-8'
+                className='md:max-w-md w-xs md:text-[56px] text-[36px] md:leading-[64px] leading-10 font-bold text-white mb-4'
               >
-                {title}
+                {title1} <br />
+                <span className='text-primary'>{title2}</span>
               </motion.h1>
 
               <motion.div
                 style={{ opacity: opacityText }}
                 className='max-w-xl'
               >
-                <p className='text-lg text-white mb-8'>
+                <p className='text-lg text-white mb-8 md:w-[400px] w-[80dvw]'>
                   {description}
                 </p>
                 <Button 

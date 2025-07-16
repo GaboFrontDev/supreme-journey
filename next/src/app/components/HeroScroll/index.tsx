@@ -40,10 +40,16 @@ export default function HeroScroll() {
 
         <motion.h2
           style={{ scale, y: isMobile ? y2 : y }}
-          className="absolute max-w-4xl text-[34px] md:text-[84px] leading-[30px] md:leading-[96px] text-center text-black"
+          className="md:block hidden absolute max-w-4xl text-[34px] md:text-[84px] leading-[30px] md:leading-[96px] text-center text-black"
         >
           Experiencia global, enfoque local
         </motion.h2>
+
+        <h2
+          className="md:hidden block absolute max-w-4xl text-[34px] md:text-[84px] leading-[30px] md:leading-[96px] text-center text-black"
+        >
+          Experiencia global, enfoque local
+        </h2>
       </div>
     </Section>
   );

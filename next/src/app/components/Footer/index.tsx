@@ -10,7 +10,7 @@ export default function Footer({ offices }: FooterProps) {
   return (
     <footer className='rounded-t-3xl bg-black px-6 pb-8 pt-10 text-white'>
       <div className='mx-auto max-w-7xl'>
-        <div className='md:grid md:grid-cols-4 gap-10 text-sm'>
+        <div className='gap-10 text-sm md:grid md:grid-cols-4'>
           {offices.slice(0, 44).map((office, index) => (
             <div className='space-y-5' key={index}>
               <div className='space-y-6'>
@@ -31,11 +31,11 @@ export default function Footer({ offices }: FooterProps) {
             </div>
           ))}
         </div>
-        <div className='pb-8 pt-20'>
+        <div className='hidden pb-8 pt-20 md:block'>
           <h4 className='text-xl font-bold'>Mapa de navegación</h4>
         </div>
-        <div className='md:grid md:grid-cols-4 gap-10 text-sm'>
-          <ul className='space-y-3 text-base font-bold text-c-gray-200'>
+        <div className='gap-10 text-sm md:grid md:grid-cols-4'>
+          <ul className='hidden space-y-3 text-base font-bold text-c-gray-200 md:block'>
             <li>
               <a href='/projects' className='hover:underline'>
                 Proyectos
@@ -62,7 +62,7 @@ export default function Footer({ offices }: FooterProps) {
               </a>
             </li>
           </ul>
-          <ul className='space-y-3 text-base font-bold text-c-gray-200'>
+          <ul className='hidden space-y-3 text-base font-bold text-c-gray-200 md:block'>
             <li>
               <a href='/projects/usos-mixtos' className='hover:underline'>
                 Usos Mixtos
@@ -92,7 +92,7 @@ export default function Footer({ offices }: FooterProps) {
               </a>
             </li>
           </ul>
-          <ul className='space-y-3 text-base font-bold text-c-gray-200'>
+          <ul className='hidden space-y-3 text-base font-bold text-c-gray-200 md:block'>
             <li>
               <a href='/projects/latam' className='hover:underline'>
                 LATAM
@@ -114,16 +114,19 @@ export default function Footer({ offices }: FooterProps) {
               </a>
             </li>
             <li>
-              <a href='/projects/renovaciones-y-expansiones' className='hover:underline'>
+              <a
+                href='/projects/renovaciones-y-expansiones'
+                className='hover:underline'
+              >
                 Renovaciones y expansiones
               </a>
             </li>
           </ul>
-          <ul className='space-y-3 text-base font-bold text-c-gray-200'>
+          <ul className='pt-4 text-sm font-bold text-c-gray-200 md:space-y-3 md:text-base'>
             <li>
               <a
                 href='https://www.instagram.com/aresarquitectos'
-                className='hover:underline'
+                className='hover:underline '
                 target='_blank'
               >
                 Instagram
@@ -158,21 +161,26 @@ export default function Footer({ offices }: FooterProps) {
           </ul>
         </div>
         <div className='pt-20'>
-          <div className='md:grid md:grid-cols-4 gap-10 text-sm'>
-            <p className='text-xs font-bold text-c-gray-200'>Ares 2025 ©</p>
+          <div className='gap-10 text-sm md:grid md:grid-cols-4 space-between flex'>
             <a
               href='#'
-              className='text-xs font-bold text-c-gray-200 hover:underline p-6'
+              className='md:p-6 text-xs font-bold text-c-gray-200 hover:underline'
             >
               Uso de cookies
             </a>
             <a
               href='#'
-              className='text-xs font-bold text-c-gray-200 hover:underline p-6'
+              className='md:p-6 text-xs font-bold text-c-gray-200 hover:underline text-right'
             >
               Aviso de privacidad
             </a>
+            <p className='hidden md:block md:p-6 text-base text-[#A1A1A1] text-left'>Ares 2025 ©</p>
           </div>
+        </div>
+
+        <div className='md:hidden py-2'>
+            <p className='text-base text-[#A1A1A1] text-left'>Ares 2025 ©</p>
+
         </div>
       </div>
     </footer>

@@ -161,7 +161,7 @@ export default function HomeComponent({
         </div>
       </Section>
       <Section width='md:max-w-7xl max-w-full overflow-hidden md:overflow-visible'>
-        <h2 className=' text-5xl font-bold text-[#636B69]'>Servicios</h2>
+        <h2 className=' text-4xl font-bold text-[#636B69]'>Servicios</h2>
         <div className='items-center justify-between gap-36 md:flex'>
           <CollapsibleList items={services} onChange={setActiveServiceId} />
           <div
@@ -219,7 +219,7 @@ export default function HomeComponent({
           </div>
         </div>
 
-        <div className='mt-20 flex justify-items-start'>
+        <div className='mt-20 flex items-center justify-center md:justify-start'>
           <Button label='Explora nuestros proyectos' href='/projects' />
         </div>
       </Section>
@@ -227,7 +227,7 @@ export default function HomeComponent({
         width='max-w-7xl overflow-hidden md:overflow-visible md:pl-0 md:pr-0'
         data-testid='projects-section'
       >
-        <h2 className='leading-16 mb-16 text-5xl font-bold text-[#636B69]'>
+        <h2 className='leading-16 mb-16 text-4xl font-bold text-[#636B69]'>
           Proyectos destacados
         </h2>
         <div className='mb-16 hidden space-x-4 md:flex'>
@@ -265,9 +265,9 @@ export default function HomeComponent({
           ))}
         </CarouselWrapper>
       </Section>
-      <Section width='max-w-4xl' paddingTop='pt-4' paddingBottom='pb-36'>
-        <div className='text-center'>
-          <h2 className='mb-20 text-5xl text-black'>
+      <Section width='max-w-4xl' paddingTop='pt-8' paddingBottom='pb-36'>
+        <div className='text-center pt-8'>
+          <h2 className='mb-20 text-4xl text-black'>
             Diseñemos de la mano espacios que trasciendan e historias que
             conectan
           </h2>
