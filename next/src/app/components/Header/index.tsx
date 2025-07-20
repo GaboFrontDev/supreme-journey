@@ -109,30 +109,6 @@ export default function Header({
     return () => unsubscribe();
   }, [scrollY, SCROLL_TRIGGER, forceScrolledStyle]);
 
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      const dropdowns = document.querySelectorAll('.dropdown-menu');
-
-      let clickedInside = false;
-      dropdowns.forEach((dropdown) => {
-        if (dropdown.contains(event.target as Node)) {
-          clickedInside = true;
-        }
-      });
-
-      if (!clickedInside) {
-        setOpenDropdown(null);
-      }
-    };
-
-    document.addEventListener('mousedown', handleClickOutside);
-
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, []);
-
-
   return (
     <>
       {/* desktop */}
@@ -165,11 +141,7 @@ export default function Header({
               >
                 <Link href='/projects'>Proyectos</Link>
                 <button
-                  onClick={() =>
-                    setOpenDropdown(
-                      openDropdown === 'proyectos' ? null : 'proyectos'
-                    )
-                  }
+                  onClick={() => setOpenDropdown('proyectos')}
                   title='Mostrar menú de proyectos'
                 >
                   <Image
@@ -217,11 +189,7 @@ export default function Header({
               >
                 <Link href='/ares_culture'>Cultura Ares</Link>
                 <button
-                  onClick={() =>
-                    setOpenDropdown(
-                      openDropdown === 'cultura' ? null : 'cultura'
-                    )
-                  }
+                  onClick={() => setOpenDropdown('cultura')}
                   title='Mostrar menú de cultura'
                 >
                   <Image
@@ -272,9 +240,7 @@ export default function Header({
           <div className='flex items-center space-x-6'>
             <div className='relative'>
               <button
-                onClick={() =>
-                  setOpenDropdown(openDropdown === 'idioma' ? null : 'idioma')
-                }
+                onClick={() => setOpenDropdown('idioma')}
                 className={`flex items-center gap-2 rounded-full px-3 py-1 text-[15px] font-bold
                 ${hoverColorClass} transition-all ${textColorClass}`}
               >
@@ -320,8 +286,8 @@ export default function Header({
       </motion.div>
       {/* móvil */}
       <motion.section
-        className={`fixed left-1/2 top-6 z-50 max-w-7xl -translate-x-1/2 rounded-full px-6
-        py-3 shadow-lg backdrop-blur-sm md:hidden ${backgroundColorClass} w-[87vw]
+        className={`fixed left-1/2 top-6 z-50 max-w-7xl -translate-x-1/2 rounded-full px-6 py-3
+        shadow-lg backdrop-blur-sm md:hidden ${backgroundColorClass} w-[87vw]
         select-none`}
         initial={{ y: 0, opacity: 1, x: '-50%' }}
         animate={{
@@ -384,13 +350,7 @@ export default function Header({
                     Proyectos
                   </Link>
                   <button
-                    onClick={() =>
-                      setOpenDropdown(
-                        openDropdown === 'proyectos-mobile'
-                          ? null
-                          : 'proyectos-mobile'
-                      )
-                    }
+                    onClick={() => setOpenDropdown('proyectos-mobile')}
                     className='p-1'
                     title='Mostrar categorías de proyectos'
                   >
@@ -410,9 +370,7 @@ export default function Header({
                         key={index}
                         href={`/projects/${formatTitleToUrl(category)}`}
                         className={`block ${textColorClass} text-sm hover:underline`}
-                        onClick={() => 
-                          console.log("click")
-                        }
+                        onClick={() => console.log('click')}
                       >
                         {category}
                       </a>
@@ -444,13 +402,7 @@ export default function Header({
                     Cultura Ares
                   </Link>
                   <button
-                    onClick={() =>
-                      setOpenDropdown(
-                        openDropdown === 'cultura-mobile'
-                          ? null
-                          : 'cultura-mobile'
-                      )
-                    }
+                    onClick={() => setOpenDropdown('cultura-mobile')}
                     className='p-1'
                     title='Mostrar opciones de cultura'
                   >
@@ -508,13 +460,7 @@ export default function Header({
                 >
                   <span>Idioma</span>
                   <button
-                    onClick={() =>
-                      setOpenDropdown(
-                        openDropdown === 'idioma-mobile'
-                          ? null
-                          : 'idioma-mobile'
-                      )
-                    }
+                    onClick={() => setOpenDropdown('idioma-mobile')}
                     className='p-1'
                     title='Mostrar opciones de idioma'
                   >
