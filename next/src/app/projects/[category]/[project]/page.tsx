@@ -34,7 +34,6 @@ export async function generateStaticParams() {
       project: formatTitleToUrl(project.nombre),
     }));
   });
-  console.log(allPermutations);
   return allPermutations;
 }
 

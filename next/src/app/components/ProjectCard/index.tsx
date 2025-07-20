@@ -3,8 +3,6 @@ import Image from 'next/image';
 import Button from '../Button';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import { useMemo, useState } from 'react';
-import { isMobile } from '@/dynamicRendering/utils';
 
 interface ProjectCardProps {
   title: string;
@@ -43,7 +41,13 @@ export default function ProjectCard({
 }: ProjectCardProps) {
   const router = useRouter();
 
-  const _isMobile = useMemo(() => isMobile(window), [window, isMobile]);
+  const isMobile = () => {
+    if(window) {
+      return window?.innerWidth > 764;
+    }
+
+    return false;
+  }
 
   return (
     <div
@@ -85,7 +89,7 @@ export default function ProjectCard({
         </div>
         <div className='flex flex-wrap gap-2 md:flex-nowrap'>
           {categories
-            ?.slice(0, _isMobile ? 1 : categories.length)
+            ?.slice(0, isMobile() ? 1 : categories.length)
             .map((cat, i) => {
               const categoryUrl = formatTitleToUrl(cat);
               return categoryUrl ? (

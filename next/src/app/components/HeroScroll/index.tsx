@@ -7,7 +7,6 @@ import Section from '../Section';
 
 export default function HeroScroll() {
   const ref = useRef(null);
-  const [isMobile, setIsMobile] = useState(false);
 
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -21,11 +20,13 @@ export default function HeroScroll() {
   const y = useSpring(rawY, { stiffness: 80, damping: 20 });
   const y2 = useSpring(rawY2, { stiffness: 80, damping: 20 });
 
-  useEffect(() => {
-    if (window) {
-      setIsMobile(window.innerWidth < 768);
+  const isMobile = () => {
+    if(window) {
+      return window?.innerWidth > 764;
     }
-  }, [window.innerWidth]);
+
+    return false;
+  }
 
   return (
     <Section
@@ -44,7 +45,7 @@ export default function HeroScroll() {
         />
 
         <motion.h2
-          style={{ scale, y: isMobile ? y2 : y }}
+          style={{ scale, y: isMobile() ? y2 : y }}
           className='absolute hidden max-w-4xl text-center text-[34px] leading-[30px] text-black
             md:block md:text-[84px] md:leading-[96px]'
         >
