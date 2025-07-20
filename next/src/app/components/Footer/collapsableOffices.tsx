@@ -17,7 +17,7 @@ export const CollapsableOffices = ({ offices }: CollapsableOfficesProps) => {
         title: office.title,
         content: (
           <>
-            <div className='space-y-5' key={index}>
+            <div className='space-y-5 text-white' key={index}>
               <div className='space-y-4'>
                 <p className='text-xs font-bold'>{office.name}</p>
                 <ul className='space-y-1 text-xs leading-5 text-c-gray-200'>

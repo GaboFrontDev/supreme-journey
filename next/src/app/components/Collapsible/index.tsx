@@ -80,7 +80,7 @@ export default function CollapsibleList({ items, onChange, fontColor = "#000000"
                   transition={{ duration: 0.3, ease: 'easeInOut' }}
                   className="overflow-hidden"
                 >
-                  <div className="text-lg text-white my-4 py-5 border-b border-[#000000]/8">
+                  <div className="text-lg text-black my-4 py-5 border-b border-[#000000]/8">
                     {content}
                   </div>
                 </motion.div>
