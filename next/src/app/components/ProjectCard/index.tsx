@@ -1,4 +1,5 @@
 'use client';
+import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Button from '../Button';
 import Link from 'next/link';
@@ -40,20 +41,18 @@ export default function ProjectCard({
   parentCategory,
 }: ProjectCardProps) {
   const router = useRouter();
+  const [isMobile, setIsMobile] = useState(false);
 
-  const isMobile = () => {
-    if(window) {
-      return window?.innerWidth > 764;
-    }
-
-    return false;
-  }
+  useEffect(() => {
+    setIsMobile(window.innerWidth < 768);
+  }, [window.innerWidth]);
 
   return (
     <div
       className={`w-[85dvw] overflow-hidden rounded-xl md:w-auto md:min-w-[620px] ${
         contentWhite ? 'bg-white' : 'bg-[#F5F5F5]'
-      } select-none first-of-type:pl-4 last-of-type:pr-4 only-of-type:px-0`}
+      } select-none first-of-type:pl-4 last-of-type:pr-4
+      only-of-type:px-0`}
     >
       <div
         className='relative h-[200px] w-full cursor-pointer overflow-hidden rounded-xl md:h-[300px]
@@ -89,7 +88,7 @@ export default function ProjectCard({
         </div>
         <div className='flex flex-wrap gap-2 md:flex-nowrap'>
           {categories
-            ?.slice(0, isMobile() ? 1 : categories.length)
+            ?.slice(0, isMobile ? 1 : categories.length)
             .map((cat, i) => {
               const categoryUrl = formatTitleToUrl(cat);
               return categoryUrl ? (

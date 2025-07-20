@@ -1,5 +1,5 @@
 'use client';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { mapStyles } from './consts';
 
 interface SnazzyMapProps {
@@ -14,13 +14,12 @@ interface SnazzyMapProps {
 export default function Map({ lat, lng, title = '', zoom = 17, styles, id }: SnazzyMapProps) {
   const mapRef = useRef(null);
 
-  const isMobile = () => {
-    if(window) {
-      return window?.innerWidth > 764;
-    }
+  const [isMobile, setIsMobile] = useState(false);
 
-    return false;
-  }
+  useEffect(() => {
+    setIsMobile(window.innerWidth < 768);
+  }, [window.innerWidth]);
+
 
   useEffect(() => {
     // @ts-ignore
@@ -56,5 +55,5 @@ export default function Map({ lat, lng, title = '', zoom = 17, styles, id }: Sna
     });
   }, [lat, lng, title, zoom, styles]);
 
-  return <iframe src={`https://snazzymaps.com/embed/${id}`} width="100%" height={isMobile() ? '300px' : '600px'} style={{border: 'none'}}></iframe>
+  return <iframe src={`https://snazzymaps.com/embed/${id}`} width="100%" height={isMobile ? '300px' : '600px'} style={{border: 'none'}}></iframe>
 }

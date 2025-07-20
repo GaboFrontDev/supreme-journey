@@ -19,14 +19,12 @@ export default function HeroScroll() {
   const scale = useSpring(rawScale, { stiffness: 80, damping: 20 });
   const y = useSpring(rawY, { stiffness: 80, damping: 20 });
   const y2 = useSpring(rawY2, { stiffness: 80, damping: 20 });
+const [isMobile, setIsMobile] = useState(false);
+  
+  useEffect(() => {
+    setIsMobile(window.innerWidth < 768);
+  }, [window.innerWidth]);
 
-  const isMobile = () => {
-    if(window) {
-      return window?.innerWidth > 764;
-    }
-
-    return false;
-  }
 
   return (
     <Section
@@ -45,7 +43,7 @@ export default function HeroScroll() {
         />
 
         <motion.h2
-          style={{ scale, y: isMobile() ? y2 : y }}
+          style={{ scale, y: isMobile ? y2 : y }}
           className='absolute hidden max-w-4xl text-center text-[34px] leading-[30px] text-black
             md:block md:text-[84px] md:leading-[96px]'
         >
