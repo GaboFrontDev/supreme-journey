@@ -26,7 +26,7 @@ export default function HistoryItem({
   const isDouble = cards.length > 1;
 
   return (
-    <div className={`${isDouble ? 'w-[800px]' : 'w-[400px]'} select-none scroll-smooth`} id={id}>
+    <div className={`${isDouble ? 'w-[800px]' : 'w-[400px]'} px-4 select-none scroll-smooth`} id={id}>
       <div className="mb-20 border-b border-[#EFEFEF]">
         <h2
           className="relative inline-block text-[70px]"

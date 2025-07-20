@@ -384,7 +384,7 @@ export default function TheStudyPage() {
         width='overflow-hidden md:overflow-visible p-0'
         data-testid='projects-section'
         paddingLeft='pl-0'
-        paddingRight='pr-0'
+        paddingRight='px-4'
         paddingTop='pt-0'
         paddingBottom='pb-0'
       >
