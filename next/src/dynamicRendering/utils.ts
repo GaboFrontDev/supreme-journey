@@ -138,5 +138,7 @@ export const getDestacados = async () => {
 }
 
 export const isMobile = (window: Window) =>{
-  return window.innerWidth < 768;
+  if(window) {
+    return window.innerWidth < 768;
+  }
 }

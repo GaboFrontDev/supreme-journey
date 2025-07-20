@@ -43,7 +43,7 @@ export default function ProjectCard({
 }: ProjectCardProps) {
   const router = useRouter();
 
-  const _isMobile = useMemo(() => isMobile(window), [window.innerWidth, isMobile]);
+  const _isMobile = useMemo(() => isMobile(window), [window, isMobile]);
 
   return (
     <div

@@ -7,7 +7,6 @@ type CollapsableOfficesProps = {
 };
 
 export const CollapsableOffices = ({ offices }: CollapsableOfficesProps) => {
-  console.log(offices);
   if (!offices || offices.length === 0) return null;
 
   return (

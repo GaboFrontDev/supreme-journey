@@ -11,7 +11,7 @@ export default function HeroScroll() {
 
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ['start center', 'start start']
+    offset: ['start center', 'start start'],
   });
 
   const rawScale = useTransform(scrollYProgress, [0, 0.1], [1, 0.75]);
@@ -22,31 +22,38 @@ export default function HeroScroll() {
   const y2 = useSpring(rawY2, { stiffness: 80, damping: 20 });
 
   useEffect(() => {
-    setIsMobile(window.innerWidth < 768);
+    if (window) {
+      setIsMobile(window.innerWidth < 768);
+    }
   }, [window.innerWidth]);
 
   return (
-    <Section width="max-w-7xl overflow-hidden md:overflow-visible" paddingTop="pt-0">
+    <Section
+      width='max-w-7xl overflow-hidden md:overflow-visible'
+      paddingTop='pt-0'
+    >
       <div
         ref={ref}
-        className="relative md:h-[610px] h-[250px] flex items-center justify-center overflow-hidden"
+        className='relative flex h-[250px] items-center justify-center overflow-hidden md:h-[610px]'
       >
         <Image
-          src="/images/map_pattern.png"
-          alt="Patrón de mapa"
+          src='/images/map_pattern.png'
+          alt='Patrón de mapa'
           fill
-          className="object-cover"
+          className='object-cover'
         />
 
         <motion.h2
           style={{ scale, y: isMobile ? y2 : y }}
-          className="md:block hidden absolute max-w-4xl text-[34px] md:text-[84px] leading-[30px] md:leading-[96px] text-center text-black"
+          className='absolute hidden max-w-4xl text-center text-[34px] leading-[30px] text-black
+            md:block md:text-[84px] md:leading-[96px]'
         >
           Experiencia global, enfoque local
         </motion.h2>
 
         <h2
-          className="md:hidden block absolute max-w-4xl text-[34px] md:text-[84px] leading-[30px] md:leading-[96px] text-center text-black"
+          className='absolute block max-w-4xl text-center text-[34px] leading-[30px] text-black
+            md:hidden md:text-[84px] md:leading-[96px]'
         >
           Experiencia global, enfoque local
         </h2>
