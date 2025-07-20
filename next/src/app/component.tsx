@@ -156,7 +156,7 @@ export default function HomeComponent({
         paddingTop='pt-0'
       >
         <OfficesGrid items={offices} />
-        <div className='flex justify-items-start'>
+        <div className='flex md:justify-items-start justify-center'>
           <Button label='Conoce el estudio' href='/the_study' />
         </div>
       </Section>

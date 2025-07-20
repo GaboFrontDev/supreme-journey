@@ -89,8 +89,8 @@ export default function CarouselWrapper({
 
       <div
         ref={containerRef}
-        className={`scrollbar-hide snap-x snap-mandatory overflow-x-scroll pl-6 pr-6
-        md:overflow-x-auto md:pl-24 md:pr-0 ${
+        className={`scrollbar-hide snap-x snap-mandatory overflow-x-scroll
+        md:overflow-x-auto md:pr-0 ${
           dragging ? 'cursor-grabbing' : 'cursor-grab'
         }`}
         onMouseDown={handleMouseDown}

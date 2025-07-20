@@ -41,9 +41,8 @@ export default function ProjectPage({
 
   return (
     <>
-
       <Section width='max-w-7xl' paddingTop='pt-32' paddingBottom='pb-12'>
-        <div className='md:flex items-center justify-between gap-36'>
+        <div className='items-center justify-between gap-36 md:flex'>
           <div className='flex-col'>
             <div className='mb-10 flex items-center gap-2'>
               <Link href='/projects' className='flex items-center gap-2'>
@@ -96,7 +95,10 @@ export default function ProjectPage({
         paddingLeft='pl-0'
         paddingRight='pr-0'
       >
-        <div className='relative h-[300px] md:h-[810px] w-full select-none overflow-hidden rounded-t-xl md:rounded-t-3xl'>
+        <div
+          className='relative h-[300px] w-full select-none overflow-hidden rounded-t-xl md:h-[810px]
+            md:rounded-t-3xl'
+        >
           <Image
             src={
               project.attributes.miniatura.data.attributes.url ??
@@ -110,7 +112,7 @@ export default function ProjectPage({
       </Section>
 
       <Section width='max-w-7xl'>
-        <div className='md:grid grid-cols-[1fr_580px]'>
+        <div className='grid-cols-[1fr_580px] md:grid'>
           <div>
             <h2 className='mb-6 text-[20px] font-bold leading-tight text-[#A1A1A1]'>
               Ficha
@@ -119,7 +121,8 @@ export default function ProjectPage({
               <div className='space-y-1'>
                 <span className='text-base text-[#A1A1A1]'>Año</span>
                 <p className='text-lg text-black'>
-                  {project.attributes.ficha?.year ||  project.attributes.ficha?.año}
+                  {project.attributes.ficha?.year ||
+                    project.attributes.ficha?.año}
                 </p>
               </div>
               <div className='space-y-1'>
@@ -159,14 +162,12 @@ export default function ProjectPage({
                 </p>
               </div>
               {project.attributes.ficha?.habitaciones && (
-              <div className='space-y-1'>
-                <span className='text-base text-[#A1A1A1]'>
-                  Habitaciones
-                </span>
-                <p className='text-lg text-black'>
-                  {project.attributes.ficha?.habitaciones}
-                </p>
-              </div>
+                <div className='space-y-1'>
+                  <span className='text-base text-[#A1A1A1]'>Habitaciones</span>
+                  <p className='text-lg text-black'>
+                    {project.attributes.ficha?.habitaciones}
+                  </p>
+                </div>
               )}
             </div>
           </div>
@@ -188,7 +189,7 @@ export default function ProjectPage({
       ))}
 
       <Section width='max-w-7xl'>
-        <div className='md:flex gap-52'>
+        <div className='gap-52 md:flex'>
           <div>
             <h2 className='mb-6 text-[20px] font-bold leading-tight text-[#A1A1A1]'>
               Líderes
@@ -230,8 +231,15 @@ export default function ProjectPage({
         </div>
       </Section>
 
-      <Section width='max-w-7xl' background='bg-[#F5F5F5]' paddingLeft='pl-0 md:pl-6' paddingRight='pr-0 md:pr-6'>
-        <div className='mb-10 md:flex px-6'>
+      <Section
+        width='overflow-hidden md:overflow-visible py-2 w-full'
+        data-testid='projects-section'
+        paddingLeft='pl-0'
+        paddingRight='px-0'
+        paddingBottom='pb-0'
+        paddingTop='pt-0'
+      >
+        <div className='mb-10 px-6 md:flex'>
           <h2 className='max-w-md text-[32px] font-bold leading-tight text-[#636B69]'>
             Proyectos relacionados
           </h2>

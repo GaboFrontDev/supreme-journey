@@ -156,7 +156,7 @@ export default function Header({
               {openDropdown === 'proyectos' && (
                 <div
                   className={`dropdown-menu grid w-[700px] grid-cols-3 ${textColorClass} left-0 top-full mt-10
-                  rounded-lg px-8 py-4 shadow-lg backdrop-blur-sm ${backgroundColorClass} absolute`}
+                  rounded-lg px-8 py-4 shadow-lg  ${backgroundColorClass}  backdrop-blur-lg absolute`}
                 >
                   {groupedCategoriesByCol.map((group, index) => (
                     <div key={index} className='flex flex-col gap-1'>
@@ -165,6 +165,7 @@ export default function Header({
                           key={index}
                           href={`/projects/${formatTitleToUrl(category)}`}
                           className='mt-4 hover:underline'
+                          onClick={() => setOpenDropdown(null)}
                         >
                           {category}
                         </Link>
@@ -204,24 +205,33 @@ export default function Header({
               {openDropdown === 'cultura' && (
                 <div
                   className={`dropdown-menu w-[333px] ${textColorClass} left-0 top-full mt-10 rounded-lg p-6
-                  shadow-lg backdrop-blur-sm ${backgroundColorClass} absolute`}
+                  shadow-lg backdrop-blur-sm bg-white absolute`}
                 >
                   <ul className='space-y-6 text-[15px]'>
                     <li>
                       <Link
                         href='/ares_sustainability'
                         className='hover:underline'
+                        onClick={() => setOpenDropdown(null)}
                       >
                         Design Innovation & Sustainability
                       </Link>
                     </li>
                     <li>
-                      <Link href='/ares_peva' className='hover:underline'>
+                      <Link
+                        href='/ares_peva'
+                        className='hover:underline'
+                        onClick={() => setOpenDropdown(null)}
+                      >
                         Ares PEVA
                       </Link>
                     </li>
                     <li>
-                      <Link href='/ares_architects' className='hover:underline'>
+                      <Link
+                        href='/ares_architects'
+                        className='hover:underline'
+                        onClick={() => setOpenDropdown(null)}
+                      >
                         Formando Arquitectos
                       </Link>
                     </li>
