@@ -1,6 +1,7 @@
 'use client';
 
 import { type Offices } from '@/app/utils/coordinates';
+import { CollapsableOffices } from './collapsableOffices';
 
 interface FooterProps {
   offices: Offices;
@@ -10,8 +11,11 @@ export default function Footer({ offices }: FooterProps) {
   return (
     <footer className='rounded-t-3xl bg-black px-6 pb-8 pt-10 text-white'>
       <div className='mx-auto max-w-7xl'>
-        <div className='gap-10 text-sm md:grid md:grid-cols-4'>
-          {offices.slice(0, 44).map((office, index) => (
+        <div className='md:hidden'>
+          <CollapsableOffices offices={offices} />
+        </div>
+        <div className='hidden gap-10 text-sm md:grid md:grid-cols-4'>
+          {offices.slice(0, 4).map((office, index) => (
             <div className='space-y-5' key={index}>
               <div className='space-y-6'>
                 <h4 className='text-xl font-bold'>{office.title}</h4>

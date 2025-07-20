@@ -8,7 +8,6 @@ import Script from 'next/script';
 import { offices, services } from './consts';
 
 import Button from '../components/Button';
-import Header from '../components/Header';
 import Section from '../components/Section';
 import CollapsibleList from '../components/Collapsible';
 
@@ -290,7 +289,7 @@ export default function ContactComponent({ offices, styles }: ContactComponentPr
       </Section>
 
       <Section width='max-w-7xl' paddingTop='pt-4' paddingBottom='pb-48'>
-        <div className='grid grid-cols-[300px_1fr] gap-32'>
+        <div className='md:grid grid-cols-[300px_1fr] gap-32'>
           <div>
             <p className='mb-5 text-lg text-black'>{selectedOffice.address}</p>
             <div className='space-y-6'>

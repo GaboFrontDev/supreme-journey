@@ -6,15 +6,16 @@ import { motion, AnimatePresence } from 'framer-motion';
 interface Item {
   id: string;
   title: string;
-  content: string;
+  content: string | React.ReactNode;
 }
 
 interface Props {
   items: Item[];
   onChange?: (id: string | null) => void;
+  fontColor?: string
 }
 
-export default function CollapsibleList({ items, onChange }: Props) {
+export default function CollapsibleList({ items, onChange, fontColor = "#000000" }: Props) {
   const [openId, setOpenId] = useState<string | null>(items[0]?.id ?? null);
 
   return (
@@ -57,9 +58,9 @@ export default function CollapsibleList({ items, onChange }: Props) {
               </motion.div>
 
               <motion.span
-                animate={{ color: isOpen ? '#407978' : '#000000' }}
+                animate={{ color: isOpen ? '#407978' : fontColor }}
                 transition={{ duration: 0.3 }}
-                className="font-bold text-2xl"
+                className="font-bold text-2xl "
               >
                 {title}
               </motion.span>
@@ -79,7 +80,7 @@ export default function CollapsibleList({ items, onChange }: Props) {
                   transition={{ duration: 0.3, ease: 'easeInOut' }}
                   className="overflow-hidden"
                 >
-                  <div className="text-lg text-black my-4 py-5 border-b border-[#000000]/8">
+                  <div className="text-lg text-white my-4 py-5 border-b border-[#000000]/8">
                     {content}
                   </div>
                 </motion.div>

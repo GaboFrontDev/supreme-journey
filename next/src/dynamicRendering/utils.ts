@@ -136,3 +136,7 @@ export const getDestacados = async () => {
   const data = await response as StrapiResponseSingle<DestacadoData>;
   return data;
 }
+
+export const isMobile = (window: Window) =>{
+  return window.innerWidth < 768;
+}

@@ -1,6 +1,7 @@
 'use client';
 import { useEffect, useRef } from 'react';
 import { mapStyles } from './consts';
+import { isMobile } from '@/dynamicRendering/utils';
 
 interface SnazzyMapProps {
   lat: number;
@@ -48,5 +49,7 @@ export default function Map({ lat, lng, title = '', zoom = 17, styles, id }: Sna
     });
   }, [lat, lng, title, zoom, styles]);
 
-  return <iframe src={`https://snazzymaps.com/embed/${id}`} width="100%" height="600px" style={{border: 'none'}}></iframe>
+  const _isMobile = isMobile(window);
+
+  return <iframe src={`https://snazzymaps.com/embed/${id}`} width="100%" height={_isMobile ? '300px' : '600px'} style={{border: 'none'}}></iframe>
 }
