@@ -254,7 +254,7 @@ export default function TheStudyPage() {
       element.scrollIntoView({
         behavior: 'smooth',
         block: 'nearest',
-        inline: 'center',
+        inline: 'start',
       });
     }
   };
