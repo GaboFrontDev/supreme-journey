@@ -12,6 +12,7 @@ import HistoryItem from '../components/HistoryCard';
 import ProcessSteps from '../components/ProcessSteps';
 import { associates } from './[person]/const';
 import { years, historyItems } from './consts';
+import { CollapableSteps } from './CollapableSteps';
 
 const directors = [
   {
@@ -342,11 +343,18 @@ export default function TheStudyPage() {
         </div>
       </Section>
 
-      <Section width='max-w-7xl'>
+      <Section width='hidden md:block max-w-7xl'>
         <h2 className='font-regular mb-20 max-w-2xl text-[40px] leading-tight text-black'>
           Nos motiva la calidad, la innovación y la excelencia en el diseño
         </h2>
         <ProcessSteps />
+      </Section>
+
+      <Section width='block md:hidden max-w-7xl'>
+        <h2 className='font-regular mb-20 max-w-2xl text-[40px] leading-tight text-black'>
+          Nos motiva la calidad, la innovación y la excelencia en el diseño
+        </h2>
+        <CollapableSteps />
       </Section>
 
       <Section
