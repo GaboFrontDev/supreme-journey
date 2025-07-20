@@ -63,7 +63,7 @@ export default function CarouselWrapper({
   };
 
   return (
-    <div className='relative w-[99dvw] select-none'>
+    <div className='relative w-screen select-none'>
       <button
         onClick={() => scroll('left')}
         style={{ top: arrowOffsetY }}

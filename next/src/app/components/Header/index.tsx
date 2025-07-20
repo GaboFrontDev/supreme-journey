@@ -79,7 +79,7 @@ export default function Header({
       setTranslateSrc('/icons/translate.png');
       setVariantButton('primary');
       setTextColorClass('text-[#636B69]');
-      setBackgroundColorClass('bg-white/20');
+      setBackgroundColorClass('bg-white/80');
       setHoverColorClass('hover:bg-[#EFEFEF]');
       setHamburgerColorClass('border-2 border-[#636B69] bg-[#EFEFEF]');
     }
@@ -132,10 +132,6 @@ export default function Header({
     };
   }, []);
 
-  // Cerrar menú móvil al cambiar de ruta
-  useEffect(() => {
-    setIsMobileMenuOpen(false);
-  }, [pathname]);
 
   return (
     <>
@@ -410,14 +406,16 @@ export default function Header({
                 {openDropdown === 'proyectos-mobile' && (
                   <div className='ml-4 space-y-2'>
                     {categories.map((category, index) => (
-                      <Link
+                      <a
                         key={index}
                         href={`/projects/${formatTitleToUrl(category)}`}
                         className={`block ${textColorClass} text-sm hover:underline`}
-                        onClick={() => setIsMobileMenuOpen(false)}
+                        onClick={() => 
+                          console.log("click")
+                        }
                       >
                         {category}
-                      </Link>
+                      </a>
                     ))}
                   </div>
                 )}

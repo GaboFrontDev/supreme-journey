@@ -27,26 +27,25 @@ export const CategoryComponent = ({
 
   return (
     <Section
-      width='max-w-7xl mx-0'
-      paddingTop='pt-0'
-      key={category.id}
+      width='overflow-hidden md:overflow-visible p-0'
       paddingLeft='pl-0'
       paddingRight='pr-0'
-      
+      paddingTop='pt-12'
+      paddingBottom='pb-0'
       data-testid={`category-${category.id}`}
     >
       <div className='mb-16 flex items-center justify-between px-6 md:px-24'>
-        <h2 className='text-xl md:text-5xl font-bold text-[#636B69]'>
+        <h2 className='text-xl font-bold text-[#636B69] md:text-5xl'>
           {category.attributes.nombre}
         </h2>
         <Button
           href={`/projects/${formatSlug(category.attributes.nombre)}`}
           label='Ver todos'
           variant='secondary'
-          className='text-xs py-2 px-4 md:text-base'
+          className='px-4 py-2 text-xs md:text-base'
         />
       </div>
-      <CarouselWrapper arrowOffsetY='45%'>
+      <CarouselWrapper arrowOffsetY='50%'>
         {projects.slice(0, 4).map((project) => (
           <ProjectCard
             key={project.attributes.nombre}

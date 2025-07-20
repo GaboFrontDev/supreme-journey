@@ -3,7 +3,8 @@ import Image from 'next/image';
 import Button from '../Button';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import { useEffect, useState } from 'react';
+import { useMemo, useState } from 'react';
+import { isMobile } from '@/dynamicRendering/utils';
 
 interface ProjectCardProps {
   title: string;
@@ -40,22 +41,19 @@ export default function ProjectCard({
   contentWhite = false,
   parentCategory,
 }: ProjectCardProps) {
-  const [isMobile, setIsMobile] = useState(false);
   const router = useRouter();
 
-  useEffect(() => {
-    setIsMobile(window.innerWidth < 768);
-  }, [window.innerWidth]);
+  const _isMobile = useMemo(() => isMobile(window), [window.innerWidth, isMobile]);
 
   return (
     <div
-      className={`w-[85dvw] overflow-hidden rounded-xl md:min-w-[620px] md:w-auto ${
+      className={`w-[85dvw] overflow-hidden rounded-xl md:w-auto md:min-w-[620px] ${
         contentWhite ? 'bg-white' : 'bg-[#F5F5F5]'
       } select-none`}
     >
       <div
-        className='relative h-[200px] md:h-[300px] w-full cursor-pointer overflow-hidden rounded-xl md:rounded-2xl
-          md:h-[380px] md:w-full'
+        className='relative h-[200px] w-full cursor-pointer overflow-hidden rounded-xl md:h-[300px]
+          md:h-[380px] md:w-full md:rounded-2xl'
         onClick={() => {
           router.push(`/projects/${parentCategory}/${formatTitleToUrl(title)}`);
         }}
@@ -71,19 +69,23 @@ export default function ProjectCard({
         <div className='flex items-start justify-between'>
           <div className='mb-8'>
             <h3 className='mb-1 text-xl font-bold text-black'>
-              <a href={`/projects/${parentCategory}/${formatTitleToUrl(title)}`}>{title}</a>
+              <a
+                href={`/projects/${parentCategory}/${formatTitleToUrl(title)}`}
+              >
+                {title}
+              </a>
             </h3>
             <p className='text-lg font-light text-[#A1A1A1]'>{location}</p>
           </div>
-          {!isMobile && <Button
+          <Button
             href={`/projects/${parentCategory}/${formatTitleToUrl(title)}`}
             label='Ver proyecto'
-            className='text-xs p-0 md:py-2 md:px-4'
-          />}
+            className='hidden p-0 text-xs md:block md:px-4 md:py-2'
+          />
         </div>
         <div className='flex flex-wrap gap-2 md:flex-nowrap'>
           {categories
-            ?.slice(0, isMobile ? 1 : categories.length)
+            ?.slice(0, _isMobile ? 1 : categories.length)
             .map((cat, i) => {
               const categoryUrl = formatTitleToUrl(cat);
               return categoryUrl ? (

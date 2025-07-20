@@ -367,7 +367,7 @@ export default function TheStudyPage() {
         <h2 className='mb-16 text-5xl font-bold text-[#636B69]' id='history'>
           Ares, <br /> a través del tiempo
         </h2>
-        <div className='mb-16 space-x-4'>
+        <div className='mb-16 md:space-x-4 md:space-y-0 space-y-2 space-x-1 md:block'>
           {years.map((year) => (
             <FilterButton
               key={year}
@@ -378,7 +378,17 @@ export default function TheStudyPage() {
             />
           ))}
         </div>
-        <CarouselWrapper arrowOffsetY='75%'>
+      </Section>
+
+      <Section
+        width='overflow-hidden md:overflow-visible p-0'
+        data-testid='projects-section'
+        paddingLeft='pl-0'
+        paddingRight='pr-0'
+        paddingTop='pt-0'
+        paddingBottom='pb-0'
+      >
+        <CarouselWrapper>
           {historyItems.map((item) => (
             <HistoryItem
               key={item.year}
