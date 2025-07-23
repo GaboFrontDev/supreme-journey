@@ -27,7 +27,7 @@ const stats = [
 ];
 
 const offices = [
-  { title: 'Guadalajara HQ', country: 'México' },
+  { title: 'Guadalajara', country: 'México' },
   { title: 'CDMX', country: 'México' },
   { title: 'L35 Barcelona', country: 'España' },
   { title: 'L35 Madrid', country: 'España' },
@@ -160,7 +160,7 @@ export default function HomeComponent({
           <Button label='Conoce el estudio' href='/the_study' />
         </div>
       </Section>
-      <Section width='md:max-w-7xl max-w-full overflow-hidden md:overflow-visible'>
+      <Section width='md:max-w-7xl max-w-full overflow-hidden md:overflow-visible' paddingBottom='pb-16'>
         <h2 className=' text-4xl font-bold text-[#636B69]'>Servicios</h2>
         <div className='items-center justify-between gap-36 md:flex'>
           <CollapsibleList items={services} onChange={setActiveServiceId} />
@@ -195,7 +195,7 @@ export default function HomeComponent({
         background='bg-[#F5F5F5]'
       >
         <div className='mb-20 flex flex-col items-center justify-between md:flex-row'>
-          <h2 className='max-w-md text-left text-[40px] font-bold leading-tight text-[#636B69]'>
+          <h2 className='max-w-md text-left text-4xl font-bold leading-tight text-[#636B69]'>
             Diseñamos desde la colaboración
           </h2>
           <p className='max-w-md text-left text-lg text-black md:text-right'>
@@ -226,11 +226,13 @@ export default function HomeComponent({
       <Section
         width='max-w-7xl overflow-hidden md:overflow-visible md:pl-0 md:pr-0'
         data-testid='projects-section'
+        paddingBottom='pb-0'
+        paddingTop='pt-14'
       >
         <h2 className='leading-16 mb-16 text-4xl font-bold text-[#636B69]'>
           Proyectos destacados
         </h2>
-        <div className='mb-16 hidden space-x-4 md:flex'>
+        <div className='mb-16 hidden space-x-4'>
           {categorias.map((categoria) => (
             <FilterButton
               href={`/projects/${formatTitleToUrl(categoria.attributes.nombre)}`}
@@ -265,9 +267,9 @@ export default function HomeComponent({
           ))}
         </CarouselWrapper>
       </Section>
-      <Section width='max-w-4xl' paddingTop='pt-8' paddingBottom='pb-36'>
+      <Section width='max-w-4xl' paddingTop='pt-8' paddingBottom='pb-32'>
         <div className='text-center pt-8'>
-          <h2 className='mb-20 text-4xl text-black'>
+          <h2 className='mb-10 text-4xl text-black'>
             Diseñemos de la mano espacios que trasciendan e historias que
             conectan
           </h2>

@@ -30,10 +30,11 @@ const [isMobile, setIsMobile] = useState(false);
     <Section
       width='max-w-7xl overflow-hidden md:overflow-visible'
       paddingTop='pt-0'
+      paddingBottom='pb-0'
     >
       <div
         ref={ref}
-        className='relative flex h-[250px] items-center justify-center overflow-hidden md:h-[610px]'
+        className='relative flex h-[250px] items-center justify-center overflow-hidden md:h-[500px]'
       >
         <Image
           src='/images/map_pattern.png'
