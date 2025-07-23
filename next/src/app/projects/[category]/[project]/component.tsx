@@ -110,7 +110,7 @@ export default function ProjectPage({
         </div>
       </Section>
 
-      <Section width='max-w-7xl'>
+      <Section width='max-w-7xl' paddingTop='pt-12' paddingBottom='pb-12'>
         <div className='grid-cols-[1fr_580px] md:grid'>
           <div>
             <h2 className='mb-6 text-[20px] font-bold leading-tight text-[#A1A1A1]'>
@@ -170,11 +170,11 @@ export default function ProjectPage({
               )}
             </div>
           </div>
-          <div>
+          <div className='py-16 md:py-0'>
             <h2 className='mb-6 text-[20px] font-bold leading-tight text-[#A1A1A1]'>
               Concepto
             </h2>
-            <h2 className='font-regular max-w-2xl text-[40px] leading-tight text-black'>
+            <h2 className='font-regular max-w-2xl text-4xl leading-tight text-black'>
               {project.attributes.concepto}
             </h2>
           </div>
@@ -187,7 +187,7 @@ export default function ProjectPage({
         />
       ))}
 
-      <Section width='max-w-7xl'>
+      <Section width='max-w-7xl' paddingBottom='pb-12'>
         <div className='gap-52 md:flex'>
           <div>
             <h2 className='mb-6 text-[20px] font-bold leading-tight text-[#A1A1A1]'>
@@ -205,7 +205,7 @@ export default function ProjectPage({
               ))}
             </ul>
           </div>
-          <div>
+          <div className='py-12 md:py-0'>
             <h2 className='mb-6 text-[20px] font-bold leading-tight text-[#A1A1A1]'>
               Equipo
             </h2>
@@ -235,7 +235,7 @@ export default function ProjectPage({
         data-testid='projects-section'
         paddingLeft='pl-0'
         paddingRight='px-0'
-        paddingBottom='pb-0'
+        paddingBottom='pb-12'
         paddingTop='pt-0'
       >
         <div className='mb-10 px-6 md:flex'>
@@ -257,7 +257,7 @@ export default function ProjectPage({
                 image={
                   project_rel.attributes.miniatura.data.attributes.url ?? ''
                 }
-                contentWhite={true}
+                contentWhite={false}
                 key={index}
                 parentCategory={formatTitleToUrl(category)}
               />

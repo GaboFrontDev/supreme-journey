@@ -12,7 +12,7 @@ export default function CenteredImage({ component }: CenteredImageProps) {
 
   return (
     <Section width="max-w-7xl" data-testid="centered-image-section">
-      <div className="relative w-full aspect-[16/9] overflow-hidden rounded-2xl" data-testid="centered-image-section-image">
+      <div className="relative w-full md:aspect-[16/9] aspect-[16/10] overflow-hidden md:rounded-2xl" data-testid="centered-image-section-image">
         <Image
           src={imageUrl}
           alt={component.alt}
