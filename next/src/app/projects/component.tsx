@@ -115,7 +115,7 @@ export default function ProjectsComponent({
 
       <Section width='max-w-4xl' paddingBottom='pb-36'>
         <div className='text-center'>
-          <h2 className='mb-20 text-5xl text-black'>
+          <h2 className='mb-20 text-4xl text-black'>
             Transformemos en conjunto las ideas en diseños que trasciendan
           </h2>
           <Button label='Trabajemos Juntos' href='/contact' />
