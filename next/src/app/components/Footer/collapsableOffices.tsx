@@ -11,6 +11,7 @@ export const CollapsableOffices = ({ offices }: CollapsableOfficesProps) => {
 
   return (
     <CollapsibleList
+      accentFontColor='#9AA09D'
       items={offices?.map((office, index) => ({
         id: office.id,
         title: office.title,

@@ -13,13 +13,14 @@ interface Props {
   items: Item[];
   onChange?: (id: string | null) => void;
   fontColor?: string
+  accentFontColor?: string;
 }
 
-export default function CollapsibleList({ items, onChange, fontColor = "#000000" }: Props) {
+export default function CollapsibleList({ items, onChange, fontColor = "#000000", accentFontColor = "#407978" }: Props) {
   const [openId, setOpenId] = useState<string | null>(items[0]?.id ?? null);
 
   return (
-    <div className="w-full">
+    <div className="w-full select-none">
       {items.map(({ id, title, content }) => {
         const isOpen = openId === id;
 
@@ -58,7 +59,7 @@ export default function CollapsibleList({ items, onChange, fontColor = "#000000"
               </motion.div>
 
               <motion.span
-                animate={{ color: isOpen ? '#407978' : fontColor }}
+                animate={{ color: isOpen ? accentFontColor : fontColor }}
                 transition={{ duration: 0.3 }}
                 className="font-bold text-2xl "
               >
