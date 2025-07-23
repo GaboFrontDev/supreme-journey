@@ -145,7 +145,6 @@ export default function CategoryPageComponent({
               onChange={(e) => setSearchQuery(e.target.value)}
             />
           </div>
-          <Button label='Ordenar' variant='secondary' iconFilter />
         </div>
       </Section>
 
