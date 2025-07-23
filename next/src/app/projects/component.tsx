@@ -72,7 +72,7 @@ export default function ProjectsComponent({
 
   return (
     <>
-      <Section width='max-w-7xl' paddingTop='pt-52'>
+      <Section width='max-w-7xl' paddingTop='pt-52' paddingBottom='pb-10'>
         <div className='flex items-center'>
           <h2 className='max-w-md text-[40px] font-bold leading-tight text-[#636B69]'>
             Explora nuestros proyectos

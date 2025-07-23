@@ -31,7 +31,7 @@ export const CategoryComponent = ({
       paddingLeft='pl-0'
       paddingRight='pr-0'
       paddingTop='pt-12'
-      paddingBottom='pb-0'
+      paddingBottom='pb-12'
       data-testid={`category-${category.id}`}
     >
       <div className='mb-16 flex items-center justify-between px-6 md:px-24'>
