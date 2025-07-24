@@ -121,9 +121,9 @@ export default function CategoryPageComponent({
         </div>
       </Section>
 
-      <Section width='max-w-7xl' paddingBottom='pb-20'>
+      <Section width='max-w-7xl' paddingBottom='pb-20' paddingTop='pt-12'>
         <div className='md:flex items-center'>
-          <h2 className='font-regular max-w-2xl text-[40px] leading-tight text-black'>
+          <h2 className='font-regular max-w-2xl text-4xl leading-tight text-black'>
             {categoryData.texto}
           </h2>
         </div>

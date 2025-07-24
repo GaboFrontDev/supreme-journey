@@ -82,6 +82,7 @@ const Step = ({
         minHeight: isActive ? `${activeHeight}px` : closedHeight,
         maxHeight: isActive ? `${activeHeight}px` : closedHeight,
       }}
+      id={`step-${index}`}
     >
       <div
         onClick={() => onSelect(index)}
@@ -111,7 +112,7 @@ const Step = ({
         </h3>
 
         {showDescription && (
-          <p className='mt-20 text-base leading-relaxed text-black'>
+          <p className='mt-10 text-base leading-relaxed text-black'>
             {step.description}
           </p>
         )}
@@ -120,10 +121,26 @@ const Step = ({
   );
 };
 
-export const CollapableSteps = () => {
+interface CollapableStepsProps {
+  onClick?: (index: number) => void;
+}
+
+export const CollapableSteps = ({
+  onClick,
+}: CollapableStepsProps = { onClick: () => {}
+}) => {
   const [activeIndex, setActiveIndex] = useState<number | null>(0);
   const totalSteps = steps.length;
   const activeHeight = 500;
+
+  const handleClick = (index: number) => {
+    if (activeIndex === index) {
+      setActiveIndex(null);
+    } else {
+      setActiveIndex(index);
+    }
+    onClick?.(index);
+  }
 
 
   return steps.map((step, index) => (
@@ -135,7 +152,7 @@ export const CollapableSteps = () => {
       isAdjacent={index === activeIndex! - 1 || index === activeIndex! + 1}
       activeHeight={activeHeight}
       totalSteps={totalSteps}
-      onSelect={setActiveIndex}
+      onSelect={handleClick}
     ></Step>
   ));
 };

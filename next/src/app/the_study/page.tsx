@@ -259,6 +259,17 @@ export default function TheStudyPage() {
     }
   };
 
+  const scrollToStep = (index: number) => {
+    const element = document.getElementById(`step-${index}`);
+    if (element) {
+      element.scrollIntoView({
+        behavior: 'smooth',
+        block: 'center',
+        inline: 'end',
+      });
+    }
+  }
+
   const [_selectedSection, setSelectedSection] =
     useState<keyof typeof keyToSection>('arquitectos');
 
@@ -312,8 +323,8 @@ export default function TheStudyPage() {
 
       <Section width='max-w-7xl'>
         <div className='items-center justify-between gap-36 md:flex'>
-          <div className='flex-col gap-16 md:flex'>
-            <h2 className='max-w-3xl text-5xl font-bold text-[#636B69]'>
+          <div className='flex flex-col gap-12 '>
+            <h2 className='max-w-3xl text-4xl font-bold text-[#636B69]'>
               Con sede en Guadalajara, Jalisco, México
             </h2>
             <p className='max-w-2xl text-lg text-black'>
@@ -323,10 +334,26 @@ export default function TheStudyPage() {
               reconocidas marcas, consolidándose como un referente en la
               industria.
             </p>
+            <div
+              className='relative block min-h-[320px] w-full min-w-[320px] md:hidden md:min-h-[564px]
+                md:w-auto md:min-w-[564px]'
+            >
+              <div className='overflow-hidden rounded-2xl'>
+                <Image
+                  src='/images/the_study/2.png'
+                  alt='Imagen de servicio'
+                  fill
+                  className='object-contain md:object-cover'
+                />
+              </div>
+              <p className='absolute -bottom-8 right-0 text-sm font-bold text-[#A1A1A1]'>
+                Plaza Patria
+              </p>
+            </div>
           </div>
           <div
-            className='relative min-h-[320px] w-full min-w-[320px] md:min-h-[564px] md:w-auto
-              md:min-w-[564px]'
+            className='relative hidden min-h-[320px] w-full min-w-[320px] md:block md:min-h-[564px]
+              md:w-auto md:min-w-[564px]'
           >
             <div className='overflow-hidden rounded-2xl'>
               <Image
@@ -343,19 +370,23 @@ export default function TheStudyPage() {
         </div>
       </Section>
 
-      <Section width='hidden md:block max-w-7xl'>
-        <h2 className='font-regular mb-20 max-w-2xl text-[40px] leading-tight text-black'>
-          Nos motiva la calidad, la innovación y la excelencia en el diseño
-        </h2>
-        <ProcessSteps />
-      </Section>
+      <div className='hidden md:block'>
+        <Section width='max-w-7xl' paddingTop='pt-12'>
+          <h2 className='font-regular mb-20 max-w-2xl text-4xl leading-tight text-black'>
+            Nos motiva la calidad, la innovación y la excelencia en el diseño
+          </h2>
+          <ProcessSteps />
+        </Section>
+      </div>
 
-      <Section width='block md:hidden max-w-7xl'>
-        <h2 className='font-regular mb-20 max-w-2xl text-[40px] leading-tight text-black'>
-          Nos motiva la calidad, la innovación y la excelencia en el diseño
-        </h2>
-        <CollapableSteps />
-      </Section>
+      <div className='block md:hidden'>
+        <Section width='max-w-7xl' paddingTop='pt-12'>
+          <h2 className='font-regular mb-20 max-w-2xl text-4xl leading-tight text-black'>
+            Nos motiva la calidad, la innovación y la excelencia en el diseño
+          </h2>
+          <CollapableSteps onClick={scrollToStep} />
+        </Section>
+      </div>
 
       <Section
         width='max-w-7xl'
@@ -367,7 +398,7 @@ export default function TheStudyPage() {
         <h2 className='mb-16 text-5xl font-bold text-[#636B69]' id='history'>
           Ares, <br /> a través del tiempo
         </h2>
-        <div className='mb-16 md:space-x-4 md:space-y-0 space-y-2 space-x-1 md:block'>
+        <div className='mb-16 space-x-1 space-y-2 md:block md:space-x-4 md:space-y-0'>
           {years.map((year) => (
             <FilterButton
               key={year}
