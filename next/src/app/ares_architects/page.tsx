@@ -128,7 +128,7 @@ export default function AresArchitectsPage() {
       </Section>
 
       <Section width='max-w-7xl' paddingTop='pt-10' paddingBottom='pb-20'>
-        <div className='md:grid grid-cols-5 gap-36'>
+        <div className='md:grid grid-cols-5 gap-36 flex flex-col gap-12'>
           <div>
             <h4 className="flex items-start text-[#989F9C] text-8xl relative">
               1
