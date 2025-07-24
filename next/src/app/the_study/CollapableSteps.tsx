@@ -131,7 +131,7 @@ export const CollapableSteps = ({
 }) => {
   const [activeIndex, setActiveIndex] = useState<number | null>(0);
   const totalSteps = steps.length;
-  const activeHeight = 500;
+  const activeHeight = 450;
 
   const handleClick = (index: number) => {
     if (activeIndex === index) {

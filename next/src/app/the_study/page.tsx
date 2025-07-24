@@ -398,7 +398,7 @@ export default function TheStudyPage() {
         <h2 className='mb-16 text-5xl font-bold text-[#636B69]' id='history'>
           Ares, <br /> a través del tiempo
         </h2>
-        <div className='mb-16 space-x-1 space-y-2 md:block md:space-x-4 md:space-y-0'>
+        <div className='mb-16 flex flex-wrap gap-4 md:block md:space-x-4 md:space-y-0'>
           {years.map((year) => (
             <FilterButton
               key={year}
