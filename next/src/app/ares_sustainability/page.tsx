@@ -26,7 +26,7 @@ export default function AresSustainabilityPage() {
                 <span className='text-sm font-bold text-[#A1A1A1]'>DIS</span>
               </div>
             </div>
-            <h2 className='mb-6 mt-2 max-w-2xl text-[40px] font-bold leading-tight text-[#636B69]'>
+            <h2 className='mb-6 mt-2 max-w-2xl text-4xl font-bold leading-tight text-[#636B69]'>
               Diseño <br />
               sostenible
             </h2>
@@ -48,7 +48,7 @@ export default function AresSustainabilityPage() {
         paddingLeft='pl-0'
         paddingRight='pr-0'
       >
-        <div className='relative h-[810px] w-full overflow-hidden rounded-t-3xl'>
+        <div className='relative h-[300px] md:h-[810px] w-full overflow-hidden rounded-t-3xl'>
           <Image
             src='/images/ares_sustainability/1.png'
             alt='Ares Sustainability'
@@ -60,7 +60,7 @@ export default function AresSustainabilityPage() {
 
       <Section width='max-w-7xl' paddingTop='pt-20' paddingBottom='pb-20'>
         <div className='md:grid grid-cols-2 gap-36'>
-          <h2 className='font-regular max-w-2xl text-[40px] leading-tight text-black'>
+          <h2 className='font-regular max-w-2xl text-4xl leading-tight text-black'>
             DIS Digital Innovation & Sustainability
           </h2>
           <div className='text-lg text-black [&>p:first-child]:mt-36 [&>p]:my-8'>
@@ -89,7 +89,7 @@ export default function AresSustainabilityPage() {
         paddingLeft='pl-0'
         paddingRight='pr-0'
       >
-        <div className='relative h-[810px] w-full overflow-hidden rounded-t-3xl'>
+        <div className='relative h-[300px] md:h-[810px] w-full overflow-hidden rounded-t-3xl'>
           <Image
             src='/images/ares_sustainability/2.png'
             alt='Ares Sustainability'
@@ -101,7 +101,7 @@ export default function AresSustainabilityPage() {
 
       <Section width='max-w-7xl' paddingTop='pt-20' paddingBottom='pb-20'>
         <div className='md:grid grid-cols-2 gap-36'>
-          <h2 className='font-regular max-w-2xl text-[40px] leading-tight text-black'>
+          <h2 className='font-regular max-w-2xl text-4xl leading-tight text-black'>
             BIM Building Information Modeling
           </h2>
           <div className='text-lg text-black [&>p:first-child]:mt-0 [&>p]:my-8'>
@@ -132,8 +132,8 @@ export default function AresSustainabilityPage() {
       </Section>
 
       <Section width='max-w-7xl' paddingTop='pt-10' paddingBottom='pb-20'>
-        <div className='grid grid-cols-2 md:grid-cols-5 md:gap-36 gap-6'>
-          <div>
+        <div className='md:grid grid-cols-2 md:grid-cols-5 md:gap-36  flex flex-col gap-12'>
+          <div className='w-full'>
             <h4 className='relative flex items-start text-8xl text-[#989F9C]'>
               1
               <Image

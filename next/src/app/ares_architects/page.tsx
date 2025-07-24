@@ -28,7 +28,7 @@ export default function AresArchitectsPage() {
                 </span>
               </div>
             </div>
-            <h2 className='mb-6 mt-2 max-w-2xl text-[40px] font-bold leading-tight text-[#636B69]'>
+            <h2 className='mb-6 mt-2 max-w-2xl text-4xl font-bold leading-tight text-[#636B69]'>
               Formando <br />
               arquitectos
             </h2>
@@ -61,7 +61,7 @@ export default function AresArchitectsPage() {
 
       <Section width='max-w-7xl' paddingTop='pt-20' paddingBottom='pb-20'>
         <div className='md:grid grid-cols-2 gap-36'>
-          <h2 className='font-regular max-w-2xl text-[40px] leading-tight text-black'>
+          <h2 className='font-regular max-w-2xl text-4xl leading-tight text-black'>
             Creemos en el poder de compartir conocimiento y experiencia para
             motivar a generaciones futuras
           </h2>
@@ -106,7 +106,7 @@ export default function AresArchitectsPage() {
 
       <Section width='max-w-7xl' paddingTop='pt-20' paddingBottom='pb-20'>
         <div className='md:grid grid-cols-2 gap-36'>
-          <h2 className='font-regular max-w-2xl text-[40px] leading-tight text-black'>
+          <h2 className='font-regular max-w-2xl text-4xl leading-tight text-black'>
             Desarrollar una conexión directa con la realidad profesional
           </h2>
           <div className='text-lg text-black [&>p:first-child]:mt-0 [&>p]:my-8'>

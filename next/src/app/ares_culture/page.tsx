@@ -44,7 +44,7 @@ export default function AresCulturePage() {
       <Section width='max-w-7xl' paddingTop='pt-52' paddingBottom='pb-12'>
         <div className='md:flex items-center justify-between gap-36'>
           <div className='flex-col'>
-            <h2 className='mb-6 mt-2 max-w-2xl text-[40px] font-bold leading-tight text-[#636B69]'>
+            <h2 className='mb-6 mt-2 max-w-2xl text-4xl font-bold leading-tight text-[#636B69]'>
               Cultura Ares
             </h2>
           </div>
@@ -64,7 +64,7 @@ export default function AresCulturePage() {
         paddingLeft='pl-0'
         paddingRight='pr-0'
       >
-        <div className='relative h-[810px] w-full overflow-hidden rounded-t-3xl'>
+        <div className='relative h-[300px] md:h-[810px] w-full overflow-hidden rounded-t-3xl'>
           <Image
             src='/images/ares_culture/1.png'
             alt='Ares Culture'
@@ -74,17 +74,17 @@ export default function AresCulturePage() {
         </div>
       </Section>
 
-      <Section width='max-w-7xl' paddingBottom='pb-20'>
+      <Section width='max-w-7xl' paddingBottom='pb-12' paddingTop='pt-12'>
         <div className='flex items-center'>
-          <h2 className='font-regular max-w-2xl text-[40px] leading-tight text-black'>
+          <h2 className='font-regular max-w-2xl text-4xl leading-tight text-black'>
             La tradición de la mano alzada, la enseñanza como legado de
             conocimiento y la innovación digital
           </h2>
         </div>
       </Section>
 
-      <Section width='max-w-7xl' paddingTop='pt-10' paddingBottom='pb-48'>
-        <div className='md:grid grid-cols-2 gap-10'>
+      <Section width='max-w-7xl' paddingTop='pt-10' paddingBottom='pb-20'>
+        <div className='md:grid grid-cols-2 gap-10 flex flex-col'>
           {iniciativas.map((iniciativa) => (
             <div
               key={iniciativa.id}

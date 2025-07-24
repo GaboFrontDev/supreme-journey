@@ -430,7 +430,7 @@ export default function TheStudyPage() {
       </Section>
 
       <Section width='max-w-7xl' paddingBottom='pt-0'>
-        <h2 className='font-regular max-w-2xl text-[40px] leading-tight text-black'>
+        <h2 className='font-regular max-w-2xl text-4xl leading-tight text-black'>
           Somos creativos que juntos diseñan procesos que impulsan resultados
         </h2>
         <div className='mb-10 mt-28'>

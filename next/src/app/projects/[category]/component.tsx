@@ -37,7 +37,7 @@ const HeadSection = ({
               </span>
             </Link>
           </div>
-          <h2 className='mb-6 mt-2 max-w-2xl text-[40px] font-bold leading-tight text-[#636B69]'>
+          <h2 className='mb-6 mt-2 max-w-2xl text-4xl font-bold leading-tight text-[#636B69]'>
             {category}
           </h2>
         </div>

@@ -122,7 +122,7 @@ export default function ContactComponent({ offices, styles }: ContactComponentPr
       <Section width='max-w-7xl' paddingTop='pt-52' paddingBottom='pb-20'>
         <div className='md:grid grid-cols-2 gap-36'>
           <div className='flex-col'>
-            <h2 className='mb-16 max-w-xs text-[40px] font-bold leading-tight text-[#636B69]'>
+            <h2 className='mb-16 max-w-xs text-4xl font-bold leading-tight text-[#636B69]'>
               Trabajemos juntos
             </h2>
             <div className='flex items-center justify-between gap-36'>
@@ -241,7 +241,7 @@ export default function ContactComponent({ offices, styles }: ContactComponentPr
       </Section>
 
       <Section width='max-w-7xl' paddingTop='pt-0' paddingBottom='pb-0'>
-        <h2 className='mb-16 text-[40px] font-bold leading-tight text-[#636B69]'>
+        <h2 className='mb-16 text-4xl font-bold leading-tight text-[#636B69]'>
           Nuestras oficinas
         </h2>
       </Section>

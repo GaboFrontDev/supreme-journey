@@ -69,7 +69,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
       <Section width='max-w-7xl' paddingTop='pt-12'>
         <div className='flex items-start justify-between gap-36'>
           <div>
-            <h2 className='my-2 max-w-2xl text-[40px] font-bold leading-tight text-[#636B69]'>
+            <h2 className='my-2 max-w-2xl text-4xl font-bold leading-tight text-[#636B69]'>
               {attributes.nombre}
             </h2>
             <span className='text-lg font-bold text-[#A1A1A1]'>
@@ -136,7 +136,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
       </Section>
 
       <Section width='max-w-7xl' paddingTop='pt-0' paddingBottom='pb-48'>
-        <h2 className='mb-14 mt-2 text-[40px] font-bold leading-tight text-[#636B69]'>
+        <h2 className='mb-14 mt-2 text-4xl font-bold leading-tight text-[#636B69]'>
           Artículos relacionados
         </h2>
         <div className='md:grid grid-cols-2 gap-10'>

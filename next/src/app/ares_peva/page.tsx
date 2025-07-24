@@ -42,7 +42,7 @@ export default function AresPevaPage() {
                 </span>
               </div>
             </div>
-            <h2 className='mb-6 mt-2 max-w-2xl text-[40px] font-bold leading-tight text-[#636B69]'>
+            <h2 className='mb-6 mt-2 max-w-2xl text-4xl font-bold leading-tight text-[#636B69]'>
               Pensando <br />
               En Voz Alta
             </h2>
@@ -64,7 +64,7 @@ export default function AresPevaPage() {
         paddingLeft='pl-0'
         paddingRight='pr-0'
       >
-        <div className='relative h-[810px] w-full overflow-hidden rounded-t-3xl'>
+        <div className='relative h-[300px] md:h-[810px] w-full overflow-hidden rounded-t-3xl'>
           <Image
             src='/images/ares_peva/1.png'
             alt='Ares PEVA'
@@ -74,9 +74,9 @@ export default function AresPevaPage() {
         </div>
       </Section>
 
-      <Section width='max-w-7xl' paddingBottom='pb-20'>
+      <Section width='max-w-7xl' paddingBottom='pb-12' paddingTop='pt-12'>
         <div className='md:flex items-center'>
-          <h2 className='font-regular max-w-2xl text-[40px] leading-tight text-black'>
+          <h2 className='font-regular max-w-2xl text-4xl leading-tight text-black'>
             El dibujo es el primer paso en la creación de una narrativa visual
             que da vida a un espacio
           </h2>
@@ -90,7 +90,7 @@ export default function AresPevaPage() {
         paddingLeft='pl-0'
         paddingRight='pr-0'
       >
-        <div className='relative h-[810px] w-full overflow-hidden rounded-t-3xl'>
+        <div className='relative h-[300px] md:h-[810px] w-full overflow-hidden rounded-t-3xl'>
           <Image
             src='/images/ares_peva/2.png'
             alt='Ares PEVA'
@@ -101,8 +101,8 @@ export default function AresPevaPage() {
       </Section>
 
       <Section width='max-w-7xl' paddingTop='pt-20' paddingBottom='pb-20'>
-        <div className='md:grid grid-cols-2 gap-36'>
-          <h2 className='font-regular max-w-2xl text-[40px] leading-tight text-black'>
+        <div className='md:grid grid-cols-2 md:gap-36 flex flex-col gap-12'>
+          <h2 className='font-regular max-w-2xl text-4xl leading-tight text-black'>
             Ares Archivos de Arquitectura
           </h2>
           <div className='text-lg text-black [&>p:first-child]:mt-0 [&>p]:my-8'>
