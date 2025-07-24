@@ -197,11 +197,6 @@ const disenos = [
 
 const operaciones = [
   {
-    name: 'Pedro López',
-    image: '/images/Pedro-Lopez.jpg',
-    position: 'Director de Operaciones',
-  },
-  {
     name: 'Ana Fernández',
     image: '/images/Ana-Fernandez.jpg',
     position: 'Recursos Humanos',
@@ -510,8 +505,8 @@ export default function TheStudyPage() {
         </div>
       </Section>
 
-      <Section width='max-w-7xl' paddingBottom='pt-0'>
-        <div className='mb-16 grid select-none grid-cols-2 items-center justify-between gap-4 md:gap-10'>
+      <Section width='max-w-7xl' paddingBottom='pt-0' paddingTop='pt-12'>
+        <div className='mb-16 md:grid flex flex-col select-none grid-cols-2 md:items-center md:justify-between gap-4 md:gap-10'>
           {professionals.map((professional, index) => {
             const isActive = professional.key === _selectedSection;
 

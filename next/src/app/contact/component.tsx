@@ -290,7 +290,7 @@ export default function ContactComponent({ offices, styles }: ContactComponentPr
 
       <Section width='max-w-7xl' paddingTop='pt-4' paddingBottom='pb-48'>
         <div className='md:grid grid-cols-[300px_1fr] gap-32'>
-          <div>
+          <div className='pb-12'>
             <p className='mb-5 text-lg text-black'>{selectedOffice.address}</p>
             <div className='space-y-6'>
               <p className='text-lg font-bold'>{selectedOffice.name || 'Nombre pendiente'}</p>

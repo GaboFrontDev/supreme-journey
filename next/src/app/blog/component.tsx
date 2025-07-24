@@ -27,6 +27,7 @@ export default function BlogPageComponent({ posts }: BlogPageComponentProps) {
         date: post.attributes.createdAt,
         image: post.attributes.miniatura?.data?.attributes?.url || '',
         paragraphs: post.attributes.preview || '',
+        fecha: post.attributes.fecha || '',
       };
     });
   }, [posts]);
@@ -114,7 +115,6 @@ export default function BlogPageComponent({ posts }: BlogPageComponentProps) {
               onChange={(e) => setSearch(e.target.value)}
             />
           </div>
-          <Button label="Ordenar" variant="secondary" iconFilter />
         </div>
       </Section>
 
@@ -129,7 +129,7 @@ export default function BlogPageComponent({ posts }: BlogPageComponentProps) {
             <BlogCard
               key={index}
               images={[post.image]}
-              date={formatDateToSpanish(post.date)}
+              date={formatDateToSpanish(post.fecha)}
               title={post.title}
               slug={post.slug}
             />
