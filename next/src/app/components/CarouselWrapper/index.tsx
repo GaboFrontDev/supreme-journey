@@ -2,15 +2,18 @@
 
 import { useRef, useState } from 'react';
 import Image from 'next/image';
+import { twMerge } from 'tailwind-merge';
 
 interface CarouselWrapperProps {
   children: React.ReactNode;
   arrowOffsetY?: string;
+  containerClasses?: string;
 }
 
 export default function CarouselWrapper({
   children,
   arrowOffsetY = '50%',
+  containerClasses = '',
 }: CarouselWrapperProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const isDragging = useRef(false);
@@ -62,6 +65,8 @@ export default function CarouselWrapper({
     });
   };
 
+  const containerClass = twMerge('flex w-max gap-6 pr-0 md:pr-0', containerClasses)
+
   return (
     <div className='relative w-screen select-none'>
       <button
@@ -98,7 +103,7 @@ export default function CarouselWrapper({
         onMouseLeave={handleMouseLeave}
         onMouseMove={handleMouseMove}
       >
-        <div className='flex w-max gap-6 pr-0 md:pr-0'>{children}</div>
+        <div className={containerClass}>{children}</div>
       </div>
     </div>
   );

@@ -419,7 +419,7 @@ export default function TheStudyPage() {
         paddingTop='pt-0'
         paddingBottom='pb-0'
       >
-        <CarouselWrapper>
+        <CarouselWrapper containerClasses='gap-4'>
           {historyItems.map((item) => (
             <HistoryItem
               key={item.year}
