@@ -68,15 +68,49 @@ export default function PersonPage({ params }: { params: { person: string } }) {
         </div>
       </Section>
 
-      <Section width='max-w-7xl' paddingTop='pt-12'>
+      <Section width='max-w-7xl' paddingTop='pt-12' paddingBottom='pb-12'>
         <div className='items-start justify-between gap-36 md:flex'>
           <div>
-            <h2 className='my-2 max-w-2xl text-[40px] font-bold leading-tight text-[#636B69]'>
+            <h2 className='my-2 max-w-2xl text-4xl font-bold leading-tight text-[#636B69]'>
               {person.name}
             </h2>
             <span className='text-lg font-bold text-[#A1A1A1]'>
               {person.position}
             </span>
+            <div className='md:hidden block relative md:min-h-[564px] md:min-w-[564px] py-12'>
+            <div className='overflow-hidden rounded-2xl'>
+              <Image
+                src={person.detail || person.image}
+                alt={person.name}
+                width={564}
+                height={564}
+                className='object-cover md:h-[564px] md:w-[564px]'
+              />
+            </div>
+            <div className='mt-4 flex justify-end gap-3'>
+              <Link
+                href={person.link.Instagram || ''}
+                target='_blank'
+                className='text-sm font-bold text-[#A1A1A1] hover:underline'
+              >
+                Instagram
+              </Link>
+              <Link
+                href={person.link.LinkedIn || ''}
+                target='_blank'
+                className='text-sm font-bold text-[#A1A1A1] hover:underline'
+              >
+                Linkedin
+              </Link>
+              <Link
+                href={person.link.Facebook || ''}
+                target='_blank'
+                className='text-sm font-bold text-[#A1A1A1] hover:underline'
+              >
+                Facebook
+              </Link>
+            </div>
+          </div>
             <div className='text-lg text-black [&>p]:my-8'>
               <p>{person.description[0]}</p>
               <p>{person.description[1]}</p>
@@ -91,7 +125,7 @@ export default function PersonPage({ params }: { params: { person: string } }) {
               )}
             </div>
           </div>
-          <div className='relative md:min-h-[564px] md:min-w-[564px]'>
+          <div className='hidden md:block relative md:min-h-[564px] md:min-w-[564px]'>
             <div className='overflow-hidden rounded-2xl'>
               <Image
                 src={person.detail || person.image}
@@ -133,10 +167,10 @@ export default function PersonPage({ params }: { params: { person: string } }) {
         data-testid='projects-section'
         paddingLeft='pl-0'
         paddingRight='px-0'
-        paddingBottom='pb-0'
+        paddingBottom='pb-12'
         paddingTop='pt-0'
       >
-        <h2 className='mb-14 mt-2 text-[40px] font-bold leading-tight text-[#636B69] px-6'>
+        <h2 className='mb-14 mt-2 text-4xl font-bold leading-tight text-[#636B69] px-6'>
           Otras biografías
         </h2>
         <CarouselWrapper>

@@ -13,6 +13,7 @@ import ProcessSteps from '../components/ProcessSteps';
 import { associates } from './[person]/const';
 import { years, historyItems } from './consts';
 import { CollapableSteps } from './CollapableSteps';
+import Link from 'next/link';
 
 const directors = [
   {
@@ -268,7 +269,7 @@ export default function TheStudyPage() {
         inline: 'end',
       });
     }
-  }
+  };
 
   const [_selectedSection, setSelectedSection] =
     useState<keyof typeof keyToSection>('arquitectos');
@@ -441,20 +442,28 @@ export default function TheStudyPage() {
           <h2 className='mb-10 text-[32px] font-bold leading-tight text-[#636B69]'>
             Directores
           </h2>
-          <div className='grid grid-cols-2 gap-4 md:grid-cols-3 md:gap-10 '>
+          <div className='grid grid-cols-2 gap-2 md:grid-cols-3 md:gap-10 '>
             {directors.map((director, index) => (
               <div key={index} className='flex flex-col py-6 md:py-0'>
                 <div className='relative mb-4 h-[185px] w-full overflow-hidden rounded-xl md:h-[380px]'>
-                  <Image
-                    src={director.image}
-                    alt='Imagen de servicio'
-                    fill
-                    className='object-contain md:object-cover'
-                  />
+                  <Link
+                    href={`/the_study/${director.name.toLowerCase().replace(/\s+/g, '-').replace(/á/g, 'a').replace(/é/g, 'e').replace(/í/g, 'i').replace(/ó/g, 'o').replace(/ú/g, 'u')}`}
+                  >
+                    <Image
+                      src={director.image}
+                      alt='Imagen de servicio'
+                      fill
+                      className='object-contain md:object-cover'
+                    />
+                  </Link>
                 </div>
                 <div className='flex flex-col items-start'>
                   <h2 className='text-lg font-bold text-black'>
-                    {director.name}
+                    <Link
+                      href={`/the_study/${director.name.toLowerCase().replace(/\s+/g, '-').replace(/á/g, 'a').replace(/é/g, 'e').replace(/í/g, 'i').replace(/ó/g, 'o').replace(/ú/g, 'u')}`}
+                    >
+                      {director.name}
+                    </Link>
                   </h2>
                   <span className='text-[#A1A1A1]'>{director.position}</span>
 
@@ -468,7 +477,7 @@ export default function TheStudyPage() {
             ))}
           </div>
         </div>
-        <div className='mb-10 mt-28'>
+        <div className='mb-10 mt-12'>
           <h2 className='mb-10 text-[32px] font-bold leading-tight text-[#636B69]'>
             Asociados
           </h2>

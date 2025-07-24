@@ -160,7 +160,7 @@ export const associates: Person[] = [
   },
   {
     name: 'Pedro López',
-    position: 'Director de Operaciones',
+    position: 'COO',
     role: 'COO',
     image: '/images/the_study/associates/pedro-lopez.jpg',
     description: [
@@ -205,7 +205,7 @@ export const associates: Person[] = [
     },
   },
   {
-    name: 'Eduardo Domínguez',
+    name: 'Lalo Domínguez',
     position: 'Director de Proyecto',
     role: 'Project Director',
     image: '/images/the_study/associates/1.png',
