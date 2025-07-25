@@ -20,7 +20,7 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
   return (
     <html lang='es'>
       <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID || ''} />
-      <body className='min-h-screen bg-white'>
+      <body className='min-h-screen overflow-x-hidden bg-white'>
         <Header categories={sortedCategories.map((category) => category.attributes.nombre)} />
         <main>{children}</main>
         <Footer offices={offices} />
