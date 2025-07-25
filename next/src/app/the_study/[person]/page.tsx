@@ -179,7 +179,7 @@ export default function PersonPage({ params }: { params: { person: string } }) {
             person
           ).map((director, index) => (
             <div key={index} className='flex select-none flex-col first-of-type:pl-4 last-of-type:pr-4'>
-              <div className='relative mb-4 h-[380px] w-[400px] overflow-hidden rounded-xl '>
+              <div className='relative mb-4 h-[320px] w-[80dvw] md:h-[380px] md:w-[400px] overflow-hidden rounded-xl '>
                 <Image
                   src={director.image}
                   alt='Imagen de servicio'
