@@ -336,7 +336,7 @@ export default function TheStudyPage() {
             >
               <div className='overflow-hidden rounded-2xl'>
                 <Image
-                  src='/images/the_study/2.png'
+                  src='/images/PLAZA PATRIA-SITIO-WEB.jpg'
                   alt='Imagen de servicio'
                   fill
                   className='object-contain md:object-cover'
@@ -353,7 +353,7 @@ export default function TheStudyPage() {
           >
             <div className='overflow-hidden rounded-2xl'>
               <Image
-                src='/images/the_study/2.png'
+                src='/images/PLAZA PATRIA-SITIO-WEB.jpg'
                 alt='Imagen de servicio'
                 fill
                 className='object-contain md:object-cover'
