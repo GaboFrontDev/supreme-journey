@@ -41,10 +41,6 @@ export default async function CategoryPage({
           content={category.attributes.concepto}
         />
         <meta property='og:type' content='website' />
-        <meta
-          property='og:url'
-          content={`https://ares.proyectos.uchile.cl/projects/${params.category}`}
-        />
         {category.attributes.portada.data.attributes.previewUrl && (
           <meta
             property='og:image'
