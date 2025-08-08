@@ -2,7 +2,7 @@ import CategoryPageComponent from './component';
 import { notFound } from 'next/navigation';
 import { getCategories } from '@/dynamicRendering/utils';
 import { formatSlug } from '@/utils/formatSlug';
-import Head from 'next/dist/shared/lib/head';
+import Head from 'next/head';
 
 export async function generateStaticParams() {
   const categories = await getCategories();
