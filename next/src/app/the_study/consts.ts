@@ -25,7 +25,7 @@ export const years = [
           title: 'Plaza Patria',
           description:
             'Diseñado por el Arq. Jacinto Arenas Serna, es el primer centro comercial techado de América Latina, convirtiéndose rápidamente e un referente comercial y punto de encuentro en la ciudad.',
-          image: '/images/history/1.png',
+          image: '/images/PLAZA-PATRIA-SITIO-WEB.jpg',
         },
       ],
     },
