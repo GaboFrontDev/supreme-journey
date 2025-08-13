@@ -13,18 +13,31 @@ export default function MetricoolTracker({ isProd }: MetricoolTrackerProps) {
     return <></>;
   }
   return (
-    <Script
-      src='https://tracker.metricool.com/resources/be.js'
-      strategy='afterInteractive' // Se carga después de que la página esté lista
-      onLoad={() => {
-        if (typeof beTracker !== 'undefined' && beTracker.t) {
-          beTracker.t({
-            hash: 'cce6f89e82017e6b68cfd26e5f674333',
-          });
-        } else {
-          console.error('beTracker no se cargó correctamente.');
-        }
-      }}
-    />
+    <>
+      <Script
+        src='https://tracker.metricool.com/resources/be.js'
+        strategy='afterInteractive'
+      />
+      <Script
+        id='metricool-init'
+        strategy='afterInteractive'
+        dangerouslySetInnerHTML={{
+          __html: `
+            (function waitForMetricool() {
+              var attempts = 0;
+              var interval = setInterval(function() {
+                if (window.beTracker && typeof window.beTracker.t === 'function') {
+                  window.beTracker.t({ hash: "cce6f89e82017e6b68cfd26e5f674333" });
+                  clearInterval(interval);
+                } else if (attempts++ > 20) {
+                  console.error("beTracker no se cargó después de esperar 20 intentos");
+                  clearInterval(interval);
+                }
+              }, 100);
+            })();
+          `,
+        }}
+      />
+    </>
   );
 }
