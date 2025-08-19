@@ -76,6 +76,11 @@ const architects = [
     position: 'Arquitecto',
   },
   {
+    name: 'Omar Torres',
+    image: '/images/Omar-Valdivia.jpg',
+    position: 'Arquitecto',
+  },
+  {
     name: 'Fabiola Félix',
     image: '/images/the_study/architect/6.png',
     position: 'Arquitecto',
@@ -108,6 +113,31 @@ const architects = [
   {
     name: 'Diana Pacheco',
     image: '/images/the_study/architect/12.png',
+    position: 'Arquitecto',
+  },
+  {
+    name: 'Abraham García',
+    image: '/images/Abraham-Garcia.jpg',
+    position: 'Arquitecto',
+  },
+  {
+    name: 'Juan de Dios Martínez',
+    image: '/images/Juan-Martinez.jpg',
+    position: 'Arquitecto',
+  },
+  {
+    name: 'Denzel Gómez',
+    image: '/images/Denzel-Gomez.jpg',
+    position: 'Arquitecto',
+  },
+  {
+    name: 'Guadalupe García',
+    image: '/images/Guadalupe-Garcia.jpg',
+    position: 'Arquitecto',
+  },
+  {
+    name: 'Enrique Carlos',
+    image: '/images/Enrique-Carlos.jpg',
     position: 'Arquitecto',
   },
 ];
