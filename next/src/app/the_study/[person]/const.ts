@@ -191,20 +191,6 @@ export const associates: Person[] = [
     },
   },
   {
-    name: 'Manijeh Lizárraga',
-    position: 'Director de Proyecto',
-    role: 'Project Director',
-    image: '/images/the_study/associates/5.png',
-    description: [
-      'Con 18 años en Ares Arquitectos, Manijeh lidera proyectos hoteleros para marcas como Marriott, Hilton y Nobu. Su enfoque combina funcionalidad, coherencia de marca y experiencia del usuario. Es egresada del ITESM Guadalajara y ha consolidado su experiencia en planificación, diseño y coordinación técnica.',
-    ],
-    link: {
-      Instagram: '',
-      Facebook: '',
-      LinkedIn: '',
-    },
-  },
-  {
     name: 'Lalo Domínguez',
     position: 'Director de Proyecto',
     role: 'Project Director',
