@@ -17,10 +17,27 @@ const Map = dynamic(() => import('./map'), {
 
 type Offices = typeof offices;
 
+interface TextContent {
+  mainTitle: string;
+  fullNameLabel: string;
+  emailLabel: string;
+  phoneLabel: string;
+  cvLabel: string;
+  positionLabel: string;
+  companyLabel: string;
+  messageLabel: string;
+  submitButtonLabel: string;
+  officesTitle: string;
+  cvRequiredMessage: string;
+  successMessage: string;
+  noFileSelected: string;
+  pendingName: string;
+}
 
 interface ContactComponentProps {
   offices: Offices;
   styles: any;
+  texts: TextContent;
 }
 
 const EnumServices = {
@@ -29,7 +46,7 @@ const EnumServices = {
   '3': 'curriculum'
 }
 
-export default function ContactComponent({ offices, styles }: ContactComponentProps) {
+export default function ContactComponent({ offices, styles, texts }: ContactComponentProps) {
   const [activeServiceId, setActiveServiceId] = useState<string | null>(
     services[0].id
   );
@@ -40,7 +57,7 @@ export default function ContactComponent({ offices, styles }: ContactComponentPr
 
   const formRef = useRef<HTMLFormElement>(null);
 
-  const [fileName, setFileName] = useState<string>('Sin seleccionar');
+  const [fileName, setFileName] = useState<string>(texts.noFileSelected);
   const [selectedOffice, setSelectedOffice] = useState(offices[0]);
 
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -66,7 +83,7 @@ export default function ContactComponent({ offices, styles }: ContactComponentPr
       maps[office.id] = <Map lat={office.lat} lng={office.lng} id={office.id} title={office.title} styles={styles} /> 
     })
     return maps;
-  }, [offices, firstLoad]);
+  }, [offices, firstLoad, styles]);
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -78,7 +95,7 @@ export default function ContactComponent({ offices, styles }: ContactComponentPr
 
         if ( activeServiceId === '3') {
           if (!formRef.current.cv.value) {
-            alert('Por favor, sube tu currículum');
+            alert(texts.cvRequiredMessage);
             return;
           }
           // serialize the file
@@ -103,7 +120,7 @@ export default function ContactComponent({ offices, styles }: ContactComponentPr
 
         // get the url from the response
         formRef.current?.reset();
-        alert('Formulario enviado correctamente, gracias por contactarnos');
+        alert(texts.successMessage);
       }
     } catch (error) {
       console.error(error);
@@ -123,7 +140,7 @@ export default function ContactComponent({ offices, styles }: ContactComponentPr
         <div className='md:grid grid-cols-2 gap-36'>
           <div className='flex-col'>
             <h2 className='mb-16 max-w-xs text-4xl font-bold leading-tight text-[#636B69]'>
-              Trabajemos juntos
+              {texts.mainTitle}
             </h2>
             <div className='flex items-center justify-between gap-36'>
               <CollapsibleList items={services} onChange={setActiveServiceId} />
@@ -133,7 +150,7 @@ export default function ContactComponent({ offices, styles }: ContactComponentPr
             <form ref={formRef} onSubmit={handleSubmit} className='flex flex-col gap-4'>
               <div className='space-y-2'>
                 <label htmlFor='name'>
-                  Nombre completo <span className='text-[#EE3F3F]'>*</span>
+                  {texts.fullNameLabel} <span className='text-[#EE3F3F]'>*</span>
                 </label>
                 <input
                   name='userName'
@@ -145,7 +162,7 @@ export default function ContactComponent({ offices, styles }: ContactComponentPr
               </div>
               <div className='space-y-2'>
                 <label htmlFor='email'>
-                  Correo eléctrónico <span className='text-[#EE3F3F]'>*</span>
+                  {texts.emailLabel} <span className='text-[#EE3F3F]'>*</span>
                 </label>
                 <input
                   name='email'
@@ -157,7 +174,7 @@ export default function ContactComponent({ offices, styles }: ContactComponentPr
               </div>
               <div className='space-y-2'>
                 <label htmlFor='phone'>
-                  Teléfono <span className='text-[#EE3F3F]'>*</span>
+                  {texts.phoneLabel} <span className='text-[#EE3F3F]'>*</span>
                 </label>
                 <input
                   name='phone'
@@ -171,7 +188,7 @@ export default function ContactComponent({ offices, styles }: ContactComponentPr
                 <>
                   <div className='space-y-2'>
                     <label htmlFor='cv'>
-                      Sube tu currículum{' '}
+                      {texts.cvLabel}{' '}
                       <span className='text-[#EE3F3F]'>*</span>
                     </label>
                     <label
@@ -189,7 +206,7 @@ export default function ContactComponent({ offices, styles }: ContactComponentPr
                     />
                   </div>
                   <div className='space-y-2'>
-                    <label htmlFor='position'>Puesto</label>
+                    <label htmlFor='position'>{texts.positionLabel}</label>
                     <input
                       id='position'
                       name='position'
@@ -204,7 +221,7 @@ export default function ContactComponent({ offices, styles }: ContactComponentPr
                 <>
                   <div className='space-y-2'>
                     <label htmlFor='company'>
-                      Empresa{' '}
+                      {texts.companyLabel}{' '}
                       {activeServiceId === '2' && (
                         <span className='text-[#EE3F3F]'>*</span>
                       )}
@@ -218,7 +235,7 @@ export default function ContactComponent({ offices, styles }: ContactComponentPr
                     />
                   </div>
                   <div className='space-y-2'>
-                    <label htmlFor='message'>Mensaje</label>
+                    <label htmlFor='message'>{texts.messageLabel}</label>
                     <textarea
                       id='message'
                       name='message'
@@ -229,7 +246,7 @@ export default function ContactComponent({ offices, styles }: ContactComponentPr
                 </>
               )}
               <Button
-                label='Enviar'
+                label={texts.submitButtonLabel}
                 variant='primary'
                 className='mt-4 text-center'
                 type='submit'
@@ -242,7 +259,7 @@ export default function ContactComponent({ offices, styles }: ContactComponentPr
 
       <Section width='max-w-7xl' paddingTop='pt-0' paddingBottom='pb-0'>
         <h2 className='mb-16 text-4xl font-bold leading-tight text-[#636B69]'>
-          Nuestras oficinas
+          {texts.officesTitle}
         </h2>
       </Section>
 
@@ -293,7 +310,7 @@ export default function ContactComponent({ offices, styles }: ContactComponentPr
           <div className='pb-12'>
             <p className='mb-5 text-lg text-black'>{selectedOffice.address}</p>
             <div className='space-y-6'>
-              <p className='text-lg font-bold'>{selectedOffice.name || 'Nombre pendiente'}</p>
+              <p className='text-lg font-bold'>{selectedOffice.name || texts.pendingName}</p>
               <ul className='space-y-4 text-lg leading-5 text-black'>
                 <li>{selectedOffice.phone}</li>
                 <li>{selectedOffice.email}</li>
