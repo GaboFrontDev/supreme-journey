@@ -131,11 +131,6 @@ const architects = [
     position: 'Arquitecto',
   },
   {
-    name: 'Guadalupe García',
-    image: '/images/Guadalupe-Garcia.jpg',
-    position: 'Arquitecto',
-  },
-  {
     name: 'Enrique Carlos',
     image: '/images/Enrique-Carlos.jpg',
     position: 'Arquitecto',
