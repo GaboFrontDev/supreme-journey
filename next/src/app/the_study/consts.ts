@@ -103,9 +103,9 @@ export const years = [
       lineColor: '#636B69',
       cards: [
         {
-          title: 'Apertura de oficina en Colombia',
+          title: 'Apertura de Oficina en Colombia',
           description:
-            'Nuestra primera oficina internacional lo que nos permitió expandir nuestra visión arquitectónica hacia nuevos mercados y desarrollo de proyectos innovadores en la región.',
+            'La apertura de nuestra primera sede internacional marcó el inicio de una nueva era. Llevamos nuestra visión arquitectónica más allá de las fronteras, abriendo nuevos mercados y desarrollando proyectos de alto impacto en la región.',
           image: '/images/history/8.png',
         },
       ],
