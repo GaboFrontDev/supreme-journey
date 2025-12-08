@@ -140,6 +140,30 @@ const architects = [
     image: '/images/Enrique-Carlos.jpg',
     position: 'Arquitecto',
   },
+  {
+    name: 'Carlos Rodríguez',
+    image:
+      'https://storage.googleapis.com/ares_images/""/Carlos_Abraham_3f9ac8b3a5/Carlos_Abraham_3f9ac8b3a5.jpg',
+    position: 'Arquitecto',
+  },
+  {
+    name: 'Alejandra Miranda',
+    image:
+      'https://storage.googleapis.com/ares_images/""/Alejandra_Miranda_dfd1dc0de9/Alejandra_Miranda_dfd1dc0de9.jpg',
+    position: 'Arquitecto',
+  },
+  {
+    name: 'Alfonso Amaya',
+    image:
+      'https://storage.googleapis.com/ares_images/""/Alfonso_Maya_c652441727/Alfonso_Maya_c652441727.jpg',
+    position: 'Arquitecto',
+  },
+  {
+    name: 'Diego de la Torre',
+    image:
+      'https://storage.googleapis.com/ares_images/""/Diego_de_la_Torre_3e78899620/Diego_de_la_Torre_3e78899620.jpg',
+    position: 'Arquitecto',
+  },
 ];
 
 const professionals = [
@@ -204,6 +228,12 @@ const acabados = [
     name: 'Ofelia Aguilar',
     image: '/images/Ofelia.jpg',
     position: 'Acabados',
+  },
+  {
+    name: 'Gabriel García',
+    image:
+      'https://storage.googleapis.com/ares_images/%22%22/Gabriel_2b9fab382f/Gabriel_2b9fab382f.jpg',
+    position: 'Diseñador',
   },
 ];
 
@@ -303,23 +333,70 @@ export default function TheStudyPage() {
     return keyToSection[_selectedSection];
   }, [_selectedSection]);
 
-  const memoizedSelectedSection = useMemo(() => {
-    return selectedSection.map((architect, index) => (
-      <div key={index} className='flex flex-col'>
-        <div className='relative mb-4 h-[185px] w-full overflow-hidden rounded-xl md:h-[380px]'>
-          <Image
-            src={architect.image}
-            alt={architect.name}
-            fill
-            className='object-cover'
-          />
+  const memoizedProfessionals = useMemo(() => {
+    return professionals.map((professional, index) => {
+      const isActive = professional.key === _selectedSection;
+
+      return (
+        <div
+          key={index}
+          className='flex cursor-pointer items-center gap-4'
+          onClick={() =>
+            setSelectedSection(professional.key as keyof typeof keyToSection)
+          }
+        >
+          <div
+            className='relative hidden h-8 min-h-8 w-8 min-w-8 items-center justify-center rounded-full
+              bg-[#EFEFEF] md:flex'
+          >
+            <Image
+              src={
+                isActive
+                  ? '/icons/arrow_downward_active.png'
+                  : '/icons/arrow_downward_alt.png'
+              }
+              alt='Icono de flecha'
+              width={10}
+              height={10}
+              className='pointer-events-none object-cover'
+            />
+          </div>
+          <div>
+            <h4
+              className={`text-xl font-bold ${isActive ? 'text-[#407978]' : 'text-[#636B69]'}`}
+            >
+              {professional.title}
+            </h4>
+          </div>
         </div>
-        <div className='flex flex-col items-start'>
-          <h2 className='text-lg font-bold text-black'>{architect.name}</h2>
-          <span className='text-[#A1A1A1]'>{architect.position}</span>
-        </div>
+      );
+    });
+  }, [_selectedSection]);
+
+  const renderPersonCard = (
+    person: { name: string; image: string; position: string },
+    index: number
+  ) => (
+    <div key={index} className='flex flex-col'>
+      <div className='relative mb-4 h-[185px] w-full overflow-hidden rounded-xl md:h-[380px]'>
+        <Image
+          src={person.image}
+          alt={person.name}
+          fill
+          className='object-cover'
+        />
       </div>
-    ));
+      <div className='flex flex-col items-start'>
+        <h2 className='text-lg font-bold text-black'>{person.name}</h2>
+        <span className='text-[#A1A1A1]'>{person.position}</span>
+      </div>
+    </div>
+  );
+
+  const memoizedSelectedSection = useMemo(() => {
+    return selectedSection.map((person, index) =>
+      renderPersonCard(person, index)
+    );
   }, [selectedSection]);
 
   return (
@@ -536,46 +613,11 @@ export default function TheStudyPage() {
       </Section>
 
       <Section width='max-w-7xl' paddingBottom='pt-0' paddingTop='pt-12'>
-        <div className='mb-16 md:grid flex flex-col select-none grid-cols-2 md:items-center md:justify-between gap-4 md:gap-10'>
-          {professionals.map((professional, index) => {
-            const isActive = professional.key === _selectedSection;
-
-            return (
-              <div
-                key={index}
-                className='flex cursor-pointer items-center gap-4'
-                onClick={() =>
-                  setSelectedSection(
-                    professional.key as keyof typeof keyToSection
-                  )
-                }
-              >
-                <div
-                  className='relative hidden h-8 min-h-8 w-8 min-w-8 items-center justify-center rounded-full
-                    bg-[#EFEFEF] md:flex'
-                >
-                  <Image
-                    src={
-                      isActive
-                        ? '/icons/arrow_downward_active.png'
-                        : '/icons/arrow_downward_alt.png'
-                    }
-                    alt='Icono de flecha'
-                    width={10}
-                    height={10}
-                    className='pointer-events-none object-cover'
-                  />
-                </div>
-                <div>
-                  <h4
-                    className={`text-xl font-bold ${isActive ? 'text-[#407978]' : 'text-[#636B69]'}`}
-                  >
-                    {professional.title}
-                  </h4>
-                </div>
-              </div>
-            );
-          })}
+        <div
+          className='mb-16 flex select-none grid-cols-2 flex-col gap-4 md:grid md:items-center
+            md:justify-between md:gap-10'
+        >
+          {memoizedProfessionals}
         </div>
       </Section>
 
@@ -585,99 +627,7 @@ export default function TheStudyPage() {
             {memoizedSelectedSection}
           </div>
         </Section>
-      ) : (
-        <>
-          <Section width='max-w-7xl' paddingTop='pt-0' paddingBottom='pb-48'>
-            <div className='grid-cols-3 gap-10 md:grid'>
-              {architects.map((architect, index) => (
-                <div key={index} className='flex flex-col'>
-                  <div className='relative mb-4 h-[380px] w-full overflow-hidden rounded-xl'>
-                    <Image
-                      src={architect.image}
-                      alt={architect.name}
-                      fill
-                      className='object-cover'
-                    />
-                  </div>
-                  <div className='flex flex-col items-start'>
-                    <h2 className='text-lg font-bold text-black'>
-                      {architect.name}
-                    </h2>
-                    <span className='text-[#A1A1A1]'>{architect.position}</span>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </Section>
-          <Section width='max-w-7xl' paddingTop='pt-0' paddingBottom='pb-48'>
-            <div className='grid-cols-3 gap-10 md:grid'>
-              {acabados.map((acabado, index) => (
-                <div key={index} className='flex flex-col'>
-                  <div className='relative mb-4 h-[380px] w-full overflow-hidden rounded-xl'>
-                    <Image
-                      src={acabado.image}
-                      alt={acabado.name}
-                      fill
-                      className='object-cover'
-                    />
-                  </div>
-                  <div className='flex flex-col items-start'>
-                    <h2 className='text-lg font-bold text-black'>
-                      {acabado.name}
-                    </h2>
-                    <span className='text-[#A1A1A1]'>{acabado.position}</span>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </Section>
-
-          <Section width='max-w-7xl' paddingTop='pt-0' paddingBottom='pb-48'>
-            <div className='grid-cols-3 gap-10 md:grid'>
-              {disenos.map((diseno, index) => (
-                <div key={index} className='flex flex-col'>
-                  <div className='relative mb-4 h-[380px] w-full overflow-hidden rounded-xl'>
-                    <Image
-                      src={diseno.image}
-                      alt={diseno.name}
-                      fill
-                      className='object-cover'
-                    />
-                  </div>
-                  <div className='flex flex-col items-start'>
-                    <h2 className='text-lg font-bold text-black'>
-                      {diseno.name}
-                    </h2>
-                    <span className='text-[#A1A1A1]'>{diseno.position}</span>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </Section>
-          <Section width='max-w-7xl' paddingTop='pt-0' paddingBottom='pb-48'>
-            <div className='grid-cols-3 gap-10 md:grid'>
-              {operaciones.map((operacion, index) => (
-                <div key={index} className='flex flex-col'>
-                  <div className='relative mb-4 h-[380px] w-full overflow-hidden rounded-xl'>
-                    <Image
-                      src={operacion.image}
-                      alt={operacion.name}
-                      fill
-                      className='object-cover'
-                    />
-                  </div>
-                  <div className='flex flex-col items-start'>
-                    <h2 className='text-lg font-bold text-black'>
-                      {operacion.name}
-                    </h2>
-                    <span className='text-[#A1A1A1]'>{operacion.position}</span>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </Section>
-        </>
-      )}
+      ) : null}
     </>
   );
 }
