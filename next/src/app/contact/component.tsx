@@ -70,6 +70,7 @@ export default function ContactComponent({ offices, styles, texts }: ContactComp
   };
 
   useEffect(() => {
+    console.log(texts)
     setFirstLoad(false);
   }, []);
 

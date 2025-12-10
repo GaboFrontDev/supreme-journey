@@ -46,13 +46,11 @@ const defaultTextContent = {
 
 async function getContactPageContent() {
   try {
-    const response = await fetch(
-      `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/pagina-contacto`,
-      { next: { revalidate: 60 } }
+    const response = await fetchWithToken<ContactPageContent>(
+      `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/pagina-contacto?populate=*`
     );
-    const contentRequest = (await response.json()) as ContactPageContent;
-    if (contentRequest?.data?.attributes) {
-      return contentRequest.data.attributes;
+    if (response?.data?.attributes) {
+      return response.data.attributes;
     }
   } catch (error) {
     console.error('Error fetching contact page content from Strapi:', error);
@@ -71,5 +69,7 @@ export default async function ContactPage() {
 
   const textContent = await getContactPageContent();
 
-  return <ContactComponent offices={offices} styles={styles} texts={textContent} />;
+  return (
+    <ContactComponent offices={offices} styles={styles} texts={textContent} />
+  );
 }
