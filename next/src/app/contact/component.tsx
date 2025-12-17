@@ -202,8 +202,10 @@ export default function ContactComponent({ offices, styles, texts }: ContactComp
                     <input
                       id='cv'
                       type='file'
+                      accept='application/pdf'
                       onChange={handleFileChange}
                       className='hidden'
+                      
                     />
                   </div>
                   <div className='space-y-2'>
