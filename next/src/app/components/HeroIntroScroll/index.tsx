@@ -5,19 +5,23 @@ import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
 import Image from 'next/image';
 import Button from '../Button';
 
-const component = {
-  title1: 'Éxito a través',
-  title2: 'del diseño',
-  description: 'Somos una empresa de diseño que ayuda a crear productos exitosos.',
-  image: '/images/hero.png',
-  button: {
-    label: 'Trabajemos Juntos',
-    href: '/contact', 
-  },
+type HeroIntroProps = {
+  title1?: string;
+  title2?: string;
+  description?: string;
+  image?: string;
+  buttonLabel?: string;
+  buttonHref?: string;
 };
 
-export default function HeroIntroScroll() {
-  const { title1, title2, description, image, button } = component;
+export default function HeroIntroScroll({
+  title1 = 'Éxito a través 2',
+  title2 = 'del diseño',
+  description = 'Somos una empresa de diseño que ayuda a crear productos exitosos.',
+  image = '/images/hero.png',
+  buttonLabel = 'Trabajemos Juntos',
+  buttonHref = '/contact',
+}: HeroIntroProps) {
   const ref = useRef(null);
 
   const { scrollYProgress } = useScroll({
@@ -54,24 +58,13 @@ export default function HeroIntroScroll() {
             style={{ scale }} 
             className='absolute inset-0 z-0 flex items-center justify-center bg-black'
           >
-            {false ? (
-              <video
-                src={image}
-                autoPlay
-                muted
-                loop
-                playsInline
-                className='object-cover w-full h-full'
-              />
-            ) : (
-              <Image
-                src='/images/hero.png'
-                alt='Hero background'
-                fill
-                className='object-cover'
-                priority
-              />
-            )}
+            <Image
+              src={image}
+              alt='Hero background'
+              fill
+              className='object-cover'
+              priority
+            />
           </motion.div>
 
           <motion.div
@@ -97,9 +90,9 @@ export default function HeroIntroScroll() {
                   {description}
                 </p>
                 <Button 
-                  label={button.label || ''} 
+                  label={buttonLabel || ''} 
                   variant="secondary" 
-                  href={button.href} 
+                  href={buttonHref} 
                 />
               </motion.div>
             </div>

@@ -17,8 +17,9 @@ import OfficesGrid from './components/OfficesGrid';
 import { Cliente, DestacadoData } from './strapi';
 import { CategoriaProyectoData } from './projects/strapi';
 import { formatTitleToUrl } from '@/dynamicRendering/utils';
+import type { HomePageContent } from './home/types';
 
-const stats = [
+const defaultStats = [
   { value: '50', label: 'Años de experiencia', fixedWidth: true },
   { value: '16', label: 'Países' },
   { value: '4', label: 'Millones de m² diseñados', fixedWidth: true },
@@ -26,7 +27,7 @@ const stats = [
   { value: '110', label: 'Proyectos en México y LATAM' },
 ];
 
-const offices = [
+const defaultOffices = [
   { title: 'Guadalajara', country: 'México' },
   { title: 'CDMX', country: 'México' },
   { title: 'L35 Barcelona', country: 'España' },
@@ -73,7 +74,7 @@ const items4 = [
   { name: 'Grupo Inmobiliario Gigante' },
 ];
 
-const services = [
+const defaultServices = [
   {
     id: '1',
     title: 'Arquitectura',
@@ -108,41 +109,83 @@ export default function HomeComponent({
   clients,
   destacados,
   categorias,
+  pageContent,
 }: {
   clients: Cliente[];
   destacados: DestacadoData;
   categorias: CategoriaProyectoData[];
+  pageContent?: HomePageContent;
 }) {
-  const [activeServiceId, setActiveServiceId] = useState<string | null>(
-    services[0].id
-  );
-  const activeService = services.find((s) => s.id === activeServiceId);
+  const stats = pageContent?.stats ?? defaultStats;
 
-  const mappedClients = clients.map((client) => ({
-    name: client.name,
-    bold: client.esNegritas,
+  const offices = pageContent?.oficinas ?? defaultOffices;
+  const services = (pageContent?.servicios ?? pageContent?.services ?? defaultServices).map((s: any, idx: number) => ({
+    id: s.id ?? `${idx + 1}`,
+    title: s.title,
+    content: s.content,
+    image: typeof s.image === 'string' ? s.image : (s.image?.url ?? ''),
   }));
 
+  const texts = {
+    servicesTitle: pageContent?.textos?.servicesTitle ?? pageContent?.texts?.servicesTitle ?? 'Servicios',
+    collaborationTitle: pageContent?.textos?.collaborationTitle ?? pageContent?.texts?.collaborationTitle ?? 'Diseñamos desde la colaboración',
+    collaborationDescription:
+      pageContent?.textos?.collaborationDescription ?? pageContent?.texts?.collaborationDescription ??
+      'Escuchamos, entendemos y colaboramos con cada cliente para dar vida a espacios que reflejan su esencia y superan expectativas',
+    projectsTitle: pageContent?.textos?.projectsTitle ?? pageContent?.texts?.projectsTitle ?? 'Proyectos destacados',
+    finalCtaTitle:
+      pageContent?.textos?.finalCtaTitle ?? pageContent?.texts?.finalCtaTitle ??
+      'Diseñemos de la mano espacios que trasciendan e historias que conectan',
+    ctaStudyLabel: pageContent?.textos?.ctaStudyLabel ?? pageContent?.texts?.ctaStudyLabel ?? 'Conoce el estudio',
+    ctaStudyHref: pageContent?.textos?.ctaStudyHref ?? pageContent?.texts?.ctaStudyHref ?? '/the_study',
+    ctaProjectsLabel: pageContent?.textos?.ctaProjectsLabel ?? pageContent?.texts?.ctaProjectsLabel ?? 'Explora nuestros proyectos',
+    ctaProjectsHref: pageContent?.textos?.ctaProjectsHref ?? pageContent?.texts?.ctaProjectsHref ?? '/projects',
+    finalCtaLabel: pageContent?.textos?.finalCtaLabel ?? pageContent?.texts?.finalCtaLabel ?? 'Trabajemos Juntos',
+    finalCtaHref: pageContent?.textos?.finalCtaHref ?? pageContent?.texts?.finalCtaHref ?? '/contact',
+  };
+
+  const hero = pageContent?.hero ?? {
+    title1: 'Éxito a través',
+    title2: 'del diseño',
+    description: 'Somos una empresa de diseño que ayuda a crear productos exitosos.',
+    image: '/images/hero.png',
+    buttonLabel: 'Trabajemos Juntos',
+    buttonHref: '/contact',
+  };
+
+  const [activeServiceId, setActiveServiceId] = useState<string | null>(
+    services[0]?.id ?? null
+  );
+  const activeService = services.find((s: any) => s.id === activeServiceId);
+
+  const mappedClients = clients.length
+    ? clients.map((client) => ({ name: client.name, bold: client.esNegritas }))
+    : [...items1, ...items2, ...items3, ...items4];
+
   // separate clients in 4 groups of any size
+  const quarter = Math.floor(mappedClients.length * 0.25) || 1;
+  const half = Math.floor(mappedClients.length * 0.5) || quarter + 1;
+  const threeQuarter = Math.floor(mappedClients.length * 0.75) || half + 1;
+
   const clientsGroups = [
-    mappedClients.slice(0, Math.floor(mappedClients.length * 0.25)),
-    mappedClients.slice(
-      Math.floor(mappedClients.length * 0.25),
-      Math.floor(mappedClients.length * 0.5)
-    ),
-    mappedClients.slice(
-      Math.floor(mappedClients.length * 0.5),
-      Math.floor(mappedClients.length * 0.75)
-    ),
-    mappedClients.slice(
-      Math.floor(mappedClients.length * 0.75),
-      mappedClients.length
-    ),
+    mappedClients.slice(0, quarter),
+    mappedClients.slice(quarter, half),
+    mappedClients.slice(half, threeQuarter),
+    mappedClients.slice(threeQuarter, mappedClients.length),
   ];
 
   return (
     <>
-      <HeroIntroScroll />
+      {(pageContent?.heroIntro ?? true) && (
+        <HeroIntroScroll
+          title1={hero.title1}
+          title2={hero.title2}
+          description={hero.description}
+          image={hero.image}
+          buttonLabel={hero.buttonLabel}
+          buttonHref={hero.buttonHref}
+        />
+      )}
       <Section
         width='max-w-7xl overflow-hidden md:overflow-visible'
         paddingBottom='pt-0'
@@ -157,11 +200,11 @@ export default function HomeComponent({
       >
         <OfficesGrid items={offices} />
         <div className='flex md:justify-items-start justify-center'>
-          <Button label='Conoce el estudio' href='/the_study' />
+          <Button label={texts.ctaStudyLabel} href={texts.ctaStudyHref} />
         </div>
       </Section>
       <Section width='md:max-w-7xl max-w-full overflow-hidden md:overflow-visible' paddingBottom='pb-16'>
-        <h2 className=' text-4xl font-bold text-[#636B69]'>Servicios</h2>
+        <h2 className=' text-4xl font-bold text-[#636B69]'>{texts.servicesTitle}</h2>
         <div className='items-center justify-between gap-36 md:flex'>
           <CollapsibleList items={services} onChange={setActiveServiceId} />
           <div
@@ -196,11 +239,10 @@ export default function HomeComponent({
       >
         <div className='mb-20 flex flex-col items-center justify-between md:flex-row'>
           <h2 className='max-w-md text-left text-4xl font-bold leading-tight text-[#636B69]'>
-            Diseñamos desde la colaboración
+            {texts.collaborationTitle}
           </h2>
           <p className='max-w-md text-left text-lg text-black md:text-right'>
-            Escuchamos, entendemos y colaboramos con cada cliente para dar vida
-            a espacios que reflejan su esencia y superan expectativas
+            {texts.collaborationDescription}
           </p>
         </div>
 
@@ -220,7 +262,7 @@ export default function HomeComponent({
         </div>
 
         <div className='mt-20 flex items-center justify-center md:justify-start'>
-          <Button label='Explora nuestros proyectos' href='/projects' />
+          <Button label={texts.ctaProjectsLabel} href={texts.ctaProjectsHref} />
         </div>
       </Section>
       <Section
@@ -230,7 +272,7 @@ export default function HomeComponent({
         paddingTop='pt-14'
       >
         <h2 className='leading-16 mb-16 text-4xl font-bold text-[#636B69]'>
-          Proyectos destacados
+          {texts.projectsTitle}
         </h2>
         <div className='mb-16 hidden space-x-4'>
           {categorias.map((categoria) => (
@@ -270,10 +312,9 @@ export default function HomeComponent({
       <Section width='max-w-4xl' paddingTop='pt-8' paddingBottom='pb-32'>
         <div className='text-center pt-8'>
           <h2 className='mb-10 text-4xl text-black'>
-            Diseñemos de la mano espacios que trasciendan e historias que
-            conectan
+            {texts.finalCtaTitle}
           </h2>
-          <Button label='Trabajemos Juntos' href='/contact' />
+          <Button label={texts.finalCtaLabel} href={texts.finalCtaHref} />
         </div>
       </Section>
     </>
