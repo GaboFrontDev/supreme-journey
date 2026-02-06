@@ -31,7 +31,7 @@ const directors = [
   {
     name: 'Raúl Méndez',
     image: '/images/the_study/directors/3.png',
-    position: 'Principal Partners / Business Developer',
+    position: 'Principal Partner / Business Developer',
     link: '',
   },
   {
