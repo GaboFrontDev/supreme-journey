@@ -1,5 +1,5 @@
 'use client';
-import Image from 'next/image';
+import Image from '@/core/Image';
 import Section from '@/app/components/Section';
 import Link from 'next/link';
 import ProjectCard from '@/app/components/ProjectCard';

@@ -1,7 +1,7 @@
 import { AnimatedBox } from '@/components/AnimatedBox';
 import Button from '@/components/Button';
 import { WhatItIs } from '@/context/page/domain/PageEntity';
-import Image from 'next/image';
+import Image from '@/core/Image';
 
 export const HowItWorksSection: React.FC<WhatItIs> = ({
   title,

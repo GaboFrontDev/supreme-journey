@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import Image from '@/core/Image';
 import { ImageImageComponent } from '@/types/strapiBlog';
 import Section from '../Section';
 

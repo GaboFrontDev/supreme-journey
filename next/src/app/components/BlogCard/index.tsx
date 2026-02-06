@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "@/core/Image";
 import Button from "../Button";
 
 interface BlogCardProps {
@@ -16,6 +16,7 @@ export default function BlogCard({
   slug,
   buttonLabel = "Continuar Leyendo",
 }: BlogCardProps) {
+  console.log(images, date, title, slug);
   return (
     <div className="md:flex items-center justify-between gap-6 px-2 py-8 md:px-0 md:py-0">
       <div className="min-w-[196px] min-h-[218px] overflow-hidden rounded-2xl relative">

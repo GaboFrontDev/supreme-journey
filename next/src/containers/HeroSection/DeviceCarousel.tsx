@@ -1,7 +1,7 @@
 'use client';
 
 import { memo, useEffect, useRef, useState } from 'react';
-import Image from 'next/image';
+import Image from '@/core/Image';
 import { ArrowRightIcon } from '@/Icons/ArrowRightIcon';
 import Link from 'next/link';
 import { HeroMediaCarousel } from '@/context/page/domain/PageEntity';

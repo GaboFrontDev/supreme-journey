@@ -1,7 +1,7 @@
 import { ArrowRightIcon } from '@/Icons/ArrowRightIcon';
 import { AnimatedBox } from '@/components/AnimatedBox';
 import Button from '@/components/Button';
-import Image from 'next/image';
+import Image from '@/core/Image';
 import { ProductsSlides } from '@/context/page/domain/PageEntity';
 
 export const FeaturesSection: React.FC<ProductsSlides> = ({

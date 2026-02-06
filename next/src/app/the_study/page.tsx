@@ -1,7 +1,7 @@
 'use client';
 
 import { useMemo, useState } from 'react';
-import Image from 'next/image';
+import Image from '@/core/Image';
 import Header from '../components/Header';
 import Section from '../components/Section';
 import Button from '../components/Button';

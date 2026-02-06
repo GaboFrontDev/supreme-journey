@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "@/core/Image";
 import Button from "../Button";
 
 interface ProjectCardProps {

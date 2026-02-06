@@ -2,7 +2,7 @@
 
 import { useRef, useState, useEffect } from 'react';
 import { motion, useScroll, useSpring, useTransform } from 'framer-motion';
-import Image from 'next/image';
+import Image from '@/core/Image';
 import Section from '../Section';
 
 export default function HeroScroll() {

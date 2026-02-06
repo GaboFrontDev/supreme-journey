@@ -118,6 +118,7 @@ export interface ArticuloRelacionadoAttributes {
   miniatura: Image;
   nombre: string;
   autor: string;
+  fecha: string;
 }
 
 export interface ArticuloRelacionadoData {

@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import clsx from 'clsx';
-import Image from 'next/image';
+import Image from '@/core/Image';
 import { twMerge } from 'tailwind-merge';
 
 interface ButtonProps {

@@ -1,7 +1,7 @@
 'use client';
 
 import { motion, AnimatePresence } from 'framer-motion';
-import Image from 'next/image';
+import Image from '@/core/Image';
 import CarouselWrapper from '../CarouselWrapper';
 
 interface GalleryModalProps {

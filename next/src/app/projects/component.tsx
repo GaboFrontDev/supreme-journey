@@ -1,6 +1,6 @@
 'use client';
 import { useMemo } from 'react';
-import Image from 'next/image';
+import Image from '@/core/Image';
 
 import { CategoriaProyectoData, StrapiResponse } from './strapi';
 import { CategoryComponent } from './categoriaComponent';

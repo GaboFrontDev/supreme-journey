@@ -2,7 +2,7 @@
 
 import { useRef } from 'react';
 import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
-import Image from 'next/image';
+import Image from '@/core/Image';
 import Button from '../Button';
 
 type HeroIntroProps = {

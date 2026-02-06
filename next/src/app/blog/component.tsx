@@ -6,7 +6,7 @@ import BlogCard from '../components/BlogCard';
 import FilterButton from '../components/FilterButton';
 import Button from '../components/Button';
 import Footer from '../components/Footer';
-import Image from 'next/image';
+import Image from '@/core/Image';
 import { StrapiResponse } from '@/types/strapiBlog';
 
 interface BlogPageComponentProps {

@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { ArticleAnimationBox } from './ArticleAnimationBox';
-import Image from 'next/image';
+import Image from '@/core/Image';
 import { ArticleEntity } from '@/context/article/domain/ArticleEntity';
 import { StrapiEntryEntity } from '@/context/shared/domain/StrapiEntity';
 import { getUrlLocaleFromLang } from '@/dynamicRendering/utils';

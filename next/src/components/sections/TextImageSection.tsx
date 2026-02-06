@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import Image from '@/core/Image';
 import { TextImageComponent } from '@/types/strapiBlog';
 import Section from '../Section';
 import ReactMarkdown from 'react-markdown';

@@ -1,6 +1,6 @@
 import { ArrowRightIcon } from '@/Icons/ArrowRightIcon';
 import { SmallFolder } from '@/context/page/domain/PageEntity';
-import Image from 'next/image';
+import Image from '@/core/Image';
 import Link from 'next/link';
 
 export const SmallFolderBlock = (props: SmallFolder) => (

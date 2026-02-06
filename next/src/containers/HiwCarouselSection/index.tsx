@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import Image from 'next/image';
+import Image from '@/core/Image';
 import { useEffect, useState } from 'react';
 import { AnimatedBox } from '@/components/AnimatedBox';
 import { HowItWorksCarousel } from '@/context/page/domain/PageEntity';

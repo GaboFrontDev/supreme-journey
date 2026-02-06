@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import Image from '@/core/Image';
 import Header from '@/app/components/Header';
 import Section from '@/app/components/Section';
 import Link from 'next/link';

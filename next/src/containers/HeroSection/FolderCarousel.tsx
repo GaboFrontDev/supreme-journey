@@ -1,6 +1,6 @@
 'use client';
 
-import Image from 'next/image';
+import Image from '@/core/Image';
 import { motion } from 'framer-motion';
 import { memo, useEffect, useState } from 'react';
 import { HeroFolderCarousel } from '@/context/page/domain/PageEntity';

@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useMemo, useRef, useState } from 'react';
-import Image from 'next/image';
+import Image from '@/core/Image';
 import dynamic from 'next/dynamic';
 import Script from 'next/script';
 

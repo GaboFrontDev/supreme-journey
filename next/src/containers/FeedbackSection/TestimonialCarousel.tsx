@@ -2,7 +2,7 @@
 
 import { WhatClientsSayReviews } from '@/context/page/domain/PageEntity';
 import { motion } from 'framer-motion';
-import Image from 'next/image';
+import Image from '@/core/Image';
 import useMeasure from 'react-use-measure';
 
 const cardVariants = {

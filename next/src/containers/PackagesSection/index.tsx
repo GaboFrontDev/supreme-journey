@@ -1,6 +1,6 @@
 import { AnimatedBox } from '@/components/AnimatedBox';
 import { Packages } from '@/context/page/domain/PageEntity';
-import Image from 'next/image';
+import Image from '@/core/Image';
 
 export const PackagesSection: React.FC<Packages> = ({
   title,

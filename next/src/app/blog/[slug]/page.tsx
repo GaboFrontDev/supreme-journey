@@ -6,7 +6,7 @@ import { queryParams } from '../consts';
 import SectionRenderer from '@/components/sections/SectionRenderer';
 import Section from '@/components/Section';
 import Link from 'next/link';
-import Image from 'next/image';
+import Image from '@/core/Image';
 import { fetchWithToken } from '@/dynamicRendering/utils';
 import CarouselWrapper from '@/app/components/CarouselWrapper';
 import BlogCard from '@/app/components/BlogCard';
@@ -144,7 +144,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
             <BlogCard
               key={index}
               images={[blog?.attributes.miniatura.data?.attributes.url]}
-              date={formatDateToSpanish(blog?.attributes.createdAt)}
+              date={formatDateToSpanish(blog?.attributes.fecha)}
               title={blog?.attributes.nombre}
               slug={blog?.attributes.slug}
             />

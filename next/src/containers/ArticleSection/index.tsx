@@ -3,7 +3,7 @@ import { ArrowRightIcon } from '@/Icons/ArrowRightIcon';
 import { AnimatedArticle } from '@/components/AnimatedArticle';
 import { ArticleEntity } from '@/context/article/domain/ArticleEntity';
 import { StrapiEntryEntity } from '@/context/shared/domain/StrapiEntity';
-import Image from 'next/image';
+import Image from '@/core/Image';
 import Link from 'next/link';
 import ReactMarkdown from 'react-markdown';
 

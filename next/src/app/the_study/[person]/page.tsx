@@ -2,7 +2,7 @@ import Button from '@/app/components/Button';
 import CarouselWrapper from '@/app/components/CarouselWrapper';
 import Header from '@/app/components/Header';
 import Section from '@/app/components/Section';
-import Image from 'next/image';
+import Image from '@/core/Image';
 import Link from 'next/link';
 import { directors, associates } from './const';
 import { Person } from './types';
