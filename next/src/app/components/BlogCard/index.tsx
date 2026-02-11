@@ -5,6 +5,7 @@ interface BlogCardProps {
   title: string;
   slug: string;
   buttonLabel?: string;
+  data?: any;
 }
 
 export default function BlogCard(props: BlogCardProps) {

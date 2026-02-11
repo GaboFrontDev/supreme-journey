@@ -1,4 +1,3 @@
-import Header from '@/app/components/Header';
 import { notFound } from 'next/navigation';
 import { PageAttributes, StrapiResponse } from '@/types/strapiBlog';
 import qs from 'qs';
@@ -143,7 +142,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
           {attributes.relacionados.data?.map((blog, index) => (
             <BlogCard
               key={index}
-              images={[blog?.attributes.miniatura.data?.attributes.url]}
+              images={[blog?.attributes.miniatura.data?.attributes.previewUrl || '']}
               date={formatDateToSpanish(blog?.attributes.fecha)}
               title={blog?.attributes.nombre}
               slug={blog?.attributes.slug}

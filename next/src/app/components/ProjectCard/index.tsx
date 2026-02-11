@@ -45,7 +45,7 @@ export default function ProjectCard({
 
   useEffect(() => {
     setIsMobile(window.innerWidth < 768);
-  }, [window.innerWidth]);
+  }, []);
 
   return (
     <div
@@ -55,8 +55,8 @@ export default function ProjectCard({
       only-of-type:pl-4 only-of-type:pr-0`}
     >
       <div
-        className='relative h-[200px] w-full cursor-pointer overflow-hidden rounded-xl md:h-[300px]
-          md:h-[380px] md:w-full md:rounded-2xl'
+        className='relative h-[200px] w-full cursor-pointer overflow-hidden rounded-xl md:h-[380px]
+          md:w-full md:rounded-2xl'
         onClick={() => {
           router.push(`/projects/${parentCategory}/${formatTitleToUrl(title)}`);
         }}

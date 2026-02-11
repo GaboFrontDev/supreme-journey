@@ -10,6 +10,7 @@ interface BlogCardProps {
   title: string;
   slug: string;
   buttonLabel?: string;
+  data ?: any;
 }
 
 export default function BlogCardComponent({
@@ -18,7 +19,9 @@ export default function BlogCardComponent({
   title,
   slug,
   buttonLabel = 'Continuar Leyendo',
+  data,
 }: BlogCardProps) {
+  console.log('BlogCard data:', data); // Log the data prop to see its contents
   // lazy import useRouter to avoid hydration issues
   const router = useRouter();
   return (

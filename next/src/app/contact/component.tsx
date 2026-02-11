@@ -12,8 +12,8 @@ import Section from '../components/Section';
 import CollapsibleList from '../components/Collapsible';
 
 const Map = dynamic(() => import('./map'), {
-    ssr: false,
-  });
+  ssr: false,
+});
 
 type Offices = typeof offices;
 
@@ -43,10 +43,14 @@ interface ContactComponentProps {
 const EnumServices = {
   '1': 'asesoria',
   '2': 'atencion-proveedor',
-  '3': 'curriculum'
-}
+  '3': 'curriculum',
+};
 
-export default function ContactComponent({ offices, styles, texts }: ContactComponentProps) {
+export default function ContactComponent({
+  offices,
+  styles,
+  texts,
+}: ContactComponentProps) {
   const [activeServiceId, setActiveServiceId] = useState<string | null>(
     services[0].id
   );
@@ -70,19 +74,27 @@ export default function ContactComponent({ offices, styles, texts }: ContactComp
   };
 
   useEffect(() => {
-    console.log(texts)
+    console.log(texts);
     setFirstLoad(false);
-  }, []);
+  }, [texts]);
 
   const preloadedMaps = useMemo(() => {
-    if(firstLoad) {
+    if (firstLoad) {
       return {};
     }
-    
+
     const maps = {} as Record<string, React.ReactNode>;
     offices.forEach((office) => {
-      maps[office.id] = <Map lat={office.lat} lng={office.lng} id={office.id} title={office.title} styles={styles} /> 
-    })
+      maps[office.id] = (
+        <Map
+          lat={office.lat}
+          lng={office.lng}
+          id={office.id}
+          title={office.title}
+          styles={styles}
+        />
+      );
+    });
     return maps;
   }, [offices, firstLoad, styles]);
 
@@ -94,7 +106,7 @@ export default function ContactComponent({ offices, styles, texts }: ContactComp
       if (formRef.current) {
         const formData = new FormData();
 
-        if ( activeServiceId === '3') {
+        if (activeServiceId === '3') {
           if (!formRef.current.cv.value) {
             alert(texts.cvRequiredMessage);
             return;
@@ -111,13 +123,18 @@ export default function ContactComponent({ offices, styles, texts }: ContactComp
         formData.append('tel', formRef.current.phone?.value || '');
         formData.append('puesto', formRef.current.position?.value || '');
         formData.append('empresa', formRef.current.company?.value || '');
-        formData.append('mensaje', formRef.current.message?.value || '' );
-        formData.append('tipo', EnumServices[activeServiceId as keyof typeof EnumServices]);
-        // upload to strapi 
-        (await fetch(`${process.env.NEXT_PUBLIC_STRAPI_API_URL}/contact`, {
-          method: 'POST',
-          body: formData,
-        })).json();
+        formData.append('mensaje', formRef.current.message?.value || '');
+        formData.append(
+          'tipo',
+          EnumServices[activeServiceId as keyof typeof EnumServices]
+        );
+        // upload to strapi
+        (
+          await fetch(`${process.env.NEXT_PUBLIC_STRAPI_API_URL}/contact`, {
+            method: 'POST',
+            body: formData,
+          })
+        ).json();
 
         // get the url from the response
         formRef.current?.reset();
@@ -138,7 +155,7 @@ export default function ContactComponent({ offices, styles, texts }: ContactComp
       />
 
       <Section width='max-w-7xl' paddingTop='pt-52' paddingBottom='pb-20'>
-        <div className='md:grid grid-cols-2 gap-36'>
+        <div className='grid-cols-2 gap-36 md:grid'>
           <div className='flex-col'>
             <h2 className='mb-16 max-w-xs text-4xl font-bold leading-tight text-[#636B69]'>
               {texts.mainTitle}
@@ -148,10 +165,15 @@ export default function ContactComponent({ offices, styles, texts }: ContactComp
             </div>
           </div>
           <div>
-            <form ref={formRef} onSubmit={handleSubmit} className='flex flex-col gap-4'>
+            <form
+              ref={formRef}
+              onSubmit={handleSubmit}
+              className='flex flex-col gap-4'
+            >
               <div className='space-y-2'>
                 <label htmlFor='name'>
-                  {texts.fullNameLabel} <span className='text-[#EE3F3F]'>*</span>
+                  {texts.fullNameLabel}{' '}
+                  <span className='text-[#EE3F3F]'>*</span>
                 </label>
                 <input
                   name='userName'
@@ -189,8 +211,7 @@ export default function ContactComponent({ offices, styles, texts }: ContactComp
                 <>
                   <div className='space-y-2'>
                     <label htmlFor='cv'>
-                      {texts.cvLabel}{' '}
-                      <span className='text-[#EE3F3F]'>*</span>
+                      {texts.cvLabel} <span className='text-[#EE3F3F]'>*</span>
                     </label>
                     <label
                       htmlFor='cv'
@@ -205,7 +226,6 @@ export default function ContactComponent({ offices, styles, texts }: ContactComp
                       accept='application/pdf'
                       onChange={handleFileChange}
                       className='hidden'
-                      
                     />
                   </div>
                   <div className='space-y-2'>
@@ -248,13 +268,20 @@ export default function ContactComponent({ offices, styles, texts }: ContactComp
                   </div>
                 </>
               )}
-              <Button
-                label={texts.submitButtonLabel}
-                variant='primary'
-                className='mt-4 text-center'
-                type='submit'
-                disabled={isLoading}
-              />
+              <div className='relative'>
+                <Button
+                  label={isLoading ? '' : texts.submitButtonLabel}
+                  variant='primary'
+                  className='mt-4 text-center'
+                  type='submit'
+                  disabled={isLoading}
+                />
+                {isLoading && (
+                  <span className='absolute inset-0 flex items-center justify-center'>
+                    <span className='inline-block h-5 w-5 animate-spin rounded-full border-2 border-solid border-current border-r-transparent align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite]'></span>
+                  </span>
+                )}
+              </div>
             </form>
           </div>
         </div>
@@ -267,7 +294,7 @@ export default function ContactComponent({ offices, styles, texts }: ContactComp
       </Section>
 
       <Section width='max-w-7xl' paddingBottom='pt-4' paddingTop='pt-10'>
-        <div className='mb-16 md:grid grid-cols-4 gap-10 py-8 md:py-0 select-none'>
+        <div className='mb-16 select-none grid-cols-4 gap-10 py-8 md:grid md:py-0'>
           {offices.map((office: any, index: number) => {
             const isActive = office.title === selectedOffice.title;
 
@@ -309,18 +336,20 @@ export default function ContactComponent({ offices, styles, texts }: ContactComp
       </Section>
 
       <Section width='max-w-7xl' paddingTop='pt-4' paddingBottom='pb-48'>
-        <div className='md:grid grid-cols-[300px_1fr] gap-32'>
+        <div className='grid-cols-[300px_1fr] gap-32 md:grid'>
           <div className='pb-12'>
             <p className='mb-5 text-lg text-black'>{selectedOffice.address}</p>
             <div className='space-y-6'>
-              <p className='text-lg font-bold'>{selectedOffice.name || texts.pendingName}</p>
+              <p className='text-lg font-bold'>
+                {selectedOffice.name || texts.pendingName}
+              </p>
               <ul className='space-y-4 text-lg leading-5 text-black'>
                 <li>{selectedOffice.phone}</li>
                 <li>{selectedOffice.email}</li>
               </ul>
             </div>
           </div>
-          <div className='h-[300px] md:h-[447px] overflow-hidden rounded-xl'>
+          <div className='h-[300px] overflow-hidden rounded-xl md:h-[447px]'>
             {preloadedMaps[selectedOffice.id]}
           </div>
         </div>
